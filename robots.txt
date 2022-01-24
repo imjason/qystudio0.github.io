@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+
+Disallow: /fonts/
+Disallow: /vendors/
+
+Sitemap: https://www.qystudio.ltd/sitemap.xml
+Sitemap: https://www.qystudio.ltd/baidusitemap.xml
