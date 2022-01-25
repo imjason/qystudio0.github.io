@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://qystudio.ltd/note/index.html</loc>
-    
-    <lastmod>2022-01-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qystudio.ltd/notebook/index.html</loc>
     
     <lastmod>2022-01-25</lastmod>
@@ -20,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://qystudio.ltd/note/python/index.html</loc>
+    <loc>https://qystudio.ltd/note/volantis/index.html</loc>
     
     <lastmod>2022-01-25</lastmod>
     
@@ -29,7 +20,16 @@
   </url>
   
   <url>
-    <loc>https://qystudio.ltd/note/volantis/index.html</loc>
+    <loc>https://qystudio.ltd/note/index.html</loc>
+    
+    <lastmod>2022-01-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/python/index.html</loc>
     
     <lastmod>2022-01-25</lastmod>
     
