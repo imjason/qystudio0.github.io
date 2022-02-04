@@ -47,51 +47,6 @@
   </url>
   
   <url>
-    <loc>https://qystudio.ltd/posts/64280.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/artitalk/index.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/covid19/index.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/diyc/index.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/messages/index.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qystudio.ltd/posts/78415.html</loc>
     
     <lastmod>2022-02-04</lastmod>
@@ -165,6 +120,51 @@
   
   <url>
     <loc>https://qystudio.ltd/posts/35934.html</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/posts/64280.html</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/artitalk/index.html</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/covid19/index.html</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/diyc/index.html</loc>
+    
+    <lastmod>2022-02-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/messages/index.html</loc>
     
     <lastmod>2022-02-04</lastmod>
     
