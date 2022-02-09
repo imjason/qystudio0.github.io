@@ -36,7 +36,7 @@
 <p>“新闻和兴趣”：它默认显示的是当地的天气。如果点击一下这个天气图标，就会弹出资讯。</p>
 <p>“笔按钮”：点一下这个按钮，就会显示白板和截图的按钮。另外，在系统设置里，也可以对笔进行进一步详细的设定。</p>
 </div><h2 id="四、建议"><a href="#四、建议" class="headerlink" title="四、建议"></a>四、建议</h2><div class="story post-story"><p>正如前面说过，Win10 Build 21354还是测试版本，不建议大家在实体机上安装。测试版往往有比较多的bug，在虚拟机里玩玩就好，提前体验一下即将发布的新系统，过过瘾就好</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://www.qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -530,7 +530,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="story post-story"><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://www.qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/48495.html">建站博客折腾之路</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -724,7 +724,7 @@
 <p>MD5: 179bfe07f7050093ee595ddd85a30201</p>
 <p>SHA1: 3b6da9194ba303ac7dbbf2e521716c809500919c</p>
 <p>测试工具下载:<a href="https://aka.ms/GetPCHealthCheckApp">https://aka.ms/GetPCHealthCheckApp</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://www.qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -749,7 +749,7 @@
 <p>回车确认之后，就是开启上帝模式了，打开文件夹你会看到很多系统设置项目，包括了系统设置选项和各种工具。</p>
 <p>比如一键删除浏览的历史记录、阻止或允许弹窗、等等，你们可以可以根据自己需求去使用</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://www.qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://www.qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>tools</category>
@@ -787,7 +787,7 @@
 <p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。</p>
 <p>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。</p>
 <p>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://www.qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/48495.html">建站博客折腾之路</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -826,7 +826,7 @@
 <li><p>别忘了设置后保存设置并点击“设为默认图床”按钮</p>
 </li>
 </ol>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://www.qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/48495.html">建站博客折腾之路</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -938,7 +938,7 @@
 <p>然后我们再用另存为pdf格式功能来保存下来就好。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><div class="story post-story"><p>除了上面介绍的基本特性之外，reveal.js支持自动播放、自制插件、支持处理事件等等有利于开发人员写slides的特性。相信能给你的slides带来新的好玩的东西，将汇报与分享变成乐趣。Enjoy it!</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://www.qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>前端</category>
@@ -960,7 +960,7 @@
 <p>任正非称，未来软件将吞噬一切，说明未来信息社会的数字化基础架构核心是软件。</p>
 <p>数字社会首先要终端数字化，更难的是行业终端数字化，只有行业终端数字化了，才可能建立起智能化和软件服务的基础。</p>
 <h3 id="直播邀请"><a href="#直播邀请" class="headerlink" title="直播邀请"></a>直播邀请</h3><p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632481552000.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632481552000.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li><li><a href="https://www.qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://www.qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
+<div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -1022,7 +1022,7 @@
 <p>算是不错的良心应用，推荐大家有需要可以安装使用。</p>
 </div><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><div class="story post-story"><p>官方在线下载器(非常慢)<a href="https://www.kaspersky.com.cn/free-antivirus">https://www.kaspersky.com.cn/free-antivirus</a></p>
 <p>离线包(速度快):<a href="https://www.aliyundrive.com/s/iGHMXFmk4jU">https://www.aliyundrive.com/s/iGHMXFmk4jU</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://www.qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>software</category>
@@ -1050,7 +1050,7 @@
 <h3 id="更快更安全浏览："><a href="#更快更安全浏览：" class="headerlink" title="更快更安全浏览："></a>更快更安全浏览：</h3><p>烦人的工具栏和插件降低了您的在线浏览体验，并侵犯了您的在线隐私。<br>IObit Uninstaller 是用于检测和删除恶意和基于广告的插件的最佳卸载工具，以避免更改您的主页，跟踪您的活动或弹出广告。<br>IObit Uninstaller 还支持为 Windows 10 用户删除 Microsoft Edge 扩展。</p>
 <h3 id="更强大的工具："><a href="#更强大的工具：" class="headerlink" title="更强大的工具："></a>更强大的工具：</h3><p>IObit Uninstaller 也可以自动检测第三方卸载程序的残留，并通过强大的扫描可彻底、快速地删除它们。<br>“工具”中的清理软件，可以清理标准卸载和Windows修补程序缓存文件留下的文件，以释放更多的电脑空间。</p>
 <h3 id="测试图"><a href="#测试图" class="headerlink" title="测试图"></a>测试图</h3><p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1634472798000.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1634472798000.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><span class='btn center large'><a class="button" href='https://pan.qystudio.ltd/TOOLS/WINDOW/IObit%20Uninstaller%209.5.0.15.zip?preview' title='下载'><i class='fad fa-download'></i>下载</a></span><div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/61939.html">无广告、无推送，最最纯净的WPS版本</a></li><li><a href="https://www.qystudio.ltd/posts/42493.html">卸载工具 IObit Uninstaller</a></li><li><a href="https://www.qystudio.ltd/posts/61939.html">无广告、无推送，最最纯净的WPS版本</a></li></ul></div>
+<h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><span class='btn center large'><a class="button" href='https://pan.qystudio.ltd/TOOLS/WINDOW/IObit%20Uninstaller%209.5.0.15.zip?preview' title='下载'><i class='fad fa-download'></i>下载</a></span><div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/61939.html">无广告、无推送，最最纯净的WPS版本</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>software</category>
@@ -1076,7 +1076,7 @@
 <li>discuz论坛建站系列文章</li>
 </ul>
 </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="story post-story"><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://www.qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/48495.html">建站博客折腾之路</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1111,7 +1111,7 @@
 <p>本次大会正式发布了第一个支持数字基础设施全场景的openEuler 21.09创新版本，将于9月30日在社区上线。该版本不仅对服务器和云计算场景能力进行了增强，还实现了对于边缘计算和嵌入式场景的支持。2022年一季度，欧拉开源社区将发布支持全场景融合的社区LTS版本，使能合作伙伴面向不同场景发布商业发行版。</p>
 </div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>欧拉自开源以来获得产业界的积极支持和响应，是中国最具活力的开源社区。截至目前，已有超过6000名开发者和100多家企业、高校、组织和机构加入欧拉社区，汇聚从处理器、整机、操作系统发行版厂商、到行业应用等全产业链，十多家主流操作系统领军企业发行基于欧拉的商业版本。欧拉的全新发布将吸引更多云、边缘、嵌入式领域伙伴加入社区，共同加速欧拉在数字基础设施全领域的广泛应用。华为将始终坚持在基础软件上的长期投入，联合全产业链合作伙伴，共同构建开放共赢的操作系统开源生态。</p>
 </div><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><div class="story post-story"><p><a href="https://repo.openeuler.org/openEuler-21.09/">https://repo.openeuler.org/openEuler-21.09/</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li><li><a href="https://www.qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://www.qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://www.qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li><li><a href="wangbei98.github.io/2020/07/03/阿里云搭建https服务/">阿里云搭建https服务</a></li><li><a href="wangbei98.github.io/2020/05/27/Vue-打包发布到服务器/">Vue-打包发布到服务器</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -1142,7 +1142,7 @@
 <p>04WPS精品课教育版<br>为师生提供优秀的精品课程，赠送WPS办公技巧免费课程。在报考WPS二级考试的同时，WPS还会为考生赠送四个月的免费会员，所以如果大家今年有人报考的话，千万别忘记了领取。</p>
 <p>WPS教育考试版不仅限于师生使用，由于其具有的优良特性，非常适合用来替代大家正在使用的WPS个人版。</p>
 </div><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><div class="story post-story"><p>下载链接：<a href="http://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar" title="点击下载">点击下载</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/42493.html">卸载工具 IObit Uninstaller</a></li><li><a href="https://www.qystudio.ltd/posts/42493.html">卸载工具 IObit Uninstaller</a></li><li><a href="https://www.qystudio.ltd/posts/61939.html">无广告、无推送，最最纯净的WPS版本</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/42493.html">卸载工具 IObit Uninstaller</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>software</category>
@@ -1172,7 +1172,7 @@
 
 </div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://www.qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://www.qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://www.qystudio.ltd/posts/48495.html">建站博客折腾之路</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1220,7 +1220,7 @@
 <p>懂哥下载时就被误杀了好几次，小伙伴遇到此类情况，记得允许通过或暂时关闭杀软。</p>
 </div><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><div class="story post-story"><p>下载链接下次补</p>
 <p>就只放github链接了</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://www.qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystudio.ltd/posts/63659.html">window上帝模式</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>software</category>
