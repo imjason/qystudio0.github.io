@@ -1,1 +1,93 @@
-const FriendsJS={requestAPI:(e,t,r)=>{let n=5;!function a(){return new Promise(((o,s)=>{let i=0,l=setTimeout((()=>{0===i&&(i=2,l=null,s("请求超时"),0==n&&r())}),5e3);fetch(e).then((function(e){if(2!==i&&(clearTimeout(l),o(e),l=null,i=1),e.ok)return e.json();throw new Error("Network response was not ok.")})).then((function(e){n=0,t(e)})).catch((function(e){n>0?(n-=1,setTimeout((()=>{a()}),5e3)):r()}))}))}()},layout:e=>{const t=e.el;FriendsJS.requestAPI(e.api,(function(r){t.querySelector(".loading-wrap").remove();const n=r.content;var a="";n.forEach(((t,r)=>{var n='<div class="user-card">';n+='<a class="card-link" target="_blank" rel="external noopener noreferrer"',n+=' href="'+t.url+'">',n+='<img alt="'+t.title+'" src="'+(t.avatar||e.avatar)+'" onerror="javascript:this.onerror=null;this.src=\''+e.avatar+"';\">",n+='<div class="name"><span>'+t.title+"</span></div>",n+="</a>",a+=n+="</div>"})),t.querySelector(".group-body").innerHTML=a}),(function(){try{t.querySelector(".loading-wrap svg").remove(),t.querySelector(".loading-wrap p").innerText("加载失败，请稍后重试。")}catch(e){}}))},start:()=>{const e=document.getElementsByClassName("friendsjs-wrap");for(var t=0;t<e.length;t++){const n=e[t],a=n.getAttribute("api");if(null!=a){var r=new Object;r.el=n,r.api=a,r.class=n.getAttribute("class"),r.avatar="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/avatar/round/3442075.svg",FriendsJS.layout(r)}}}};FriendsJS.start(),document.addEventListener("pjax:complete",(function(){FriendsJS.start()}));
+const FriendsJS = {
+  requestAPI: (url, callback, timeout) => {
+    let retryTimes = 5;
+
+    function request() {
+      return new Promise((resolve, reject) => {
+        let status = 0; // 0 等待 1 完成 2 超时
+        let timer = setTimeout(() => {
+          if (status === 0) {
+            status = 2;
+            timer = null;
+            reject('请求超时');
+            if (retryTimes == 0) {
+              timeout();
+            }
+          }
+        }, 5000);
+        fetch(url).then(function (response) {
+          if (status !== 2) {
+            clearTimeout(timer);
+            resolve(response);
+            timer = null;
+            status = 1;
+          }
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        }).then(function (data) {
+          retryTimes = 0;
+          callback(data);
+        }).catch(function (error) {
+          if (retryTimes > 0) {
+            retryTimes -= 1;
+            setTimeout(() => {
+              request();
+            }, 5000);
+          } else {
+            timeout();
+          }
+        });
+      });
+    }
+    request();
+  },
+  layout: (cfg) => {
+    const el = cfg.el;
+    FriendsJS.requestAPI(cfg.api, function (data) {
+      el.querySelector('.loading-wrap').remove();
+      const arr = data.content;
+      var cellALL = "";
+      arr.forEach((item, i) => {
+        var user = '<div class="user-card">';
+        user += '<a class="card-link" target="_blank" rel="external noopener noreferrer"';
+        user += ' href="' + item.url + '">';
+        user += '<img alt="' + item.title + '" src="' + (item.avatar || cfg.avatar) + '" onerror="javascript:this.onerror=null;this.src=\'' + cfg.avatar + '\';">';
+        user += '<div class="name"><span>' + item.title + '</span></div>';
+        user += '</a>';
+        user += '</div>';
+        cellALL += user;
+      });
+      el.querySelector('.group-body').innerHTML = cellALL;
+    }, function () {
+      try {
+        el.querySelector('.loading-wrap svg').remove();
+        el.querySelector('.loading-wrap p').innerText('加载失败，请稍后重试。');
+      } catch (e) { }
+    });
+  },
+  start: () => {
+    const els = document.getElementsByClassName('friendsjs-wrap');
+    for (var i = 0; i < els.length; i++) {
+      const el = els[i];
+      const api = el.getAttribute('api');
+      if (api == null) {
+        continue;
+      }
+      var cfg = new Object();
+      cfg.el = el;
+      cfg.api = api;
+      cfg.class = el.getAttribute('class');
+      cfg.avatar = volantis.THEMECONFIG.default.avatar;
+      FriendsJS.layout(cfg);
+    }
+  }
+}
+
+
+
+FriendsJS.start();
+document.addEventListener('pjax:complete', function () {
+  FriendsJS.start();
+});

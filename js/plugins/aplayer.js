@@ -1,1 +1,191 @@
-const MainAPlayer=(()=>{const e={},a={checkAPlayer:()=>{void 0===volantis.APlayerController.status||void 0===e.player?a.setAPlayerObject():void 0===e.observer&&a.setAPlayerObserver()},setAPlayerObject:()=>{let l=document.querySelectorAll(".footer meting-js");0==l.length&&(l=document.querySelectorAll("meting-js")),e.player=void 0,l.forEach(((l,t)=>{l.meta.id==volantis.APlayerController.id&&l.aplayer&&void 0===e.player&&(e.player=l.aplayer,a.setAPlayerObserver(),a.updateTitle())}))},setAPlayerObserver:()=>{try{e.player.on("play",(function(l){a.updateAPlayerControllerStatus(l),e.status="play"})),e.player.on("pause",(function(l){a.updateAPlayerControllerStatus(l),e.status="pause"})),e.player.on("volumechange",(function(l){a.onUpdateAPlayerVolume(l),e.status="volumechange"})),e.player.on("loadstart",(function(l){a.updateTitle(l),e.status="loadstart"})),e.volumeBarWrap=document.getElementsByClassName("nav volume")[0].children[0],e.volumeBar=e.volumeBarWrap.children[0];const l=e=>{a.updateAPlayerVolume(e)},t=r=>{e.volumeBarWrap.classList.remove("aplayer-volume-bar-wrap-active"),document.removeEventListener("mouseup",t),document.removeEventListener("mousemove",l),a.updateAPlayerVolume(r)};e.volumeBarWrap.addEventListener("mousedown",(a=>{a.stopPropagation(),e.volumeBarWrap.classList.add("aplayer-volume-bar-wrap-active"),document.addEventListener("mousemove",l),document.addEventListener("mouseup",t)})),e.volumeBarWrap.addEventListener("click",(e=>{e.stopPropagation()})),a.updateAPlayerControllerStatus(),a.onUpdateAPlayerVolume(),e.observer=!0}catch(a){console.log(a),e.observer=void 0}},updateAPlayerVolume:a=>{let l=((a.clientX||a.changedTouches[0].clientX)-e.volumeBar.getBoundingClientRect().left)/e.volumeBar.clientWidth;l=Math.max(l,0),l=Math.min(l,1),e.player.volume(l)},onUpdateAPlayerVolume:()=>{try{e.volumeBar.children[0].style.width=100*e.player.audio.volume+"%"}catch(e){console.log(e)}},updateAPlayerControllerStatus:()=>{try{e.player.audio.paused?(volantis.APlayerController.status="pause",document.getElementsByClassName("nav toggle")[0].children[0].classList.add("fa-play"),document.getElementsByClassName("nav toggle")[0].children[0].classList.remove("fa-pause")):(volantis.APlayerController.status="play",document.getElementsByClassName("nav toggle")[0].children[0].classList.remove("fa-play"),document.getElementsByClassName("nav toggle")[0].children[0].classList.add("fa-pause"))}catch(e){console.log(e)}},aplayerToggle:()=>{a.checkAPlayer();try{e.player.toggle()}catch(e){console.log(e)}},aplayerBackward:()=>{a.checkAPlayer();try{e.player.skipBack(),e.player.play()}catch(e){console.log(e)}},aplayerForward:()=>{a.checkAPlayer();try{e.player.skipForward(),e.player.play()}catch(e){console.log(e)}},aplayerVolume:l=>{a.checkAPlayer();try{e.player.volume(l)}catch(e){console.log(e)}},updateTitle:()=>{a.checkAPlayer();try{const a=e.player.list.index,l=e.player.list.audios[a];document.getElementsByClassName("nav music-title")[0].innerHTML=l.title}catch(e){}}};return{checkAPlayer:()=>{a.checkAPlayer()},aplayerBackward:()=>{a.aplayerBackward()},aplayerToggle:()=>{a.aplayerToggle()},aplayerForward:()=>{a.aplayerForward()},APlayer:e}})();Object.freeze(MainAPlayer),volantis.requestAnimationFrame((()=>{MainAPlayer.checkAPlayer()}));
+/**
+ * 右键音乐
+ * */
+const RightMenuAplayer = (() => {
+  let playStatus; // 播放器状态
+  const APlayer = {}; // 右键音乐所控制的播放器
+  const fn = {};
+
+  fn.checkAPlayer = () => {
+    if (playStatus === undefined || APlayer.player === undefined) {
+      fn.setAPlayerObject();
+    } else if (APlayer.observer === undefined) {
+      fn.setAPlayerObserver();
+    }
+  }
+
+  // 设置全局播放器所对应的 aplyer 对象
+  fn.setAPlayerObject = () => {
+    let meting = document.querySelectorAll('.footer meting-js');
+    if (meting.length == 0) {
+      meting = document.querySelectorAll('meting-js');
+    }
+    APlayer.player = undefined;
+    meting.forEach((item, index) => {
+      if (item.meta.id == volantis.THEMECONFIG.plugins.aplayer.id && item.aplayer && APlayer.player === undefined) {
+        APlayer.player = item.aplayer;
+        fn.setAPlayerObserver();
+        fn.updateTitle();
+      }
+    });
+  }
+
+  // 事件监听
+  fn.setAPlayerObserver = () => {
+    try {
+      APlayer.player.on('play', function (e) {
+        fn.updateAPlayerControllerStatus(e);
+        APlayer.status = 'play';
+      });
+      APlayer.player.on('pause', function (e) {
+        fn.updateAPlayerControllerStatus(e);
+        APlayer.status = 'pause';
+      });
+      APlayer.player.on('volumechange', function (e) {
+        fn.onUpdateAPlayerVolume(e);
+        APlayer.status = 'volumechange';
+      });
+      APlayer.player.on('loadstart', function (e) {
+        fn.updateTitle(e);
+        APlayer.status = 'loadstart';
+      });
+
+      // 监听音量手势
+      APlayer.volumeBarWrap = document.getElementsByClassName('nav volume')[0].children[0];
+      APlayer.volumeBar = APlayer.volumeBarWrap.children[0];
+
+      const thumbMove = (e) => {
+        fn.updateAPlayerVolume(e);
+      };
+
+      const thumbUp = (e) => {
+        APlayer.volumeBarWrap.classList.remove('aplayer-volume-bar-wrap-active');
+        document.removeEventListener('mouseup', thumbUp);
+        document.removeEventListener('mousemove', thumbMove);
+        fn.updateAPlayerVolume(e);
+      };
+
+      APlayer.volumeBarWrap.addEventListener('mousedown', (event) => {
+        event.stopPropagation();
+        APlayer.volumeBarWrap.classList.add('aplayer-volume-bar-wrap-active');
+        document.addEventListener('mousemove', thumbMove);
+        document.addEventListener('mouseup', thumbUp);
+      });
+
+      APlayer.volumeBarWrap.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+
+      fn.updateAPlayerControllerStatus();
+      fn.onUpdateAPlayerVolume();
+      APlayer.observer = true;
+    } catch (error) {
+      console.log(error);
+      APlayer.observer = undefined;
+    }
+  }
+
+  fn.updateAPlayerVolume = (e) => {
+    let percentage = ((e.clientX || e.changedTouches[0].clientX) -
+      APlayer.volumeBar.getBoundingClientRect().left) / APlayer.volumeBar.clientWidth;
+    percentage = Math.max(percentage, 0);
+    percentage = Math.min(percentage, 1);
+    APlayer.player.volume(percentage);
+  }
+
+  fn.onUpdateAPlayerVolume = () => {
+    try {
+      APlayer.volumeBar.children[0].style.width = APlayer.player.audio.volume * 100 + '%';
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 更新控制器状态
+  fn.updateAPlayerControllerStatus = () => {
+    try {
+      if (APlayer.player.audio.paused) {
+        playStatus = 'pause';
+        document.getElementsByClassName('nav toggle')[0].children[0].classList.add('fa-play');
+        document.getElementsByClassName('nav toggle')[0].children[0].classList.remove('fa-pause');
+      } else {
+        playStatus = 'play';
+        document.getElementsByClassName('nav toggle')[0].children[0].classList.remove('fa-play');
+        document.getElementsByClassName('nav toggle')[0].children[0].classList.add('fa-pause');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 播放/暂停
+  fn.aplayerToggle = () => {
+    event.stopPropagation();
+    fn.checkAPlayer();
+    try {
+      APlayer.player.toggle();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 上一曲
+  fn.aplayerBackward = () => {
+    event.stopPropagation();
+    fn.checkAPlayer();
+    try {
+      APlayer.player.skipBack();
+      APlayer.player.play();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 下一曲
+  fn.aplayerForward = () => {
+    event.stopPropagation();
+    fn.checkAPlayer();
+    try {
+      APlayer.player.skipForward();
+      APlayer.player.play();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 调节音量
+  fn.aplayerVolume = (percent) => {
+    fn.checkAPlayer();
+    try {
+      APlayer.player.volume(percent);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  // 更新音乐标题
+  fn.updateTitle = () => {
+    fn.checkAPlayer();
+    try {
+      const index = APlayer.player.list.index;
+      const obj = APlayer.player.list.audios[index];
+      document.getElementsByClassName('nav music-title')[0].innerHTML = obj.title;
+    } catch (error) {
+      //console.log(error);
+    }
+  }
+
+  return {
+    checkAPlayer: fn.checkAPlayer,
+    aplayerBackward: fn.aplayerBackward,
+    aplayerToggle: fn.aplayerToggle,
+    aplayerForward: fn.aplayerForward,
+    APlayer: APlayer
+  }
+})()
+
+Object.freeze(RightMenuAplayer);
+
+volantis.requestAnimationFrame(() => {
+  RightMenuAplayer.checkAPlayer();
+});

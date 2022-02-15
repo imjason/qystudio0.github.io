@@ -1,1 +1,1186 @@
-document.addEventListener("DOMContentLoaded",(function(){volantis.requestAnimationFrame((()=>{VolantisApp.init(),VolantisApp.subscribe(),VolantisFancyBox.init(),VolantisFancyBox.bind("#post-body img:not([fancybox])"),highlightKeyWords.startFromURL(),locationHash(),volantis.pjax.push((()=>{VolantisApp.pjaxReload(),VolantisFancyBox.init(),VolantisFancyBox.bind("#post-body img:not([fancybox])"),sessionStorage.setItem("domTitle",document.title),highlightKeyWords.startFromURL()}),"app.js"),volantis.pjax.send((()=>{volantis.dom.switcher.removeClass("active"),volantis.dom.header.removeClass("z_search-open"),volantis.dom.wrapper.removeClass("sub"),volantis.EventListener.remove()}),"app.js")}))}));const changeTitle=()=>{sessionStorage.setItem("domTitle",document.title),document.addEventListener("visibilitychange",(function(){const e=sessionStorage.getItem("domTitle")||document.title,t=e.split(" - ")||[];"hidden"==document.visibilityState?document.title=2===t.length?t[1]:t[0]:document.title=e}))},locationHash=()=>{if(window.location.hash){let e=decodeURI(window.location.hash.split("#")[1]).replace(/\ /g,"-"),t=document.getElementById(e);t&&setTimeout((()=>{window.location.hash.startsWith("#fn")?volantis.scroll.to(t,{addTop:-volantis.dom.header.offsetHeight-5,behavior:"instant"}):volantis.scroll.to(t,{addTop:5,behavior:"instant"})}),1e3)}},VolantisApp=(()=>{const e={};let t=80;return e.init=()=>{volantis.dom.header&&(t=volantis.dom.header.clientHeight+16),window.onresize=()=>{document.documentElement.clientWidth<500?volantis.isMobile=1:volantis.isMobile=0,volantis.isMobile!=volantis.isMobileOld&&(e.setGlobalHeaderMenuEvent(),e.setHeader(),e.setHeaderSearch())},volantis.scroll.push(e.scrollEventCallBack,"scrollEventCallBack")},e.event=()=>{volantis.dom.$(document.getElementById("scroll-down")).on("click",(function(){e.scrolltoElement(volantis.dom.bodyAnchor)}))},e.restData=()=>{t=volantis.dom.header?volantis.dom.header.clientHeight+16:80},e.setIsMobile=()=>{document.documentElement.clientWidth<500?(volantis.isMobile=1,volantis.isMobileOld=1):(volantis.isMobile=0,volantis.isMobileOld=0)},e.scrolltoElement=(e,o=t)=>{volantis.scroll.to(e,{top:e.offsetTop-o})},e.scrollEventCallBack=()=>{const e=volantis.dom.bodyAnchor.offsetTop-t,o=volantis.scroll.getScrollTop();volantis.dom.topBtn&&(o>volantis.dom.bodyAnchor.offsetTop?(volantis.dom.topBtn.addClass("show"),volantis.scroll.del>0?volantis.dom.topBtn.removeClass("hl"):volantis.dom.topBtn.addClass("hl")):volantis.dom.topBtn.removeClass("show").removeClass("hl")),volantis.dom.header&&(o-e>-1?volantis.dom.header.addClass("show"):volantis.dom.header.removeClass("show")),pdata.ispage&&volantis.dom.wrapper&&(volantis.scroll.del>0&&o>100?volantis.dom.wrapper.addClass("sub"):volantis.scroll.del<0&&volantis.dom.wrapper.removeClass("sub")),volantis.isMobile&&(pdata.ispage&&volantis.dom.tocTarget&&volantis.dom.toc&&(volantis.dom.tocTarget.removeClass("active"),volantis.dom.toc.removeClass("active")),volantis.dom.mPhoneList&&volantis.dom.mPhoneList.forEach((function(e){volantis.dom.$(e).hide()})))},e.setScrollAnchor=()=>{volantis.dom.topBtn&&volantis.dom.bodyAnchor&&volantis.dom.topBtn.click((t=>{t.preventDefault(),t.stopPropagation(),e.scrolltoElement(volantis.dom.bodyAnchor),t.stopImmediatePropagation()}))},e.setHeader=()=>{pdata.ispage&&(volantis.dom.wrapper.find(".nav-sub .title").html(pdata.postTitle),volantis.dom.comment=volantis.dom.$(document.getElementById("s-comment")),volantis.dom.commentTarget=volantis.dom.$(document.querySelector("#l_main article#comments")),volantis.dom.commentTarget?volantis.dom.comment.click((t=>{t.preventDefault(),t.stopPropagation(),e.scrolltoElement(volantis.dom.commentTarget),t.stopImmediatePropagation()})):volantis.dom.comment.style.display="none",volantis.isMobile&&(volantis.dom.toc=volantis.dom.$(document.getElementById("s-toc")),volantis.dom.tocTarget=volantis.dom.$(document.querySelector("#l_side .toc-wrapper")),volantis.dom.tocTarget?(volantis.dom.toc.click((e=>{e.stopPropagation(),volantis.dom.tocTarget.toggleClass("active"),volantis.dom.toc.toggleClass("active")})),volantis.dom.$(document).click((function(e){e.stopPropagation(),volantis.dom.tocTarget&&volantis.dom.tocTarget.removeClass("active"),volantis.dom.toc.removeClass("active")}))):volantis.dom.toc.style.display="none"))},e.setHeaderMenuSelection=()=>{volantis.dom.headerMenu=volantis.dom.$(document.querySelectorAll("#l_header .navigation,#l_cover .navigation,#l_side .navigation")),volantis.dom.headerMenu.forEach((e=>{let t=volantis.dom.$(e).find("li a.active");t&&t.removeClass("active");let o=volantis.dom.$(e).find("div a.active");o&&o.removeClass("active")}));var e=location.pathname.replace(/\/|%|\./g,"");0==e.length&&(e="home");var t=e.match(/page\d{0,}$/g);t&&(t=t[0],e=e.split(t)[0]);var o=e.match(/index.html/);o&&(o=o[0],e=e.split(o)[0]),(e=e.replace(/(\[|\]|~|#|@)/g,"\\$1"))&&volantis.dom.headerMenu&&volantis.dom.headerMenu.forEach((t=>{let o=t.querySelector("[active-action=action-"+e+"]");o&&volantis.dom.$(o).addClass("active")}))},e.setGlobalHeaderMenuEvent=()=>{volantis.isMobile?document.querySelectorAll("#l_header .m-phone li").forEach((function(e){e.querySelector(".list-v")&&volantis.dom.$(e).click((function(e){e.stopPropagation(),e.currentTarget.parentElement.childNodes.forEach((function(e){"[object HTMLLIElement]"==Object.prototype.toString.call(e)&&e.childNodes.forEach((function(e){"[object HTMLUListElement]"==Object.prototype.toString.call(e)&&volantis.dom.$(e).hide()}))}));let t=e.currentTarget.children;for(let e=0;e<t.length;e++){const o=t[e];volantis.dom.$(o).show()}}),0)})):document.querySelectorAll("#wrapper .m-pc li > a[href]").forEach((function(e){volantis.dom.$(e.parentElement).click((function(e){e.stopPropagation(),e.target.origin==e.target.baseURI&&document.querySelectorAll("#wrapper .m-pc .list-v").forEach((function(e){volantis.dom.$(e).hide()}))}),0)})),e.setPageHeaderMenuEvent()},e.setPageHeaderMenuEvent=()=>{volantis.isMobile&&volantis.dom.$(document).click((function(e){volantis.dom.mPhoneList.forEach((function(e){volantis.dom.$(e).hide()}))}))},e.setHeaderSearch=()=>{volantis.isMobile&&volantis.dom.switcher&&(volantis.dom.switcher.click((function(e){e.stopPropagation(),volantis.dom.header.toggleClass("z_search-open"),volantis.dom.switcher.toggleClass("active")}),!1),volantis.dom.$(document).click((function(e){volantis.dom.header.removeClass("z_search-open"),volantis.dom.switcher.removeClass("active")}),!1),volantis.dom.search.click((function(e){e.stopPropagation()}),!1))},e.setTabs=()=>{let e=document.querySelectorAll("#l_main .tabs .nav-tabs");e&&e.forEach((function(e){e.querySelectorAll("a").forEach((function(e){volantis.dom.$(e).on("click",(e=>{e.preventDefault(),e.stopPropagation();const t=volantis.dom.$(e.target.parentElement.parentElement.parentElement);return t.find(".nav-tabs .active").removeClass("active"),volantis.dom.$(e.target.parentElement).addClass("active"),t.find(".tab-content .active").removeClass("active"),t.find(e.target.className).addClass("active"),!1}))}))}))},window.checkRightMenu=!0,e.toggleRightMenu=()=>{let e=document.getElementById("destroyRightContent"),t=document.getElementById("initRightContent");(e||t)&&(window.checkRightMenu?(e.style.display="block",t.style.display="none"):(t.style.display="block",e.style.display="none"),e.removeEventListener("click",null),e.addEventListener("click",(function(){RightMenu.destroy(!0),window.checkRightMenu=!1,t.style.display="block",e.style.display="none"})),t.removeEventListener("click",null),t.addEventListener("click",(function(){RightMenu.init(!0),window.checkRightMenu=!0,e.style.display="block",t.style.display="none"})))},volantis.selectComment="beaudar",e.switchComment=()=>{const e=document.getElementById("switchBtn");e&&("beaudar"!==volantis.selectComment&&e.classList.remove("move"),e.onclick=function(){const t=document.getElementById("twikoo"),o=document.getElementById("beaudar_container");"twikoo"===volantis.selectComment?(t.classList.toggle("content-in"),o.classList.toggle("content-in"),volantis.selectComment="beaudar",t.style.display="none",t.classList.remove("content-in"),o.style.display="block",o.classList.add("content-in")):(volantis.selectComment="twikoo",t.style.display="block",t.classList.add("content-in"),o.style.display="none",o.classList.remove("content-in")),e.classList.toggle("move")})},e.footnotes=()=>{let e=document.querySelectorAll("#l_main .footnote-backref, #l_main .footnote-ref > a");e.forEach((function(t,o){e[o].click=()=>{},volantis.dom.$(t).on("click",(e=>{e.stopPropagation(),e.preventDefault();let t=decodeURI(e.target.hash.split("#")[1]).replace(/\ /g,"-"),o=document.getElementById(t);o&&volantis.scroll.to(o,{addTop:-volantis.dom.header.offsetHeight-5,behavior:"instant"})}))}))},e.copyCode=t=>{document.querySelectorAll(t).forEach((t=>{t.insertAdjacentHTML("beforebegin",'<button class="btn-copy" data-clipboard-snippet=""><i class="fas fa-copy"></i><span>COPY</span></button>');const o=t.previousSibling;o.onclick=n=>{n.stopPropagation();const a=o.querySelector("i"),l=o.querySelector("span");t.focus();const i=new Range;i.selectNodeContents(t),document.getSelection().removeAllRanges(),document.getSelection().addRange(i);const s=document.getSelection().toString();e.writeClipText(s).then((()=>{volantis.messageCopyright&&volantis.messageCopyright.enable&&volantis.message(volantis.messageCopyright.title,volantis.messageCopyright.message,{icon:volantis.messageCopyright.icon}),o.classList.add("copied"),a.classList.remove("fa-copy"),a.classList.add("fa-check-circle"),l.innerText="COPIED",setTimeout((()=>{a.classList.remove("fa-check-circle"),a.classList.add("fa-copy"),l.innerText="COPY"}),2e3)})).catch((e=>{volantis.message("系统提示",e,{icon:"fal fa-exclamation-circle red"}),o.classList.add("copied-failed"),a.classList.remove("fa-copy"),a.classList.add("fa-exclamation-circle"),l.innerText="COPY FAILED",setTimeout((()=>{a.classList.remove("fa-exclamation-circle"),a.classList.add("fa-copy"),l.innerText="COPY"}))}))}}))},e.writeClipText=e=>{try{return navigator.clipboard.writeText(e).then((()=>Promise.resolve())).catch((e=>Promise.reject(e||"复制文本失败!")))}catch(t){const o=document.createElement("input");o.setAttribute("readonly","readonly"),document.body.appendChild(o),o.setAttribute("value",e),o.select();try{let e=document.execCommand("copy");return document.body.removeChild(o),e&&"unsuccessful"!==e?Promise.resolve():Promise.reject("复制文本失败!")}catch(e){return document.body.removeChild(o),Promise.reject("当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!")}}},{init:()=>{e.init(),e.event()},subscribe:()=>{e.setIsMobile(),e.setHeader(),e.setHeaderMenuSelection(),e.setGlobalHeaderMenuEvent(),e.setHeaderSearch(),e.setScrollAnchor(),e.setTabs(),e.toggleRightMenu(),e.footnotes(),e.copyCode()},pjaxReload:()=>{e.event(),e.restData(),e.setHeader(),e.setHeaderMenuSelection(),e.setPageHeaderMenuEvent(),e.setScrollAnchor(),e.setTabs(),e.toggleRightMenu(),e.footnotes(),e.copyCode(),document.querySelector("#l_header .nav-main").querySelectorAll(".list-v:not(.menu-phone)").forEach((function(e){e.removeAttribute("style")})),document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style")},writeClipText:e.writeClipText,copyCode:e.copyCode}})();Object.freeze(VolantisApp);const VolantisFancyBox=(()=>{const e={loadFancyBox:e=>{volantis.css("https://unpkg.com/@fancyapps/ui@4.0.12/dist/fancybox.css"),volantis.js("https://unpkg.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js").then((()=>{e&&e()}))},init:(t=!0,o=e.groupBind)=>{!document.querySelector(".md .gallery img, .fancybox")&&t||("undefined"==typeof Fancybox?e.loadFancyBox(o):o())},elementHandling:(e,t)=>{document.querySelectorAll(e).forEach((e=>{if(e.hasAttribute("fancybox"))return;e.setAttribute("fancybox","");const o=document.createElement("a");o.setAttribute("href",e.src),o.setAttribute("data-caption",e.alt),o.setAttribute("data-fancybox",t),o.classList.add("fancybox"),o.append(e.cloneNode()),e.replaceWith(o)}))},bind:t=>{e.init(!1,(()=>{Fancybox.bind(t,{groupAll:!0,Hash:!1,hideScrollbar:!1,Thumbs:{autoStart:!1},caption:function(e,t,o){return o.$trigger.alt||null}})}))},groupBind:(e=null)=>{const t=new Set;document.querySelectorAll(".gallery").forEach((e=>{e.querySelector("img")&&t.add(e.getAttribute("data-group")||"default")})),e&&t.add(e);for(const e of t)Fancybox.unbind('[data-fancybox="'+e+'"]'),Fancybox.bind('[data-fancybox="'+e+'"]',{Hash:!1,hideScrollbar:!1,Thumbs:{autoStart:!1}})}};return{init:e.init,bind:t=>{e.bind(t)},groupBind:(t,o="default")=>{try{e.elementHandling(t,o),e.init(!1,(()=>{e.groupBind(o)}))}catch(e){console.error(e)}}}})();Object.freeze(VolantisFancyBox);const highlightKeyWords=(()=>{let e={markNum:0,markNextId:-1,startFromURL:()=>{const t=decodeURI(new URL(location.href).searchParams.get("keyword")),o=t?t.split(" "):[],n=document.querySelector("#l_main");1==o.length&&"null"==o[0]||(e.start(o,n),e.scrollToFirstHighlightKeywordMark())},scrollToFirstHighlightKeywordMark:()=>{e.scrollToNextHighlightKeywordMark("0")||volantis.requestAnimationFrame(e.scrollToFirstHighlightKeywordMark)},scrollToNextHighlightKeywordMark:t=>{let o=t||(e.markNextId+1)%e.markNum;e.markNextId=parseInt(o);let n=document.getElementById("keyword-mark-"+e.markNextId);return n||(e.markNextId=(e.markNextId+1)%e.markNum,n=document.getElementById("keyword-mark-"+e.markNextId)),n&&volantis.scroll.to(n,{addTop:-volantis.dom.header.offsetHeight-5,behavior:"instant"}),n},scrollToPrevHighlightKeywordMark:t=>{let o=t||(e.markNextId-1+e.markNum)%e.markNum;e.markNextId=parseInt(o);let n=document.getElementById("keyword-mark-"+e.markNextId);return n||(e.markNextId=(e.markNextId-1+e.markNum)%e.markNum,n=document.getElementById("keyword-mark-"+e.markNextId)),n&&volantis.scroll.to(n,{addTop:-volantis.dom.header.offsetHeight-5,behavior:"instant"}),n},start:(t,o)=>{if(e.markNum=0,!t.length||!o||1==t.length&&"null"==t[0])return;console.log(t);const n=document.createTreeWalker(o,NodeFilter.SHOW_TEXT,null),a=[];for(;n.nextNode();)n.currentNode.parentNode.matches("button, select, textarea")||a.push(n.currentNode);a.forEach((o=>{const[n]=e.getIndexByWord(t,o.nodeValue);if(!n.length)return;const a=e.mergeIntoSlice(0,o.nodeValue.length,n);e.highlightText(o,a,"keyword"),e.highlightStyle()}))},getIndexByWord:(e,t,o=!1)=>{const n=[],a=new Set;return e.forEach((e=>{const l=document.createElement("div");l.innerText=e;const i=(e=l.innerHTML).length;if(0===i)return;let s=0,r=-1;for(o||(t=t.toLowerCase(),e=e.toLowerCase());(r=t.indexOf(e,s))>-1;)n.push({position:r,word:e}),a.add(e),s=r+i})),n.sort(((e,t)=>e.position!==t.position?e.position-t.position:t.word.length-e.word.length)),[n,a]},mergeIntoSlice:(e,t,o)=>{let n=o[0],{position:a,word:l}=n;const i=[],s=new Set;for(;a+l.length<=t&&0!==o.length;){s.add(l),i.push({position:a,length:l.length});const e=a+l.length;for(o.shift();0!==o.length&&(n=o[0],a=n.position,l=n.word,e>a);)o.shift()}return{hits:i,start:e,end:t,count:s.size}},highlightText:(t,o,n)=>{const a=t.nodeValue;let l=o.start;const i=[];for(const{position:t,length:s}of o.hits){const o=document.createTextNode(a.substring(l,t));l=t+s;let r=document.createElement("mark");r.className=n,r=e.highlightStyle(r),r.appendChild(document.createTextNode(a.substr(t,s))),i.push(o,r)}t.nodeValue=a.substring(l,o.end),i.forEach((e=>{t.parentNode.insertBefore(e,t)}))},highlightStyle:t=>{if(t)return t.id="keyword-mark-"+e.markNum,e.markNum++,t.style.background="#ff0",t.style["border-bottom"]="1px dashed #ff2a2a",t.style.color="#ff2a2a",t.style["font-weight"]="bold",t},cleanHighlightStyle:()=>{document.querySelectorAll(".keyword").forEach((e=>{e.style.background="transparent",e.style["border-bottom"]=null,e.style.color=null,e.style["font-weight"]=null}))}};return{start:(t,o)=>{e.start(t,o)},startFromURL:()=>{e.startFromURL()},scrollToNextHighlightKeywordMark:t=>{e.scrollToNextHighlightKeywordMark(t)},scrollToPrevHighlightKeywordMark:t=>{e.scrollToPrevHighlightKeywordMark(t)},cleanHighlightStyle:()=>{e.cleanHighlightStyle()}}})();Object.freeze(highlightKeyWords);
+document.addEventListener("DOMContentLoaded", function () {
+  volantis.requestAnimationFrame(() => {
+    VolantisApp.init();
+    VolantisApp.subscribe();
+    VolantisFancyBox.init();
+    VolantisFancyBox.bind('#post-body img:not([fancybox])');
+    highlightKeyWords.startFromURL();
+    locationHash();
+    //changeTitle();
+  
+    volantis.pjax.push(() => {
+      VolantisApp.pjaxReload();
+      VolantisFancyBox.init();
+      VolantisFancyBox.bind('#post-body img:not([fancybox])');
+      sessionStorage.setItem("domTitle", document.title);
+      highlightKeyWords.startFromURL();
+    }, 'app.js');
+    volantis.pjax.send(() => {
+      volantis.dom.switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.dom.header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.dom.wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.EventListener.remove() // 移除事件监听器 see: layout/_partial/scripts/global.ejs
+    }, 'app.js');
+  });
+});
+
+// 动态修改标题
+const changeTitle = () => {
+  sessionStorage.setItem("domTitle", document.title);
+  document.addEventListener('visibilitychange', function () {
+    const title = sessionStorage.getItem("domTitle") || document.title;
+    const titleArr = title.split(' - ') || [];
+    if (document.visibilityState == 'hidden') {
+      document.title = titleArr.length === 2 ? titleArr[1] : titleArr[0];
+    } else {
+      document.title = title;
+    }
+  });
+}
+
+/*锚点定位*/
+const locationHash = () => {
+  if (window.location.hash) {
+    let locationID = decodeURI(window.location.hash.split('#')[1]).replace(/\ /g, '-');
+    let target = document.getElementById(locationID);
+    if (target) {
+      setTimeout(() => {
+        if (window.location.hash.startsWith('#fn')) { // hexo-reference https://github.com/volantis-x/hexo-theme-volantis/issues/647
+          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+        } else {
+          // 锚点中上半部有大片空白 高度大概是 volantis.dom.header.offsetHeight
+          volantis.scroll.to(target, { addTop: 5, behavior: 'instant' })
+        }
+      }, 1000)
+    }
+  }
+}
+Object.freeze(locationHash);
+
+/* Main */
+const VolantisApp = (() => {
+  const fn = {},
+    COPYHTML = '<button class="btn-copy" data-clipboard-snippet=""><i class="fas fa-copy"></i><span>COPY</span></button>';
+  let scrollCorrection = 80;
+
+  fn.init = () => {
+    if (volantis.dom.header) {
+      scrollCorrection = volantis.dom.header.clientHeight + 16;
+    }
+
+    window.onresize = () => {
+      if (document.documentElement.clientWidth < 500) {
+        volantis.isMobile = 1;
+      } else {
+        volantis.isMobile = 0;
+      }
+      if (volantis.isMobile != volantis.isMobileOld) {
+        fn.setGlobalHeaderMenuEvent();
+        fn.setHeader();
+        fn.setHeaderSearch();
+      }
+    }
+    volantis.scroll.push(fn.scrollEventCallBack, "scrollEventCallBack")
+  }
+
+  fn.event = () => {
+    volantis.dom.$(document.getElementById("scroll-down")).on('click', function () {
+      fn.scrolltoElement(volantis.dom.bodyAnchor);
+    });
+
+    // 站点信息 最后活动日期
+    if (volantis.THEMECONFIG.sidebar.for_page.includes('webinfo') || volantis.THEMECONFIG.sidebar.for_post.includes('webinfo')) {
+      const lastupd = volantis.THEMECONFIG.sidebar.widget_library.webinfo.type.lastupd;
+      if (!!document.getElementById('last-update-show') && lastupd.enable && lastupd.friendlyShow) {
+        document.getElementById('last-update-show').innerHTML = fn.utilTimeAgo(volantis.LASTUPDATE);
+      }
+    }
+
+    // 站点信息 运行时间
+    if(!!document.getElementById('webinfo-runtime-count')) {
+      let BirthDay = new Date(volantis.THEMECONFIG.sidebar.widget_library.webinfo.type.runtime.data);
+      let timeold = (new Date().getTime() - BirthDay.getTime());
+      let daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+      document.getElementById('webinfo-runtime-count').innerHTML = `${daysold} ${volantis.THEMECONFIG.sidebar.widget_library.webinfo.type.runtime.unit}`;
+    }
+
+    // 消息提示 复制时弹出
+    if (volantis.THEMECONFIG.plugins.message.enable
+      && volantis.THEMECONFIG.plugins.message.copyright.enable) {
+      document.body.oncopy = function () {
+        VolantisApp.message(volantis.THEMECONFIG.plugins.message.copyright.title,
+          volantis.THEMECONFIG.plugins.message.copyright.message, {
+          icon: volantis.THEMECONFIG.plugins.message.copyright.icon
+        });
+      };
+    }
+  }
+
+  fn.restData = () => {
+    scrollCorrection = volantis.dom.header ? volantis.dom.header.clientHeight + 16 : 80;
+  }
+
+  fn.setIsMobile = () => {
+    if (document.documentElement.clientWidth < 500) {
+      volantis.isMobile = 1;
+      volantis.isMobileOld = 1;
+    } else {
+      volantis.isMobile = 0;
+      volantis.isMobileOld = 0;
+    }
+  }
+
+  // 校正页面定位（被导航栏挡住的区域）
+  fn.scrolltoElement = (elem, correction = scrollCorrection) => {
+    volantis.scroll.to(elem, {
+      top: elem.offsetTop - correction
+    })
+  }
+
+  // 滚动事件回调们
+  fn.scrollEventCallBack = () => {
+    // 【移动端 PC】//////////////////////////////////////////////////////////////////////
+
+    // 显示/隐藏 Header导航 topBtn 【移动端 PC】
+    const showHeaderPoint = volantis.dom.bodyAnchor.offsetTop - scrollCorrection;
+    const scrollTop = volantis.scroll.getScrollTop(); // 滚动条距离顶部的距离
+
+    // topBtn
+    if (volantis.dom.topBtn) {
+      if (scrollTop > volantis.dom.bodyAnchor.offsetTop) {
+        volantis.dom.topBtn.addClass('show');
+        // 向上滚动高亮 topBtn
+        if (volantis.scroll.del > 0) {
+          volantis.dom.topBtn.removeClass('hl');
+        } else {
+          volantis.dom.topBtn.addClass('hl');
+        }
+      } else {
+        volantis.dom.topBtn.removeClass('show').removeClass('hl');
+      }
+    }
+
+    // Header导航
+    if (volantis.dom.header) {
+      if (scrollTop - showHeaderPoint > -1) {
+        volantis.dom.header.addClass('show');
+      } else {
+        volantis.dom.header.removeClass('show');
+      }
+    }
+
+    // 决定一二级导航栏的切换 【向上滚动切换为一级导航栏；向下滚动切换为二级导航栏】  【移动端 PC】
+    if (pdata.ispage && volantis.dom.wrapper) {
+      if (volantis.scroll.del > 0 && scrollTop > 100) { // 向下滚动
+        volantis.dom.wrapper.addClass('sub'); // <---- 二级导航显示
+      } else if (volantis.scroll.del < 0) { // 向上滚动
+        volantis.dom.wrapper.removeClass('sub'); // <---- 取消二级导航显示 一级导航显示
+      }
+    }
+
+    // 【移动端】//////////////////////////////////////////////////////////////////////
+    if (volantis.isMobile) {
+      // 【移动端】 页面滚动  隐藏 移动端toc目录按钮
+      if (pdata.ispage && volantis.dom.tocTarget && volantis.dom.toc) {
+        volantis.dom.tocTarget.removeClass('active');
+        volantis.dom.toc.removeClass('active');
+      }
+      // 【移动端】 滚动时隐藏子菜单
+      if (volantis.dom.mPhoneList) {
+        volantis.dom.mPhoneList.forEach(function (e) {
+          volantis.dom.$(e).hide();
+        })
+      }
+    }
+  }
+
+  // 设置滚动锚点
+  fn.setScrollAnchor = () => {
+    // click topBtn 滚动至bodyAnchor 【移动端 PC】
+    if (volantis.dom.topBtn && volantis.dom.bodyAnchor) {
+      volantis.dom.topBtn.click(e => {
+        e.preventDefault();
+        e.stopPropagation();
+        fn.scrolltoElement(volantis.dom.bodyAnchor);
+        e.stopImmediatePropagation();
+      });
+    }
+
+  }
+
+  // 设置导航栏
+  fn.setHeader = () => {
+    // !!! 此处的Dom对象需要重载 !!!
+    if (!pdata.ispage) return;
+
+    // 填充二级导航文章标题 【移动端 PC】
+    volantis.dom.wrapper.find('.nav-sub .title').html(pdata.postTitle);
+
+    // ====== bind events to every btn =========
+    // 评论按钮 【移动端 PC】
+    volantis.dom.comment = volantis.dom.$(document.getElementById("s-comment")); // 评论按钮  桌面端 移动端
+    volantis.dom.commentTarget = volantis.dom.$(document.querySelector('#l_main article#comments')); // 评论区域
+    if (volantis.dom.commentTarget) {
+      volantis.dom.comment.click(e => { // 评论按钮点击后 跳转到评论区域
+        e.preventDefault();
+        e.stopPropagation();
+        fn.scrolltoElement(volantis.dom.commentTarget);
+        e.stopImmediatePropagation();
+      });
+    } else volantis.dom.comment.style.display = 'none'; // 关闭了评论，则隐藏评论按钮
+
+    // 移动端toc目录按钮 【移动端】
+    if (volantis.isMobile) {
+      volantis.dom.toc = volantis.dom.$(document.getElementById("s-toc")); // 目录按钮  仅移动端
+      volantis.dom.tocTarget = volantis.dom.$(document.querySelector('#l_side .toc-wrapper')); // 侧边栏的目录列表
+      if (volantis.dom.tocTarget) {
+        // 点击移动端目录按钮 激活目录按钮 显示侧边栏的目录列表
+        volantis.dom.toc.click((e) => {
+          e.stopPropagation();
+          volantis.dom.tocTarget.toggleClass('active');
+          volantis.dom.toc.toggleClass('active');
+        });
+        // 点击空白 隐藏
+        volantis.dom.$(document).click(function (e) {
+          e.stopPropagation();
+          if (volantis.dom.tocTarget) {
+            volantis.dom.tocTarget.removeClass('active');
+          }
+          volantis.dom.toc.removeClass('active');
+        });
+      } else volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
+    }
+  }
+
+  // 设置导航栏菜单选中状态  【移动端 PC】
+  fn.setHeaderMenuSelection = () => {
+    // !!! 此处的Dom对象需要重载 !!!
+    volantis.dom.headerMenu = volantis.dom.$(document.querySelectorAll('#l_header .navigation,#l_cover .navigation,#l_side .navigation')); // 导航列表
+
+    // 先把已经激活的取消激活
+    volantis.dom.headerMenu.forEach(element => {
+      let li = volantis.dom.$(element).find('li a.active')
+      if (li)
+        li.removeClass('active')
+      let div = volantis.dom.$(element).find('div a.active')
+      if (div)
+        div.removeClass('active')
+    });
+
+    // replace '%' '/' '.'
+    var idname = location.pathname.replace(/\/|%|\./g, '');
+    if (idname.length == 0) {
+      idname = 'home';
+    }
+    var page = idname.match(/page\d{0,}$/g);
+    if (page) {
+      page = page[0];
+      idname = idname.split(page)[0];
+    }
+    var index = idname.match(/index.html/);
+    if (index) {
+      index = index[0];
+      idname = idname.split(index)[0];
+    }
+    // 转义字符如 [, ], ~, #, @
+    idname = idname.replace(/(\[|\]|~|#|@)/g, '\\$1');
+    if (idname && volantis.dom.headerMenu) {
+      volantis.dom.headerMenu.forEach(element => {
+        // idname 不能为数字开头, 加一个 action- 前缀
+        let id = element.querySelector("[active-action=action-" + idname + "]")
+        if (id) {
+          volantis.dom.$(id).addClass('active')
+        }
+      });
+    }
+  }
+
+  // 设置全局事件
+  fn.setGlobalHeaderMenuEvent = () => {
+    if (volantis.isMobile) {
+      // 【移动端】 关闭已经展开的子菜单 点击展开子菜单
+      document.querySelectorAll('#l_header .m-phone li').forEach(function (e) {
+        if (e.querySelector(".list-v")) {
+          // 点击菜单
+          volantis.dom.$(e).click(function (e) {
+            e.stopPropagation();
+            // 关闭已经展开的子菜单
+            e.currentTarget.parentElement.childNodes.forEach(function (e) {
+              if (Object.prototype.toString.call(e) == '[object HTMLLIElement]') {
+                e.childNodes.forEach(function (e) {
+                  if (Object.prototype.toString.call(e) == '[object HTMLUListElement]') {
+                    volantis.dom.$(e).hide()
+                  }
+                })
+              }
+            })
+            // 点击展开子菜单
+            let array = e.currentTarget.children
+            for (let index = 0; index < array.length; index++) {
+              const element = array[index];
+              if (volantis.dom.$(element).title === 'menu') { // 移动端菜单栏异常  
+                volantis.dom.$(element).display = "flex"      // https://github.com/volantis-x/hexo-theme-volantis/issues/706
+              } else {
+                volantis.dom.$(element).show()
+              }
+            }
+          }, 0);
+        }
+      })
+    } else {
+      // 【PC端】 hover时展开子菜单，点击时[target.baseURI==origin时]隐藏子菜单? 现有逻辑大部分情况不隐藏子菜单
+      document.querySelectorAll('#wrapper .m-pc li > a[href]').forEach(function (e) {
+        volantis.dom.$(e.parentElement).click(function (e) {
+          e.stopPropagation();
+          if (e.target.origin == e.target.baseURI) {
+            document.querySelectorAll('#wrapper .m-pc .list-v').forEach(function (e) {
+              volantis.dom.$(e).hide(); // 大概率不会执行
+            })
+          }
+        }, 0);
+      })
+    }
+    fn.setPageHeaderMenuEvent();
+  }
+
+  // 【移动端】隐藏子菜单
+  fn.setPageHeaderMenuEvent = () => {
+    if (!volantis.isMobile) return
+    // 【移动端】 点击空白处隐藏子菜单
+    volantis.dom.$(document).click(function (e) {
+      volantis.dom.mPhoneList.forEach(function (e) {
+        volantis.dom.$(e).hide();
+      })
+    });
+  }
+
+  // 设置导航栏搜索框 【移动端】
+  fn.setHeaderSearch = () => {
+    if (!volantis.isMobile) return;
+    if (!volantis.dom.switcher) return;
+    // 点击移动端搜索按钮
+    volantis.dom.switcher.click(function (e) {
+      e.stopPropagation();
+      volantis.dom.header.toggleClass('z_search-open'); // 激活移动端搜索框
+      volantis.dom.switcher.toggleClass('active'); // 移动端搜索按钮
+    }, false); // false : pjax 不移除监听
+    // 点击空白取消激活
+    volantis.dom.$(document).click(function (e) {
+      volantis.dom.header.removeClass('z_search-open');
+      volantis.dom.switcher.removeClass('active');
+    }, false); // false : pjax 不移除监听
+    // 移动端点击搜索框 停止事件传播
+    volantis.dom.search.click(function (e) {
+      e.stopPropagation();
+    }, false); // false : pjax 不移除监听
+  }
+
+  // 设置 tabs 标签  【移动端 PC】
+  fn.setTabs = () => {
+    let tabs = document.querySelectorAll('#l_main .tabs .nav-tabs')
+    if (!tabs) return
+    tabs.forEach(function (e) {
+      e.querySelectorAll('a').forEach(function (e) {
+        volantis.dom.$(e).on('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const $tab = volantis.dom.$(e.target.parentElement.parentElement.parentElement);
+          $tab.find('.nav-tabs .active').removeClass('active');
+          volantis.dom.$(e.target.parentElement).addClass('active');
+          $tab.find('.tab-content .active').removeClass('active');
+          $tab.find(e.target.className).addClass('active');
+          return false;
+        });
+      })
+    })
+  }
+
+  // 设定激活/销毁自定义右键
+  window.checkRightMenu = true;
+  fn.toggleRightMenu = () => {
+    let _destroyRightContent = document.getElementById('destroyRightContent');
+    let _initRightContent = document.getElementById('initRightContent');
+
+    if (_destroyRightContent || _initRightContent) {
+      if (window.checkRightMenu) {
+        _destroyRightContent.style.display = "block";
+        _initRightContent.style.display = "none";
+      } else {
+        _initRightContent.style.display = "block";
+        _destroyRightContent.style.display = "none";
+      }
+
+      _destroyRightContent.removeEventListener('click', null);
+      _destroyRightContent.addEventListener('click', function () {
+        RightMenu.destroy(true);
+        window.checkRightMenu = false;
+        _initRightContent.style.display = "block";
+        _destroyRightContent.style.display = "none";
+      })
+
+      _initRightContent.removeEventListener('click', null);
+      _initRightContent.addEventListener('click', function () {
+        RightMenu.init(true);
+        window.checkRightMenu = true;
+        _destroyRightContent.style.display = "block";
+        _initRightContent.style.display = "none";
+      })
+    }
+  }
+
+  // 评论切换
+  volantis.selectComment = 'beaudar';
+  fn.switchComment = () => {
+    const _btn = document.getElementById('switchBtn');
+    if (_btn) {
+      if(volantis.selectComment !== 'beaudar') {
+        _btn.classList.remove('move');
+      } 
+      _btn.onclick = function () {
+        const _twikoo = document.getElementById('twikoo');
+        const _beaudar = document.getElementById('beaudar_container');
+        if (volantis.selectComment === 'twikoo') {
+          _twikoo.classList.toggle('content-in');
+          _beaudar.classList.toggle('content-in');
+          volantis.selectComment = 'beaudar';
+          _twikoo.style.display = 'none';
+          _twikoo.classList.remove('content-in');
+          _beaudar.style.display = 'block';
+          _beaudar.classList.add('content-in');
+        } else {
+          volantis.selectComment = 'twikoo';
+          _twikoo.style.display = 'block';
+          _twikoo.classList.add('content-in');
+          _beaudar.style.display = 'none';
+          _beaudar.classList.remove('content-in');
+        }
+        _btn.classList.toggle("move");
+      }
+    }
+    // console.clear();
+    // console.log("%c ", "background:url(https://api.btstu.cn/sjbz/?lx=dongman) no-repeat center;background-size:cover;padding-left:100%;padding-bottom:55%;overflow:hidden;border-radius:10px;margin:5px 0");
+  }
+
+  // hexo-reference 页脚跳转 https://github.com/volantis-x/hexo-theme-volantis/issues/647
+  fn.footnotes = () => {
+    let ref = document.querySelectorAll('#l_main .footnote-backref, #l_main .footnote-ref > a');
+    ref.forEach(function (e, i) {
+      ref[i].click = () => { }; // 强制清空原 click 事件
+      volantis.dom.$(e).on('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        let targetID = decodeURI(e.target.hash.split('#')[1]).replace(/\ /g, '-');
+        let target = document.getElementById(targetID);
+        if (target) {
+          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+        }
+      });
+    })
+  }
+
+  // 工具类：代码块复制
+  fn.utilCopyCode = (Selector) => {
+    document.querySelectorAll(Selector).forEach(node => {
+      const test = node.insertAdjacentHTML("beforebegin", COPYHTML);
+      const _BtnCopy = node.previousSibling;
+      _BtnCopy.onclick = e => {
+        e.stopPropagation();
+        const _icon = _BtnCopy.querySelector('i');
+        const _span = _BtnCopy.querySelector('span');
+
+        node.focus();
+        const range = new Range();
+        range.selectNodeContents(node);
+        document.getSelection().removeAllRanges();
+        document.getSelection().addRange(range);
+
+        const str = document.getSelection().toString();
+        fn.utilWriteClipText(str).then(() => {
+          fn.messageCopyright();
+          _BtnCopy.classList.add('copied');
+          _icon.classList.remove('fa-copy');
+          _icon.classList.add('fa-check-circle');
+          _span.innerText = "COPIED";
+          setTimeout(() => {
+            _icon.classList.remove('fa-check-circle');
+            _icon.classList.add('fa-copy');
+            _span.innerText = "COPY";
+          }, 2000)
+        }).catch(e => {
+          VolantisApp.message('系统提示', e, {
+            icon: 'fal fa-exclamation-circle red'
+          });
+          _BtnCopy.classList.add('copied-failed');
+          _icon.classList.remove('fa-copy');
+          _icon.classList.add('fa-exclamation-circle');
+          _span.innerText = "COPY FAILED";
+          setTimeout(() => {
+            _icon.classList.remove('fa-exclamation-circle');
+            _icon.classList.add('fa-copy');
+            _span.innerText = "COPY";
+          })
+        })
+      }
+    });
+  }
+
+  // 工具类：复制字符串到剪切板
+  fn.utilWriteClipText = (str) => {
+    try {
+      return navigator.clipboard
+        .writeText(str)
+        .then(() => {
+          return Promise.resolve()
+        })
+        .catch(err => {
+          return Promise.reject(err || '复制文本失败!')
+        })
+    } catch (e) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      try {
+        let result = document.execCommand('copy')
+        document.body.removeChild(input);
+        if (!result || result === 'unsuccessful') {
+          return Promise.reject('复制文本失败!')
+        } else {
+          return Promise.resolve()
+        }
+      } catch (e) {
+        document.body.removeChild(input);
+        return Promise.reject(
+          '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
+        )
+      }
+    }
+  }
+
+  // 工具类：返回时间间隔
+  fn.utilTimeAgo = (dateTimeStamp) => {
+    const minute = 1e3 * 60, hour = minute * 60, day = hour * 24, week = day * 7, month = day * 30;
+    const now = new Date().getTime();
+    const diffValue = now - dateTimeStamp;
+    const minC = diffValue / minute,
+      hourC = diffValue / hour,
+      dayC = diffValue / day,
+      weekC = diffValue / week,
+      monthC = diffValue / month;
+    if (diffValue < 0) {
+      result = ""
+    } else if (monthC >= 1 && monthC < 7) {
+      result = " " + parseInt(monthC) + " 月前"
+    } else if (weekC >= 1 && weekC < 4) {
+      result = " " + parseInt(weekC) + " 周前"
+    } else if (dayC >= 1 && dayC < 7) {
+      result = " " + parseInt(dayC) + " 天前"
+    } else if (hourC >= 1 && hourC < 24) {
+      result = " " + parseInt(hourC) + " 小时前"
+    } else if (minC >= 1 && minC < 60) {
+      result = " " + parseInt(minC) + " 分钟前"
+    } else if (diffValue >= 0 && diffValue <= minute) {
+      result = "刚刚"
+    } else {
+      const datetime = new Date();
+      datetime.setTime(dateTimeStamp);
+      const Nyear = datetime.getFullYear();
+      const Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+      const Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+      const Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+      const Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+      const Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+      result = Nyear + "-" + Nmonth + "-" + Ndate
+    }
+    return result;
+  }
+
+  // 消息提示：标准
+  fn.message = (title, message, option = {}, done = null) => {
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.THEMECONFIG.cdn.map.css.message)
+      volantis.js(volantis.THEMECONFIG.cdn.map.js.message, () => {
+        tozashMessage(title, message, option, done);
+      });
+    } else {
+      tozashMessage(title, message, option, done);
+    }
+    function tozashMessage(title, message, option, done) {
+      const {
+        icon,
+        time,
+        position,
+        transitionIn,
+        transitionOut,
+        messageColor,
+        titleColor,
+        backgroundColor,
+        zindex,
+        displayMode
+      } = option;
+      iziToast.show({
+        layout: '2',
+        icon: 'Fontawesome',
+        closeOnEscape: 'true',
+        displayMode: displayMode || 'replace',
+        transitionIn: transitionIn || volantis.THEMECONFIG.plugins.message.transitionIn,
+        transitionOut: transitionOut || volantis.THEMECONFIG.plugins.message.transitionOut,
+        messageColor: messageColor || volantis.THEMECONFIG.plugins.message.messageColor,
+        titleColor: titleColor || volantis.THEMECONFIG.plugins.message.titleColor,
+        backgroundColor: backgroundColor || volantis.THEMECONFIG.plugins.message.backgroundColor,
+        zindex: zindex || volantis.THEMECONFIG.plugins.message.zindex,
+        icon: icon || volantis.THEMECONFIG.plugins.message.icon.default,
+        timeout: time || volantis.THEMECONFIG.plugins.message.time.default,
+        position: position || volantis.THEMECONFIG.plugins.message.position,
+        title: title,
+        message: message,
+        onClosed: () => {
+          if (done) done();
+        },
+      });
+    }
+  }
+
+  // 消息提示：询问
+  fn.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.THEMECONFIG.cdn.map.css.message)
+      volantis.js(volantis.THEMECONFIG.cdn.map.js.message, () => {
+        tozashQuestion(title, message, option, success, cancel, done);
+      });
+    } else {
+      tozashQuestion(title, message, option, success, cancel, done);
+    }
+
+    function tozashQuestion(title, message, option, success, cancel, done) {
+      const {
+        icon,
+        time,
+        position,
+        transitionIn,
+        transitionOut,
+        messageColor,
+        titleColor,
+        backgroundColor,
+        zindex
+      } = option;
+      iziToast.question({
+        id: 'question',
+        icon: 'Fontawesome',
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        position: 'center',
+        messageColor: messageColor || volantis.THEMECONFIG.plugins.message.messageColor,
+        titleColor: titleColor || volantis.THEMECONFIG.plugins.message.titleColor,
+        backgroundColor: backgroundColor || volantis.THEMECONFIG.plugins.message.backgroundColor,
+        zindex: zindex || volantis.THEMECONFIG.plugins.message.zindex,
+        icon: icon || volantis.THEMECONFIG.plugins.message.icon.quection,
+        timeout: time || volantis.THEMECONFIG.plugins.message.time.quection,
+        title: title,
+        message: message,
+        buttons: [
+          ['<button><b>是</b></button>', (instance, toast) => {
+            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
+            if (success) success(instance, toast)
+          }],
+          ['<button><b>否</b></button>', (instance, toast) => {
+            instance.hide({ transitionOut: transitionOut || 'fadeOut' }, toast, 'button');
+            if (cancel) cancel(instance, toast)
+          }]
+        ],
+        onClosed: (instance, toast, closedBy) => {
+          if (done) done(instance, toast, closedBy);
+        }
+      });
+    }
+  }
+
+  // 消息提示：隐藏
+  fn.hideMessage = (done = null) => {
+    const toast = document.querySelector('.iziToast');
+    if (!toast) {
+      if (done) done()
+      return;
+    }
+
+    if (typeof iziToast === "undefined") {
+      volantis.css(volantis.THEMECONFIG.cdn.map.css.message)
+      volantis.js(volantis.THEMECONFIG.cdn.map.js.message, () => {
+        hideMessage(done);
+      });
+    } else {
+      hideMessage(done);
+    }
+
+    function hideMessage(done) {
+      iziToast.hide({}, toast);
+      if (done) done();
+    }
+  }
+
+  // 消息提示：复制
+  fn.messageCopyright = () => {
+    // 消息提示 复制时弹出
+    if (volantis.THEMECONFIG.plugins.message.enable
+      && volantis.THEMECONFIG.plugins.message.copyright.enable) {
+      VolantisApp.message(volantis.THEMECONFIG.plugins.message.copyright.title,
+        volantis.THEMECONFIG.plugins.message.copyright.message, {
+        icon: volantis.THEMECONFIG.plugins.message.copyright.icon
+      });
+    }
+  }
+
+  return {
+    init: () => {
+      fn.init();
+      fn.event();
+    },
+    subscribe: () => {
+      fn.setIsMobile();
+      fn.setHeader();
+      fn.setHeaderMenuSelection();
+      fn.setGlobalHeaderMenuEvent();
+      fn.setHeaderSearch();
+      fn.setScrollAnchor();
+      fn.setTabs();
+      fn.toggleRightMenu();
+      fn.footnotes();
+      // fn.switchComment();
+    },
+    pjaxReload: () => {
+      fn.event();
+      fn.restData();
+      fn.setHeader();
+      fn.setHeaderMenuSelection();
+      fn.setPageHeaderMenuEvent();
+      fn.setScrollAnchor();
+      fn.setTabs();
+      fn.toggleRightMenu();
+      fn.footnotes();
+      // fn.switchComment();
+
+      // 移除小尾巴的移除
+      document.querySelector("#l_header .nav-main").querySelectorAll('.list-v:not(.menu-phone)').forEach(function (e) {
+        e.removeAttribute("style")
+      })
+      document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style")
+    },
+    utilCopyCode: fn.utilCopyCode,
+    utilWriteClipText: fn.utilWriteClipText,
+    utilTimeAgo: fn.utilTimeAgo,
+    message: fn.message,
+    question: fn.question,
+    hideMessage: fn.hideMessage,
+    messageCopyright: fn.messageCopyright
+  }
+})()
+Object.freeze(VolantisApp);
+
+/* FancyBox */
+const VolantisFancyBox = (() => {
+  const fn = {};
+
+  fn.loadFancyBox = (done) => {
+    volantis.css(volantis.THEMECONFIG.plugins.fancybox.css);
+    volantis.js(volantis.THEMECONFIG.plugins.fancybox.js).then(() => {
+      if (done) done();
+    })
+  }
+
+  /**
+   * 加载及处理
+   * 
+   * @param {*} checkMain 是否只处理文章区域的文章
+   * @param {*} done      FancyBox 加载完成后的动作，默认执行分组绑定
+   * @returns 
+   */
+  fn.init = (checkMain = true, done = fn.groupBind) => {
+    if (!document.querySelector(".md .gallery img, .fancybox") && checkMain) return;
+    if (typeof Fancybox === "undefined") {
+      fn.loadFancyBox(done);
+    } else {
+      done();
+    }
+  }
+
+  /**
+   * 图片元素预处理
+   * 
+   * @param {*} selectors 选择器
+   * @param {*} name      分组
+   */
+  fn.elementHandling = (selectors, name) => {
+    const nodeList = document.querySelectorAll(selectors);
+    nodeList.forEach($item => {
+      if ($item.hasAttribute('fancybox')) return;
+      $item.setAttribute('fancybox', '');
+      const $link = document.createElement('a');
+      $link.setAttribute('href', $item.src);
+      $link.setAttribute('data-caption', $item.alt);
+      $link.setAttribute('data-fancybox', name);
+      $link.classList.add('fancybox');
+      $link.append($item.cloneNode());
+      $item.replaceWith($link);
+    })
+  }
+
+  /**
+   * 原生绑定
+   * 
+   * @param {*} selectors 选择器
+   */
+  fn.bind = (selectors) => {
+    fn.init(false, () => {
+      Fancybox.bind(selectors, {
+        groupAll: true,
+        Hash: false,
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: function (fancybox, carousel, slide) {
+          return slide.$trigger.alt || null
+        }
+      });
+    });
+  }
+
+  /**
+   * 分组绑定
+   * 
+   * @param {*} groupName 分组名称
+   */
+  fn.groupBind = (groupName = null) => {
+    const group = new Set();
+
+    document.querySelectorAll(".gallery").forEach(ele => {
+      if (ele.querySelector("img")) {
+        group.add(ele.getAttribute('data-group') || 'default');
+      }
+    })
+
+    if (!!groupName) group.add(groupName);
+
+    for (const iterator of group) {
+      Fancybox.unbind('[data-fancybox="' + iterator + '"]');
+      Fancybox.bind('[data-fancybox="' + iterator + '"]', {
+        Hash: false,
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        }
+      });
+    }
+  }
+
+  return {
+    init: fn.init,
+    bind: fn.bind,
+    groupBind: (selectors, groupName = 'default') => {
+      try {
+        fn.elementHandling(selectors, groupName);
+        fn.init(false, () => {
+          fn.groupBind(groupName)
+        });
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+})()
+Object.freeze(VolantisFancyBox);
+
+// highlightKeyWords 与 搜索功能搭配 https://github.com/next-theme/hexo-theme-next/blob/eb194a7258058302baf59f02d4b80b6655338b01/source/js/third-party/search/local-search.js
+// Question: 锚点稳定性未知
+// ToDo: 查找模式 
+// 0. (/////////要知道浏览器自带全页面查找功能 CTRL + F)
+// 1. 右键开启查找模式 / 导航栏菜单开启?? / CTRL + F ???
+// 2. 查找模式面板 (可拖动? or 固定?)
+// 3. keyword mark id 从 0 开始编号 查找下一处 highlightKeyWords.scrollToNextHighlightKeywordMark() 查找上一处 scrollToPrevHighlightKeywordMark() 循环查找(取模%)
+// 4. 可输入修改 查找关键词 keywords(type:list) 
+// 5. 区分大小写 caseSensitive (/ 全字匹配?? / 正则匹配??)
+// 6. 在选定区域中查找 querySelector ??
+// 7. 关闭查找模式
+// 8. 搜索跳转 (URL 入口) 自动开启查找模式 调用 scrollToNextHighlightKeywordMark()
+const highlightKeyWords = (() => {
+  let fn = {}
+  fn.markNum = 0
+  fn.markNextId = -1
+  fn.startFromURL = () => {
+    const params = decodeURI(new URL(location.href).searchParams.get('keyword'));
+    const keywords = params ? params.split(' ') : [];
+    const post = document.querySelector('#l_main');
+    if (keywords.length == 1 && keywords[0] == "null") {
+      return;
+    }
+    fn.start(keywords, post); // 渲染耗时较长
+    fn.scrollToFirstHighlightKeywordMark()
+  }
+  fn.scrollToFirstHighlightKeywordMark = () => {
+    let target = fn.scrollToNextHighlightKeywordMark("0");
+    if (!target) {
+      volantis.requestAnimationFrame(fn.scrollToFirstHighlightKeywordMark)
+    }
+  }
+  fn.scrollToNextHighlightKeywordMark = (id) => {
+    // Next Id
+    let input = id || (fn.markNextId + 1) % fn.markNum;
+    fn.markNextId = parseInt(input)
+    let target = document.getElementById("keyword-mark-" + fn.markNextId);
+    if (!target) {
+      fn.markNextId = (fn.markNextId + 1) % fn.markNum;
+      target = document.getElementById("keyword-mark-" + fn.markNextId);
+    }
+    if (target) {
+      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+    }
+    // Current target
+    return target
+  }
+  fn.scrollToPrevHighlightKeywordMark = (id) => {
+    // Prev Id
+    let input = id || (fn.markNextId - 1 + fn.markNum) % fn.markNum;
+    fn.markNextId = parseInt(input)
+    let target = document.getElementById("keyword-mark-" + fn.markNextId);
+    if (!target) {
+      fn.markNextId = (fn.markNextId - 1 + fn.markNum) % fn.markNum;
+      target = document.getElementById("keyword-mark-" + fn.markNextId);
+    }
+    if (target) {
+      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+    }
+    // Current target
+    return target
+  }
+  fn.start = (keywords, querySelector) => {
+    fn.markNum = 0
+    if (!keywords.length || !querySelector || (keywords.length == 1 && keywords[0] == "null")) return;
+    console.log(keywords);
+    const walk = document.createTreeWalker(querySelector, NodeFilter.SHOW_TEXT, null);
+    const allNodes = [];
+    while (walk.nextNode()) {
+      if (!walk.currentNode.parentNode.matches('button, select, textarea')) allNodes.push(walk.currentNode);
+    }
+    allNodes.forEach(node => {
+      const [indexOfNode] = fn.getIndexByWord(keywords, node.nodeValue);
+      if (!indexOfNode.length) return;
+      const slice = fn.mergeIntoSlice(0, node.nodeValue.length, indexOfNode);
+      fn.highlightText(node, slice, 'keyword');
+      fn.highlightStyle()
+    });
+  }
+  fn.getIndexByWord = (words, text, caseSensitive = false) => {
+    const index = [];
+    const included = new Set();
+    words.forEach(word => {
+      const div = document.createElement('div');
+      div.innerText = word;
+      word = div.innerHTML;
+
+      const wordLen = word.length;
+      if (wordLen === 0) return;
+      let startPosition = 0;
+      let position = -1;
+      if (!caseSensitive) {
+        text = text.toLowerCase();
+        word = word.toLowerCase();
+      }
+      while ((position = text.indexOf(word, startPosition)) > -1) {
+        index.push({ position, word });
+        included.add(word);
+        startPosition = position + wordLen;
+      }
+    });
+    index.sort((left, right) => {
+      if (left.position !== right.position) {
+        return left.position - right.position;
+      }
+      return right.word.length - left.word.length;
+    });
+    return [index, included];
+  };
+  fn.mergeIntoSlice = (start, end, index) => {
+    let item = index[0];
+    let { position, word } = item;
+    const hits = [];
+    const count = new Set();
+    while (position + word.length <= end && index.length !== 0) {
+      count.add(word);
+      hits.push({
+        position,
+        length: word.length
+      });
+      const wordEnd = position + word.length;
+
+      index.shift();
+      while (index.length !== 0) {
+        item = index[0];
+        position = item.position;
+        word = item.word;
+        if (wordEnd > position) {
+          index.shift();
+        } else {
+          break;
+        }
+      }
+    }
+    return {
+      hits,
+      start,
+      end,
+      count: count.size
+    };
+  };
+  fn.highlightText = (node, slice, className) => {
+    const val = node.nodeValue;
+    let index = slice.start;
+    const children = [];
+    for (const { position, length } of slice.hits) {
+      const text = document.createTextNode(val.substring(index, position));
+      index = position + length;
+      let mark = document.createElement('mark');
+      mark.className = className;
+      mark = fn.highlightStyle(mark)
+      mark.appendChild(document.createTextNode(val.substr(position, length)));
+      children.push(text, mark);
+    }
+    node.nodeValue = val.substring(index, slice.end);
+    children.forEach(element => {
+      node.parentNode.insertBefore(element, node);
+    });
+  }
+  fn.highlightStyle = (mark) => {
+    if (!mark) return;
+    mark.id = "keyword-mark-" + fn.markNum;
+    fn.markNum++;
+    mark.style.background = "#ff0";
+    mark.style["border-bottom"] = "1px dashed #ff2a2a";
+    mark.style["color"] = "#ff2a2a";
+    mark.style["font-weight"] = "bold";
+    return mark
+  }
+  fn.cleanHighlightStyle = () => {
+    document.querySelectorAll(".keyword").forEach(mark => {
+      mark.style.background = "transparent";
+      mark.style["border-bottom"] = null;
+      mark.style["color"] = null;
+      mark.style["font-weight"] = null;
+    })
+  }
+  return {
+    start: (keywords, querySelector) => {
+      fn.start(keywords, querySelector)
+    },
+    startFromURL: () => {
+      fn.startFromURL()
+    },
+    scrollToNextHighlightKeywordMark: (id) => {
+      fn.scrollToNextHighlightKeywordMark(id)
+    },
+    scrollToPrevHighlightKeywordMark: (id) => {
+      fn.scrollToPrevHighlightKeywordMark(id)
+    },
+    cleanHighlightStyle: () => {
+      fn.cleanHighlightStyle()
+    },
+  }
+})()
+Object.freeze(highlightKeyWords);
+
+/* DOM 控制 */
+const DOMController = {
+  /**
+   * 控制元素显隐
+   */
+  visible: (ele, type = true) => {
+    if (ele) ele.style.display = type === true ? 'block' : 'none';
+  },
+
+  /**
+   * 移除元素
+   */
+  remove: (param) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.remove();
+    })
+  },
+
+  /**
+   * 设置属性
+   */
+  setAttribute: (param, attrName, attrValue) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.setAttribute(attrName, attrValue)
+    })
+  },
+
+  /**
+   * 设置样式
+   */
+  setStyle: (param, styleName, styleValue) => {
+    const node = document.querySelectorAll(param);
+    node.forEach(ele => {
+      ele.style[styleName] = styleValue;
+    })
+  },
+
+  fadeIn: (e) => {
+    if (!e) return;
+    e.style.visibility = "visible";
+    e.style.opacity = 1;
+    e.style.display = "block";
+    e.style.transition = "all 0.5s linear";
+    return e
+  },
+
+  fadeOut: (e) => {
+    if (!e) return;
+    e.style.visibility = "hidden";
+    e.style.opacity = 0;
+    e.style.display = "none";
+    e.style.transition = "all 0.5s linear";
+    return e
+  },
+
+  fadeToggle: (e) => {
+    if (!e) return;
+    if (e.style.visibility == "hidden") {
+      e = DOMController.fadeIn(e)
+    } else {
+      e = DOMController.fadeOut(e)
+    }
+    return e
+  },
+
+  hasClass: (e, c) => {
+    if (!e) return;
+    return e.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+  },
+
+  addClass: (e, c) => {
+    if (!e) return;
+    e.classList.add(c);
+    return e
+  },
+
+  removeClass: (e, c) => {
+    if (!e) return;
+    e.classList.remove(c);
+    return e
+  },
+
+  toggleClass: (e, c) => {
+    if (!e) return;
+    if (DOMController.hasClass(e, c)) {
+      DOMController.removeClass(e, c)
+    } else {
+      DOMController.addClass(e, c)
+    }
+    return e
+  }
+}
+Object.freeze(DOMController);
