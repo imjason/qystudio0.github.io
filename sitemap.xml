@@ -173,6 +173,15 @@
   </url>
   
   <url>
+    <loc>https://qystudio.ltd/posts/55153.html</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qystudio.ltd/posts/25250.html</loc>
     
     <lastmod>2022-01-21</lastmod>
@@ -290,13 +299,6 @@
 
   
   <url>
-    <loc>https://qystudio.ltd/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-02-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://qystudio.ltd/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-02-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -312,6 +314,20 @@
   
   <url>
     <loc>https://qystudio.ltd/tags/%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/tags/gulp/</loc>
     <lastmod>2022-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

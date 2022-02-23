@@ -47,6 +47,44 @@
       </tags>
   </entry>
   <entry>
+    <title>gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</title>
+    <url>/posts/55153.html</url>
+    <content><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><div class="story post-story"><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文</p>
+</div><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><div class="story post-story"><p>在查看了日志最后发现了如下报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Did you forget to signal async completion?</span><br></pre></td></tr></table></figure>
+
+<p>在查看了gulp官网之后我人傻了,全是英文</p>
+<p>这是一个新特性,简单来说就是原因: gulp 不再支持同步任务了。 因为同步任务常常会导致难以调试的细微错误,例如忘记从任务 (task)中返回 stream。 当你看到 “ Did you forget to signal async completion ?” 警告时,说明你<strong>并未使用前面提到的返回方式</strong></p>
+<p>意思是你没有写一个任务完成的返回通知(如果我描述有误评论区告诉我)</p>
+<p>官网的原文是When you see the <em>“Did you forget to signal async completion?”</em> warning, none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.</p>
+</div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="story post-story"><h3 id="官网的解决方案是Using-async-await"><a href="#官网的解决方案是Using-async-await" class="headerlink" title="官网的解决方案是Using async/await"></a>官网的解决方案是Using async/await</h3><p>即把原来类似这样的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, () =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>改成这样</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, async() =&gt; &#123;</span><br><span class="line">   await console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>就正常了</p>
+<h3 id="更简单的方法"><a href="#更简单的方法" class="headerlink" title="更简单的方法"></a>更简单的方法</h3><p>在我一顿搜索之后发现了更简单的方法</p>
+<p>在不使用文件流的情况下，向task的函数里传入一个名叫done的回调函数，以结束task</p>
+<p>例如源代码是这样的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&#x27;default&#x27;, gulp.series(&#x27;one&#x27;));</span><br></pre></td></tr></table></figure>
+
+<p>那只要添加一个done的回调函数即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>又码了1000多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>前端</tag>
+        <tag>gulp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo史上最全搭建教程</title>
     <url>/posts/51935.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="story post-story"><p>现在市面上的博客很多，如CSDN，博客园，简书等平台，可以直接在上面发表，用户交互做的好，写的文章百度也能搜索的到。缺点是比较不自由，会受到平台的各种限制和恶心的广告。</p>
@@ -530,7 +568,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="story post-story"><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -787,7 +825,7 @@
 <p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。</p>
 <p>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。</p>
 <p>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -826,7 +864,7 @@
 <li><p>别忘了设置后保存设置并点击“设为默认图床”按钮</p>
 </li>
 </ol>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -938,7 +976,7 @@
 <p>然后我们再用另存为pdf格式功能来保存下来就好。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><div class="story post-story"><p>除了上面介绍的基本特性之外，reveal.js支持自动播放、自制插件、支持处理事件等等有利于开发人员写slides的特性。相信能给你的slides带来新的好玩的东西，将汇报与分享变成乐趣。Enjoy it!</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/32661.html">卡巴斯基中国版</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>前端</category>
@@ -1076,7 +1114,7 @@
 <li>discuz论坛建站系列文章</li>
 </ul>
 </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="story post-story"><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1172,14 +1210,14 @@
 
 </div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://qystudio.ltd/posts/14158.html">使用PicGo+GitHub搭建免费个人图床</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>博客</tag>
+        <tag>前端</tag>
         <tag>跳转</tag>
       </tags>
   </entry>
