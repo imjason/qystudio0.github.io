@@ -1210,6 +1210,7 @@
 
 </div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
+<p>源码参考自<a href="https://github.com/pai233/go-jumper/">go-jumper</a></p>
 <div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
