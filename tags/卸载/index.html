@@ -21,7 +21,7 @@
   <meta content="青云工作室" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1645678956314" as="style">
+  <link rel="preload" href="/css/style.css?time=1645679496150" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -43,7 +43,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png">
   <!-- feed -->
-    <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
+      <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
   <!-- import meta -->
   <!-- link -->
   <!-- import link -->
@@ -1730,8 +1730,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1645678956314" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1645678956314"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1645679496150" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1645679496150"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1826,21 +1826,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
   volantis.debug = false; // 开启调试模式
-  volantis.LASTUPDATE = new Date('Thu Feb 24 2022 05:02:36 GMT+0000 (Coordinated Universal Time)');
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
-  async function volantisInitConfig() {
-    try {
-      let respThemeConfig = await fetch('/volantis-themeconfig.json');
-      let respWebConfig = await fetch('/volantis-webconfig.json');
-      volantis.THEMECONFIG = await respThemeConfig.json();
-      volantis.WEBCONFIG = await respWebConfig.json();
-    } catch (e) {
-      console.error(`主题配置读取失败： ${e}`)
-      
+  volantis.GLOBAL_CONFIG ={
+    cdn: {"js":{"app":"/js/app.js?time=1645679496150","sites":"/js/plugins/sites.js?time=1645679496150","friends":"/js/plugins/friends.js?time=1645679496150","parallax":"/js/plugins/parallax.js?time=1645679496150","rightMenu":"/js/plugins/rightMenu.js?time=1645679496150","contributors":"/js/plugins/contributors.js?time=1645679496150","message":"/js/thirdparty/message.js?time=1645679496150","valine":"https://npm.elemecdn.com/valine@1.4/dist/Valine.min.js?time=1645679496150","search":"/js/search/hexo.js?time=1645679496150","iconfontInkss":"/js/iconfontInkss.js?time=1645679496150","iconfontEmoji":"/js/iconfontEmoji.js?time=1645679496150"},"css":{"style":"/css/style.css?time=1645679496150","message":"/css/message.css?time=1645679496150"}},
+    default: null,
+    lastupdate: new Date('Thu Feb 24 2022 05:11:36 GMT+0000 (Coordinated Universal Time)'),
+    sidebar: {
+      for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
+      for_post: ["toc","lastupdate"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2021/01/20",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"/libs/@fancyapps/ui/dist/fancybox.css?time=1645679494409","js":"/libs/@fancyapps/ui/dist/fancybox.umd.js?time=1645679494409"},
+      aplayer: {
+        id: 6821246154,
+        enable:true
+      },
+      rightmenu: {
+        faicon: "fad",
+        layout: ["home","archives","message","hr","print","darkmode","reading","hr","music"],
+        music_alwaysShow: true,
+        customPicUrl: {"enable":false,"old":null,"new":null},
+        print: true
+      }
     }
   }
-  volantisInitConfig()
 
   /******************** volantis.EventListener ********************************/
   // 事件监听器 see: /source/js/app.js
@@ -3391,7 +3412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
  
   <div class='content'> 
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-02-24</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-02-24</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-02-24</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-02-24</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-02-24</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li></ul> 
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/35934.html"><div class="item"><time>2022-02-24</time><span>系统</span></div><span>数字基础设施开源操作系统欧拉全新发布</span></a></li><li><a class="widget-last" href="/posts/64280.html"><div class="item"><time>2022-02-24</time><span>software</span></div><span>软件屏蔽器 秒杀流氓软件</span></a></li><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-02-24</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-02-24</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-02-24</time><span>tools</span></div><span>window上帝模式</span></a></li></ul> 
   </div> 
 </section> 
 
@@ -3666,7 +3687,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1645678956314.js"></script>
+<script src="/js/app.js?time=1645679496150.js"></script>
 
 
 
@@ -3827,7 +3848,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1645678956314')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1645679496150')</script>
 
 
 
@@ -3956,19 +3977,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1645678956314")
+        volantis.js("/js/plugins/sites.js?time=1645679496150")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1645678956314")
+        volantis.js("/js/plugins/friends.js?time=1645679496150")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1645678956314")
+        volantis.js("/js/plugins/contributors.js?time=1645679496150")
       }
     
   };
@@ -4030,14 +4051,14 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  volantis.css("/libs/aplayer/dist/APlayer.min.css");
+  volantis.css("/libs/aplayer/dist/APlayer.min.css?time=1645679494409");
   (async () => {
     // APlayer 需要在  MetingJS 之前加载
     await volantis.js("https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/js/APlayer.mini.js")
     await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1645678956316')
+    await volantis.js('/js/plugins/aplayer.js?time=1645679496152')
   
   })();
 
@@ -4108,7 +4129,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  volantis.layoutHelper("comments",`<div id="waline"><i class="fas fa-cog fa-spin fa-fw fa-2x"></i></div>`)
+  volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
   function pjax_waline() {
     if(!document.querySelector("#waline"))return;
     let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
@@ -4166,13 +4187,17 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1645678956314");
+    return volantis.js("/js/search/hexo.js?time=1645679496150");
   }
 
   function loadSearchService() {
     loadSearchScript();
     document.querySelectorAll(".input.u-search-input").forEach((e) => {
       e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event)=>{event.preventDefault();}, false);
     });
   }
 
@@ -4494,8 +4519,8 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
   <script>
   function load_swiper() {
     if (!document.querySelectorAll(".swiper-container")[0]) return;
-    volantis.css("/libs/swiper/swiper-bundle.min.css");
-    volantis.js("/libs/swiper/swiper-bundle.min.js").then(() => {
+    volantis.css("/libs/swiper/swiper-bundle.min.css?time=1645679494409");
+    volantis.js("/libs/swiper/swiper-bundle.min.js?time=1645679494409").then(() => {
       pjax_swiper();
     });
   }
@@ -4734,7 +4759,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 
 
 
-<script src="/libs/pjax/pjax.min.js"></script>
+<script src="/libs/pjax/pjax.min.js?time=1645679494409.js"></script>
 
 
 <script>
