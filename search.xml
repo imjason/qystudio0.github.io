@@ -49,7 +49,7 @@
   <entry>
     <title>gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</title>
     <url>/posts/55153.html</url>
-    <content><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><div class="story post-story"><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文</p>
+    <content><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><div class="story post-story"><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文<br><img src="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" class="lazyload" data-srcset="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><div class="story post-story"><p>在查看了日志最后发现了如下报错</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Did you forget to signal async completion?</span><br></pre></td></tr></table></figure>
 
@@ -57,7 +57,8 @@
 <p>这是一个新特性,简单来说就是原因: gulp 不再支持同步任务了。 因为同步任务常常会导致难以调试的细微错误,例如忘记从任务 (task)中返回 stream。 当你看到 “ Did you forget to signal async completion ?” 警告时,说明你<strong>并未使用前面提到的返回方式</strong></p>
 <p>意思是你没有写一个任务完成的返回通知(如果我描述有误评论区告诉我)</p>
 <p>官网的原文是When you see the <em>“Did you forget to signal async completion?”</em> warning, none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.</p>
-</div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="story post-story"><h3 id="官网的解决方案是Using-async-await"><a href="#官网的解决方案是Using-async-await" class="headerlink" title="官网的解决方案是Using async/await"></a>官网的解决方案是Using async/await</h3><p>即把原来类似这样的代码</p>
+</div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="story post-story"><h3 id="官网的解决方案是"><a href="#官网的解决方案是" class="headerlink" title="官网的解决方案是"></a>官网的解决方案是</h3><p>Using async/await</p>
+<p>即把原来类似这样的代码</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, () =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>改成这样</p>
@@ -72,7 +73,7 @@
 <p>那只要添加一个done的回调函数即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
-</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>又码了1000多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
+</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
 <div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>

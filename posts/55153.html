@@ -21,7 +21,7 @@
   <meta content="青云工作室" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1645678375955" as="style">
+  <link rel="preload" href="/css/style.css?time=1645678653907" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1733,8 +1733,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1645678375955" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1645678375955"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1645678653907" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1645678653907"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1829,7 +1829,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /************这个文件存放不需要重载的全局变量和全局函数*********/
   window.volantis = {}; // volantis 全局变量
   volantis.debug = false; // 开启调试模式
-  volantis.LASTUPDATE = new Date('Thu Feb 24 2022 04:52:55 GMT+0000 (Coordinated Universal Time)');
+  volantis.LASTUPDATE = new Date('Thu Feb 24 2022 04:57:33 GMT+0000 (Coordinated Universal Time)');
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   async function volantisInitConfig() {
@@ -3007,9 +3007,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   
-    <span hidden>
-      <meta itemprop="image" content="http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img itemprop="image" class='headimg' src='https://bu.dusays.com/2022/02/24/8dd37de3207c0.png'/>
+      </a>
+    </div>
   
   <div class="article-meta" id="top">
     
@@ -3114,7 +3116,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><div class="story post-story"><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文</p>
+    <h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><div class="story post-story"><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文<br><img src="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" class="lazyload" data-srcset="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><div class="story post-story"><p>在查看了日志最后发现了如下报错</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Did you forget to signal async completion?</span><br></pre></td></tr></table></figure>
 
@@ -3122,7 +3124,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>这是一个新特性,简单来说就是原因: gulp 不再支持同步任务了。 因为同步任务常常会导致难以调试的细微错误,例如忘记从任务 (task)中返回 stream。 当你看到 “ Did you forget to signal async completion ?” 警告时,说明你<strong>并未使用前面提到的返回方式</strong></p>
 <p>意思是你没有写一个任务完成的返回通知(如果我描述有误评论区告诉我)</p>
 <p>官网的原文是When you see the <em>“Did you forget to signal async completion?”</em> warning, none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.</p>
-</div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="story post-story"><h3 id="官网的解决方案是Using-async-await"><a href="#官网的解决方案是Using-async-await" class="headerlink" title="官网的解决方案是Using async/await"></a>官网的解决方案是Using async/await</h3><p>即把原来类似这样的代码</p>
+</div><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><div class="story post-story"><h3 id="官网的解决方案是"><a href="#官网的解决方案是" class="headerlink" title="官网的解决方案是"></a>官网的解决方案是</h3><p>Using async/await</p>
+<p>即把原来类似这样的代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, () =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p>改成这样</p>
@@ -3137,7 +3140,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>那只要添加一个done的回调函数即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
-</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>又码了1000多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
+</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
 <div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>
   </div>
@@ -3320,7 +3323,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%98%E8%B5%B7"><span class="toc-text">缘起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%98%AFUsing-async-await"><span class="toc-text">官网的解决方案是Using async&#x2F;await</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">更简单的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">推荐文章（由hexo文章推荐插件驱动）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%98%E8%B5%B7"><span class="toc-text">缘起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%98%AF"><span class="toc-text">官网的解决方案是</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">更简单的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">推荐文章（由hexo文章推荐插件驱动）</span></a></li></ol>
     </div>
   </section>
 
@@ -3565,7 +3568,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1645678375955.js"></script>
+<script src="/js/app.js?time=1645678653907.js"></script>
 
 
 
@@ -3726,7 +3729,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1645678375955')</script>
+  <script>volantis.js('/js/plugins/rightMenu.js?time=1645678653907')</script>
 
 
 
@@ -3855,19 +3858,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1645678375955")
+        volantis.js("/js/plugins/sites.js?time=1645678653906")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1645678375955")
+        volantis.js("/js/plugins/friends.js?time=1645678653906")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1645678375955")
+        volantis.js("/js/plugins/contributors.js?time=1645678653907")
       }
     
   };
@@ -3936,7 +3939,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1645678375958')
+    await volantis.js('/js/plugins/aplayer.js?time=1645678653909')
   
   })();
 
@@ -4065,7 +4068,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1645678375955");
+    return volantis.js("/js/search/hexo.js?time=1645678653907");
   }
 
   function loadSearchService() {
@@ -4523,7 +4526,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/55153.html","name":"gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)","description":"gulp升级4.0后的报错与修复","datePublished":"2022-02-15T06:28:55.000Z","dateModified":"2022-02-15T06:28:55.000Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/55153.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/55153.html","wordCount":0,"articleSection":"web","keywords":"博客,前端,gulp","image":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/55153.html","name":"gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)","description":"gulp升级4.0后的报错与修复","datePublished":"2022-02-15T06:28:55.000Z","dateModified":"2022-02-15T06:28:55.000Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/55153.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"http://unpkg.zhimg.com/qycdn@0.9.0/img/logo/avatar.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/55153.html","wordCount":0,"articleSection":"web","keywords":"博客,前端,gulp","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/02/24/8dd37de3207c0.png","width":1024,"height":768}}]</script>
 
 
 <script>
