@@ -117,7 +117,7 @@ self.addEventListener("message", async event => {
     }
 })
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>ChenBlogHelper Error</h1>
+    return new Response(`<h1>IBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
 
