@@ -673,23 +673,23 @@ button {
   }
   :root:not([color-scheme]) {
     --color-site-body: #21252b;
-    --color-read-bkg: #222;
-    --color-read-post: #333;
-    --color-site-bg: #222;
-    --color-site-inner: #eee;
+    --color-read-bkg: #282c34;
+    --color-read-post: #282c34;
+    --color-site-bg: #282c34;
+    --color-site-inner: #979fad;
     --color-site-footer: #aaa;
-    --color-card: #333;
-    --color-text: #eee;
+    --color-card: #282c34;
+    --color-text: #979fad;
     --color-block: #3a3a3a;
     --color-codeblock: #343a3c;
     --color-inlinecode: #d56d28;
-    --color-h1: #eee;
-    --color-h2: #eee;
-    --color-h3: #ddd;
-    --color-h4: #ddd;
-    --color-h5: #ddd;
-    --color-h6: #ddd;
-    --color-p: #bbb;
+    --color-h1: #979fad;
+    --color-h2: #979fad;
+    --color-h3: #abb2bf;
+    --color-h4: #abb2bf;
+    --color-h5: #abb2bf;
+    --color-h6: #abb2bf;
+    --color-p: #abb2bf;
     --color-list: #aaa;
     --color-list-hl: #69dfc4;
     --color-meta: #888;
@@ -698,7 +698,7 @@ button {
     --color-img-error: #21252b;
   }
   :root:not([color-scheme]) img {
-    filter: brightness(70%) !important;
+    filter: brightness(65%) !important;
   }
   :root:not([color-scheme]) #wrapper .title {
     color: var(--color-meta) !important;
@@ -744,23 +744,23 @@ button {
 }
 [color-scheme='dark'] {
   --color-site-body: #21252b;
-  --color-read-bkg: #222;
-  --color-read-post: #333;
-  --color-site-bg: #222;
-  --color-site-inner: #eee;
+  --color-read-bkg: #282c34;
+  --color-read-post: #282c34;
+  --color-site-bg: #282c34;
+  --color-site-inner: #979fad;
   --color-site-footer: #aaa;
-  --color-card: #333;
-  --color-text: #eee;
+  --color-card: #282c34;
+  --color-text: #979fad;
   --color-block: #3a3a3a;
   --color-codeblock: #343a3c;
   --color-inlinecode: #d56d28;
-  --color-h1: #eee;
-  --color-h2: #eee;
-  --color-h3: #ddd;
-  --color-h4: #ddd;
-  --color-h5: #ddd;
-  --color-h6: #ddd;
-  --color-p: #bbb;
+  --color-h1: #979fad;
+  --color-h2: #979fad;
+  --color-h3: #abb2bf;
+  --color-h4: #abb2bf;
+  --color-h5: #abb2bf;
+  --color-h6: #abb2bf;
+  --color-p: #abb2bf;
   --color-list: #aaa;
   --color-list-hl: #69dfc4;
   --color-meta: #888;
@@ -769,7 +769,7 @@ button {
   --color-img-error: #21252b;
 }
 [color-scheme='dark'] img {
-  filter: brightness(70%) !important;
+  filter: brightness(65%) !important;
 }
 [color-scheme='dark'] #wrapper .title {
   color: var(--color-meta) !important;
@@ -819,14 +819,14 @@ button {
 }
 @font-face {
   font-family: 'UbuntuMono';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  src: url("https://cdn1.tianli0.top/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
 }
 @font-face {
   font-family: 'lishu';
-  src: url("https://cdn.jsdelivr.net/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2");
+  src: url("https://cdn1.tianli0.top/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;

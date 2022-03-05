@@ -1008,39 +1008,155 @@ footer.footer .copyright p {
     -ms-justify-content: center;
   }
 }
-.md .simpleuser-group {
-  margin: 0;
+.article.l_friends .friends-group .friend-content {
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 112px);
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  margin: -8px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  align-items: flex-start;
+  line-height: 1.3;
 }
-.md .simpleuser {
-  text-align: center;
-  padding: 1em 0.5em;
+.article.l_friends .friends-group .friend-content .friend-card {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
   border-radius: 4px;
   -webkit-border-radius: 4px;
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  padding: 8px 0;
+  margin: 8px;
+  margin-top: calc(2.25 * 16px + 32px);
+  color: var(--color-meta);
+  background: var(--color-block);
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -khtml-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  align-content: flex-start;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: calc(100%/4 - 16px);
 }
-.md .simpleuser img {
+@media screen and (max-width: 1024px) {
+  .article.l_friends .friends-group .friend-content .friend-card {
+    width: calc(100%/4 - 16px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .article.l_friends .friends-group .friend-content .friend-card {
+    width: calc(100%/3 - 16px);
+  }
+}
+@media screen and (max-width: 500px) {
+  .article.l_friends .friends-group .friend-content .friend-card {
+    width: calc(100%/2 - 16px);
+  }
+}
+.article.l_friends .friends-group .friend-content .friend-card:hover .friend-left .avatar {
+  transform: scale(1.2) rotate(12deg);
+  -webkit-transform: scale(1.2) rotate(12deg);
+  -khtml-transform: scale(1.2) rotate(12deg);
+  -moz-transform: scale(1.2) rotate(12deg);
+  -o-transform: scale(1.2) rotate(12deg);
+  -ms-transform: scale(1.2) rotate(12deg);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-left {
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  object-fit: cover;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-self: center;
 }
-.md .simpleuser img+span {
+.article.l_friends .friends-group .friend-content .friend-card .friend-left .avatar {
+  width: 64px;
+  height: 64px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  margin: 16px 8px 4px 8px;
+  margin-top: calc(-1.25 * 16px - 32px);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border: 2px solid #fff;
+  background: #fff;
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-right {
+  margin: 4px 8px;
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.2;
-  color: var(--color-text);
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
 }
-.md .simpleuser:hover {
-  background: var(--color-site-bg);
+.article.l_friends .friends-group .friend-content .friend-card .friend-right p {
+  text-align: center;
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-right .friend-tags-wrapper {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin-left: -2px;
+  word-break: break-all;
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-right p {
+  margin: 0;
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-right p.friend-name {
+  font-size: 0.8125rem;
+  padding-top: 4px;
+  font-weight: bold;
+}
+.article.l_friends .friends-group .friend-content .friend-card .friend-right p.tags {
+  font-size: 0.78125rem;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: inline;
+  background: none;
+  word-wrap: break-word;
+  padding-right: 4px;
 }
 .md img {
   position: relative;
@@ -7127,149 +7243,6 @@ pre {
     -ms-transform: rotate(360deg);
   }
 }
-p,
-input,
-pre>span,
-textarea {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/text.png"), text;
-}
-.fancybox-container .fancybox-stage,
-.fancybox__carousel .is-draggable {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-out.png"), zoom-out;
-}
-.fancybox a,
-.fancybox-can-zoomIn .fancybox-content,
-.fancybox__carousel .fancybox__slide.can-zoom_in .fancybox__content {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-in.png"), zoom-in;
-}
-span.btn>a:not([href]):hover,
-.fancybox-button[disabled],
-.fancybox-button[disabled]:hover,
-.gt-container .gt-btn.is--disable,
-span.not-select {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/circle.png"), not-allowed;
-}
-html,
-a:not([href]),
-a:not([href]) p,
-button[disabled],
-html input[disabled],
-.article .widget,
-#l_body .post section.meta .new-meta-box .new-meta-item .notlink,
-ul.list-v.rightmenu a,
-span.btn a:not([href]),
-div.tabs ul.nav-tabs li.tab.active a,
-article#comments #valine_container .vcards .vhead span.vnick,
-kbd,
-.a > p,
-.not-select,
-.not-select p,
-.MiniValine *,
-.aplayer .aplayer-info .aplayer-music,
-.gt-container a.is--active,
-.iframe,
-.embed-show,
-p > img,
-p > svg,
-.fix-cursor-default {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png"), default;
-}
-a,
-psw,
-button,
-html input[type=button],
-input[type=reset],
-input[type=submit],
-table::-webkit-scrollbar-thumb,
-scrollbar::-webkit-scrollbar-thumb,
-#scroll-down,
-ul.list-v.rightmenu li.music a.nav.volume .aplayer-volume-bar,
-#u-search .modal .modal-header .btn-close,
-#u-search .modal .modal-footer .nav,
-article .checkbox input,
-details summary,
-.article a.link-card,
-div.tabs ul.nav-tabs li.tab a,
-.btn-copy,
-.fancybox-can-pan .fancybox-content,
-.fancybox-can-swipe .fancybox-content,
-.waves-effect,
-a.result.search-result-fix,
-.tag > p,
-.prev > p,
-.next > p,
-.author > p,
-.list-h > a > p,
-.category > a > p,
-.friend-right p,
-.v[data-class=v] a,
-.v[data-class=v] .vbtn,
-.v[data-class=v] .vicon,
-.v[data-class=v] .vcards .vcard .vhead .vnick,
-.v[data-class=v] .vcards .vcard .vh .vmeta .vat,
-.v[data-class=v] .vwrap .vemojis i,
-.v[data-class=v] .vcards .vcard .vcontent.expand,
-.aplayer .aplayer-pic,
-.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon,
-.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap,
-.aplayer .aplayer-list ol li,
-.aplayer .aplayer-list ol li .aplayer-list-author,
-.aplayer .aplayer-list ol li .aplayer-list-index,
-.waves-button,
-.waves-button-input,
-.waves-button:hover,
-.waves-button:visited,
-.fancybox-button,
-.MiniValine .vbtn,
-.MiniValine .vcancel-comment-reply,
-.MiniValine .vcancel-comment-reply svg,
-.MiniValine .vlist .vcard .vcomment-body .vat,
-.MiniValine .vlist .vcard .vcomment-body .vhead .vname,
-.MiniValine .vinputs-area .btn-wrap .vfunction-btn svg,
-.MiniValine .vinputs-area .vextra-area .vsmile-icons img,
-.MiniValine .vlist .vcard .vcomment-body .text-wrapper .vcomment a,
-.gt-container .gt-btn,
-.gt-container .gt-user-inner,
-.gt-container .gt-avatar-github,
-.gt-container .gt-popup .gt-action,
-.gt-container .gt-comment-like:hover,
-.gt-container .gt-comment-edit:hover,
-.gt-container .gt-comment-reply:hover,
-.tk-icon,
-.tk-avatar img,
-.tk-meta a,
-.tk-action-icon,
-.fancybox,
-.fix-cursor-pointer {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png"), pointer;
-}
-.cur-default,
-.iziToast,
-.iziToast p {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png"), default !important;
-}
-.cur-pointer,
-.carousel__button,
-.fancybox__slide,
-.iziToast-buttons button {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png"), pointer !important;
-}
-.cur-not-allowed {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/circle.png"), not-allowed !important;
-}
-.cur-zoom-in,
-.fancybox__carousel .fancybox__slide.can-zoom_in .fancybox__content,
-.has-image[data-image-fit=contain].can-zoom_in .fancybox__image {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-in.png"), zoom-in !important;
-}
-.cur-zoom-out,
-.fancybox__carousel .is-draggable,
-.has-image[data-image-fit=contain].is-draggable .fancybox__image {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-out.png"), zoom-out !important;
-}
-.cur-text {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/text.png"), text !important;
-}
 .common_read {
   z-index: auto !important;
   opacity: 1 !important;
@@ -7603,7 +7576,7 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
   :root:not([color-scheme]) svg.iconfont,
   :root:not([color-scheme]) img,
   :root:not([color-scheme]) .lazyload {
-    filter: brightness(70%) !important;
+    filter: brightness(65%) !important;
   }
   :root:not([color-scheme]) .widget.blogger .content .social-wrapper a.social:hover {
     background: var(--color-card);
@@ -7679,7 +7652,7 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
     background: linear-gradient(180deg, rgba(0,0,0,0) 0, rgba(33,33,33,0.8));
   }
   :root:not([color-scheme]) .aplayer-pic {
-    filter: brightness(70%);
+    filter: brightness(65%);
   }
   :root:not([color-scheme]) .aplayer .aplayer-list ol li {
     border-top: 1px solid var(--color-card);
@@ -7717,7 +7690,7 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
 [color-scheme='dark'] svg.iconfont,
 [color-scheme='dark'] img,
 [color-scheme='dark'] .lazyload {
-  filter: brightness(70%) !important;
+  filter: brightness(65%) !important;
 }
 [color-scheme='dark'] .widget.blogger .content .social-wrapper a.social:hover {
   background: var(--color-card);
@@ -7793,7 +7766,7 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
   background: linear-gradient(180deg, rgba(0,0,0,0) 0, rgba(33,33,33,0.8));
 }
 [color-scheme='dark'] .aplayer-pic {
-  filter: brightness(70%);
+  filter: brightness(65%);
 }
 [color-scheme='dark'] .aplayer .aplayer-list ol li {
   border-top: 1px solid var(--color-card);
@@ -8906,7 +8879,7 @@ ul.list-v.rightmenu {
   -webkit-border-radius: 8px;
 }
 ul.list-v.rightmenu li a {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png"), pointer !important;
+  cursor: $pointer, pointer !important;
 }
 .post.post-v3.white-box {
   text-align: left;
@@ -9063,7 +9036,7 @@ section span,
 details summary span,
 .new-meta-box span,
 .nav-tabs span {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png"), default;
+  cursor: $default, default;
 }
 .not-select.default-cursor,
 figcaption.default-cursor,
@@ -9072,7 +9045,7 @@ section.default-cursor,
 details summary.default-cursor,
 .new-meta-box.default-cursor,
 .nav-tabs.default-cursor {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png"), default !important;
+  cursor: $default, default !important;
 }
 .allow-select {
   -webkit-touch-callout: all;
@@ -9089,7 +9062,7 @@ details summary.default-cursor,
 .bb_spoiler a,
 a .bb_spoiler,
 .bb_spoiler a.new {
-  cursor: url("https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png"), pointer;
+  cursor: $pointer, pointer;
   border-bottom: 1px solid;
   border-color: var(--color-p);
   background-color: var(--color-card);

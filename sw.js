@@ -44,7 +44,7 @@ let cdn = {
             "url": "https://jsd.hin.cool/gh"
         },
         jsdelivr_io: {
-            "url": "https://jsdelivr.io/gh"
+            "url": "https://jsdelivr.panbaidu.cn/gh"
         }
     },
     "combine": {
@@ -68,7 +68,7 @@ let cdn = {
             "url": "https://jsd.hin.cool/combine"
         },
         jsdelivr_io: {
-            "url": "https://jsdelivr.io/combine"
+            "url": "https://jsdelivr.panbaidu.cn/combine"
         }
     },
     "npm": {
@@ -107,7 +107,7 @@ let cdn = {
             "url": "https://jsd.hin.cool/npm"
         },
         jsdelivr_io: {
-            "url": "https://jsdelivr.io/npm"
+            "url": "https://jsdelivr.panbaidu.cn/npm"
         }
     }
 }
