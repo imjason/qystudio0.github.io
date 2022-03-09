@@ -2,60 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://qystudio.ltd/offline.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/note/index.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/notebook/index.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/note/python/index.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/note/volantis/index.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://qystudio.ltd/note/python/1/index.html</loc>
-    
-    <lastmod>2022-03-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qystudio.ltd/posts/48475.html</loc>
     
     <lastmod>2022-03-09</lastmod>
@@ -137,6 +83,15 @@
   </url>
   
   <url>
+    <loc>https://qystudio.ltd/offline.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qystudio.ltd/artitalk/index.html</loc>
     
     <lastmod>2022-03-09</lastmod>
@@ -147,6 +102,51 @@
   
   <url>
     <loc>https://qystudio.ltd/messages/index.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/index.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/notebook/index.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/python/index.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/volantis/index.html</loc>
+    
+    <lastmod>2022-03-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/python/1/index.html</loc>
     
     <lastmod>2022-03-09</lastmod>
     
