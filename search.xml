@@ -1126,42 +1126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数字基础设施开源操作系统欧拉全新发布</title>
-    <url>/posts/35934.html</url>
-    <content><![CDATA[<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><div class="story post-story"><p>9月25日，在华为全联接2021大会上，面向数字基础设施的开源操作系统欧拉（openEuler）全新发布。欧拉操作系统可广泛部署于服务器、云计算、边缘计算、嵌入式等各种形态设备，应用场景覆盖IT（Information Technology）、CT（Communication Technology）和OT（Operational Technology），实现统一操作系统支持多设备，应用一次开发覆盖全场景</p>
-<p>华为计算产品线总裁邓泰华表示，操作系统“碎片化”现状，导致数字基础设施产生大量“软烟囱”，带来生态割裂、应用重复开发、协同繁琐的挑战，数字化新时代，呼唤新的统一操作系统。</p>
-</div><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><div class="story post-story"><p>在ICT领域，华为提供服务器、存储、云服务、边缘计算、基站、路由器、工业控制等产品和解决方案，都需要搭载操作系统，所以华为一直在构建能力，旨在通过统一的操作系统架构来满足不同应用场景的需求。</p>
-<p>本次欧拉全新升级，同时支持服务器、云计算、边缘计算、嵌入式等各种形态设备的需求。支持多样性计算，致力于提供安全、稳定、易用的操作系统；并通过为应用提供确定性保障能力，支持OT领域应用及OT与ICT的融合。至此全新发布的欧拉操作系统可覆盖从IT、CT到OT数字基础设施全场景。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632568725000.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632568725000.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>欧拉创造性的提出全栈原子化解耦，支持版本灵活构建、服务自由组合，通过一套架构灵活支持南向多样性设备，北向全场景应用。</p>
-<p>统一操作系统，支持多设备：</p>
-<ul>
-<li>采用全量组件原子化架构，支持内核灵活组合，全栈服务化按需构建，可根据设备不同的资源能力和业务特征进行灵活裁剪、按需构建，满足不同设备对于操作系统的要求。</li>
-<li>支持构建服务自助化，“菜单式”配置内核和系统服务，可以对软件包、文件、函数等不同层级进行分级灵活组合，自动化、简化操作系统版本构建。</li>
-<li>提供多设备协同套件，包括“边云”协同，统一数据、网络和管理；集群多节点协同，可支持PB级内存池，实现不同设备之间的能力互助和资源共享，发挥硬件最优性能。</li>
-</ul>
-<p>应用一次开发，覆盖全场景：</p>
-<ul>
-<li>标准API，实现操作系统与应用交互语言的统一；</li>
-<li>欧拉SDK统一封装各种应用所需的数据、音视频、安全等能力，使能极简开发，并增强应用性能；</li>
-<li>欧拉Devkit提供跨设备开发向导、自动测试平台等插件，并可方便的集成到主流的应用开发平台。</li>
-</ul>
-<p>欧拉和鸿蒙已经实现了内核技术共享，未来计划在欧拉构筑分布式软总线能力，让搭载欧拉操作系统的设备可以自动识别和连接鸿蒙终端。后续进一步在安全OS、设备驱动框架、以及新编程语言等方面实现共享。通过能力共享、实现生态互通，“欧拉+鸿蒙”更好的服务数字全场景。</p>
-<p>本次大会正式发布了第一个支持数字基础设施全场景的openEuler 21.09创新版本，将于9月30日在社区上线。该版本不仅对服务器和云计算场景能力进行了增强，还实现了对于边缘计算和嵌入式场景的支持。2022年一季度，欧拉开源社区将发布支持全场景融合的社区LTS版本，使能合作伙伴面向不同场景发布商业发行版。</p>
-</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>欧拉自开源以来获得产业界的积极支持和响应，是中国最具活力的开源社区。截至目前，已有超过6000名开发者和100多家企业、高校、组织和机构加入欧拉社区，汇聚从处理器、整机、操作系统发行版厂商、到行业应用等全产业链，十多家主流操作系统领军企业发行基于欧拉的商业版本。欧拉的全新发布将吸引更多云、边缘、嵌入式领域伙伴加入社区，共同加速欧拉在数字基础设施全领域的广泛应用。华为将始终坚持在基础软件上的长期投入，联合全产业链合作伙伴，共同构建开放共赢的操作系统开源生态。</p>
-</div><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><div class="story post-story"><p><a href="https://repo.openeuler.org/openEuler-21.09/">https://repo.openeuler.org/openEuler-21.09/</a></p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li><li><a href="wangbei98.github.io/2020/07/03/阿里云搭建https服务/">阿里云搭建https服务</a></li><li><a href="wangbei98.github.io/2020/05/27/Vue-打包发布到服务器/">Vue-打包发布到服务器</a></li></ul></div>
-</div>]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>系统</tag>
-        <tag>欧拉</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>无广告、无推送，最最纯净的WPS版本</title>
     <url>/posts/61939.html</url>
     <content><![CDATA[<p>无广告、无推送，最最纯净的WPS版本<br>另附四大权限<br>与下载地址</p>
@@ -1221,6 +1185,42 @@
         <tag>博客</tag>
         <tag>前端</tag>
         <tag>跳转</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数字基础设施开源操作系统欧拉全新发布</title>
+    <url>/posts/35934.html</url>
+    <content><![CDATA[<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><div class="story post-story"><p>9月25日，在华为全联接2021大会上，面向数字基础设施的开源操作系统欧拉（openEuler）全新发布。欧拉操作系统可广泛部署于服务器、云计算、边缘计算、嵌入式等各种形态设备，应用场景覆盖IT（Information Technology）、CT（Communication Technology）和OT（Operational Technology），实现统一操作系统支持多设备，应用一次开发覆盖全场景</p>
+<p>华为计算产品线总裁邓泰华表示，操作系统“碎片化”现状，导致数字基础设施产生大量“软烟囱”，带来生态割裂、应用重复开发、协同繁琐的挑战，数字化新时代，呼唤新的统一操作系统。</p>
+</div><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><div class="story post-story"><p>在ICT领域，华为提供服务器、存储、云服务、边缘计算、基站、路由器、工业控制等产品和解决方案，都需要搭载操作系统，所以华为一直在构建能力，旨在通过统一的操作系统架构来满足不同应用场景的需求。</p>
+<p>本次欧拉全新升级，同时支持服务器、云计算、边缘计算、嵌入式等各种形态设备的需求。支持多样性计算，致力于提供安全、稳定、易用的操作系统；并通过为应用提供确定性保障能力，支持OT领域应用及OT与ICT的融合。至此全新发布的欧拉操作系统可覆盖从IT、CT到OT数字基础设施全场景。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632568725000.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1632568725000.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>欧拉创造性的提出全栈原子化解耦，支持版本灵活构建、服务自由组合，通过一套架构灵活支持南向多样性设备，北向全场景应用。</p>
+<p>统一操作系统，支持多设备：</p>
+<ul>
+<li>采用全量组件原子化架构，支持内核灵活组合，全栈服务化按需构建，可根据设备不同的资源能力和业务特征进行灵活裁剪、按需构建，满足不同设备对于操作系统的要求。</li>
+<li>支持构建服务自助化，“菜单式”配置内核和系统服务，可以对软件包、文件、函数等不同层级进行分级灵活组合，自动化、简化操作系统版本构建。</li>
+<li>提供多设备协同套件，包括“边云”协同，统一数据、网络和管理；集群多节点协同，可支持PB级内存池，实现不同设备之间的能力互助和资源共享，发挥硬件最优性能。</li>
+</ul>
+<p>应用一次开发，覆盖全场景：</p>
+<ul>
+<li>标准API，实现操作系统与应用交互语言的统一；</li>
+<li>欧拉SDK统一封装各种应用所需的数据、音视频、安全等能力，使能极简开发，并增强应用性能；</li>
+<li>欧拉Devkit提供跨设备开发向导、自动测试平台等插件，并可方便的集成到主流的应用开发平台。</li>
+</ul>
+<p>欧拉和鸿蒙已经实现了内核技术共享，未来计划在欧拉构筑分布式软总线能力，让搭载欧拉操作系统的设备可以自动识别和连接鸿蒙终端。后续进一步在安全OS、设备驱动框架、以及新编程语言等方面实现共享。通过能力共享、实现生态互通，“欧拉+鸿蒙”更好的服务数字全场景。</p>
+<p>本次大会正式发布了第一个支持数字基础设施全场景的openEuler 21.09创新版本，将于9月30日在社区上线。该版本不仅对服务器和云计算场景能力进行了增强，还实现了对于边缘计算和嵌入式场景的支持。2022年一季度，欧拉开源社区将发布支持全场景融合的社区LTS版本，使能合作伙伴面向不同场景发布商业发行版。</p>
+</div><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><div class="story post-story"><p>欧拉自开源以来获得产业界的积极支持和响应，是中国最具活力的开源社区。截至目前，已有超过6000名开发者和100多家企业、高校、组织和机构加入欧拉社区，汇聚从处理器、整机、操作系统发行版厂商、到行业应用等全产业链，十多家主流操作系统领军企业发行基于欧拉的商业版本。欧拉的全新发布将吸引更多云、边缘、嵌入式领域伙伴加入社区，共同加速欧拉在数字基础设施全领域的广泛应用。华为将始终坚持在基础软件上的长期投入，联合全产业链合作伙伴，共同构建开放共赢的操作系统开源生态。</p>
+</div><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><div class="story post-story"><p><a href="https://repo.openeuler.org/openEuler-21.09/">https://repo.openeuler.org/openEuler-21.09/</a></p>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://qystudio.ltd/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://qystudio.ltd/posts/78415.html">Windows 10 21H2 太阳谷更新镜像发布</a></li><li><a href="wangbei98.github.io/2020/07/03/阿里云搭建https服务/">阿里云搭建https服务</a></li><li><a href="wangbei98.github.io/2020/05/27/Vue-打包发布到服务器/">Vue-打包发布到服务器</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>系统</tag>
+        <tag>欧拉</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
