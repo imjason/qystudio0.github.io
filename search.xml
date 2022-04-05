@@ -63,27 +63,27 @@
 
 <p>这样就可以方便的分发cdn文件的npm了</p>
 <h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><p>既然有npm，那么类似jsd的镜像就很多了</p>
-<div class="note link green"><p>note link green <a href="https://npm.elemecdn.com/">https://npm.elemecdn.com</a></p></div>
+<div class="note link green"><p><a href="https://npm.elemecdn.com/">https://npm.elemecdn.com</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://cdn.jsdelivr.net/npm">https://cdn.jsdelivr.net/npm</a></p></div>
+<div class="note link green"><p><a href="https://cdn.jsdelivr.net/npm">https://cdn.jsdelivr.net/npm</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://unpkg.zhimg.com/">https://unpkg.zhimg.com</a> 添加了防盗链</p></div>
+<div class="note link green"><p><a href="https://unpkg.zhimg.com/">https://unpkg.zhimg.com</a> 添加了防盗链</p></div>
 
-<div class="note link green"><p>note link green <a href="https://unpkg.com/">https://unpkg.com</a></p></div>
+<div class="note link green"><p><a href="https://unpkg.com/">https://unpkg.com</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://u.pigax.cn/npm">https://u.pigax.cn/npm</a></p></div>
+<div class="note link green"><p><a href="https://u.pigax.cn/npm">https://u.pigax.cn/npm</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://unpkg.pigax.cn/">https://unpkg.pigax.cn/</a></p></div>
+<div class="note link green"><p><a href="https://unpkg.pigax.cn/">https://unpkg.pigax.cn/</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://cdn-jsd.pigax.cn/npm">https://cdn-jsd.pigax.cn/npm</a></p></div>
+<div class="note link green"><p><a href="https://cdn-jsd.pigax.cn/npm">https://cdn-jsd.pigax.cn/npm</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://cdn1.tianli0.top/npm">https://cdn1.tianli0.top/npm</a> 需要许可</p></div>
+<div class="note link green"><p><a href="https://cdn1.tianli0.top/npm">https://cdn1.tianli0.top/npm</a> 需要许可</p></div>
 
-<div class="note link green"><p>note link green <a href="https://cdn.cnortles.top/npm">https://cdn.cnortles.top/npm</a></p></div>
+<div class="note link green"><p><a href="https://cdn.cnortles.top/npm">https://cdn.cnortles.top/npm</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://jsd.hin.cool/npm">https://jsd.hin.cool/npm</a></p></div>
+<div class="note link green"><p><a href="https://jsd.hin.cool/npm">https://jsd.hin.cool/npm</a></p></div>
 
-<div class="note link green"><p>note link green <a href="https://jsdelivr.panbaidu.cn/npm">https://jsdelivr.panbaidu.cn/npm</a></p></div>
+<div class="note link green"><p><a href="https://jsdelivr.panbaidu.cn/npm">https://jsdelivr.panbaidu.cn/npm</a></p></div>
 
 </div><h2 id="其他方案-前端竞速"><a href="#其他方案-前端竞速" class="headerlink" title="其他方案(前端竞速)"></a>其他方案(前端竞速)</h2><div class="story post-story"><p>去看<a href="blog.cyfan.top">cyfan的博客</a></p>
 </div><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><div class="story post-story"><p>这篇文章在2月就准备开始写了，憋到今天才发布</p>
