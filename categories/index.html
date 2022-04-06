@@ -22,7 +22,7 @@
   <meta content="青云工作室" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649233179907" as="style">
+  <link rel="preload" href="/css/style.css?time=1649254191358" as="style">
   <link rel="preload" href="https://cdn1.tianli0.top/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff" as="font" type="font/woff" crossorigin="anonymous">
 
@@ -1731,8 +1731,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649233179907" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649233179907"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1649254191358" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1649254191358"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1830,9 +1830,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1649233179907","sites":"/js/plugins/sites.js?time=1649233179907","friends":"/js/plugins/friends.js?time=1649233179907","parallax":"/js/plugins/parallax.js?time=1649233179907","rightMenu":"/js/plugins/rightMenu.js?time=1649233179907","contributors":"/js/plugins/contributors.js?time=1649233179907","message":"/js/thirdparty/message.js?time=1649233179907","search":"/js/search/hexo.js?time=1649233179907","iconfontInkss":"/js/thirdparty/iconfontInkss.js?time=1649233179907"},"css":{"style":"/css/style.css?time=1649233179907","message":"/css/message.css?time=1649233179907"}},
-    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg?time=1649233179907","link":"/media/placeholder/link/8f277b4ee0ecd.svg?time=1649233179907","cover":"/media/placeholder/cover/76b86c0226ffd.svg?time=1649233179907","image":"/media/placeholder/image/2659360.svg?time=1649233179907"},
-    lastupdate: new Date(1649233179907),
+    cdn: {"js":{"app":"/js/app.js?time=1649254191358","sites":"/js/plugins/sites.js?time=1649254191358","friends":"/js/plugins/friends.js?time=1649254191358","parallax":"/js/plugins/parallax.js?time=1649254191358","rightMenu":"/js/plugins/rightMenu.js?time=1649254191358","contributors":"/js/plugins/contributors.js?time=1649254191358","message":"/js/thirdparty/message.js?time=1649254191358","search":"/js/search/hexo.js?time=1649254191358","iconfontInkss":"/js/thirdparty/iconfontInkss.js?time=1649254191358"},"css":{"style":"/css/style.css?time=1649254191358","message":"/css/message.css?time=1649254191358"}},
+    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg?time=1649254191358","link":"/media/placeholder/link/8f277b4ee0ecd.svg?time=1649254191358","cover":"/media/placeholder/cover/76b86c0226ffd.svg?time=1649254191358","image":"/media/placeholder/image/2659360.svg?time=1649254191358"},
+    lastupdate: new Date(1649254191358),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2211,18 +2211,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "/media/placeholder/avatar/round/3442075.svg?time=1649233179907";
+    img.src = "/media/placeholder/avatar/round/3442075.svg?time=1649254191358";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "/media/placeholder/cover/76b86c0226ffd.svg?time=1649233179907";
+    img.src = "/media/placeholder/cover/76b86c0226ffd.svg?time=1649254191358";
     img.onerror = null;
   }
   /******************************************************************************/
 </script>
 
   <!-- Custom Files head begin-->
-  
+  <!-- sw前端竞速 -->
+<script>
+  window.addEventListener('load', async () => {
+      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+          .then(async reg => {
+              //安装成功，建议此处强刷新以立刻执行SW
+              if (window.localStorage.getItem('install') != 'true') {
+                  window.localStorage.setItem('install', 'true');
+                  setTimeout(() => {
+                      window.location.search = `?time=${new Date().getTime()}`
+                  }, 1000)
+              }
+          }).catch(err => {
+              //安装失败，错误信息会由err传参
+          })
+  });
+</script>
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -3156,7 +3172,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1649233179907.js"></script>
+<script src="/js/app.js?time=1649254191358.js"></script>
 
 
 
@@ -3318,7 +3334,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </ul>
   </div>
   
-<script src="/js/plugins/rightMenu.js?time=1649233179907.js"></script>
+<script src="/js/plugins/rightMenu.js?time=1649254191358.js"></script>
 
 
 
@@ -3448,19 +3464,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649233179907")
+        volantis.js("/js/plugins/sites.js?time=1649254191358")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649233179907")
+        volantis.js("/js/plugins/friends.js?time=1649254191358")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649233179907")
+        volantis.js("/js/plugins/contributors.js?time=1649254191358")
       }
     
   };
@@ -3529,7 +3545,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1649233179907')
+    await volantis.js('/js/plugins/aplayer.js?time=1649254191358')
   
   })();
 
@@ -3658,7 +3674,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649233179907");
+    return volantis.js("/js/search/hexo.js?time=1649254191358");
   }
 
   function loadSearchService() {
@@ -4183,8 +4199,6 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 <!-- more -->
 
   
-  <script src="https://source.cnortles.top/js/grayscale.js" /></script>
-
   <script src="https://source.cnortles.top/js/leave.min.js" /></script>
 
   <script></script>
