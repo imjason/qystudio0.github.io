@@ -88,7 +88,7 @@
 </div><h2 id="其他方案-前端竞速"><a href="#其他方案-前端竞速" class="headerlink" title="其他方案(前端竞速)"></a>其他方案(前端竞速)</h2><div class="story post-story"><p>去看<a href="blog.cyfan.top">cyfan的博客</a></p>
 </div><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><div class="story post-story"><p>这篇文章在2月就准备开始写了，憋到今天才发布</p>
 <p>前端竞速不会的还在问，会用的同学已经用起来了，我的博客速度怎么样，留言告诉我</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://dedicationyu.cn/article/33444f3e.html">Hexo 和 NexT 美化教程</a></li><li><a href="https://dedicationyu.cn/article/e632495d.html">next 源主题修改备忘录</a></li><li><a href="https://dedicationyu.cn/article/31c54502.html">hexo 博客恢复和升级</a></li><li><a href="https://dedicationyu.cn/article/e1ce727a.html">hexo 和 github 搭建自己的博客详细教程</a></li><li><a href="https://www.lengyuewusheng.com/hexo-next-github-pages%E6%90%AD%E5%BB%BA%E5%BC%80%E6%BA%90%E5%8D%9A%E5%AE%A2.html">hexo(Next)+GitHub Pages搭建开源博客</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://dedicationyu.cn/article/33444f3e.html">Hexo 和 NexT 美化教程</a></li><li><a href="https://dedicationyu.cn/article/e632495d.html">next 源主题修改备忘录</a></li><li><a href="https://dedicationyu.cn/article/31c54502.html">hexo 博客恢复和升级</a></li><li><a href="https://dedicationyu.cn/article/e1ce727a.html">hexo 和 github 搭建自己的博客详细教程</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -622,7 +622,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="story post-story"><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://dedicationyu.cn/article/33444f3e.html">Hexo 和 NexT 美化教程</a></li><li><a href="https://dedicationyu.cn/article/e632495d.html">next 源主题修改备忘录</a></li><li><a href="https://dedicationyu.cn/article/31c54502.html">hexo 博客恢复和升级</a></li><li><a href="https://dedicationyu.cn/article/e1ce727a.html">hexo 和 github 搭建自己的博客详细教程</a></li><li><a href="https://www.lengyuewusheng.com/hexo-next-github-pages%E6%90%AD%E5%BB%BA%E5%BC%80%E6%BA%90%E5%8D%9A%E5%AE%A2.html">hexo(Next)+GitHub Pages搭建开源博客</a></li></ul></div>
+<div></div><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><div class="story post-story"><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://dedicationyu.cn/article/33444f3e.html">Hexo 和 NexT 美化教程</a></li><li><a href="https://dedicationyu.cn/article/e632495d.html">next 源主题修改备忘录</a></li><li><a href="https://dedicationyu.cn/article/31c54502.html">hexo 博客恢复和升级</a></li><li><a href="https://dedicationyu.cn/article/e1ce727a.html">hexo 和 github 搭建自己的博客详细教程</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1342,6 +1342,19 @@
         <tag>tools</tag>
         <tag>PPT</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>停更通知</title>
+    <url>/posts/25002.html</url>
+    <content><![CDATA[<h2 id="停更"><a href="#停更" class="headerlink" title="停更"></a>停更</h2><div class="story post-story"><p>经过慎重考虑，青云工作室准备在2022/4/11开始停更</p>
+</div><h2 id="重启时间"><a href="#重启时间" class="headerlink" title="重启时间"></a>重启时间</h2><div class="story post-story"><p>重启时间预计定在8月中旬</p>
+</div><h2 id="再起航"><a href="#再起航" class="headerlink" title="再起航"></a>再起航</h2><div class="story post-story"><p>在8月重启网站时，我们将带来更好的网站，更快的速度</p>
+<p>同时会重构开往的官网</p>
+<p>预计我们会在开源美化的主题同时，尝试开源全部源码</p>
+<p>而且青云将建立一个基于gitea的代码托管平台，拥有CI/CD</p>
+<p>请耐心等待，青云将变得更好</p>
+
+</div>]]></content>
   </entry>
   <entry>
     <title>华为宣布将发布操作系统openEuler欧拉</title>
