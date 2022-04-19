@@ -7664,6 +7664,74 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
   :root:not([color-scheme]) .aplayer.aplayer-withlist .aplayer-info {
     border-bottom: 1px solid var(--color-block);
   }
+  :root:not([color-scheme]) .widget.grid .content .grid a,
+  :root:not([color-scheme]) .widget>.content ul.entry a .badge,
+  :root:not([color-scheme]) .widget>.content ul.popular-posts a .badge {
+    color: #aaa !important;
+  }
+  :root:not([color-scheme]) .highlight>table,
+  :root:not([color-scheme]) .highlight:hover {
+    background-color: #1d1f23 !important;
+  }
+  :root:not([color-scheme]) article#comments p[ct] {
+    color: var(--color-p) !important;
+  }
+  :root:not([color-scheme]) .highlight pre .comment {
+    color: #847a7d !important;
+  }
+  :root:not([color-scheme]) .highlight pre .marked {
+    background-color: #3d424f !important;
+  }
+  :root:not([color-scheme]) div.note.quote {
+    border-color: #555c66 !important;
+  }
+  :root:not([color-scheme]) hr {
+    background-color: #555c66 !important;
+  }
+  :root:not([color-scheme]) #l_header,
+  :root:not([color-scheme]) #l_main .post,
+  :root:not([color-scheme]) #l_side .widget,
+  :root:not([color-scheme]) #rightmenu-content {
+    background-color: #282c34;
+  }
+  :root:not([color-scheme]) a,
+  :root:not([color-scheme]) .widget.text .content a {
+    color: #abb2bf;
+  }
+  :root:not([color-scheme]) a:hover,
+  :root:not([color-scheme]) .widget.text .content a:hover {
+    color: #ff5722;
+  }
+  :root:not([color-scheme]) #l_body #s-top.show.hl {
+    background: #494b51;
+  }
+  :root:not([color-scheme]) textarea.el-textarea__inner {
+    background: none !important;
+  }
+  :root:not([color-scheme]) #desktopNavTitle {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none !important;
+  }
+  :root:not([color-scheme]) #githubEmoji {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block !important;
+  }
+  :root:not([color-scheme]) #l_main .post,
+  :root:not([color-scheme]) #l_side .widget {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  :root:not([color-scheme]) .loading-circle {
+    background-color: rgba(19,14,14,0.702);
+  }
+  :root:not([color-scheme]) #BKG,
+  :root:not([color-scheme]) .cus-article-bkg {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
 }
 [color-scheme='dark'] {
   --block-hover: #1c1c1c;
@@ -7777,6 +7845,74 @@ ul.list-v.rightmenu li.music .nav.volume .aplayer-volume-bar .aplayer-volume {
 }
 [color-scheme='dark'] .aplayer.aplayer-withlist .aplayer-info {
   border-bottom: 1px solid var(--color-block);
+}
+[color-scheme='dark'] .widget.grid .content .grid a,
+[color-scheme='dark'] .widget>.content ul.entry a .badge,
+[color-scheme='dark'] .widget>.content ul.popular-posts a .badge {
+  color: #aaa !important;
+}
+[color-scheme='dark'] .highlight>table,
+[color-scheme='dark'] .highlight:hover {
+  background-color: #1d1f23 !important;
+}
+[color-scheme='dark'] article#comments p[ct] {
+  color: var(--color-p) !important;
+}
+[color-scheme='dark'] .highlight pre .comment {
+  color: #847a7d !important;
+}
+[color-scheme='dark'] .highlight pre .marked {
+  background-color: #3d424f !important;
+}
+[color-scheme='dark'] div.note.quote {
+  border-color: #555c66 !important;
+}
+[color-scheme='dark'] hr {
+  background-color: #555c66 !important;
+}
+[color-scheme='dark'] #l_header,
+[color-scheme='dark'] #l_main .post,
+[color-scheme='dark'] #l_side .widget,
+[color-scheme='dark'] #rightmenu-content {
+  background-color: #282c34;
+}
+[color-scheme='dark'] a,
+[color-scheme='dark'] .widget.text .content a {
+  color: #abb2bf;
+}
+[color-scheme='dark'] a:hover,
+[color-scheme='dark'] .widget.text .content a:hover {
+  color: #ff5722;
+}
+[color-scheme='dark'] #l_body #s-top.show.hl {
+  background: #494b51;
+}
+[color-scheme='dark'] textarea.el-textarea__inner {
+  background: none !important;
+}
+[color-scheme='dark'] #desktopNavTitle {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none !important;
+}
+[color-scheme='dark'] #githubEmoji {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block !important;
+}
+[color-scheme='dark'] #l_main .post,
+[color-scheme='dark'] #l_side .widget {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+[color-scheme='dark'] .loading-circle {
+  background-color: rgba(19,14,14,0.702);
+}
+[color-scheme='dark'] #BKG,
+[color-scheme='dark'] .cus-article-bkg {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
 }
 #safearea {
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;

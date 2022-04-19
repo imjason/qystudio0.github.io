@@ -22,7 +22,7 @@
   <meta content="青云工作室" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649684368565" as="style">
+  <link rel="preload" href="/css/style.css?time=1650376908146" as="style">
   <link rel="preload" href="https://cdn1.tianli0.top/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff" as="font" type="font/woff" crossorigin="anonymous">
 
@@ -1729,10 +1729,116 @@ ul.list-v >li>a:hover {
     background: var(--color-site-bg) !important;
   }
 }
+@media screen and (max-width: 2048px) {
+  .l_header {
+    left: 0 !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    max-width: 100% !important;
+  }
+}
+article p {
+  line-height: 2 !important;
+}
+@media screen and (max-width: 500px) {
+  #safearea {
+    margin: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  #safearea .body-wrapper {
+    padding: 0;
+  }
+  #safearea #l_main {
+    padding-left: 0;
+  }
+  #safearea #l_main article#comments,
+  #safearea #l_main article#friends,
+  #safearea #l_main article#post,
+  #safearea #l_main article#page,
+  #safearea #l_main article#arc {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_main article#cat,
+  #safearea #l_main article#tag {
+    margin: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_main .post-wrapper {
+    margin: 0 0 16px;
+  }
+  #safearea #l_main .post-wrapper .post {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_side .widget.mobile {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+}
+h1,
+h2,
+h3 {
+  font-family: lishu, Helvetica, monospace;
+}
+.iconfont {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.iconfont.emoji {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.3em;
+}
+.rem1p5 {
+  font-size: 1.5rem;
+}
+.rem2 {
+  font-size: 2rem;
+}
+.rem6 {
+  font-size: 6rem;
+}
+.rem12 {
+  font-size: 12rem;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .title {
+  line-height: inherit;
+}
+.cover-wrapper .title,
+.cover-wrapper .list-h p {
+  color: var(--color-site-inner);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 2rem;
+  }
+}
+.post.post-v3.white-box .note > p {
+  text-indent: 0;
+}
+#l_main>article.cus-indent p img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649684368565" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649684368565"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1650376908146" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1650376908146"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1830,9 +1936,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1649684368565","sites":"/js/plugins/sites.js?time=1649684368565","friends":"/js/plugins/friends.js?time=1649684368565","parallax":"/js/plugins/parallax.js?time=1649684368565","rightMenu":"/js/plugins/rightMenu.js?time=1649684368565","contributors":"/js/plugins/contributors.js?time=1649684368565","message":"/js/thirdparty/message.js?time=1649684368565","search":"/js/search/hexo.js?time=1649684368565","iconfontInkss":"/js/thirdparty/iconfontInkss.js?time=1649684368565"},"css":{"style":"/css/style.css?time=1649684368565","message":"/css/message.css?time=1649684368565"}},
-    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg?time=1649684368566","link":"/media/placeholder/link/8f277b4ee0ecd.svg?time=1649684368566","cover":"/media/placeholder/cover/76b86c0226ffd.svg?time=1649684368566","image":"/media/placeholder/image/2659360.svg?time=1649684368566"},
-    lastupdate: new Date(1649684368565),
+    cdn: {"js":{"app":"/js/app.js?time=1650376908146","sites":"/js/plugins/sites.js?time=1650376908146","friends":"/js/plugins/friends.js?time=1650376908146","parallax":"/js/plugins/parallax.js?time=1650376908146","rightMenu":"/js/plugins/rightMenu.js?time=1650376908146","contributors":"/js/plugins/contributors.js?time=1650376908146","message":"/js/thirdparty/message.js?time=1650376908146","search":"/js/search/hexo.js?time=1650376908146","iconfontInkss":"/js/thirdparty/iconfontInkss.js?time=1650376908146"},"css":{"style":"/css/style.css?time=1650376908146","message":"/css/message.css?time=1650376908146"}},
+    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg?time=1650376908146","link":"/media/placeholder/link/8f277b4ee0ecd.svg?time=1650376908146","cover":"/media/placeholder/cover/76b86c0226ffd.svg?time=1650376908146","image":"/media/placeholder/image/2659360.svg?time=1650376908146"},
+    lastupdate: new Date(1650376908146),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2211,34 +2317,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "/media/placeholder/avatar/round/3442075.svg?time=1649684368566";
+    img.src = "/media/placeholder/avatar/round/3442075.svg?time=1650376908146";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "/media/placeholder/cover/76b86c0226ffd.svg?time=1649684368566";
+    img.src = "/media/placeholder/cover/76b86c0226ffd.svg?time=1650376908146";
     img.onerror = null;
   }
   /******************************************************************************/
 </script>
 
   <!-- Custom Files head begin-->
-  <!-- sw前端竞速 -->
-<script>
-  window.addEventListener('load', async () => {
-      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
-          .then(async reg => {
-              //安装成功，建议此处强刷新以立刻执行SW
-              if (window.localStorage.getItem('install') != 'true') {
-                  window.localStorage.setItem('install', 'true');
-                  setTimeout(() => {
-                      window.location.search = `?time=${new Date().getTime()}`
-                  }, 1000)
-              }
-          }).catch(err => {
-              //安装失败，错误信息会由err传参
-          })
-  });
-</script>
+  
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -3231,7 +3321,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
  
   <div class='content'> 
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-04-11</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-04-11</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li><li><a class="widget-last" href="/posts/32661.html"><div class="item"><time>2022-04-11</time><span>software</span></div><span>卡巴斯基中国版</span></a></li><li><a class="widget-last" href="/posts/42493.html"><div class="item"><time>2022-04-11</time><span>software</span></div><span>卸载工具 IObit Uninstaller</span></a></li><li><a class="widget-last" href="/posts/35934.html"><div class="item"><time>2022-04-11</time><span>系统</span></div><span>数字基础设施开源操作系统欧拉全新发布</span></a></li></ul> 
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-04-19</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-04-19</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-04-19</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-04-19</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-04-19</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li></ul> 
   </div> 
 </section> 
 
@@ -3291,7 +3381,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-04-11 日</div> 
+          <div id="last-update-show">2022-04-19 日</div> 
         </div>
       
 
@@ -3495,7 +3585,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1649684368565.js"></script>
+<script src="/js/app.js?time=1650376908146.js"></script>
 
 
 
@@ -3657,7 +3747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     </ul>
   </div>
   
-<script src="/js/plugins/rightMenu.js?time=1649684368565.js"></script>
+<script src="/js/plugins/rightMenu.js?time=1650376908146.js"></script>
 
 
 
@@ -3787,19 +3877,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649684368565")
+        volantis.js("/js/plugins/sites.js?time=1650376908146")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649684368565")
+        volantis.js("/js/plugins/friends.js?time=1650376908146")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649684368565")
+        volantis.js("/js/plugins/contributors.js?time=1650376908146")
       }
     
   };
@@ -3868,7 +3958,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1649684368565')
+    await volantis.js('/js/plugins/aplayer.js?time=1650376908146')
   
   })();
 
@@ -3997,7 +4087,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649684368565");
+    return volantis.js("/js/search/hexo.js?time=1650376908146");
   }
 
   function loadSearchService() {
