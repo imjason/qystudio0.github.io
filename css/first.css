@@ -22,8 +22,8 @@ details summary {
   font-family: lishu, Helvetica, monospace;
 }
 :root {
-  --color-site-body: #f4f4f4;
-  --color-site-bg: #f4f4f4;
+  --color-site-body: #f7f9fe;
+  --color-site-bg: #f7f9fe;
   --color-site-inner: #555;
   --color-site-footer: #666;
   --color-card: #fff;
