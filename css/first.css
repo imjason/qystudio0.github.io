@@ -6,9 +6,7 @@
   * Chunk rendering for all but the first article.
   * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
 */
-.post-story + .post-story,
-article + article,
-.post-wrapper + .post-wrapper {
+.post-story + .post-story {
   content-visibility: auto;
   contain-intrinsic-size: 10px 500px;
 }
@@ -53,6 +51,22 @@ details summary {
   outline: none;
   margin: 0;
   padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
 }
 html {
   color: var(--color-text);
@@ -672,7 +686,7 @@ button {
     --color-mode: 'dark';
   }
   :root:not([color-scheme]) {
-    --color-site-body: #21252b;
+    --color-site-body: #121212;
     --color-read-bkg: #282c34;
     --color-read-post: #282c34;
     --color-site-bg: #282c34;
@@ -700,15 +714,11 @@ button {
   :root:not([color-scheme]) img {
     filter: brightness(65%) !important;
   }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
   :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
+    background: rgba(40,44,52,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(40,44,52,0.9) !important;
   }
   :root:not([color-scheme]) .nav-main .u-search-input {
     background: var(--color-card) !important;
@@ -717,7 +727,7 @@ button {
     background: var(--color-block) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
+    background: var(--color-site-bg) !important;
   }
   :root:not([color-scheme]) .article blockquote {
     background: var(--color-block) !important;
@@ -741,9 +751,15 @@ button {
   :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
     background: var(--color-block) !important;
   }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
 }
 [color-scheme='dark'] {
-  --color-site-body: #21252b;
+  --color-site-body: #121212;
   --color-read-bkg: #282c34;
   --color-read-post: #282c34;
   --color-site-bg: #282c34;
@@ -771,15 +787,11 @@ button {
 [color-scheme='dark'] img {
   filter: brightness(65%) !important;
 }
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
 [color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
+  background: rgba(40,44,52,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(40,44,52,0.9) !important;
 }
 [color-scheme='dark'] .nav-main .u-search-input {
   background: var(--color-card) !important;
@@ -788,7 +800,7 @@ button {
   background: var(--color-block) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
+  background: var(--color-site-bg) !important;
 }
 [color-scheme='dark'] .article blockquote {
   background: var(--color-block) !important;
@@ -811,6 +823,12 @@ button {
 }
 [color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
   background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
 }
 @media screen and (max-width: 500px) {
   [color-scheme='dark'] .l_header .m_search {

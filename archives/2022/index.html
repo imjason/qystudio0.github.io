@@ -4,33 +4,73 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
 
+  <!-- sw前端竞速 -->
+  <script>
+    window.addEventListener('load', async () => {
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+            .then(async reg => {
+                //安装成功，建议此处强刷新以立刻执行SW
+                if (window.localStorage.getItem('install') != 'true') {
+                    window.localStorage.setItem('install', 'true');
+                    setTimeout(() => {
+                        window.location.search = `?time=${new Date().getTime()}`
+                    }, 1000)
+                }
+            }).catch(err => {
+                //安装失败，错误信息会由err传参
+            })
+    });
+  </script>
+  
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow,noarchive">
   <link rel="canonical" href="https://qystudio.ltd/archives/2022/"/>
   
   
   <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta content="青云工作室" name="application-name">
-  <meta content="青云工作室" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1650980592754" as="style">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  <!-- sw前端竞速 -->
+<script>
+  window.addEventListener('load', async () => {
+      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+          .then(async reg => {
+              //安装成功，建议此处强刷新以立刻执行SW
+              if (window.localStorage.getItem('install') != 'true') {
+                  window.localStorage.setItem('install', 'true');
+                  setTimeout(() => {
+                      window.location.search = `?time=${new Date().getTime()}`
+                  }, 1000)
+              }
+          }).catch(err => {
+              //安装失败，错误信息会由err传参
+          })
+  });
+</script>
+
+  <!-- Custom Files headBegin end-->
+  <link rel="preload" href="/css/style.d3778caa.css" as="style">
   <link rel="preload" href="https://cdn1.tianli0.top/gh/inkss/common@1/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff" as="font" type="font/woff" crossorigin="anonymous">
 
+  <!-- feed -->
+      <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
   <!-- 页面元数据 -->
+  <pjax>
   <title>归档：2022 - 青云工作室</title>
   <meta name="keywords" content="青云工作室,qystudio">
-  <!-- graph -->
-  <meta name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
+  <meta desc name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客 - 青云工作室 - 青云工作室">
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="青云工作室">
 <meta property="og:url" content="https://qystudio.ltd/archives/2022/index.html">
@@ -43,15 +83,7 @@
 <meta property="article:tag" content="qystudio">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
-  <!-- feed -->
-      <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
-  <!-- import meta -->
-  <!-- link -->
-  <!-- import link -->
-      <link rel="apple-touch-icon" sizes="180x180" href="https://cdn1.tianli0.top/gh/qystudio0/cdn/img/logo/apple-touch-icon-qy.png">
-      <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://cdn1.tianli0.top/gh/qystudio0/cdn/img/logo/favicon-32x32-qy.ico">
-      <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://cdn1.tianli0.top/gh/qystudio0/cdn/img/logo/favicon-16x16-qy.ico">
-      <link href="https://cdn1.tianli0.top/gh/inkss/common@1/css/jetbrains.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  </pjax>
   <style>
     /* 首屏样式 */
     #safearea {
@@ -62,9 +94,7 @@
   * Chunk rendering for all but the first article.
   * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
 */
-.post-story + .post-story,
-article + article,
-.post-wrapper + .post-wrapper {
+.post-story + .post-story {
   content-visibility: auto;
   contain-intrinsic-size: 10px 500px;
 }
@@ -109,6 +139,22 @@ details summary {
   outline: none;
   margin: 0;
   padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
 }
 html {
   color: var(--color-text);
@@ -728,7 +774,7 @@ button {
     --color-mode: 'dark';
   }
   :root:not([color-scheme]) {
-    --color-site-body: #21252b;
+    --color-site-body: #121212;
     --color-read-bkg: #282c34;
     --color-read-post: #282c34;
     --color-site-bg: #282c34;
@@ -756,15 +802,11 @@ button {
   :root:not([color-scheme]) img {
     filter: brightness(65%) !important;
   }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
   :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
+    background: rgba(40,44,52,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(40,44,52,0.9) !important;
   }
   :root:not([color-scheme]) .nav-main .u-search-input {
     background: var(--color-card) !important;
@@ -773,7 +815,7 @@ button {
     background: var(--color-block) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
+    background: var(--color-site-bg) !important;
   }
   :root:not([color-scheme]) .article blockquote {
     background: var(--color-block) !important;
@@ -797,9 +839,15 @@ button {
   :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
     background: var(--color-block) !important;
   }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
 }
 [color-scheme='dark'] {
-  --color-site-body: #21252b;
+  --color-site-body: #121212;
   --color-read-bkg: #282c34;
   --color-read-post: #282c34;
   --color-site-bg: #282c34;
@@ -827,15 +875,11 @@ button {
 [color-scheme='dark'] img {
   filter: brightness(65%) !important;
 }
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
 [color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
+  background: rgba(40,44,52,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(40,44,52,0.9) !important;
 }
 [color-scheme='dark'] .nav-main .u-search-input {
   background: var(--color-card) !important;
@@ -844,7 +888,7 @@ button {
   background: var(--color-block) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
+  background: var(--color-site-bg) !important;
 }
 [color-scheme='dark'] .article blockquote {
   background: var(--color-block) !important;
@@ -867,6 +911,12 @@ button {
 }
 [color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
   background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
 }
 @media screen and (max-width: 500px) {
   [color-scheme='dark'] .l_header .m_search {
@@ -1837,8 +1887,8 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1650980592754" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1650980592754"></noscript>
+  <link rel="stylesheet" href="/css/style.d3778caa.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.d3778caa.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1936,9 +1986,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1650980592754","sites":"/js/plugins/sites.js?time=1650980592754","friends":"/js/plugins/friends.js?time=1650980592754","parallax":"/js/plugins/parallax.js?time=1650980592754","rightMenu":"/js/plugins/rightMenu.js?time=1650980592754","contributors":"/js/plugins/contributors.js?time=1650980592754","message":"/js/thirdparty/message.js?time=1650980592754","search":"/js/search/hexo.js?time=1650980592754","iconfontInkss":"/js/thirdparty/iconfontInkss.js?time=1650980592754"},"css":{"style":"/css/style.css?time=1650980592754","message":"/css/message.css?time=1650980592754"}},
-    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg?time=1650980592754","link":"/media/placeholder/link/8f277b4ee0ecd.svg?time=1650980592754","cover":"/media/placeholder/cover/76b86c0226ffd.svg?time=1650980592754","image":"/media/placeholder/image/2659360.svg?time=1650980592754"},
-    lastupdate: new Date(1650980592754),
+    debug: false,
+    cdn: {"js":{"app":"/js/app.53377cb8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.56b8f0d4.js","rightMenus":"/js/plugins/rightMenus.48fa1716.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.06d40311.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.d3778caa.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1651243805750),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -1954,7 +2005,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     },
     plugins: {
-      message: {"enable":true,"icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.css","js":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"},
       aplayer: {
         id: 6821246154,
@@ -1965,7 +2016,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         layout: ["home","archives","message","hr","print","darkmode","reading","hr","music"],
         music_alwaysShow: true,
         customPicUrl: {"enable":false,"old":null,"new":null}
-      }
+      },      
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false,"corsAnywhere":null},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
     }
   }
 
@@ -2110,12 +2162,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     error: new RunItem(),
     send: new RunItem(),
   };
-  volantis.pjax = {
-    ...volantis.pjax,
+  volantis.pjax = Object.assign(volantis.pjax, {
     push: volantis.pjax.method.complete.push,
     error: volantis.pjax.method.error.push,
     send: volantis.pjax.method.send.push,
-  };
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
   /********************  Dark Mode  ********************************/
   // /layout/_partial/scripts/darkmode.ejs
   // volantis.dark.mode 当前模式 dark or light
@@ -2125,10 +2186,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dark.method = {
     toggle: new RunItem(),
   };
-  volantis.dark = {
-    ...volantis.dark,
+  volantis.dark = Object.assign(volantis.dark, {
     push: volantis.dark.method.toggle.push,
-  };
+  });
   /********************  Message  ********************************/
   // VolantisApp.message
   /********************  isMobile  ********************************/
@@ -2174,7 +2234,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src);
+        script.setAttribute("src", src + "?time=1651243805750");
         HEAD.appendChild(script);
       });
     });
@@ -2184,7 +2244,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src;
+        link.href = src + "?time=1651243805750";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2195,7 +2255,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("https://npm.elemecdn.com/jquery/dist/jquery.min.js")
+        return volantis.js("https://npm.elemecdn.com/jquery/dist/jquery.min.js") 
       } else {
         return new Promise(resolve => {
           resolve()
@@ -2238,10 +2298,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     engine: new RunItem(),
     unengine: new RunItem(),
   };
-  volantis.scroll = {
-    ...volantis.scroll,
+  volantis.scroll = Object.assign(volantis.scroll, {
     push: volantis.scroll.engine.push,
-  };
+  });
   // 滚动条距离顶部的距离
   volantis.scroll.getScrollTop = () =>{
     let scrollPos;
@@ -2268,6 +2327,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         // } else {
         //   console.log("向上滚动");
         // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
         volantis.scroll.engine.start();
       }else{
         volantis.scroll.unengine.start();
@@ -2301,37 +2362,46 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     window.scrollTo(opt);
     // 监视器
     // 监视并矫正元素滚动到指定位置 
-    // 目前用于处理 toc 部分 lazyload 引起的 cls 导致的定位失败问题 [存在Bug]
-    // if (option.observer) {
-    //   volantis.scroll.unengine.push(()=>{
-    //     let me = ele.getBoundingClientRect().top
-    //     if(!(me >= -option.observerDic && me <= option.observerDic)){
-    //       volantis.scroll.to(ele, option)
-    //     }else{
-    //       volantis.scroll.unengine.remove("unengineObserver")
-    //     }
-    //   },"unengineObserver")
-    // }
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(()=>{
+        volantis.scroll.unengine.push(()=>{
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
   }
   /******************************************************************************/
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "/media/placeholder/avatar/round/3442075.svg?time=1650980592754";
+    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "/media/placeholder/cover/76b86c0226ffd.svg?time=1650980592754";
+    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
 </script>
 
-  <!-- Custom Files head begin-->
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files head end-->
+  <!-- Custom Files headEnd end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
     <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
@@ -3458,7 +3528,7 @@ Webhook 清除缓存
   <div class='content'>
     <div class="grid navigation fixed">
       
-        <a class="flat-box faa-parent animated-hover" href="/links"
+        <a class="flat-box faa-parent animated-hover" href="/links/"
           
           
           active-action="action-links">
@@ -3468,7 +3538,7 @@ Webhook 清除缓存
           友链
         </a>
       
-        <a class="flat-box faa-parent animated-hover" href="/messages"
+        <a class="flat-box faa-parent animated-hover" href="/messages/"
           
           
           active-action="action-messages">
@@ -3553,7 +3623,7 @@ Webhook 清除缓存
           
         
           
-            <a href="/setting"
+            <a href="/setting/"
               class="social fad fa-cog flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -3675,7 +3745,7 @@ Webhook 清除缓存
 
  
   <div class='content'> 
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-04-26</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-04-26</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-04-26</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-04-26</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-04-26</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul> 
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-04-29</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-04-29</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-04-29</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-04-29</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-04-29</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li></ul> 
   </div> 
 </section> 
 
@@ -3713,12 +3783,17 @@ Webhook 清除缓存
 
 
       
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>26.2k 字</div>
+        </div>
+      
 
       
         <div class="webinfo-item">
           <div>本站访客数：</div>
           
-          <div><span id="lc-uv"><span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
+          <div><span id="lc-uv"><span id='number'><i class="fa-solid fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
           
         </div>
       
@@ -3727,7 +3802,7 @@ Webhook 清除缓存
         <div class="webinfo-item">
           <div>本站总访问量：</div>
           
-          <div><span id="lc-sv"><span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
+          <div><span id="lc-sv"><span id='number'><i class="fa-solid fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
           
         </div>
       
@@ -3735,13 +3810,13 @@ Webhook 清除缓存
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-04-26 日</div> 
+          <div id="last-update-show">2022-04-29 日</div> 
         </div>
       
 
       <div class="webinfo-item">
         <div>主题版本：</div>
-        <div><a style="color: var(--color-list);" target="_blank" rel="noopener" href="https://github.com/inkss/volantis">5.0.0-alpha.11</a></div>
+        <div><a style="color: var(--color-list);" target="_blank" rel="noopener" href="https://github.com/inkss/volantis">5.0.0-alpha.111</a></div>
       </div>
     </div>
   </div>
@@ -3782,7 +3857,6 @@ Webhook 清除缓存
 <script>
   window.pdata={}
   pdata.ispage=false;
-  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3938,9 +4012,7 @@ Webhook 清除缓存
 
 
 <!-- internal -->
-
-<script src="/js/app.js?time=1650980592754.js"></script>
-
+<script src="/js/app.53377cb8.js"></script>
 
 
   
@@ -4080,9 +4152,9 @@ Webhook 清除缓存
               <p class='nav music-title fix-cursor-default'></p>
             </li>
             <li class='music ctrl'>
-              <a class='nav icon-only backward fix-cursor-default' onclick='RightMenuAplayer.aplayerBackward()'><i class='fad fa-step-backward fa-fw '></i></a>
-              <a class='nav icon-only toggle fix-cursor-default' onclick='RightMenuAplayer.aplayerToggle()'><i class='fad fa-play fa-fw '></i></a>
-              <a class='nav icon-only forward fix-cursor-default' onclick='RightMenuAplayer.aplayerForward()'><i class='fad fa-step-forward fa-fw '></i></a>
+              <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward"><i class='fad fa-step-backward fa-fw'></i></a>
+              <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle"><i class='fad fa-play fa-fw'></i></a>
+              <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward"><i class='fad fa-step-forward fa-fw'></i></a>
             </li>
             <li class='music volume'>
               <div class='nav volume'>
@@ -4100,9 +4172,361 @@ Webhook 清除缓存
       
     </ul>
   </div>
-  
-<script src="/js/plugins/rightMenu.js?time=1650980592754.js"></script>
+  <script src="/js/plugins/rightMenu.56b8f0d4.js"></script>
 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-solid fa-arrow-up fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-solid fa-image fa-fw"></i>
+      复制图片
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="googleImg" data-event="window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)" data-group="elementImage">
+      <i class="fa-solid fa-images fa-fw"></i>
+      谷歌识图
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="help" target="_blank" rel="noopener" href="https://volantis.js.org/faqs/" data-group="link">
+      <i class="fa-solid fa-question fa-fw"></i>
+      常见问题
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="examples" target="_blank" rel="noopener" href="https://volantis.js.org/examples/" data-group="link">
+      <i class="fa-solid fa-rss fa-fw"></i>
+      示例博客
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="contributors" target="_blank" rel="noopener" href="https://volantis.js.org/contributors/" data-group="link">
+      <i class="fa-solid fa-fan fa-fw"></i>
+      加入社区
+    </a>
+  </li> 
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_docs" target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      本站源码
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_theme" target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      主题源码
+    </a>
+  </li> 
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      暗黑模式
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li> 
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.48fa1716.js"></script>
+<script>
+  const RightMenusFunction = {};
+   
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+
+
+  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+  
+  
+ 
+
+  
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+  
+  
+ 
+
+  
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+  
+  
+ 
+
+  
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+  
+  
+ 
+
+  
+  RightMenusFunction['googleImg'] = (__link__) => {window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)}
+  
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+
+  
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+  
+  
+ 
+  
+
+</script>
 
 
 
@@ -4231,19 +4655,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1650980592754")
+        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1650980592754")
+        volantis.js("/js/plugins/tags/friends.f372da57.js")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1650980592754")
+        volantis.js("/js/plugins/tags/contributors.aec80453.js")
       }
     
   };
@@ -4285,7 +4709,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-
   
 
 <script>
@@ -4302,6 +4725,33 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+   <script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal("#l_main .reveal", {
+      distance: "32px",
+      duration: "800",
+      interval: "20",
+      scale: "1",
+      easing: "ease-out",
+    });
+  }
+  function init_scrollrebeal() {
+    if (typeof ScrollReveal == "undefined") {
+      volantis.requestAnimationFrame(init_scrollrebeal);
+    } else {
+      pjax_scrollrebeal();
+    }
+  }
+  volantis.js("https://npm.elemecdn.com/scrollreveal@4.0.9/dist/scrollreveal.min.js");
+  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
+  volantis.pjax.push(
+    pjax_scrollrebeal,
+    "pjax_scrollrebeal",
+    (setRequestAnimationFrame = false)
+  );
+</script>
+
+
 
 
   <script>
@@ -4312,7 +4762,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
   
     // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.js?time=1650980592754')
+    await volantis.js('/js/plugins/aplayer.dbe5eea9.js')
   
   })();
 
@@ -4382,7 +4832,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script>
+      <script>
   volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
   function pjax_waline() {
     if(!document.querySelector("#waline"))return;
@@ -4401,11 +4851,12 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       
         uploadImage: function(file) {
           const formData = new FormData();
-          formData.append('image', file);
+          formData.append('file', file);
           return fetch('https://7bu.top/api/upload?token=7ffe9d626fe4315c953758efbdb6ee2e', {
+            
             method: 'POST',
           body: formData
-          }).then(resp => resp.json()).then(resp => resp.data.url);
+          }).then(resp => resp.json()).then(resp => resp.data.links.url);
         }
       
   
@@ -4426,6 +4877,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   volantis.js('https://npm.elemecdn.com/@waline/client/dist/Waline.min.js').then(pjax_waline)
   volantis.pjax.push(pjax_waline);
 </script>
+    
 
 
 
@@ -4434,14 +4886,14 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- optional -->
 
   <script>
-  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/")
-    ? "/" || "/"
-    : "//" || "/";
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
   const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1650980592754");
+    return volantis.js("/js/search/hexo.06d40311.js");
   }
 
   function loadSearchService() {
@@ -4451,16 +4903,23 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
 
     document.querySelectorAll(".u-search-form").forEach((e) => {
-      e.addEventListener("submit", (event)=>{event.preventDefault();}, false);
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
     });
   }
 
   // 打开并搜索 字符串 s
   function OpenSearch(s) {
-    loadSearchScript().then(() => {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
       SearchService.setQueryText(s);
       SearchService.search();
-    });
+    }
   }
 
   // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
@@ -4476,7 +4935,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     e.addEventListener("focus", loadSearchService, false);
   });
 </script>
-
 
 
 
@@ -4818,11 +5276,13 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
   function listennSidebarTOC() {
     const navItems = document.querySelectorAll(".toc li");
     if (!navItems.length) return;
+    let targets = []
     const sections = [...navItems].map((element) => {
       const link = element.querySelector(".toc-link");
       const target = document.getElementById(
         decodeURI(link.getAttribute("href")).replace("#", "")
       );
+      targets.push(target)
       // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
       link.setAttribute("onclick","return false;")
       link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
@@ -4831,7 +5291,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
       link.addEventListener("click", (event) => {
         event.preventDefault();
         // 这里的 addTop 是通过错位使得 toc 自动展开.
-        volantis.scroll.to(target, { addTop: 35, observer: false});
+        volantis.scroll.to(target,{addTop: 5, observer:true})
         // Anchor id
         history.pushState(null, document.title, "#" + target.id);
       });
@@ -4852,46 +5312,66 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
       }
     }
 
-    function findIndex(entries) {
-      let index = 0;
-      let entry = entries[index];
-      if (entry.boundingClientRect.top > 0) {
-        index = sections.indexOf(entry.target);
-        return index === 0 ? 0 : index - 1;
-      }
-      for (; index < entries.length; index++) {
-        if (entries[index].boundingClientRect.top <= 0) {
-          entry = entries[index];
-        } else {
-          return sections.indexOf(entry.target);
-        }
-      }
-      return sections.indexOf(entry.target);
-    }
-
-    function createIntersectionObserver(marginTop) {
-      marginTop = Math.floor(marginTop + 10000);
-      let intersectionObserver = new IntersectionObserver(
-        (entries, observe) => {
-          let scrollHeight = document.documentElement.scrollHeight;
-          if (scrollHeight > marginTop) {
-            observe.disconnect();
-            createIntersectionObserver(scrollHeight);
-            return;
+    // 方案一：
+    volantis.activateNavIndex=0
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
           }
-          let index = findIndex(entries);
-          activateNavByIndex(navItems[index]);
-        }, {
-          rootMargin: marginTop + "px 0px -100% 0px",
-          threshold: 0,
         }
-      );
-      sections.forEach((element) => {
-        element && intersectionObserver.observe(element);
-      });
-    }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
 
-    createIntersectionObserver(document.documentElement.scrollHeight);
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
   }
 
   document.addEventListener("DOMContentLoaded", ()=>{
@@ -4901,6 +5381,96 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
     volantis.requestAnimationFrame(listennSidebarTOC)
   });
 </script>
+
+<script>
+  try {
+    // https://web.dev/content-visibility/
+    // https://www.caniuse.com/?search=content-visibility
+    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
+    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
+
+    // 备注 目前已知的问题:
+    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
+    // scrollreveal 插件潜在问题 目前尚不明确
+
+    let eqIsh = (a, b, fuzz = 2) => {
+      return Math.abs(a - b) <= fuzz;
+    };
+
+    let rectNotEQ = (a, b) => {
+      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
+    };
+
+    // Keep a map of elements and the dimensions of
+    // their place-holders, re-setting the element's
+    // intrinsic size when we get updated measurements
+    // from observers.
+    let spaced = new WeakMap();
+
+    // Only call this when known cheap, post layout
+    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
+      let old = spaced.get(el);
+      // Set intrinsic size to prevent jumping on un-painting:
+      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
+      if (!old || rectNotEQ(old, rect)) {
+        spaced.set(el, rect);
+        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
+      }
+    };
+
+    let iObs = new IntersectionObserver(
+      (entries, o) => {
+        entries.forEach((entry) => {
+          // We don't care if the element is intersecting or
+          // has been laid out as our page structure ensures
+          // they'll get the right width.
+          reserveSpace(entry.target, entry.boundingClientRect);
+        });
+      },
+      { rootMargin: "500px 0px 500px 0px" }
+    );
+
+    let rObs = new ResizeObserver((entries, o) => {
+      entries.forEach((entry) => {
+        reserveSpace(entry.target, entry.contentRect);
+      });
+    });
+
+    let resizeResilientDeferredRendering = (Selector) => {
+      let articles = document.querySelectorAll(Selector);
+
+      if (articles.length) {
+        articles.forEach((el) => {
+          iObs.observe(el);
+          rObs.observe(el);
+        });
+
+        // Workaround for Chrome bug, part 2.
+        //
+        // Re-enable browser management of rendering for the
+        // first article after the first paint. Double-rAF
+        // to ensure we get called after a layout.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            articles[0].style["content-visibility"] = "auto";
+          });
+        });
+      }
+    };
+
+    let contentVisibilityScrollFix = () => {
+      if (!("content-visibility" in document.documentElement.style)) {
+        return;
+      }
+      resizeResilientDeferredRendering(".post-story");
+    };
+    contentVisibilityScrollFix();
+    volantis.pjax.push(contentVisibilityScrollFix);
+  } catch (error) {
+    console.log(error);
+  }
+</script>
+
 
 
   <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/archives/2022/","name":"2022年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystudio.ltd/","keywords":["青云工作室","qystudio"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystudio.ltd?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
@@ -4962,18 +5532,6 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 
 
 
-
-<!-- more -->
-
-  
-  <script src="https://source.cnortles.top/js/leave.min.js" /></script>
-
-  <script></script>
-
-
-
-
-
       
         <!-- 
   pjax重载区域接口：
@@ -4984,9 +5542,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 -->
 
 
-
-<script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script>
-
+<script src="/js/szyink/pjax.min.d810aff1.js"></script>
 
 <!-- 样式位于：source/css/_plugins/pjaxanimate.styl -->
 
@@ -5017,16 +5573,12 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
       pjax = new Pjax({
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
         selectors: [
-          "head title",
           
           "#l_main",
           "#pjax-header-nav-list",
           ".pjax",
           "pjax", // <pjax></pjax> 标签
           "script[data-pjax], .pjax-reload script", // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
-          "meta[name='description']",
-          "meta[name='keywords']",
-          "meta[property^='og']"
         ],
         cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
         timeout: 5000,
@@ -5072,9 +5624,11 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 
       
     </div>
-  <!-- Custom Files bodyEnd begin-->
-  
-  <!-- Custom Files bodyEnd end-->
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
   <!-- hexo injector body_end start -->
   <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
   <script data-pjax>
