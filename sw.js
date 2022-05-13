@@ -1,12 +1,88 @@
-const CACHE_NAME = 'ICDNCache';
-let cachelist = [];
+const config = {
+    dev: {
+        blog: false,
+        accelerator: false
+    },
+    cache: {
+        name: "QYstudioBlogCache",
+        enabled: true
+    },
+    accelerator: [
+        //加速组，同一组内的url会被并发请求其余的url
+        //JsDelivr Github
+        [
+            "https://cdn.jsdelivr.net/gh",
+            "https://cdn1.tianli0.top/gh",
+            "https://cdn.oplog.cn/gh",
+          	"https://cdn.cnortles.top/gh",
+            "https://jsdelivr.panbaidu.cn/gh"
+        ],
+        //JsDelivr Combine
+        [
+            "https://cdn.jsdelivr.net/combine",
+            "https://cdn1.tianli0.top/combine",
+            "https://cdn.oplog.cn/combine",
+          	"https://cdn.cnortles.top/combine",
+            "https://jsdelivr.panbaidu.cn/combine"
+        ],
+        //NPM
+        [
+            "https://cdn.jsdelivr.net/npm",
+            "https://npm.elemecdn.com",
+            "https://cdn1.tianli0.top/npm",
+            "https://cdn.oplog.cn/npm",
+            "https://unpkg.zhimg.com",
+          	"https://cdn.cnortles.top/npm",
+            "https://unpkg.com",
+            "https://code.bdstatic.com/npm",
+            "https://jsdelivr.panbaidu.cn/npm"
+        ]
+
+    ],
+    blog: {
+        accelerator: true,
+        origin: [
+            "qystudio.ltd",
+            "ayrwjs-ofueyd-4000.preview.myide.io"
+        ],
+        mode: "npm",//加速模式：mirror|npm
+        mirrors: [
+            "vercel.qystudio.ltd",
+            "cf.qystudio.ltd",
+            "qyblog.qystudio.workers.dev",
+            "qy.beixibaobao.com"
+        ],
+        npm: {
+            accelerator: true,
+            package: "qy-blog",
+            version: "0.0.2"
+        }
+    }
+}
+
+config.blog.npm.urls = [
+
+    `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+  	`https://cdn.cnortles.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+  	`https://jsdelivr.panbaidu.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
+]
+
+
+
+
+//以下源代码，看不懂勿动
+
+
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     installEvent.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function (cache) {
-                console.log('Opened cache');
-                return cache.addAll(cachelist);
+        caches.open(config.cache.name)
+            .then(cache => {
+                return cache.addAll([]);
             })
     );
 });
@@ -18,138 +94,113 @@ self.addEventListener('fetch', async event => {
     }
 });
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>CDN分流器遇到了致命错误</h1>
+    return new Response(`<h1>Redish101BlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
-let cdn = {
-    "gh": {
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/gh"
-        },
-        jsdelivr_fastly: {
-            "url": "https://fastly.jsdelivr.net/gh"
-        },
-        jsdelivr_gcore: {
-            "url": "https://gcore.jsdelivr.net/gh"
-        },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/gh"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/gh"
-        },
-        tianli: {
-            "url": "https://cdn1.tianli0.top/gh"
-        },
-        //白嫖
-        //cdn.cnortles.top jsd.hin.cool
-        cnortles: {
-            "url": "https://cdn.cnortles.top/gh"
-        },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/gh"
-        },
-        jsdelivr_io: {
-            "url": "https://jsdelivr.io/gh"
-        }
-    },
-    "combine": {
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/combine"
-        },
-        jsdelivr_fastly: {
-            "url": "https://fastly.jsdelivr.net/combine"
-        },
-        jsdelivr_gcore: {
-            "url": "https://gcore.jsdelivr.net/combine"
-        },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/combine"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/combine"
-        },
-        tianli: {
-            "url": "https://cdn1.tianli0.top/combine"
-        },
-        //cdn.cnortles.top jsd.hin.cool
-        cnortles: {
-            "url": "https://cdn.cnortles.top/combine"
-        },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/combine"
-        },
-        jsdelivr_io: {
-            "url": "https://jsdelivr.io/combine"
-        }
-    },
-    "npm": {
-        eleme: {
-            "url": "https://npm.elemecdn.com"
-        },
-        jsdelivr: {
-            "url": "https://cdn.jsdelivr.net/npm"
-        },
-        zhimg: {
-            "url": "https://unpkg.zhimg.com"
-        },
-        unpkg: {
-            "url": "https://unpkg.com"
-        },
-        bdstatic: {
-            "url": "https://code.bdstatic.com/npm"
-        },
-        pigax_jsd: {
-            "url": "https://u.pigax.cn/npm"
-        },
-        pigax_unpkg: {
-            "url": "https://unpkg.pigax.cn/"
-        },
-        pigax_chenyfan_jsd: {
-            "url": "https://cdn-jsd.pigax.cn/npm"
-        },
-        tianli: {
-            "url": "https://cdn1.tianli0.top/npm"
-        },
-        //cdn.cnortles.top jsd.hin.cool
-        cnortles: {
-            "url": "https://cdn.cnortles.top/npm"
-        },
-        hin_cool: {
-            "url": "https://jsd.hin.cool/npm"
-        },
-        jsdelivr_io: {
-            "url": "https://jsdelivr.io/npm"
-        }
-    }
-}
-const handle = async function (req) {
-    const urlStr = req.url
-    const domain = (urlStr.split('/'))[2]
-    let urls = []
-    for (let i in cdn) {
-        for (let j in cdn[i]) {
-            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0] && urlStr.match(cdn[i][j].url)) {
-                urls = []
-                for (let k in cdn[i]) {
-                    urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
-                }
-                if (urlStr.indexOf('@latest/') > -1) {
-                    return lfetch(urls, urlStr)
-                } else {
-                    return caches.match(req).then(function (resp) {
-                        return resp || lfetch(urls, urlStr).then(function (res) {
-                            return caches.open(CACHE_NAME).then(function (cache) {
-                                cache.put(req, res.clone());
-                                return res;
-                            });
-                        });
-                    })
-                }
+const handle = async (req) => {
+    const urlObj = new URL(req.url);
+    const urlStr = urlObj.toString();
+    const urlPath = urlObj.pathname;
+    const query = (q) => urlObj.searchParams.get(q);
+    const domain = urlObj.hostname;
+    //accelerator 加速
+
+
+    let ansUrl = [];
+    config.accelerator.forEach(group => {
+        group.forEach(url => {
+            if (urlStr.match(url)) {
+                group.forEach(Aurl => {
+                    ansUrl.push(urlStr.replace(url, Aurl))
+                })
             }
+        })
+    })
+    if (ansUrl.length > 0) {
+        return caches.open(config.cache.name).then(cache => {
+            return cache.match(urlStr).then(res => {
+                if (res) return res;
+                return lfetch(ansUrl, urlStr).then(async res => {
+                    if (config.cache.enabled) {
+                        await caches.open(config.cache.name).then(cache => {
+                            cache.put(req, res.clone())
+                        })
+                    }
+                    return res
+                })
+            })
+        })
+    }
+    //blog 加速
+    if (config.blog.accelerator) {
+        if (config.blog.origin.includes(domain)) {
+
+            return caches.open(config.cache.name).then(cache => {
+                return cache.match(urlStr).then(res => {
+                    return new Promise((resolve, reject) => {
+                        if (res) {
+                            setTimeout(() => {
+                                resolve(res)
+                            }, 20);
+                        }
+
+                        setTimeout(() => {
+                            if (config.blog.mode === "mirror") {
+                                config.blog.mirrors.forEach(mirror => {
+                                    ansUrl.push(urlStr.replace(domain, mirror))
+                                })
+
+                            }
+                            if (config.blog.mode === "npm") {
+                                config.blog.npm.urls.forEach(url => {
+                                    ansUrl.push(npm_prefix(url, urlObj))
+                                })
+                            }
+                            ansUrl.push(urlStr)
+                            lfetch(ansUrl, urlStr).then(async res => {
+                                let newRes;
+                                if (npm_prefix('', urlObj).endsWith('.html')) {
+                                    newRes = new Response(await res.arrayBuffer(), {
+                                        headers: {
+                                            'content-type': 'text/html; charset=utf-8',
+                                            'cache-control': 'max-age=0',
+                                            "Server": "Redish101BlogHelper"
+                                        }
+                                    })
+                                } else {
+                                    newRes = res.clone()
+                                }
+                                if (config.cache.enabled) {
+                                    await caches.open(config.cache.name).then(async cache => {
+                                        cache.put(req, newRes.clone())
+                                    })
+                                }
+                                resolve(newRes)
+                            })
+                        }, 0);
+                    })
+                })
+
+
+
+
+            })
         }
     }
-    return fetch(req)
+
+    return fetch(req);
+}
+
+
+
+//Function 功能区
+const npm_prefix = (url, urlObj) => {
+    let path = urlObj.pathname.split("#")[0];
+    if (path.endsWith("/")) path += "index"
+    if (!path.split('/')[path.split('/').length - 1].includes(".")) {
+        path += ".html"
+    }
+    return url + path
 }
 const lfetch = async (urls, url) => {
     let controller = new AbortController();
