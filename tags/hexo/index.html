@@ -41,14 +41,13 @@
 </script>
 
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.d3778caa.css" as="style">
+  <link rel="preload" href="/css/style.5dcd0176.css" as="style">
   <link rel="preload" href="https://cdn1.tianli0.top/gh/inkss/common/fonts/canva/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff" as="font" type="font/woff" crossorigin="anonymous">
 
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <pjax>
   <title>标签：hexo - 青云工作室</title>
   <meta name="keywords" content="青云工作室,qystudio">
   <meta desc name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客 - 青云工作室 - 青云工作室">
@@ -65,13 +64,12 @@
 <meta property="article:tag" content="qystudio">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
-  </pjax>
   <style>
     /* 首屏样式 */
     #safearea {
   display: none;
 }
-/* 
+/*
   * Workaround for Chrome bug, part 1
   * Chunk rendering for all but the first article.
   * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
@@ -249,6 +247,11 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
+@supports (backdrop-filter: blur(20px)) {
+  .blur#comments {
+    backdrop-filter: unset;
+  }
+}
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -303,7 +306,6 @@ button {
   -ms-user-select: none;
   position: relative;
   overflow: hidden;
-  margin-bottom: -100px;
 }
 .cover-wrapper .cover-bg {
   position: absolute;
@@ -794,13 +796,15 @@ button {
     background: var(--color-card) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
+    background: var(--color-card) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
     background: var(--color-site-bg) !important;
   }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
+  :root:not([color-scheme]) .article blockquote,
+  :root:not([color-scheme]) .references,
+  :root:not([color-scheme]) .related_posts {
+    background: var(--color-card) !important;
   }
   :root:not([color-scheme]) .article-title a {
     color: var(--color-h1) !important;
@@ -867,13 +871,15 @@ button {
   background: var(--color-card) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
+  background: var(--color-card) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a:hover {
   background: var(--color-site-bg) !important;
 }
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
+[color-scheme='dark'] .article blockquote,
+[color-scheme='dark'] .references,
+[color-scheme='dark'] .related_posts {
+  background: var(--color-card) !important;
 }
 [color-scheme='dark'] .article-title a {
   color: var(--color-h1) !important;
@@ -1869,8 +1875,8 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.d3778caa.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.d3778caa.css"></noscript>
+  <link rel="stylesheet" href="/css/style.5dcd0176.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.5dcd0176.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1969,9 +1975,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.53377cb8.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.56b8f0d4.js","rightMenus":"/js/plugins/rightMenus.48fa1716.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.06d40311.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.d3778caa.css"}},
+    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1652421719908),
+    lastupdate: new Date(1652430847556),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -1991,15 +1997,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       fancybox: {"css":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.css","js":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"},
       aplayer: {
         id: 6821246154,
-        enable:true
+        enable:false
       },
       rightmenu: {
         faicon: "fad",
         layout: ["home","archives","message","hr","print","darkmode","reading","hr","music"],
         music_alwaysShow: true,
         customPicUrl: {"enable":false,"old":null,"new":null}
-      },      
-      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","hr","plugins.elementCheck","plugins.elementImage","menus.prevNext","hr","menus.links","hr","plugins.articlePage","menus.darkMode","hr","music"],"options":{"iconPrefix":"fa-light PETERRIVE","articleShowLink":false,"musicAlwaysShow":true,"corsAnywhere":null},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-light fa-arrow-left PETERRIVE","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-light fa-arrow-right PETERRIVE","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-light fa-redo PETERRIVE","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-light fa-arrow-up PETERRIVE","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-light PETERRIVE fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-light PETERRIVE fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-light PETERRIVE fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-light PETERRIVE fa-copy","event":"copyText","group":"seletctText"},{"id":"html2md","name":"复制为 MD","icon":"fa-light PETERRIVE fa-file-signature","event":"volantis.rightmenu.html2md()","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-light PETERRIVE fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-light PETERRIVE fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-light PETERRIVE fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-light PETERRIVE fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片文件","icon":"fa-light PETERRIVE fa-image","event":"copyImg","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-light fa-print TURQUOISE","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-light fa-book-open EMERALD","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-light fa-eclipse-alt WISTERIA","event":"volantis.dark.toggle()","group":"darkMode"}],"links":[{"id":"friends","name":"友情链接","icon":"fa-light fa-link AMETHYST","link":"/links/","group":"link"},{"id":"archive","name":"文章归档","icon":"fa-light fa-box-archive CONCRETE","link":"/archives/","group":"link"},{"id":"about","name":"关于我","icon":"fa-light fa-circle-info WISTERIA","link":"/about/","group":"link"},{"id":"info","name":"留言板","icon":"fa-light fa-comments ALIZARIN","link":"/messages/","group":"link"}],"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-light fa-angles-left PETERRIVE","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-light fa-angles-right PETERRIVE","event":"volantis.rightmenu.jump('next')","group":"prevNext"}]}}
+      },
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","hr","plugins.elementCheck","plugins.elementImage","menus.prevNext","hr","menus.links","hr","plugins.articlePage","menus.darkMode"],"options":{"iconPrefix":"fa-light PETERRIVE","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-light fa-arrow-left PETERRIVE","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-light fa-arrow-right PETERRIVE","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-light fa-redo PETERRIVE","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-light fa-arrow-up PETERRIVE","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-light PETERRIVE fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-light PETERRIVE fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-light PETERRIVE fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-light PETERRIVE fa-copy","event":"copyText","group":"seletctText"},{"id":"html2md","name":"复制为 MD","icon":"fa-light PETERRIVE fa-file-signature","event":"volantis.rightmenu.html2md()","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-light PETERRIVE fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-light PETERRIVE fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-light PETERRIVE fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-light PETERRIVE fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片文件","icon":"fa-light PETERRIVE fa-image","event":"copyImg","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-light fa-print TURQUOISE","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-light fa-book-open EMERALD","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-light fa-eclipse-alt WISTERIA","event":"volantis.dark.toggle()","group":"darkMode"}],"links":[{"id":"friends","name":"友情链接","icon":"fa-light fa-link AMETHYST","link":"/links/","group":"link"},{"id":"archive","name":"文章归档","icon":"fa-light fa-box-archive CONCRETE","link":"/archives/","group":"link"},{"id":"about","name":"关于我","icon":"fa-light fa-circle-info WISTERIA","link":"/about/","group":"link"},{"id":"info","name":"留言板","icon":"fa-light fa-comments ALIZARIN","link":"/messages/","group":"link"}],"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-light fa-angles-left PETERRIVE","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-light fa-angles-right PETERRIVE","event":"volantis.rightmenu.jump('next')","group":"prevNext"}]}}
     }
   }
 
@@ -2216,7 +2222,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1652421719908");
+        script.setAttribute("src", src + "?time=1652430847556");
         HEAD.appendChild(script);
       });
     });
@@ -2226,7 +2232,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1652421719908";
+        link.href = src + "?time=1652430847556";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2338,12 +2344,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       opt.top += option.addTop
     }
     if (!("observerDic" in option)) {
-      option.observerDic = 25
+      option.observerDic = 100
     }
     // 滚动
     window.scrollTo(opt);
     // 监视器
-    // 监视并矫正元素滚动到指定位置 
+    // 监视并矫正元素滚动到指定位置
     // 用于处理 lazyload 引起的 cls 导致的定位失败问题
     // option.observer = false
     if (option.observer) {
@@ -2358,6 +2364,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       },1000)
     }
   }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
   /******************************************************************************/
   /******************************************************************************/
   //图像加载出错时的处理
@@ -2419,8 +2438,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/" title="博客"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
                   
                   
                   
@@ -2436,8 +2455,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                     href="/" onclick="return false;" title="文章"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="文章"
                   
                   
                   >
@@ -2449,8 +2468,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/categories/" title="分类"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
                   
                   
                   
@@ -2466,8 +2485,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/archives/" title="归档"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
                   
                   
                   
@@ -2489,8 +2508,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/links/" title="友链"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/links/" title="友链"
                   
                   
                   
@@ -2506,8 +2525,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/about/" title="关于"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
                   
                   
                   
@@ -2523,8 +2542,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                     href="/" onclick="return false;" title="更多"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="更多"
                   
                   
                   >
@@ -2553,8 +2572,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/artitalk/" title="闲言碎语"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="闲言碎语"
                   
                   
                   
@@ -2570,8 +2589,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/messages/" title="留言板"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/messages/" title="留言板"
                   
                   
                   
@@ -2587,8 +2606,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
                   
                   
                   
@@ -2604,8 +2623,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
                   
                   
                   
@@ -2621,8 +2640,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
                   
                   
                   
@@ -2644,8 +2663,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
                   
                   
                   
@@ -2680,8 +2699,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/" title="博客"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
                   
                   
                   
@@ -2697,8 +2716,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                     href="/" onclick="return false;" title="文章"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="文章"
                   
                   
                   >
@@ -2710,8 +2729,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/categories/" title="分类"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
                   
                   
                   
@@ -2727,8 +2746,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/archives/" title="归档"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
                   
                   
                   
@@ -2750,8 +2769,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/links/" title="友链"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/links/" title="友链"
                   
                   
                   
@@ -2767,8 +2786,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/about/" title="关于"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
                   
                   
                   
@@ -2784,8 +2803,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                     href="/" onclick="return false;" title="更多"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="更多"
                   
                   
                   >
@@ -2814,8 +2833,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/artitalk/" title="闲言碎语"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="闲言碎语"
                   
                   
                   
@@ -2831,8 +2850,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    href="/messages/" title="留言板"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/messages/" title="留言板"
                   
                   
                   
@@ -2848,8 +2867,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
                   
                   
                   
@@ -2865,8 +2884,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
                   
                   
                   
@@ -2882,8 +2901,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                       
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
                   
                   
                   
@@ -2905,8 +2924,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                    target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
                   
                   
                   
@@ -3183,9 +3202,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div>
 <aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
   
+
   
     
     
+      
 
 <section class="widget text shadow desktop pjax">
   
@@ -3211,11 +3232,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </section>
 
+    
   
 
   
     
     
+      
 
 <section class="widget grid shadow desktop mobile pjax">
   
@@ -3264,11 +3287,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </section>
 
+    
   
 
   
     
     
+      
 
 <section class="widget blogger shadow desktop mobile pjax">
   <div class='content'>
@@ -3347,11 +3372,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </section>
 
+    
   
 
   
     
     
+      
   
 
   <section class="widget category shadow desktop pjax">
@@ -3404,11 +3431,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </section>
 
 
+    
   
 
   
     
     
+      
   
 
   <section class="widget tagcloud shadow desktop mobile pjax">
@@ -3429,14 +3458,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </section>
 
 
+    
   
 
   
     
-     
+    
+      
+    
+  
 
- 
-<section class="widget shadow desktop mobile pjax"> 
+  
+    
+    
+      
+    
+  
+
+
+  <div class="widget-sticky">
+    
+    
+
+
+<section class="widget shadow desktop mobile pjax">
   
   <header>
     
@@ -3445,15 +3490,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   </header>
 
- 
-  <div class='content'> 
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-05-13</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-05-13</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-05-13</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-05-13</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-05-13</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul> 
-  </div> 
-</section> 
 
-  
+  <div class='content'>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/64280.html"><div class="item"><time>2022-05-13</time><span>software</span></div><span>软件屏蔽器 秒杀流氓软件</span></a></li><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-05-13</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-05-13</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-05-13</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-05-13</time><span>tools</span></div><span>window上帝模式</span></a></li></ul>
+  </div>
+</section>
 
-  
     
     
 
@@ -3512,19 +3554,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-05-13 日</div> 
+          <div id="last-update-show">2022-05-13 日</div>
         </div>
       
-
-      <div class="webinfo-item">
-        <div>主题版本：</div>
-        <div><a style="color: var(--color-list);" target="_blank" rel="noopener" href="https://github.com/inkss/volantis">5.0.0-alpha.111</a></div>
-      </div>
     </div>
   </div>
 </section>
 
-  
+    
+  </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3589,22 +3627,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="aplayer-container">
           
-
-  
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='6821246154'
-      list-folded='true'>
-    </meting-js>
-  
 
 
         </div>
@@ -3714,7 +3736,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- internal -->
-<script src="/js/app.53377cb8.js"></script>
+<script src="/js/app.54cf6e41.js"></script>
 
 
 
@@ -3738,19 +3760,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   <li class='navigation menuNavigation-Content'>
 
- 
+
     <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-light fa-arrow-left PETERRIVE fa-fw"></i></a>
 
 
- 
+
     <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-light fa-arrow-right PETERRIVE fa-fw"></i></a>
 
 
- 
+
     <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-light fa-redo PETERRIVE fa-fw"></i></a>
 
 
- 
+
     <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-light fa-arrow-up PETERRIVE fa-fw"></i></a>
 
 
@@ -3766,7 +3788,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-paste fa-fw"></i>
       粘贴文本
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3775,7 +3797,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-object-ungroup fa-fw"></i>
       全选文本
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3784,7 +3806,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-cut fa-fw"></i>
       剪切文本
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3793,7 +3815,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-copy fa-fw"></i>
       复制文本
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3802,7 +3824,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-file-signature fa-fw"></i>
       复制为 MD
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3811,7 +3833,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-search fa-fw"></i>
       站内搜索
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3820,7 +3842,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-search fa-fw"></i>
       必应搜索
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3833,7 +3855,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-external-link-square-alt fa-fw"></i>
       新标签页打开
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3842,7 +3864,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-link fa-fw"></i>
       复制链接地址
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3851,7 +3873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light PETERRIVE fa-image fa-fw"></i>
       复制图片文件
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3860,7 +3882,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-angles-left PETERRIVE fa-fw"></i>
       查看上一篇
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3869,7 +3891,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-angles-right PETERRIVE fa-fw"></i>
       查看下一篇
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3882,7 +3904,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-link AMETHYST fa-fw"></i>
       友情链接
     </a>
-  </li> 
+  </li>
 
 
 
@@ -3891,7 +3913,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-box-archive CONCRETE fa-fw"></i>
       文章归档
     </a>
-  </li> 
+  </li>
 
 
 
@@ -3900,7 +3922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-circle-info WISTERIA fa-fw"></i>
       关于我
     </a>
-  </li> 
+  </li>
 
 
 
@@ -3909,7 +3931,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-comments ALIZARIN fa-fw"></i>
       留言板
     </a>
-  </li> 
+  </li>
 
 
 
@@ -3922,7 +3944,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-print TURQUOISE fa-fw"></i>
       打印页面
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3931,7 +3953,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-book-open EMERALD fa-fw"></i>
       阅读模式
     </span>
-  </li> 
+  </li>
 
 
 
@@ -3940,164 +3962,128 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <i class="fa-light fa-eclipse-alt WISTERIA fa-fw"></i>
       暗黑模式
     </span>
-  </li> 
-
-
-
-    <hr class="menuLoad-Content" >
-
-
-<div id="menuMusic">
-  <li class='music name menuOption-Content'>
-    <p class='nav music-title fix-cursor-default'></p>
   </li>
-  <li class='music ctrl'>
-    <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward">
-      <i class='fa-light PETERRIVE fa-step-backward fa-fw'></i>
-    </a>
-    <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle">
-      <i class='fa-light PETERRIVE fa-play fa-fw'></i>
-    </a>
-    <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward">
-      <i class='fa-light PETERRIVE fa-step-forward fa-fw'></i>
-    </a>
-  </li>
-  <li class='music volume'>
-    <div class='nav volume'>
-      <div class="aplayer-volume-bar-wrap">
-        <div class="aplayer-volume-bar fix-cursor-pointer">
-          <div class="aplayer-volume"></div>
-          <i class='left fa-light PETERRIVE fa-volume-off fa-fw'></i>
-          <i class='right fa-light PETERRIVE fa-volume-up fa-fw'></i>
-        </div>
-      </div>
-    </div>
-  </li>
-</div>
+
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.48fa1716.js"></script>
+<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
 <script>
   const RightMenusFunction = {};
-   
   
- 
-  
- 
-  
- 
-  
- 
-  
- 
+
+
+
+
+
+
+
+
+
+
 
 
   <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['html2md'] = (__text__) => {volantis.rightmenu.html2md()}
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
-  
-  
- 
-  
- 
 
-  
+
+
+
+
+
+
   RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['prev'] = () => {volantis.rightmenu.jump('prev')}
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['next'] = () => {volantis.rightmenu.jump('next')}
-  
-  
- 
-  
- 
-  
- 
-  
- 
-  
- 
-  
- 
-  
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
-  
-  
- 
+
+
+
 
 
   <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
-  
-  
- 
 
-  
+
+
+
+
   RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
-  
-  
- 
-  
- 
-  
+
+
 
 </script>
 
@@ -4327,116 +4313,67 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script>
-  volantis.css("https://npm.elemecdn.com/aplayer@1.10/dist/APlayer.min.css");
-  (async () => {
-    // APlayer 需要在  MetingJS 之前加载
-    await volantis.js("https://npm.elemecdn.com/aplayer@1.10/dist/APlayer.min.js")
-    await volantis.js("https://npm.elemecdn.com/meting@2.0/dist/Meting.min.js")
-  
-    // 右键 music 需要在 APlayer  MetingJS 之后加载
-    await volantis.js('/js/plugins/aplayer.dbe5eea9.js')
-  
-  })();
-
-  function SetAPlayerPlugin(){
-    let Metings = document.querySelectorAll('meting-js');
-    if (Metings.length === 0) {return;};
-    if (Metings[0].aplayer && Metings[0].aplayer.on) {
-      // improve the accessibility https://web.dev/button-name/
-      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-        e.setAttribute("aria-label","Aplayer Menu")
-      })
-      // message see: /layout/_plugins/message/script.ejs
-      
-        try {
-          setTimeout(() => {
-            Metings.forEach((item, index) => {
-              const aplayerItem = item.aplayer; if(!aplayerItem) return;
-              const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '6821246154'; 
-              if(rightAplayerCheck) RightMenuAplayer.checkAPlayer();
-              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
-                aplayerItem.on('play', function messagePlay() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                      icon: 'fas fa-play',
-                      transitionIn: 'flipInX',
-                      transitionOut: 'flipOutX'
-                    });
-                  }, 100)
-                });
-              }
-              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
-                aplayerItem.on('pause', function messagePause() {
-                  let index = aplayerItem.list.index;
-                  let title = aplayerItem.list.audios[index].title;
-                  let artist = aplayerItem.list.audios[index].artist;
-                  setTimeout(() => {
-                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
-                    if(aplayerItem.paused) {
-                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                        icon: 'fas fa-pause',
-                        transitionIn: 'flipInX',
-                        transitionOut: 'flipOutX'
-                      });
-                    }
-                  }, 100)
-                });
-              }
-            });
-          }, 500)
-        } catch (error) { console.error(error); }
-      
-    }else{
-      volantis.requestAnimationFrame(SetAPlayerPlugin)
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    SetAPlayerPlugin();
-  });
-  volantis.pjax.push(SetAPlayerPlugin);
-</script>
-
-
 
 
       <script>
   volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
+  
   function pjax_waline() {
     if(!document.querySelector("#waline"))return;
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+    let locale = {};
     let path = pdata.commentPath;
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
     if (path.length == 0) {
       let defaultPath = '';
       path = defaultPath || decodeURI(window.location.pathname);
     }
-    new Waline(Object.assign(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","path":null,"placeholder":"快来评论吧~","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"serverURL":"https://waline.qystudio.ltd","avatar":"robohash","avatarCDN":null,"pageSize":10,"lang":"zh-CN","visitor":true,"css":"https://unpkg.com/@waline/client@v2/dist/waline.css","imageUploader":{"api":"https://7bu.top/api/upload","token":"7ffe9d626fe4315c953758efbdb6ee2e","resp":"data.url"},"pageview":true,"comment":true,"emoji":["https://cdn.jsdelivr.net/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"],"copyright":false}, {
-      el: '#waline',
-      path: path,
-      placeholder: pagePlaceholder,
-      
-      // https://github.com/volantis-x/hexo-theme-volantis/issues/713
-      
-  
-  }),pdata.commentConfig));
+    if(pagePlaceholder.length != 0) {
+      locale.placeholder = pagePlaceholder;
+    }
+
+    try {
+      Waline.init(Object.assign(Object.assign({"js":"https://unpkg.com/@waline/client@v2/dist/waline.js","css":"https://unpkg.com/@waline/client@v2/dist/waline.css","path":null,"placeholder":"快来评论吧~","serverURL":"https://waline.qystudio.ltd","imageUploader":{"api":"https://7bu.top/api/upload","token":"7ffe9d626fe4315c953758efbdb6ee2e","resp":"data.url"},"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"emoji":["https://cdn.jsdelivr.net/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili"],"copyright":false}, {
+        el: '#waline',
+        path: path,
+        // https://github.com/volantis-x/hexo-theme-volantis/issues/713
+        
+          imageUploader: function(file) {
+            let headers = new Headers();
+            headers.set('Accept', 'application/json');
+            
+              headers.set('Authorization', '7ffe9d626fe4315c953758efbdb6ee2e')
+            
+            let formData = new FormData();
+            formData.append('file', file);
+            return fetch('https://7bu.top/api/upload',{
+              method: 'POST',
+              body: formData,
+              headers: headers
+              }).then((resp) => resp.json())
+                .then((resp) => resp.data.url)
+          },
+        
+        locale,
+      }),pdata.commentConfig));
+    } catch (error) {
+      alert(`Waline ${error}`)
+    }
     fancybox_waline()
   }
+
   function fancybox_waline() {
     if(typeof VolantisFancyBox === "undefined") {
       const checkFancyBox = setInterval(() => {
         if(typeof VolantisFancyBox === "undefined") return;
         clearInterval(checkFancyBox);
-        VolantisFancyBox.bind('#waline .vcontent img:not(.vemoji)');
+        VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
       })
     } else {
-      VolantisFancyBox.bind('#waline .vcontent img:not(.vemoji)');
+      VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
     }
   }
+
+  volantis.css('https://unpkg.com/@waline/client@v2/dist/waline.css')
   volantis.js('https://unpkg.com/@waline/client@v2/dist/waline.js').then(pjax_waline)
   volantis.pjax.push(pjax_waline);
 </script>
@@ -4456,7 +4393,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.06d40311.js");
+    return volantis.js("/js/search/hexo.0e52f222.js");
   }
 
   function loadSearchService() {
@@ -4753,6 +4690,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 </script>
 
 
+
 <script>
   const genUuid = () => {
     let s = [];
@@ -4778,8 +4716,9 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
   }, 1000)
 </script>
 
-		
 
+
+  
 
 
 
@@ -4877,6 +4816,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 
     // 方案一：
     volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
     volantis.scroll.push(()=>{
       if (targets[0].getBoundingClientRect().top >= 0) {
         volantis.activateNavIndex = 0
@@ -5096,7 +5036,7 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
 
 
       
-        <!-- 
+        <!--
   pjax重载区域接口：
   1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
   2.  script[data-pjax]
@@ -5136,6 +5076,9 @@ volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]
       pjax = new Pjax({
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
         selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
           
           "#l_main",
           "#pjax-header-nav-list",

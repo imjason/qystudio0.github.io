@@ -1,7 +1,7 @@
 #safearea {
   display: none;
 }
-/* 
+/*
   * Workaround for Chrome bug, part 1
   * Chunk rendering for all but the first article.
   * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
@@ -179,6 +179,11 @@ button {
     backdrop-filter: saturate(200%) blur(20px);
   }
 }
+@supports (backdrop-filter: blur(20px)) {
+  .blur#comments {
+    backdrop-filter: unset;
+  }
+}
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -233,7 +238,6 @@ button {
   -ms-user-select: none;
   position: relative;
   overflow: hidden;
-  margin-bottom: -100px;
 }
 .cover-wrapper .cover-bg {
   position: absolute;
@@ -724,13 +728,15 @@ button {
     background: var(--color-card) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a {
-    background: var(--color-block) !important;
+    background: var(--color-card) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
     background: var(--color-site-bg) !important;
   }
-  :root:not([color-scheme]) .article blockquote {
-    background: var(--color-block) !important;
+  :root:not([color-scheme]) .article blockquote,
+  :root:not([color-scheme]) .references,
+  :root:not([color-scheme]) .related_posts {
+    background: var(--color-card) !important;
   }
   :root:not([color-scheme]) .article-title a {
     color: var(--color-h1) !important;
@@ -797,13 +803,15 @@ button {
   background: var(--color-card) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a {
-  background: var(--color-block) !important;
+  background: var(--color-card) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a:hover {
   background: var(--color-site-bg) !important;
 }
-[color-scheme='dark'] .article blockquote {
-  background: var(--color-block) !important;
+[color-scheme='dark'] .article blockquote,
+[color-scheme='dark'] .references,
+[color-scheme='dark'] .related_posts {
+  background: var(--color-card) !important;
 }
 [color-scheme='dark'] .article-title a {
   color: var(--color-h1) !important;
