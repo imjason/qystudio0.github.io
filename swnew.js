@@ -14,14 +14,16 @@ const config = {
             "https://cdn.jsdelivr.net/gh",
             "https://cdn1.tianli0.top/gh",
             "https://cdn.oplog.cn/gh",
-            "https://jsdelivr.io/gh"
+          	"https://cdn.cnortles.top/gh",
+            "https://jsdelivr.panbaidu.cn/gh"
         ],
         //JsDelivr Combine
         [
             "https://cdn.jsdelivr.net/combine",
             "https://cdn1.tianli0.top/combine",
             "https://cdn.oplog.cn/combine",
-            "https://jsdelivr.io/combine"
+          	"https://cdn.cnortles.top/combine",
+            "https://jsdelivr.panbaidu.cn/combine"
         ],
         //NPM
         [
@@ -30,9 +32,10 @@ const config = {
             "https://cdn1.tianli0.top/npm",
             "https://cdn.oplog.cn/npm",
             "https://unpkg.zhimg.com",
+          	"https://cdn.cnortles.top/npm",
             "https://unpkg.com",
             "https://code.bdstatic.com/npm",
-            "https://jsdelivr.io/npm"
+            "https://jsdelivr.panbaidu.cn/npm"
         ]
 
     ],
@@ -42,7 +45,7 @@ const config = {
             "qystudio.ltd",
             "ayrwjs-ofueyd-4000.preview.myide.io"
         ],
-        mode: "mirror",//加速模式：mirror|npm
+        mode: "npm",//加速模式：mirror|npm
         mirrors: [
             "vercel.qystudio.ltd",
             "cf.qystudio.ltd",
@@ -52,7 +55,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.0.1"
+            version: "0.0.2"
         }
     }
 }
@@ -63,7 +66,9 @@ config.blog.npm.urls = [
     `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`
+  	`https://cdn.cnortles.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+  	`https://jsdelivr.panbaidu.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
 
