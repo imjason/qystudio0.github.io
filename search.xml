@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Windows 10 21H2 太阳谷更新镜像发布</title>
-    <url>/posts/78415.html</url>
-    <content><![CDATA[<p>微软将于2021年下半年推出Windows 10大更新，代号叫“太阳谷”更新</p>
-<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://tva1.sinaimg.cn/large/008eGmZEly1gph6kwkgfbj30jg0but8u.jpg" class="lazyload" data-srcset="https://tva1.sinaimg.cn/large/008eGmZEly1gph6kwkgfbj30jg0but8u.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image"/></div></div>
-
-<p>关于这个话题，撰写帖子了，比如：界面大变样，微软Win10太阳谷概念图曝光</p>
-<p>但这些资讯大都来自国外网站，只可惜微软一直没提供镜像下载，因此没办法实际上手体验。</p>
-<p>不过，就在4月11日，微软开放了Win10 Build 21354 ISO镜像下载，也就是俗称的21H2，这个版本即将于2021年下半年推送给大众。</p>
-<p>我们第一时间下载并体验了，下面就一些情况进行说明。</p>
-<div class="story post-story"><h2 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h2><p>下载页面：<a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso">https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso</a></p>
-<p>电脑浏览器访问上面的网址，然后拉到网页下方，从Select edition里选择Windows 10 Insider Preview (Dev Channel) - Build 21354：</p>
-<p>从语言里选择Chinese Simplified，然后点击Confirm：</p>
-<p>然后就可以得到最新测试版镜像了，注意链接有时效性，得到链接后尽快下载，推荐使用IDM或者迅雷进行下载：</p>
-</div><div class="story post-story"><h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>由于是测试版系统，因此推荐大家在虚拟机里安装测试，并不推荐在实体机上安装，毕竟在实体机上遇到系统bug，将会是一件很难受的事情。</p>
-<p>Windows系统：可以使用VMWare Workstation或者VirtualBox等虚拟机<br>macOS系统：可以使用Parallels Desktop、VMware Fusion或者VirtualBox等虚拟机</p>
-</div><div class="story post-story"><h2 id="三、体验"><a href="#三、体验" class="headerlink" title="三、体验"></a>三、体验</h2><h3 id="1、新图标"><a href="#1、新图标" class="headerlink" title="1、新图标"></a>1、新图标</h3><p>装完系统最大的感受，就是图标换了：</p>
-<p>用户文件、控制面板、此电脑、回收站图标均进行了较大改动：</p>
-<p>视频、图片、文档、下载、音乐、桌面等6个图标都进行了修改，同时取消了3D模型的文件夹</p>
-<p>文件夹图标更换了新样式，更“黄”了，有木有：</p>
-<p>以列表样式查看文件夹，文件夹之间的间隔更大了：</p>
-<p>控制面板、命令提示符、运行的新图标：</p>
-<p>控制面板里也采用了新样式：</p>
-<h3 id="2、开始菜单"><a href="#2、开始菜单" class="headerlink" title="2、开始菜单"></a>2、开始菜单</h3><p>开始菜单里的通用应用，也全部更换了新的图标：</p>
-<h3 id="3、预装软件"><a href="#3、预装软件" class="headerlink" title="3、预装软件"></a>3、预装软件</h3><p>预装软件和之前版本的系统，有所变化。</p>
-<p>除了图片查看器、音视频播放器、小娜、计算器、便签、邮件等常规应用之外，删除了3D模型，但增加安装了Microsoft Whiteboard、Microsoft TO DO、Microsoft资讯。其中Microsoft Whiteboard和Microsoft TO DO需要登录Microsoft账户之后才能使用，Microsoft资讯打开就能用，不需要登录。</p>
-<p>Microsoft Whiteboard是一个白板应用，简单来说，就是可以在里面涂涂画画，对于一些从事于教育行业的人士来说，可能有点用处，给学生画图做演示。</p>
-<p>多说一句，微软白板应用Android和iOS版同样也上架了Google Play Store和Apple App Store，需要的用户可以去下载使用。不过现在好像还在内测阶段。</p>
-<p>Microsoft TO DO是个免费的待办事项软件，是微软收购的，它同样也有各大平台的版本，包括Android、iOS、macOS版。</p>
-<p>Microsoft资讯，就是个资讯合集软件，资讯分类还是很全的，娱乐、新闻、生活、财经、教育、科技等等。</p>
-<p>其实在Win8、Win8.1系统里，资讯是默认内置在系统里的，后来在Win10 TH1（Build 10240）里取消了，现在Win10 21H2（Build 21354）版本又加回来了。</p>
-<h3 id="4、任务栏"><a href="#4、任务栏" class="headerlink" title="4、任务栏"></a>4、任务栏</h3><p>21H2版本的任务栏，新增了两个项目，分别是“News and interests”、“Pen button”，由于这还是测试版系统，这两个项目都没有翻译。</p>
-<p>萝卜哥帮大家翻译一下，这两个新增的分别是“新闻和兴趣”、“笔按钮”。其中，“新闻和兴趣”默认是勾选的，“笔按钮”需要手动开启才会显示。</p>
-<p>“新闻和兴趣”：它默认显示的是当地的天气。如果点击一下这个天气图标，就会弹出资讯。</p>
-<p>“笔按钮”：点一下这个按钮，就会显示白板和截图的按钮。另外，在系统设置里，也可以对笔进行进一步详细的设定。</p>
-</div><div class="story post-story"><h2 id="四、建议"><a href="#四、建议" class="headerlink" title="四、建议"></a>四、建议</h2><p>正如前面说过，Win10 Build 21354还是测试版本，不建议大家在实体机上安装。测试版往往有比较多的bug，在虚拟机里玩玩就好，提前体验一下即将发布的新系统，过过瘾就好</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
-</div>]]></content>
-      <categories>
-        <category>系统</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github图床之弃用jsd(图床使用npm镜像加速)</title>
     <url>/posts/34886.html</url>
     <content><![CDATA[<div class="story post-story"><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>2021/12/20日，赶在旧年的末尾，一则<code>JSdelivrSSL证书错误</code>缓缓上了v2ex论坛热点。</p>
@@ -102,6 +56,52 @@
         <tag>hexo</tag>
         <tag>cdn</tag>
         <tag>加速</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 10 21H2 太阳谷更新镜像发布</title>
+    <url>/posts/78415.html</url>
+    <content><![CDATA[<p>微软将于2021年下半年推出Windows 10大更新，代号叫“太阳谷”更新</p>
+<div class="img-wrap"><div class="img-bg"><img class="img lazyload" src="https://tva1.sinaimg.cn/large/008eGmZEly1gph6kwkgfbj30jg0but8u.jpg" class="lazyload" data-srcset="https://tva1.sinaimg.cn/large/008eGmZEly1gph6kwkgfbj30jg0but8u.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image"/></div></div>
+
+<p>关于这个话题，撰写帖子了，比如：界面大变样，微软Win10太阳谷概念图曝光</p>
+<p>但这些资讯大都来自国外网站，只可惜微软一直没提供镜像下载，因此没办法实际上手体验。</p>
+<p>不过，就在4月11日，微软开放了Win10 Build 21354 ISO镜像下载，也就是俗称的21H2，这个版本即将于2021年下半年推送给大众。</p>
+<p>我们第一时间下载并体验了，下面就一些情况进行说明。</p>
+<div class="story post-story"><h2 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h2><p>下载页面：<a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso">https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewiso</a></p>
+<p>电脑浏览器访问上面的网址，然后拉到网页下方，从Select edition里选择Windows 10 Insider Preview (Dev Channel) - Build 21354：</p>
+<p>从语言里选择Chinese Simplified，然后点击Confirm：</p>
+<p>然后就可以得到最新测试版镜像了，注意链接有时效性，得到链接后尽快下载，推荐使用IDM或者迅雷进行下载：</p>
+</div><div class="story post-story"><h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>由于是测试版系统，因此推荐大家在虚拟机里安装测试，并不推荐在实体机上安装，毕竟在实体机上遇到系统bug，将会是一件很难受的事情。</p>
+<p>Windows系统：可以使用VMWare Workstation或者VirtualBox等虚拟机<br>macOS系统：可以使用Parallels Desktop、VMware Fusion或者VirtualBox等虚拟机</p>
+</div><div class="story post-story"><h2 id="三、体验"><a href="#三、体验" class="headerlink" title="三、体验"></a>三、体验</h2><h3 id="1、新图标"><a href="#1、新图标" class="headerlink" title="1、新图标"></a>1、新图标</h3><p>装完系统最大的感受，就是图标换了：</p>
+<p>用户文件、控制面板、此电脑、回收站图标均进行了较大改动：</p>
+<p>视频、图片、文档、下载、音乐、桌面等6个图标都进行了修改，同时取消了3D模型的文件夹</p>
+<p>文件夹图标更换了新样式，更“黄”了，有木有：</p>
+<p>以列表样式查看文件夹，文件夹之间的间隔更大了：</p>
+<p>控制面板、命令提示符、运行的新图标：</p>
+<p>控制面板里也采用了新样式：</p>
+<h3 id="2、开始菜单"><a href="#2、开始菜单" class="headerlink" title="2、开始菜单"></a>2、开始菜单</h3><p>开始菜单里的通用应用，也全部更换了新的图标：</p>
+<h3 id="3、预装软件"><a href="#3、预装软件" class="headerlink" title="3、预装软件"></a>3、预装软件</h3><p>预装软件和之前版本的系统，有所变化。</p>
+<p>除了图片查看器、音视频播放器、小娜、计算器、便签、邮件等常规应用之外，删除了3D模型，但增加安装了Microsoft Whiteboard、Microsoft TO DO、Microsoft资讯。其中Microsoft Whiteboard和Microsoft TO DO需要登录Microsoft账户之后才能使用，Microsoft资讯打开就能用，不需要登录。</p>
+<p>Microsoft Whiteboard是一个白板应用，简单来说，就是可以在里面涂涂画画，对于一些从事于教育行业的人士来说，可能有点用处，给学生画图做演示。</p>
+<p>多说一句，微软白板应用Android和iOS版同样也上架了Google Play Store和Apple App Store，需要的用户可以去下载使用。不过现在好像还在内测阶段。</p>
+<p>Microsoft TO DO是个免费的待办事项软件，是微软收购的，它同样也有各大平台的版本，包括Android、iOS、macOS版。</p>
+<p>Microsoft资讯，就是个资讯合集软件，资讯分类还是很全的，娱乐、新闻、生活、财经、教育、科技等等。</p>
+<p>其实在Win8、Win8.1系统里，资讯是默认内置在系统里的，后来在Win10 TH1（Build 10240）里取消了，现在Win10 21H2（Build 21354）版本又加回来了。</p>
+<h3 id="4、任务栏"><a href="#4、任务栏" class="headerlink" title="4、任务栏"></a>4、任务栏</h3><p>21H2版本的任务栏，新增了两个项目，分别是“News and interests”、“Pen button”，由于这还是测试版系统，这两个项目都没有翻译。</p>
+<p>萝卜哥帮大家翻译一下，这两个新增的分别是“新闻和兴趣”、“笔按钮”。其中，“新闻和兴趣”默认是勾选的，“笔按钮”需要手动开启才会显示。</p>
+<p>“新闻和兴趣”：它默认显示的是当地的天气。如果点击一下这个天气图标，就会弹出资讯。</p>
+<p>“笔按钮”：点一下这个按钮，就会显示白板和截图的按钮。另外，在系统设置里，也可以对笔进行进一步详细的设定。</p>
+</div><div class="story post-story"><h2 id="四、建议"><a href="#四、建议" class="headerlink" title="四、建议"></a>四、建议</h2><p>正如前面说过，Win10 Build 21354还是测试版本，不建议大家在实体机上安装。测试版往往有比较多的bug，在虚拟机里玩玩就好，提前体验一下即将发布的新系统，过过瘾就好</p>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>系统</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>系统</tag>
       </tags>
   </entry>
   <entry>
