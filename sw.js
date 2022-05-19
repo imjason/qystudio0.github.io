@@ -55,7 +55,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.0.3"
+            version: "0.0.4"
         }
     }
 }
