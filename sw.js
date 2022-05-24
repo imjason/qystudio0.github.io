@@ -164,7 +164,7 @@ const handle = async (req) => {
                                         headers: {
                                             'content-type': 'text/html; charset=utf-8',
                                             'cache-control': 'max-age=0',
-                                            "Server": "Redish101BlogHelper"
+                                            "Server": "QYstudioBlogHelper"
                                         }
                                     })
                                 } else {
