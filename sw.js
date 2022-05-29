@@ -12,27 +12,27 @@ const config = {
         //JsDelivr Github
         [
             "https://cdn.jsdelivr.net/gh",
+            "https://fastly.jsdelivr.net/gh",
             "https://cdn1.tianli0.top/gh",
             "https://cdn.oplog.cn/gh",
-          	"https://cdn.cnortles.top/gh",
             "https://jsdelivr.panbaidu.cn/gh"
         ],
         //JsDelivr Combine
-        [
+        
             "https://cdn.jsdelivr.net/combine",
+            "https://fastly.jsdelivr.net/combine",
             "https://cdn1.tianli0.top/combine",
             "https://cdn.oplog.cn/combine",
-          	"https://cdn.cnortles.top/combine",
             "https://jsdelivr.panbaidu.cn/combine"
         ],
         //NPM
         [
             "https://cdn.jsdelivr.net/npm",
+            "https://fastly.jsdelivr.net/npm",
             "https://npm.elemecdn.com",
             "https://cdn1.tianli0.top/npm",
             "https://cdn.oplog.cn/npm",
             "https://unpkg.zhimg.com",
-          	"https://cdn.cnortles.top/npm",
             "https://unpkg.com",
             "https://code.bdstatic.com/npm",
             "https://jsdelivr.panbaidu.cn/npm"
@@ -55,7 +55,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.0.6"
+            version: "0.0.7"
         }
     }
 }
@@ -65,9 +65,6 @@ config.blog.npm.urls = [
     `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://cdn.jsdelivr.net/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  	`https://cdn.cnortles.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://unpkg.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
   	`https://jsdelivr.panbaidu.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
