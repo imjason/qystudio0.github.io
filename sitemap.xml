@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>https://qystudio.ltd/note/index.html</loc>
-    
-    <lastmod>2022-06-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://qystudio.ltd/notebook/index.html</loc>
     
     <lastmod>2022-06-02</lastmod>
@@ -165,6 +156,15 @@
   
   <url>
     <loc>https://qystudio.ltd/messages/index.html</loc>
+    
+    <lastmod>2022-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystudio.ltd/note/index.html</loc>
     
     <lastmod>2022-06-02</lastmod>
     
