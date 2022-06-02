@@ -18,7 +18,7 @@ const config = {
             "https://jsdelivr.panbaidu.cn/gh"
         ],
         //JsDelivr Combine
-        
+        [
             "https://cdn.jsdelivr.net/combine",
             "https://fastly.jsdelivr.net/combine",
             "https://cdn1.tianli0.top/combine",
@@ -37,7 +37,6 @@ const config = {
             "https://code.bdstatic.com/npm",
             "https://jsdelivr.panbaidu.cn/npm"
         ]
-
     ],
     blog: {
         accelerator: true,
@@ -55,7 +54,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.0.8"
+            version: "0.0.9"
         }
     }
 }
