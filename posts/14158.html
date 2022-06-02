@@ -1982,7 +1982,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654173067013),
+    lastupdate: new Date(1654179629384),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2227,7 +2227,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654173067013");
+        script.setAttribute("src", src + "?time=1654179629384");
         HEAD.appendChild(script);
       });
     });
@@ -2237,7 +2237,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654173067013";
+        link.href = src + "?time=1654179629384";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -4238,7 +4238,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@@2.5.1/dist/waline.css","path":null,"placeholder":"快来评论吧~","serverURL":"https://waline.qystudio.ltd","imageUploader":{"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":"快来评论吧~","serverURL":"https://waline.qystudio.ltd","imageUploader":{"api":null,"token":null,"resp":null},"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -4263,8 +4263,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
   }
 
-  volantis.css('https://npm.elemecdn.com/@waline/client@@2.5.1/dist/waline.css')
-  volantis.js('https://npm.elemecdn.com/@waline/client@@2.5.1/dist/waline.js').then(pjax_waline)
+  volantis.css('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css')
+  volantis.js('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js').then(pjax_waline)
   volantis.pjax.push(pjax_waline);
 </script>
     
