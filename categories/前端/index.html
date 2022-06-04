@@ -1980,7 +1980,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654249443165),
+    lastupdate: new Date(1654321238835),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2225,7 +2225,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654249443165");
+        script.setAttribute("src", src + "?time=1654321238835");
         HEAD.appendChild(script);
       });
     });
@@ -2235,7 +2235,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654249443165";
+        link.href = src + "?time=1654321238835";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3426,7 +3426,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-03</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-03</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-03</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-03</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-03</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-04</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-04</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-04</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-04</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-04</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3488,7 +3488,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-06-03 日</div>
+          <div id="last-update-show">2022-06-04 日</div>
         </div>
       
     </div>
@@ -5044,7 +5044,65 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     <!-- import body_end begin-->
     <!-- import body_end end-->
     <!-- Custom Files bodyEnd begin-->
-    
+    <script type="text/javascript" src="https://npm.elemecdn.com/qycdn@0.9.6/js/h2m.js"></script>
+<script>
+  window.onkeydown = e => {
+    if (e.ctrlKey && e.key === 'a')
+      e.preventDefault();
+  }
+  ## 停更
+
+青云团队由于一
+  volantis.rightmenu.jump = (type) => {
+    const item = document.querySelector(type === 'prev' ? 'article .prev-next a.prev' : 'article .prev-next a.next');
+    if(!!item) {
+      if(typeof pjax !== 'undefined') {
+        pjax.loadUrl(item.href)
+      } else {
+        window.location.href = item.href;
+      }
+    }
+  }
+  volantis.rightmenu.html2md = () => {
+    const selectionObj = window.getSelection();
+    const rangObj = selectionObj.getRangeAt(0);
+    const docFragment = rangObj.cloneContents();
+    const htmlStr = volantis.rightmenu.htmlHandle(docFragment);
+    const markdown = h2m(htmlStr);
+    VolantisApp.utilWriteClipText(markdown);
+  }
+  volantis.rightmenu.htmlHandle = documentFragment => {
+    const element = document.createElement("div");
+    element.appendChild(documentFragment);
+    volantis.rightmenu.removeElement([
+      'div#bottom', 'div.new-meta-box', 'div.prev-next', 'div.atk-avatar',
+      'div.atk-footer', 'div.atk-main-editor', 'div.atk-list-header',
+      'div.atk-height-limit-btn', 'div.atk-list-read-more', 'div.references',
+      '#l_cover', '#rightmenu-wrapper', '#s-top',
+      'head', 'header', 'footer', 'script', 'pjax'
+    ], element)
+    window.selectHtml = element.innerHTML;
+    return element.innerHTML.replace(/(<button(.*?)btn-copy(.*?)<\/button>)/g, '')
+      .replace(/<figcaption>(.*?)<\/figcaption>/g, '')
+  }
+  volantis.rightmenu.removeElement = (selects = [], element = document) => {
+    selects.forEach(select => {
+      element.querySelectorAll(select).forEach(item => {
+        item.remove();
+      })
+    })
+  } 
+  volantis.rightmenu.handle(() => {
+    const prev = document.querySelector('#prev').parentElement,
+      next = document.querySelector('#next').parentElement,
+      articlePrev = document.querySelector('article .prev-next a.prev p.title'),
+      articleNext = document.querySelector('article .prev-next a.next p.title');
+    prev.style.display = articlePrev ? 'block' : 'none';
+    prev.title = articlePrev ? articlePrev.innerText : null;
+    next.style.display = articleNext ? 'block' : 'none';
+    next.title = articleNext ? articleNext.innerText : null;
+  }, 'prevNext', false)
+</script>
     <!-- Custom Files bodyEnd end-->
   </body>
 </html>
