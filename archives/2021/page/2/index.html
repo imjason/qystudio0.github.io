@@ -28,20 +28,33 @@
   <!-- Custom Files headBegin begin-->
   <!-- sw前端竞速 -->
 <script>
-  window.addEventListener('load', async () => {
-      navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
-          .then(async reg => {
-              //安装成功，建议此处强刷新以立刻执行SW
-              if (window.localStorage.getItem('install') != 'true') {
-                  window.localStorage.setItem('install', 'true');
-                  setTimeout(() => {
-                      window.location.search = `?time=${new Date().getTime()}`
-                  }, 50)
-              }
-          }).catch(err => {
-              //安装失败，错误信息会由err传参
-          })
-  });
+(async () => {//使用匿名函数确保body已载入
+    /*
+    QYBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态
+    0 或不存在 未安装
+    1 已打断
+    2 已安装
+    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)
+    */
+    const $ = document.querySelector.bind(document);//语法糖
+    if ('serviceWorker' in navigator) { //如果支持sw
+        if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
+            window.localStorage.setItem('QYBlogHelper_Set', 1)
+            window.stop()
+            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')).text()
+        }
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
+            .then(async () => {
+                if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
+                    setTimeout(() => {
+                        window.localStorage.setItem('QYBlogHelper_Set', 2)
+                        window.location.reload()//刷新,以载入sw
+                    }, 500)//安装后等待500ms使其激活
+                }
+            })
+            .catch(err => console.error(`QYBlogHelperError:${err}`))
+    }
+})()
 </script>
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.5dcd0176.css" as="style">
@@ -1980,7 +1993,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654321238835),
+    lastupdate: new Date(1654770036265),
     sidebar: {
       for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2225,7 +2238,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654321238835");
+        script.setAttribute("src", src + "?time=1654770036265");
         HEAD.appendChild(script);
       });
     });
@@ -2235,7 +2248,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654321238835";
+        link.href = src + "?time=1654770036265";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3571,7 +3584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-04</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-04</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-04</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-04</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-04</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-09</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-09</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-09</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3633,7 +3646,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-06-04 日</div>
+          <div id="last-update-show">2022-06-09 日</div>
         </div>
       
     </div>
