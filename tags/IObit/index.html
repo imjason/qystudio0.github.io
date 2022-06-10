@@ -39,9 +39,10 @@
     const $ = document.querySelector.bind(document);//语法糖
     if ('serviceWorker' in navigator) { //如果支持sw
         if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
-            window.localStorage.setItem('QYBlogHelper_Set', 1)
             window.stop()
-            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')).text()
+            window.localStorage.setItem('QYBlogHelper_Set', 1)
+            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+            document.body.innerHTML = await replacehtml.text()
         }
         navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
             .then(async () => {
@@ -57,7 +58,7 @@
 })()
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.5dcd0176.css" as="style">
+  <link rel="preload" href="/css/style.1bcfbf25.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
@@ -775,13 +776,13 @@ button {
   }
   :root:not([color-scheme]) {
     --color-site-body: #121212;
-    --color-read-bkg: #282c34;
+    --color-read-bkg: #323741;
     --color-read-post: #282c34;
-    --color-site-bg: #282c34;
+    --color-site-bg: #323741;
     --color-site-inner: #979fad;
     --color-site-footer: #aaa;
     --color-card: #282c34;
-    --color-text: #979fad;
+    --color-text: #a8aeba;
     --color-block: #3a3a3a;
     --color-codeblock: #343a3c;
     --color-inlinecode: #d56d28;
@@ -803,7 +804,7 @@ button {
     filter: brightness(65%) !important;
   }
   :root:not([color-scheme]) .blur {
-    background: rgba(40,44,52,0.9) !important;
+    background: rgba(50,55,65,0.9) !important;
   }
   :root:not([color-scheme]) .white-box.blur {
     background: rgba(40,44,52,0.9) !important;
@@ -850,13 +851,13 @@ button {
 }
 [color-scheme='dark'] {
   --color-site-body: #121212;
-  --color-read-bkg: #282c34;
+  --color-read-bkg: #323741;
   --color-read-post: #282c34;
-  --color-site-bg: #282c34;
+  --color-site-bg: #323741;
   --color-site-inner: #979fad;
   --color-site-footer: #aaa;
   --color-card: #282c34;
-  --color-text: #979fad;
+  --color-text: #a8aeba;
   --color-block: #3a3a3a;
   --color-codeblock: #343a3c;
   --color-inlinecode: #d56d28;
@@ -878,7 +879,7 @@ button {
   filter: brightness(65%) !important;
 }
 [color-scheme='dark'] .blur {
-  background: rgba(40,44,52,0.9) !important;
+  background: rgba(50,55,65,0.9) !important;
 }
 [color-scheme='dark'] .white-box.blur {
   background: rgba(40,44,52,0.9) !important;
@@ -1889,10 +1890,74 @@ h3 {
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
+.sayhi {
+  text-align: left;
+}
+.bloggerpro .content {
+  font-size: 1rem !important;
+  background: linear-gradient(-45deg, var(--heo-main), #031764, #150136, #67044d);
+}
+.bloggerpro .contactme {
+  margin-top: 20px;
+  width: 80px;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+}
+.bloggerpro .contactme .icon {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -khtml-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 1.1rem;
+  background: #333;
+  color: #fff;
+}
+.bloggerpro .contactme a {
+  color: inherit !important;
+  background: transparent !important;
+}
+.bloggerpro .contactme .icon:first-child:hover {
+  background: #ee5253;
+  color: #333;
+}
+.bloggerpro .contactme .icon:last-child:hover {
+  background: #2e86de;
+  color: #333;
+}
 
   </style>
-  <link rel="stylesheet" href="/css/style.5dcd0176.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.5dcd0176.css"></noscript>
+  <link rel="stylesheet" href="/css/style.1bcfbf25.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.1bcfbf25.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1991,11 +2056,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
+    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.1bcfbf25.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654770151372),
+    lastupdate: new Date(1654861204208),
     sidebar: {
-      for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
+      for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
       webinfo: {
         lastupd: {
@@ -2238,7 +2303,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654770151372");
+        script.setAttribute("src", src + "?time=1654861204208");
         HEAD.appendChild(script);
       });
     });
@@ -2248,7 +2313,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654770151372";
+        link.href = src + "?time=1654861204208";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3243,7 +3308,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
 
-<section class="widget blogger shadow desktop mobile pjax">
+<section class="widget blogger shadow mobile pjax">
   <div class='content'>
     
       
@@ -3272,7 +3337,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             <a href="/atom.xml"
-              class="social fad fa-rss flat-btn"
+              class="social fa-solid fa-rss flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
               
@@ -3280,8 +3345,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <a href="/admin@qystudio.ltd"
-              class="social fad fa-envelope flat-btn"
+            <a href="mailto:me@xxx.com"
+              class="social fa-solid fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
               
@@ -3289,7 +3354,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <a href="https://github.com/qystudio0"
+            <a href="https://github.com/volantis-x/"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -3298,17 +3363,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <a href="/setting/"
-              class="social fad fa-cog flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://travellings.link/"
-              class="social fad fa-subway flat-btn"
+            <a href="/"
+              class="social fa-solid fa-headphones-alt flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
               
@@ -3319,6 +3375,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   </div>
 </section>
+
+    
+  
+
+  
+    
+    
+      
+
+  <section class="widget bloggerpro shadow desktop">
+    <div class='content'>
+      
+        <div class='text'>
+          <div class="txt_container">
+            <!-- <p id="type"></p> -->
+            <p class="sayhi" style="text-align: left; margin-left:1rem">👋Hi!小可爱~这是</p>
+            
+              <h2 style="text-align: left; margin-top:0;margin-left:1rem">
+                青云工作室
+              </h2>
+              
+                <p class="description1" style="text-align:left; margin-left: 1rem"><span id="jinrishici-sentence">不因何事去制作 只因兴趣而创造</span></p>
+                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                <div class="contactme" style=" margin-left:1rem">
+                  <div class="icon"><a target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=TjbIk84fDNYu4UAzA4xDzRk53hkKABh_&authKey=St%2F%2B%2FHaVkOvMkzZAqWXC5jfovqmrVqIStz5FL9o2oOCxZYAVth5ywkwnShxmf8X%2B&noverify=0&group_code=660414614"><i class='fab fa-qq'></i></a></div>
+                  <div class="icon"><a target="_blank" rel="noopener" href="https://github.com/qystudio0"><i class='fab fa-github'></i></a></div>
+                </div>
+                <p>
+                    
+                </p>
+          </div>
+        </div>
+      
+    </div>
+  </section>
 
     
   
@@ -3445,7 +3536,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-09</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-09</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-09</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-10</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-10</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-10</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3482,7 +3573,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>26.9k 字</div>
+          <div>26.8k 字</div>
         </div>
       
 
@@ -3507,7 +3598,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-06-09 日</div>
+          <div id="last-update-show">2022-06-10 日</div>
         </div>
       
     </div>
@@ -4285,7 +4376,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -4613,31 +4704,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-
-<script>
-  const genUuid = () => {
-    let s = [];
-    let hexDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for (let i = 0; i < 36; i++) {
-      s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
-    }
-    s[14] = "4"
-    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1)
-    s[8] = s[13] = s[18] = s[23] = "-"
-    let uuid = s.join("")
-    return uuid;
-  }
-  setTimeout(() => {
-    let uin = localStorage.getItem('Aegis_UIN');
-    if(!uin) {
-      uin = genUuid();
-      localStorage.setItem('Aegis_UIN', uin);
-    }
-    volantis.js("https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js").then(()=>{
-      const aegis=new Aegis({id:"n043EbNKJGaOAJxKgz",reportApiSpeed:true,reportAssetSpeed:true,spa:true,uin:uin});
-    })
-  }, 1000)
-</script>
 
 
 

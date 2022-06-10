@@ -691,13 +691,13 @@ button {
   }
   :root:not([color-scheme]) {
     --color-site-body: #121212;
-    --color-read-bkg: #282c34;
+    --color-read-bkg: #323741;
     --color-read-post: #282c34;
-    --color-site-bg: #282c34;
+    --color-site-bg: #323741;
     --color-site-inner: #979fad;
     --color-site-footer: #aaa;
     --color-card: #282c34;
-    --color-text: #979fad;
+    --color-text: #a8aeba;
     --color-block: #3a3a3a;
     --color-codeblock: #343a3c;
     --color-inlinecode: #d56d28;
@@ -719,7 +719,7 @@ button {
     filter: brightness(65%) !important;
   }
   :root:not([color-scheme]) .blur {
-    background: rgba(40,44,52,0.9) !important;
+    background: rgba(50,55,65,0.9) !important;
   }
   :root:not([color-scheme]) .white-box.blur {
     background: rgba(40,44,52,0.9) !important;
@@ -766,13 +766,13 @@ button {
 }
 [color-scheme='dark'] {
   --color-site-body: #121212;
-  --color-read-bkg: #282c34;
+  --color-read-bkg: #323741;
   --color-read-post: #282c34;
-  --color-site-bg: #282c34;
+  --color-site-bg: #323741;
   --color-site-inner: #979fad;
   --color-site-footer: #aaa;
   --color-card: #282c34;
-  --color-text: #979fad;
+  --color-text: #a8aeba;
   --color-block: #3a3a3a;
   --color-codeblock: #343a3c;
   --color-inlinecode: #d56d28;
@@ -794,7 +794,7 @@ button {
   filter: brightness(65%) !important;
 }
 [color-scheme='dark'] .blur {
-  background: rgba(40,44,52,0.9) !important;
+  background: rgba(50,55,65,0.9) !important;
 }
 [color-scheme='dark'] .white-box.blur {
   background: rgba(40,44,52,0.9) !important;
@@ -1804,4 +1804,68 @@ h3 {
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
+}
+.sayhi {
+  text-align: left;
+}
+.bloggerpro .content {
+  font-size: 1rem !important;
+  background: linear-gradient(-45deg, var(--heo-main), #031764, #150136, #67044d);
+}
+.bloggerpro .contactme {
+  margin-top: 20px;
+  width: 80px;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+}
+.bloggerpro .contactme .icon {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -khtml-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 1.1rem;
+  background: #333;
+  color: #fff;
+}
+.bloggerpro .contactme a {
+  color: inherit !important;
+  background: transparent !important;
+}
+.bloggerpro .contactme .icon:first-child:hover {
+  background: #ee5253;
+  color: #333;
+}
+.bloggerpro .contactme .icon:last-child:hover {
+  background: #2e86de;
+  color: #333;
 }

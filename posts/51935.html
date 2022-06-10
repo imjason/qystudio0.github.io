@@ -39,9 +39,10 @@
     const $ = document.querySelector.bind(document);//语法糖
     if ('serviceWorker' in navigator) { //如果支持sw
         if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
-            window.localStorage.setItem('QYBlogHelper_Set', 1)
             window.stop()
-            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')).text()
+            window.localStorage.setItem('QYBlogHelper_Set', 1)
+            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+            document.body.innerHTML = await replacehtml.text()
         }
         navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
             .then(async () => {
@@ -57,7 +58,7 @@
 })()
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.5dcd0176.css" as="style">
+  <link rel="preload" href="/css/style.1bcfbf25.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
@@ -778,13 +779,13 @@ button {
   }
   :root:not([color-scheme]) {
     --color-site-body: #121212;
-    --color-read-bkg: #282c34;
+    --color-read-bkg: #323741;
     --color-read-post: #282c34;
-    --color-site-bg: #282c34;
+    --color-site-bg: #323741;
     --color-site-inner: #979fad;
     --color-site-footer: #aaa;
     --color-card: #282c34;
-    --color-text: #979fad;
+    --color-text: #a8aeba;
     --color-block: #3a3a3a;
     --color-codeblock: #343a3c;
     --color-inlinecode: #d56d28;
@@ -806,7 +807,7 @@ button {
     filter: brightness(65%) !important;
   }
   :root:not([color-scheme]) .blur {
-    background: rgba(40,44,52,0.9) !important;
+    background: rgba(50,55,65,0.9) !important;
   }
   :root:not([color-scheme]) .white-box.blur {
     background: rgba(40,44,52,0.9) !important;
@@ -853,13 +854,13 @@ button {
 }
 [color-scheme='dark'] {
   --color-site-body: #121212;
-  --color-read-bkg: #282c34;
+  --color-read-bkg: #323741;
   --color-read-post: #282c34;
-  --color-site-bg: #282c34;
+  --color-site-bg: #323741;
   --color-site-inner: #979fad;
   --color-site-footer: #aaa;
   --color-card: #282c34;
-  --color-text: #979fad;
+  --color-text: #a8aeba;
   --color-block: #3a3a3a;
   --color-codeblock: #343a3c;
   --color-inlinecode: #d56d28;
@@ -881,7 +882,7 @@ button {
   filter: brightness(65%) !important;
 }
 [color-scheme='dark'] .blur {
-  background: rgba(40,44,52,0.9) !important;
+  background: rgba(50,55,65,0.9) !important;
 }
 [color-scheme='dark'] .white-box.blur {
   background: rgba(40,44,52,0.9) !important;
@@ -1892,10 +1893,74 @@ h3 {
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
+.sayhi {
+  text-align: left;
+}
+.bloggerpro .content {
+  font-size: 1rem !important;
+  background: linear-gradient(-45deg, var(--heo-main), #031764, #150136, #67044d);
+}
+.bloggerpro .contactme {
+  margin-top: 20px;
+  width: 80px;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+}
+.bloggerpro .contactme .icon {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -khtml-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 1.1rem;
+  background: #333;
+  color: #fff;
+}
+.bloggerpro .contactme a {
+  color: inherit !important;
+  background: transparent !important;
+}
+.bloggerpro .contactme .icon:first-child:hover {
+  background: #ee5253;
+  color: #333;
+}
+.bloggerpro .contactme .icon:last-child:hover {
+  background: #2e86de;
+  color: #333;
+}
 
   </style>
-  <link rel="stylesheet" href="/css/style.5dcd0176.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.5dcd0176.css"></noscript>
+  <link rel="stylesheet" href="/css/style.1bcfbf25.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.1bcfbf25.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1994,11 +2059,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.5dcd0176.css"}},
+    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.1bcfbf25.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654770151372),
+    lastupdate: new Date(1654861204208),
     sidebar: {
-      for_page: ["board","navigation","blogger","category","tagcloud","lastupdate","webinfo"],
+      for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
       webinfo: {
         lastupd: {
@@ -2241,7 +2306,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654770151372");
+        script.setAttribute("src", src + "?time=1654861204208");
         HEAD.appendChild(script);
       });
     });
@@ -2251,7 +2316,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654770151372";
+        link.href = src + "?time=1654861204208";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3646,7 +3711,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a target="_blank" rel="noopener" href="http://example.com/2022/04/04/%E6%97%A5%E5%B8%B8%E5%A1%AB%E5%9D%91/Hexo%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2/">Hexo安装暗黑模式</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li></ul></div>
 </div>
   </div>
   
@@ -3908,7 +3973,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-09</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-09</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-09</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-09</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-10</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-10</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-10</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3917,6 +3982,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -4704,7 +4773,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -5032,31 +5101,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-
-<script>
-  const genUuid = () => {
-    let s = [];
-    let hexDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for (let i = 0; i < 36; i++) {
-      s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
-    }
-    s[14] = "4"
-    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1)
-    s[8] = s[13] = s[18] = s[23] = "-"
-    let uuid = s.join("")
-    return uuid;
-  }
-  setTimeout(() => {
-    let uin = localStorage.getItem('Aegis_UIN');
-    if(!uin) {
-      uin = genUuid();
-      localStorage.setItem('Aegis_UIN', uin);
-    }
-    volantis.js("https://cdn-go.cn/aegis/aegis-sdk/latest/aegis.min.js").then(()=>{
-      const aegis=new Aegis({id:"n043EbNKJGaOAJxKgz",reportApiSpeed:true,reportAssetSpeed:true,spa:true,uin:uin});
-    })
-  }, 1000)
-</script>
 
 
 
