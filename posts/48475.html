@@ -1,0 +1,5292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+  <meta name="generator" content="Hexo 5.4.0">
+  <meta charset="utf-8">
+  
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="https://qystudio.ltd/posts/48475.html"/>
+  
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+      <link rel="apple-touch-icon" sizes="180x180" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/apple-touch-icon-qy.png">
+      <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-32x32-qy.ico">
+      <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-16x16-qy.ico">
+      <link href="https://cdn1.tianli0.top/gh/inkss/common@master/css/jetbrains.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  <!-- sw前端竞速 -->
+<script>
+(async () => {//使用匿名函数确保body已载入
+    /*
+    QYBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态
+    0 或不存在 未安装
+    1 已打断
+    2 已安装
+    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)
+    */
+    const $ = document.querySelector.bind(document);//语法糖
+    if ('serviceWorker' in navigator) { //如果支持sw
+        if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
+            window.stop()
+            window.localStorage.setItem('QYBlogHelper_Set', 1)
+            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+            document.body.innerHTML = await replacehtml.text()
+        }
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
+            .then(async () => {
+                if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
+                    setTimeout(() => {
+                        window.localStorage.setItem('QYBlogHelper_Set', 2)
+                        window.location.reload()//刷新,以载入sw
+                    }, 500)//安装后等待500ms使其激活
+                }
+            })
+            .catch(err => console.error(`QYBlogHelperError:${err}`))
+    }
+})()
+</script>
+  <!-- Custom Files headBegin end-->
+  <link rel="preload" href="/css/style.1bcfbf25.css" as="style">
+  <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- feed -->
+      <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
+  <!-- 页面元数据 -->
+  <title>win11安装初体验(副下载) - 青云工作室</title>
+  <meta name="keywords" content="windows,系统,青云工作室,qystudio">
+  <meta desc name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客 - 青云工作室 - 青云工作室">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="win11安装初体验(副下载)">
+<meta property="og:url" content="https://qystudio.ltd/posts/48475.html">
+<meta property="og:site_name" content="青云工作室">
+<meta property="og:description" content="6月15号深夜，Windows 11预览版的镜像，从国内论坛首先流出，各大QQ群和微信群都在广泛分享。16号白天，各大QQ群都时不时能看到群友在谈论Windows 11的话题。至此，Windows 11已经板上钉钉，无可争议了。 本次泄露的镜像具体构建号是Build 21996，包含了Windows 11家庭版、教育版、专业版。昨天上午已经下载了Windows 11的镜像，并在虚拟机里安装测试了，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
+<meta property="article:published_time" content="2021-06-21T07:15:18.000Z">
+<meta property="article:modified_time" content="2022-06-12T10:10:00.984Z">
+<meta property="article:author" content="青云工作室">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+/*
+  * Workaround for Chrome bug, part 1
+  * Chunk rendering for all but the first article.
+  * /layout/_partial/scripts/content-visibility-scroll-fix.ejs
+*/
+.post-story + .post-story {
+  content-visibility: auto;
+  contain-intrinsic-size: 10px 500px;
+}
+.new-meta-box,
+.article-title,
+.prev-next,
+.meta-v3,
+.md .footer .header,
+.widget header,
+details summary {
+  font-family: lishu, Helvetica, monospace;
+}
+:root {
+  --color-site-body: #f7f9fe;
+  --color-site-bg: #f7f9fe;
+  --color-site-inner: #555;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #36ac91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-white-png: #fff;
+  --color-img-error: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: Moe, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #1b79c4;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur#comments {
+    backdrop-filter: unset;
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 460px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: lishu, Helvetica, monospace;
+  font-size: 3.125rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 16px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 0.875rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 8px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark';
+  }
+  :root:not([color-scheme]) {
+    --color-site-body: #121212;
+    --color-read-bkg: #323741;
+    --color-read-post: #282c34;
+    --color-site-bg: #323741;
+    --color-site-inner: #979fad;
+    --color-site-footer: #aaa;
+    --color-card: #282c34;
+    --color-text: #a8aeba;
+    --color-block: #3a3a3a;
+    --color-codeblock: #343a3c;
+    --color-inlinecode: #d56d28;
+    --color-h1: #979fad;
+    --color-h2: #979fad;
+    --color-h3: #abb2bf;
+    --color-h4: #abb2bf;
+    --color-h5: #abb2bf;
+    --color-h6: #abb2bf;
+    --color-p: #abb2bf;
+    --color-list: #aaa;
+    --color-list-hl: #69dfc4;
+    --color-meta: #888;
+    --color-link: #888;
+    --color-white-png: #b2b2b2;
+    --color-img-error: #21252b;
+  }
+  :root:not([color-scheme]) img {
+    filter: brightness(65%) !important;
+  }
+  :root:not([color-scheme]) .blur {
+    background: rgba(50,55,65,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(40,44,52,0.9) !important;
+  }
+  :root:not([color-scheme]) .nav-main .u-search-input {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) .article blockquote,
+  :root:not([color-scheme]) .references,
+  :root:not([color-scheme]) .related_posts {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) .article-title a {
+    color: var(--color-h1) !important;
+  }
+  :root:not([color-scheme]) details>summary {
+    color: var(--color-p) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) details {
+    border: 1px solid var(--color-site-bg) !important;
+    background: var(--color-site-bg) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal,
+  :root:not([color-scheme]) #u-search .modal-header,
+  :root:not([color-scheme]) #u-search .modal-body {
+    background: var(--color-card) !important;
+  }
+  :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
+}
+[color-scheme='dark'] {
+  --color-site-body: #121212;
+  --color-read-bkg: #323741;
+  --color-read-post: #282c34;
+  --color-site-bg: #323741;
+  --color-site-inner: #979fad;
+  --color-site-footer: #aaa;
+  --color-card: #282c34;
+  --color-text: #a8aeba;
+  --color-block: #3a3a3a;
+  --color-codeblock: #343a3c;
+  --color-inlinecode: #d56d28;
+  --color-h1: #979fad;
+  --color-h2: #979fad;
+  --color-h3: #abb2bf;
+  --color-h4: #abb2bf;
+  --color-h5: #abb2bf;
+  --color-h6: #abb2bf;
+  --color-p: #abb2bf;
+  --color-list: #aaa;
+  --color-list-hl: #69dfc4;
+  --color-meta: #888;
+  --color-link: #888;
+  --color-white-png: #b2b2b2;
+  --color-img-error: #21252b;
+}
+[color-scheme='dark'] img {
+  filter: brightness(65%) !important;
+}
+[color-scheme='dark'] .blur {
+  background: rgba(50,55,65,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(40,44,52,0.9) !important;
+}
+[color-scheme='dark'] .nav-main .u-search-input {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #l_main .article .prev-next>a:hover {
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] .article blockquote,
+[color-scheme='dark'] .references,
+[color-scheme='dark'] .related_posts {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] .article-title a {
+  color: var(--color-h1) !important;
+}
+[color-scheme='dark'] details>summary {
+  color: var(--color-p) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] details {
+  border: 1px solid var(--color-site-bg) !important;
+  background: var(--color-site-bg) !important;
+}
+[color-scheme='dark'] #u-search .modal,
+[color-scheme='dark'] #u-search .modal-header,
+[color-scheme='dark'] #u-search .modal-body {
+  background: var(--color-card) !important;
+}
+[color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
+}
+@media screen and (max-width: 500px) {
+  [color-scheme='dark'] .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+@font-face {
+  font-family: 'Moe';
+  src: url("https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'lishu';
+  src: url("https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: lishu, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: Moe, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #44d7b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li > a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul.nav-list-h>li > a span {
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .menu >ul>li>a .icon {
+  width: 16px;
+  margin-right: 6px;
+}
+.l_header .menu >ul>li>a .icon i {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: inline-block;
+}
+.l_header .menu >ul>li>ul .icon {
+  width: 16px;
+  margin-right: 2px;
+}
+.l_header .menu >ul>li>ul .icon i {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: inline-block;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active span,
+.l_header ul.nav-list-h>li >a.active span {
+  color: #44d7b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+    height: 64px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+@media screen and (prefers-color-scheme: dark) and (max-width: 500px) {
+  .l_header .m_search {
+    background: var(--color-site-bg) !important;
+  }
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    left: 0 !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    max-width: 100% !important;
+  }
+}
+article p {
+  line-height: 2 !important;
+}
+@media screen and (max-width: 500px) {
+  #safearea {
+    margin: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  #safearea .body-wrapper {
+    padding: 0;
+  }
+  #safearea #l_main {
+    padding-left: 0;
+  }
+  #safearea #l_main article#comments,
+  #safearea #l_main article#friends,
+  #safearea #l_main article#post,
+  #safearea #l_main article#page,
+  #safearea #l_main article#arc {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_main article#cat,
+  #safearea #l_main article#tag {
+    margin: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_main .post-wrapper {
+    margin: 0 0 16px;
+  }
+  #safearea #l_main .post-wrapper .post {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+  #safearea #l_side .widget.mobile {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+}
+h1,
+h2,
+h3 {
+  font-family: lishu, Helvetica, monospace;
+}
+.iconfont {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.iconfont.emoji {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.3em;
+}
+.rem1p5 {
+  font-size: 1.5rem;
+}
+.rem2 {
+  font-size: 2rem;
+}
+.rem6 {
+  font-size: 6rem;
+}
+.rem12 {
+  font-size: 12rem;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .title {
+  line-height: inherit;
+}
+.cover-wrapper .title,
+.cover-wrapper .list-h p {
+  color: var(--color-site-inner);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 2rem;
+  }
+}
+.post.post-v3.white-box .note > p {
+  text-indent: 0;
+}
+#l_main>article.cus-indent p img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+.sayhi {
+  text-align: left;
+}
+.bloggerpro .content {
+  font-size: 1rem !important;
+  background: linear-gradient(-45deg, var(--heo-main), #031764, #150136, #67044d);
+}
+.bloggerpro .contactme {
+  margin-top: 20px;
+  width: 80px;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+}
+.bloggerpro .contactme .icon {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -khtml-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 1.1rem;
+  background: #333;
+  color: #fff;
+}
+.bloggerpro .contactme a {
+  color: inherit !important;
+  background: transparent !important;
+}
+.bloggerpro .contactme .icon:first-child:hover {
+  background: #ee5253;
+  color: #333;
+}
+.bloggerpro .contactme .icon:last-child:hover {
+  background: #2e86de;
+  color: #333;
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.1bcfbf25.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.1bcfbf25.css"></noscript>
+  <script>
+      let userColorScheme=localStorage.getItem("color-scheme")
+      if(userColorScheme){
+        document.documentElement.setAttribute("color-scheme", userColorScheme);
+      }
+    document.addEventListener("error", function(e) {
+      const elem = e.target;
+      const parentElem = e.target.parentElement;
+      const parentElemClass = parentElem.classList.toString();
+      const pParentElemClass = parentElem.parentElement.classList.toString();
+      if (elem.tagName.toLowerCase() !== 'img') {
+          return;
+      }
+      elem.classList.add('fix-cursor-default', 'error');
+      if(parentElemClass === 'fancybox' && pParentElemClass === 'fancybox') {
+        parentElem.parentElement.classList.add('hideFancybox');
+        parentElem.parentElement.classList.remove('fancybox');
+        parentElem.classList.remove('fancybox');
+      } else if(parentElemClass === 'img-bg' && pParentElemClass === 'img-wrap') {
+        parentElem.parentElement.classList.add('hideFancybox');
+      } else if(parentElemClass === 'author') {
+        parentElem.parentElement.classList.add('fix-author-imgError');
+      } else if(parentElemClass.indexOf('tk-avatar') != -1 ) {
+        parentElem.parentElement.classList.add('fix-avatar-imgError');
+      }
+    }, true);
+  </script>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support"><strong>了解详情 ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = false; // 开启调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: false,
+    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.1bcfbf25.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1655028646828),
+    sidebar: {
+      for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
+      for_post: ["toc","lastupdate"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2021/01/20",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.css","js":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"},
+      aplayer: {
+        id: 6821246154,
+        enable:false
+      },
+      rightmenu: {
+        faicon: "fad",
+        layout: ["home","archives","message","hr","print","darkmode","reading","hr","music"],
+        music_alwaysShow: true,
+        customPicUrl: {"enable":false,"old":null,"new":null}
+      },
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","hr","plugins.elementCheck","plugins.elementImage","menus.prevNext","hr","menus.links","hr","plugins.articlePage","menus.darkMode"],"options":{"iconPrefix":"fa-light PETERRIVE","articleShowLink":false,"musicAlwaysShow":false},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-light fa-arrow-left PETERRIVE","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-light fa-arrow-right PETERRIVE","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-light fa-redo PETERRIVE","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-light fa-arrow-up PETERRIVE","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-light PETERRIVE fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-light PETERRIVE fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-light PETERRIVE fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-light PETERRIVE fa-copy","event":"copyText","group":"seletctText"},{"id":"html2md","name":"复制为 MD","icon":"fa-light PETERRIVE fa-file-signature","event":"volantis.rightmenu.html2md()","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-light PETERRIVE fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-light PETERRIVE fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-light PETERRIVE fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-light PETERRIVE fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片文件","icon":"fa-light PETERRIVE fa-image","event":"copyImg","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-light fa-print TURQUOISE","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-light fa-book-open EMERALD","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-light fa-eclipse-alt WISTERIA","event":"volantis.dark.toggle()","group":"darkMode"}],"links":[{"id":"friends","name":"友情链接","icon":"fa-light fa-link AMETHYST","link":"/links/","group":"link"},{"id":"archive","name":"文章归档","icon":"fa-light fa-box-archive CONCRETE","link":"/archives/","group":"link"},{"id":"about","name":"关于我","icon":"fa-light fa-circle-info WISTERIA","link":"/about/","group":"link"},{"id":"info","name":"留言板","icon":"fa-light fa-comments ALIZARIN","link":"/messages/","group":"link"}],"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-light fa-angles-left PETERRIVE","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-light fa-angles-right PETERRIVE","event":"volantis.rightmenu.jump('next')","group":"prevNext"}]}}
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("body")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src + "?time=1655028646828");
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src + "?time=1655028646828";
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://npm.elemecdn.com/jquery/dist/jquery.min.js") 
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) =>{
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(()=>{
+        volantis.scroll.unengine.push(()=>{
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+</head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title fix-header-title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li>
+          <a id="s-comment" target="_self"  href="/" onclick="return false;" title="comment">
+            <i class="fal fa-comments fa-fw"></i>
+          </a>
+        </li>
+        
+          <li><a id="s-toc" class="s-toc fal fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            <span>QY studio</span>
+          
+        </a>
+      
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <span class="icon"><i class='fad fa-home CARROT fa-fw'></i></span> <span>博客</span>
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="文章"
+                  
+                  
+                  >
+                  <span class="icon"><i class='fad fa-search NEPHRITIS fa-fw'></i></span> <span>文章</span>
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <span class="icon"><i class='fad fa-folder-open PETERRIVE fa-fw'></i></span> <span>分类</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <span class="icon"><i class='fad fa-archive TURQUOISE fa-fw'></i></span> <span>归档</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/links/" title="友链"
+                  
+                  
+                  
+                    active-action="action-links"
+                  >
+                  <span class="icon"><i class='fad fa-link ALIZARIN fa-fw'></i></span> <span>友链</span>
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <span class="icon"><i class='fad fa-info-circle SUNFLOWER fa-fw'></i></span> <span>关于</span>
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="更多"
+                  
+                  
+                  >
+                  <span class="icon"><i class='fad fa-bars POMEGRANATE fa-fw'></i></span> <span>更多</span>
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fad fa-eclipse-alt WISTERIA fa-fw'></i>
+                  <span>暗黑模式</span>
+                </a>
+              <li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="闲言碎语"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/messages/" title="留言板"
+                  
+                  
+                  
+                    active-action="action-messages"
+                  >
+                  <span class="icon"><i class='fad fa-comments PETERRIVE fa-fw'></i></span> <span>留言板</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
+                  
+                  
+                  
+                    active-action="action-https:qystudiospeedtestcustomcom"
+                  >
+                  <span class="icon"><i class='fad fa-tachometer-fastest WISTERIA fa-fw'></i></span> <span>网络测速</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                  
+                  
+                  
+                    active-action="action-https:musicqystudioltd"
+                  >
+                  <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                  
+                  
+                  
+                    active-action="action-https:ulmusicqystudioltd"
+                  >
+                  <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                  
+                  
+                  
+                    active-action="action-https:travellingslink"
+                  >
+                  <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fal fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="搜索..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fal fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fal fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <span class="icon"><i class='fad fa-home CARROT fa-fw'></i></span> <span>博客</span>
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="文章"
+                  
+                  
+                  >
+                  <span class="icon"><i class='fad fa-search NEPHRITIS fa-fw'></i></span> <span>文章</span>
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <span class="icon"><i class='fad fa-folder-open PETERRIVE fa-fw'></i></span> <span>分类</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <span class="icon"><i class='fad fa-archive TURQUOISE fa-fw'></i></span> <span>归档</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/links/" title="友链"
+                  
+                  
+                  
+                    active-action="action-links"
+                  >
+                  <span class="icon"><i class='fad fa-link ALIZARIN fa-fw'></i></span> <span>友链</span>
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <span class="icon"><i class='fad fa-info-circle SUNFLOWER fa-fw'></i></span> <span>关于</span>
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                 href="/" onclick="return false;" title="更多"
+                  
+                  
+                  >
+                  <span class="icon"><i class='fad fa-bars POMEGRANATE fa-fw'></i></span> <span>更多</span>
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box header toggle-mode-btn">
+                  <i class='fad fa-eclipse-alt WISTERIA fa-fw'></i>
+                  <span>暗黑模式</span>
+                </a>
+              <li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/artitalk/" title="闲言碎语"
+                  
+                  
+                  
+                    active-action="action-artitalk"
+                  >
+                  <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/messages/" title="留言板"
+                  
+                  
+                  
+                    active-action="action-messages"
+                  >
+                  <span class="icon"><i class='fad fa-comments PETERRIVE fa-fw'></i></span> <span>留言板</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://qystudio.speedtestcustom.com" title="网络测速"
+                  
+                  
+                  
+                    active-action="action-https:qystudiospeedtestcustomcom"
+                  >
+                  <span class="icon"><i class='fad fa-tachometer-fastest WISTERIA fa-fw'></i></span> <span>网络测速</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                  
+                  
+                  
+                    active-action="action-https:musicqystudioltd"
+                  >
+                  <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                  
+                  
+                  
+                    active-action="action-https:ulmusicqystudioltd"
+                  >
+                  <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                  
+                  
+                  
+                    active-action="action-https:travellingslink"
+                  >
+                  <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="none" class='cover-wrapper post search' style="display: none;">
+        
+  <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">青云工作室</p>
+    
+    
+      <p class="subtitle">qystudio</p>
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜点什么吧~" />
+          <i class="icon fal fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/archives/"
+              
+              
+              active-action="action-archives">
+              <i class='fad fa-home CARROT fa-fw'></i><p>博客</p>
+            </a>
+          
+            <a href="/links/"
+              
+              
+              active-action="action-links">
+              <i class='fad fa-link NEPHRITIS fa-fw'></i><p>友链</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              active-action="action-about">
+              <i class='fad fa-info-circle PETERRIVE fa-fw'></i><p>关于</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://travellings.link/"
+              
+              
+              active-action="action-https:travellingslink">
+              <i class='fad fa-subway WISTERIA fa-fw'></i><p>开往</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/48475.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="青云工作室">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="青云工作室">
+    <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title allow-select" itemprop="name headline">
+        win11安装初体验(副下载)
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" no-lazy src="https://bu.dusays.com/2022/03/04/b972f4461561d.png" alt="Author">
+    <p itemprop="name">青云工作室团队</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fad fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">系统</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished">
+  <a class='notlink'>
+    <i class="fad fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：<time class="dataToShow" datetime="2021-06-21T07:15:18+00:00" title="2021年6月21日">2021年6月21日</time></p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="win11安装初体验(副下载)" data-path="/posts/48475.html">
+        <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fad fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fad fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：11 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+<div class="new-meta-item comments-count">
+  
+  <a href="/posts/48475.html#comments">
+    <i class="fad fa-comment-dots fa-fw"></i>
+    <span data-path="/posts/48475.html" class="waline-comment-count"></span>
+    <span class="leancloud-comments-count">&nbsp;条评论</span>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>6月15号深夜，Windows 11预览版的镜像，从国内论坛首先流出，各大QQ群和微信群都在广泛分享。16号白天，各大QQ群都时不时能看到群友在谈论Windows 11的话题。至此，Windows 11已经板上钉钉，无可争议了。</p>
+<p>本次泄露的镜像具体构建号是Build 21996，包含了Windows 11家庭版、教育版、专业版。昨天上午已经下载了Windows 11的镜像，并在虚拟机里安装测试了，现在跟大家分享一下测试体验。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/640.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/640.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="640"></p>
+<div class="story post-story"><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>由于是预览版系统，BUG比较多，而且是英文版的，所以不建议在实体机上使用。采用的是Parallels Desktop虚拟机，安装过程已经全程录像了，安装过程花了16分钟。</p>
+</div><div class="story post-story"><h2 id="二、测试"><a href="#二、测试" class="headerlink" title="二、测试"></a>二、测试</h2><h3 id="测试软件"><a href="#测试软件" class="headerlink" title="测试软件"></a>测试软件</h3><p>Windows 11 对设备的硬性要求，具体可见下图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/001.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/001.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="001"></p>
+<p>我们可以先检测自己的电脑是否可以升级到Windows11</p>
+<p><strong>那么如何检测呢？</strong></p>
+<p>可以安装微软提供的<strong>Windows电脑监控状况检查</strong>软件进行检测</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/002.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/002.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="002"></p>
+<p>需要注意的是，本软件需要在Windows10上运行，Windows7上是无法运行的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/003.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/003.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="003"></p>
+<p>安装完成后，直接打开，首页就可以看到：</p>
+<blockquote>
+<p>我们检查这台电脑是否满足系统要求</p>
+<p>如果想进行升级,则当其可用时可获取免费升级</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/004.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/004.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="004"></p>
+<p>点击立即检查，就能得知是否可以运行Windows11了</p>
+<h3 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h3><p>如果遇到不支持时可以用这些方法</p>
+<h4 id="1-常规修复"><a href="#1-常规修复" class="headerlink" title="1.常规修复"></a>1.常规修复</h4><p>事实上，过去几年出货的 PC 都有 TPM 2.0。因此，可能是您的计算机支持 TPM，但它被禁用，导致运行状况检查应用程序报告 Windows 11 无法在您的计算机上运行。</p>
+<p>如果禁用，您必须打开 BIOS 菜单并手动启用 TPM。</p>
+<h4 id="检查-TPM-是否已启用"><a href="#检查-TPM-是否已启用" class="headerlink" title="检查 TPM 是否已启用"></a>检查 TPM 是否已启用</h4><p>要检查您的计算机是否具有兼容的 TPM，请在 PowerShell 窗口中运行命令 get-tpm。</p>
+<ol>
+<li>打开“开始”菜单并搜索 Windows Powershell。</li>
+<li>右键单击“Windows PowerShell”并点击<strong>以管理员身份运行</strong>。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/005.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/005.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></li>
+<li>窗口打开后，键入并输入<strong>get-tpm</strong>。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/006.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/006.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></li>
+<li>检查 TPM 是否存在并启用。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/007.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/007.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>或者，您可以按 Win + R，键入<strong>tpm.msc，</strong>然后按 Enter。TPM 管理窗口打开后，检查“状态”和“TPM 规范版本”。</p>
+<h4 id="在-BIOS-菜单中启用-TPM"><a href="#在-BIOS-菜单中启用-TPM" class="headerlink" title="在 BIOS 菜单中启用 TPM"></a>在 BIOS 菜单中启用 TPM</h4><p>如果未启用 TPM，您可以通过 BIOS 菜单启用它，如下所示：</p>
+<ol>
+<li>关闭你的电脑。</li>
+<li>重新启动它，在启动过程中，按 F1、F2、F10、F11、DEL**打开 BIOS 或 UEFI 菜单 -**键因制造商而异 - 请查看用户手册或制造商网站以获取确切信息。</li>
+<li>BIOS 或 UEFI 菜单打开后，点击<strong>安全</strong>选项。</li>
+<li>在这里，查找 TPM 并检查它是否已启用。如果没有，请启用它。</li>
+<li>现在，确保<strong>Save and Exit</strong>。然后，重新启动您的 PC。</li>
+</ol>
+<p>在某些设备上，您可以在高级设置 &gt; 安全 &gt; 可信计算或设置 &gt; 杂项 &gt; 可信计算中找到该选项。</p>
+<h4 id="开启安全启动"><a href="#开启安全启动" class="headerlink" title="开启安全启动"></a>开启安全启动</h4><p>安全启动是一种安全标准，可帮助确保设备仅使用制造商信任的软件启动。这有助于防止恶意软件，并且通常在所有现代计算机上都可用。</p>
+<p>您的 PC 必须支持安全启动才能与 Windows 11 兼容。</p>
+<h4 id="检查是否启用了安全启动"><a href="#检查是否启用了安全启动" class="headerlink" title="检查是否启用了安全启动"></a>检查是否启用了安全启动</h4><p>要检查您的计算机上是否启用了安全启动：</p>
+<ol>
+<li>按<strong>Windows+R</strong>打开运行窗口。</li>
+<li>键入并输入<strong>msinfo32</strong>。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/008.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/008.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></li>
+<li>窗口打开后，查找“安全启动状态”。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/009.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/009.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="009"></li>
+<li>检查它是否打开。如果没有，请通过以下步骤启用它。</li>
+</ol>
+<p>相关提示 2 在应用程序不允许的情况下截取屏幕截图的方法；无需root</p>
+<h4 id="在-BIOS-菜单中启用安全启动"><a href="#在-BIOS-菜单中启用安全启动" class="headerlink" title="在 BIOS 菜单中启用安全启动"></a>在 BIOS 菜单中启用安全启动</h4><p>与 TPM 一样，您可以从 BIOS 菜单启用安全启动。</p>
+<ol>
+<li>按照上述 TPM 步骤打开 BIOS 或 UEFI 菜单。</li>
+<li>转到“<strong>启动”</strong>选项卡。您可能必须进入<strong>高级模式</strong>。</li>
+<li>寻找<strong>安全启动</strong>选项。检查它是否已启用。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/010.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/010.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></li>
+<li>如果没有，请启用它。</li>
+<li><strong>保存并退出</strong>，然后重新启动您的 PC。</li>
+</ol>
+<p>最后，打开PC健康检查工具，检查兼容性，看是否通过测试。如果没有，请重新检查您的计算机规格。</p>
+<h4 id="2-注册表大法"><a href="#2-注册表大法" class="headerlink" title="2.注册表大法"></a>2.注册表大法</h4><p>　　这种方法是外媒WindowsLatest报道的，在进行镜像安装时，Win11会提示“该电脑无法运行Win11”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/60032c11186bc63c2b13c66ac82d8644.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/60032c11186bc63c2b13c66ac82d8644.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="安装Win11系统绕过TPM 2.0的三种方法"></p>
+<p>　　不要慌，在这个界面按Shift+F10，打开命令行界面，输入regedit打开注册表，然后定位到：</p>
+<p>　　HKEY_LOCAL_MACHINE\SYSTEM\Setup</p>
+<p>　　创建一个名为“LabConfig”的项，接着在“LabConfig”下创建两个DWORD值：</p>
+<p>　　键为“BypassTPMCheck”，值为“00000001”</p>
+<p>　　键为“BypassSecureBootCheck”，值为“00000001”</p>
+<p>　　保存退出后，上图的提示就消失了，大家就可以正常安装Win11。</p>
+<h4 id="3-dll破解"><a href="#3-dll破解" class="headerlink" title="3.dll破解"></a>3.dll破解</h4><p>　如果想通过直接从Win11 ISO镜像运行setup.exe程序来升级系统，而非全新安装，还有另一种简单的解决方法。</p>
+<p>　大家需要找到Win10 ISO的appraiserres.dll文件，替换Win11 ISO的同名文件。完成后，需要使用第三方工具（如Rufus或AnyBurn）重新创建ISO镜像，然后再次运行安装文件。</p>
+<h4 id="4-了解为什么您的-PC-与-Windows-11-不兼容"><a href="#4-了解为什么您的-PC-与-Windows-11-不兼容" class="headerlink" title="4.了解为什么您的 PC 与 Windows 11 不兼容"></a>4.了解为什么您的 PC 与 Windows 11 不兼容</h4><p>WhyNotWin11 是一款便携式兼容性检查工具，可扫描您的硬件并告诉您 PC 与 Windows 11 不兼容的原因。您可以使用此工具替代 Microsoft 的 PC 健康检查工具：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/011.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/011.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="011"></p>
+<ol>
+<li><p>从GitHub<strong>下载 WhyNotWin11</strong>。</p>
+</li>
+<li><p>如果您的浏览器阻止了该应用程序，请单击三个点并保留该文件。</p>
+</li>
+<li><p>同样，Windows 可能会标记该应用程序并阻止安装。单击“<strong>更多信息”，</strong>然后单击<strong>“仍然运行”</strong>。</p>
+</li>
+<li><p>当提示运行应用程序时，单击<strong>确定</strong>。</p>
+</li>
+<li><p>它会立即检查并告诉您您的 PC 是否可以运行 Windows 11。</p>
+</li>
+<li><p>如果您的 PC 不兼容，它会告诉您您的机器缺乏的确切要求。<img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/012.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/012.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+</li>
+</ol>
+<p>它的工作原理是将您的计算机硬件与当前已知的要求相匹配：</p>
+<ul>
+<li>引导类型</li>
+<li>CPU架构</li>
+<li>CPU代</li>
+<li>核心数</li>
+<li>CPU频率</li>
+<li>DirectX 支持</li>
+<li>磁盘分区</li>
+<li>内存</li>
+<li>安全启动</li>
+<li>贮存</li>
+<li>TPM 最小值</li>
+</ul>
+<p>如果所有要求都标记为<strong>绿色并显示“OK”，则</strong>您的计算机兼容 Windows 11。但是，任何参数都以<strong>红色</strong>显示并<strong>带有 X</strong>，这就是导致兼容性问题的原因。如果可能，您可以进行更改以使 Windows 11 在设备上运行。</p>
+</div><div class="story post-story"><h2 id="三、体验"><a href="#三、体验" class="headerlink" title="三、体验"></a>三、体验</h2><p>Windows 11预览版给我的印象主要有以下几个：</p>
+<ul>
+<li>开机logo变了</li>
+<li>任务栏按钮居中</li>
+<li>无处不在的圆角矩形</li>
+<li>新增了快速分屏功能</li>
+<li>高斯模糊更好看了</li>
+</ul>
+<h3 id="开机logo"><a href="#开机logo" class="headerlink" title="开机logo"></a>开机logo</h3><p>首先谈谈开机logo。Windows 11的开机画面中央是正方形的微软logo，而Windows 10则是梯形的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/641.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/641.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Windows 11开机logo"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/642.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/642.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Windows 10开机logo"></p>
+<h3 id="改语言"><a href="#改语言" class="headerlink" title="改语言"></a>改语言</h3><p>由于这次泄露的镜像是英文版的，没有自带简体中文语言，因此安装完成需要手动去设置里添加语言</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/013.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/013.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>把地区改成中国，语言改成中文（简体，中国），并在Language里添加中文（简体，中国），然后注销系统，即可获取中文系统界面。</p>
+<p>不过，目前还仅仅是部分UI的简单汉化，很多的内置软件都没有被彻底汉化，可能是因为微软还没跟进翻译吧。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/014.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/014.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="014"></p>
+<h3 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h3><p>那么，装完系统需要激活，经过测试，使用激活工具也可以顺利激活成功，还是数字权利激活。不过系统版本被激活工具识别错误，相信作者也会及时跟进。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/016.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/016.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="016"></p>
+<h3 id="任务栏"><a href="#任务栏" class="headerlink" title="任务栏"></a>任务栏</h3><p>任务栏居中，可以说是Windows 11给人的最直观的感受，左对齐了几十年的Win按钮，终于跑到中间去了。有点像macOS的风格了，有木有？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/017.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/017.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="017"></p>
+<p>那么，任务栏的第一个按钮还是Windows按钮，不过logo换了一个，之前是纯黑色的，现在变成了蓝色渐变色的了。</p>
+<p>点击Windows按钮之后，会弹出一个浮动的、不与任务栏连接在一起的开始菜单窗口，主要显示的是已固定和推荐的项目，可以把常用的软件固定在开始菜单里。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/018.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/018.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="018"></p>
+<p>点击开始菜单窗口右上角的“所有应用”按钮，即可进入Windows菜单，这个和Windows 10类似，所有安装的软件都在这里了，不过不再显示动态磁贴了：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/019.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/019.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="019"></p>
+<p>开始菜单右下角是关机按钮，可以执行睡眠、关机、重启操作。</p>
+<p>在Windows按钮上右击，可以弹出相关的菜单，和Windows 10上差不多，不过背景颜色改成了白色。</p>
+<p>另外，在设置里，还可以选择哪些快捷方式显示在开始菜窗口里：</p>
+<p>任务栏上的第二个按钮是搜索按钮，和Windows 10上的操作差不多，不做过多介绍。</p>
+<p>任务栏上的第三个按钮是多任务按钮，可以新建桌面：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEg5AhRX4JGkTNoaW1UcpU4cEyEv9havPtek5eaZhibsRz1r7Vr0YtKkg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEg5AhRX4JGkTNoaW1UcpU4cEyEv9havPtek5eaZhibsRz1r7Vr0YtKkg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEvx8wicsM7Bu2GBQMLaDAHJPdmAycYe8p2zf1eIwiaxUH221osxmk4onw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEvx8wicsM7Bu2GBQMLaDAHJPdmAycYe8p2zf1eIwiaxUH221osxmk4onw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>任务栏上的第四个按钮是“小组件”按钮，有点像Windows 10上“<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI2Mzk4MjM4Mg==&mid=2247539972&idx=3&sn=82e55c0c8bf5e0a165a75527020c29f1&scene=21#wechat_redirect">资讯和兴趣</a>”按钮，不过这次它直接显示在屏幕左侧，里面都是各种资讯广告、天气之类的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEDCAefsI2UqwRib2Kum4BIibZhvVau8U1lXj1vlIR5w4L9vhY2DkuibqFA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEDCAefsI2UqwRib2Kum4BIibZhvVau8U1lXj1vlIR5w4L9vhY2DkuibqFA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>不知道微软之后会不会开放接口，如果发展地好的话，可能会变成类似于安卓和iOS系统上的“负一屏”，里面可以添加各种小工具，也是不错的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEOEJicEKsTXOV1hGNSmfibBfEH91h8lgIcEywZdRPmVibH2AFvFKPL53LA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_gif/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEOEJicEKsTXOV1hGNSmfibBfEH91h8lgIcEywZdRPmVibH2AFvFKPL53LA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>此外，任务栏上会显示当前已经开启的软件，并且正在运行的程序，其图标下方会出现一个小横线，并且你当前正在使用的软件，它的小横线会更长一些。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEpd3khobLpQ0uEUgFTG0maOrx6X2OTVSrl14lGY3VP4bXHMMVALokVA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEpd3khobLpQ0uEUgFTG0maOrx6X2OTVSrl14lGY3VP4bXHMMVALokVA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEpXnHia8REfWvujwcibJd51SGuZXO12XmbWXA6gkInVdxsEViadaQFxMiag/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEpXnHia8REfWvujwcibJd51SGuZXO12XmbWXA6gkInVdxsEViadaQFxMiag/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>在任务栏上右击，不会再像Windows 10那样，出现各种选项，取而代之的是任务栏设置选项。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQE2cO4UbngSJIpXjjSlXyrsYPh3nrp31xv2X1SdYEfAPXwnEMpPd1PDw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQE2cO4UbngSJIpXjjSlXyrsYPh3nrp31xv2X1SdYEfAPXwnEMpPd1PDw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>而在任务栏上的图标上右击，也可以快速取消固定。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEVkNb7KnTAHaYS61DgcxhibDGzmN8Wibxnu31YYBqWr5VOeicicQb9eGWtQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEVkNb7KnTAHaYS61DgcxhibDGzmN8Wibxnu31YYBqWr5VOeicicQb9eGWtQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>有些用户可能习惯了左对齐的任务栏，那么，在设置里也可以设定菜单栏的对齐方式，改成左对齐，就和Windows 10差不多了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEBxEZgebMeZwmZN0ghE5ft3sxW5GAeFFLOxB8ps5W72evopjMicYiafuw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEBxEZgebMeZwmZN0ghE5ft3sxW5GAeFFLOxB8ps5W72evopjMicYiafuw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<h3 id="圆角矩形"><a href="#圆角矩形" class="headerlink" title="圆角矩形"></a>圆角矩形</h3><p>被传了很久的圆角矩形，终于来了，系统内置的软件基本都已经实现了圆角矩形，这又是一项从macOS抄袭到Windows上的功能。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEskmSMHfrpxgRfpibI13rorVX0lpKCxxdiawVbMyOYqpNszceiaCibiacLHA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEskmSMHfrpxgRfpibI13rorVX0lpKCxxdiawVbMyOYqpNszceiaCibiacLHA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEohg48DYPdmTPo26iaMMFPYtuicRwCAplSlicx5R8qice3nDPTnzIgZwvjg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEohg48DYPdmTPo26iaMMFPYtuicRwCAplSlicx5R8qice3nDPTnzIgZwvjg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEla70n24nAnAq8qJicQwbMLpT2stvMK6dicXq2ibJQOYCMCnic8w6Dam0Lg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEla70n24nAnAq8qJicQwbMLpT2stvMK6dicXq2ibJQOYCMCnic8w6Dam0Lg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQECeCNhIptTYFnAT1CU40bCKPH5KtVxRntsiaqxaSP7k9fguYpCQRQrqg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQECeCNhIptTYFnAT1CU40bCKPH5KtVxRntsiaqxaSP7k9fguYpCQRQrqg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>但是，第三方软件暂时还没适配，需要开发厂商及时适配才能显示为圆角矩形，萝卜哥测试了火绒，目前它还不是圆角的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEsSeKdoANuDIShibsCMaAibtdbrkHyJrJ4TCINbzvPZvS0Z3asrmlZFIQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEsSeKdoANuDIShibsCMaAibtdbrkHyJrJ4TCINbzvPZvS0Z3asrmlZFIQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEKFjA4phcicYSZzhPl52gPoiaFC0m3HJUO5S9UCRQkKDNzGrzg0lUiaZwA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEKFjA4phcicYSZzhPl52gPoiaFC0m3HJUO5S9UCRQkKDNzGrzg0lUiaZwA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<h3 id="新的分屏功能"><a href="#新的分屏功能" class="headerlink" title="新的分屏功能"></a>新的分屏功能</h3><p>Windows 11还新增了快速分屏功能，可能很多人都没发现。</p>
+<p>以往的窗口放大按钮，单纯就是放大功能。而在Windows 11中，微软将其进行优化，只要鼠标在最大化图标上停留几秒钟，即可出现分屏功能。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQE1twgib7X49qySib6WqTsvmJ1eegS5VVoTCyJlmPaH0zMnG4NianicreWPw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQE1twgib7X49qySib6WqTsvmJ1eegS5VVoTCyJlmPaH0zMnG4NianicreWPw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>目前，Windows 11预览版提供了4种分屏模式，萝卜哥做了个动图演示：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEsicoghaLzurAfR3hS0vEPh75mhWx2NnScP8JZlR97FhKQ3IUYGnMEJQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_gif/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEsicoghaLzurAfR3hS0vEPh75mhWx2NnScP8JZlR97FhKQ3IUYGnMEJQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<h3 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h3><p>Windows 11上的背景模糊，貌似更好看了，对不？</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEysibbtiaUje1ZPtrP1Co3k161DRoy9o9rsknYzCj3QeOSWYGfwfUcCZQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEysibbtiaUje1ZPtrP1Co3k161DRoy9o9rsknYzCj3QeOSWYGfwfUcCZQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEFFAUEkbHErRZk9uFFJSt4MsCl2ZPPtvS046mdnzjxLKUSN02RZianDg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEFFAUEkbHErRZk9uFFJSt4MsCl2ZPPtvS046mdnzjxLKUSN02RZianDg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<h3 id="控制面板"><a href="#控制面板" class="headerlink" title="控制面板"></a>控制面板</h3><p>有人可能会好奇，控制面板还在不在，是不是全部统一到了设置里去了。那么，就目前的Windows 11预览版来说，控制面板还是存在的，割裂感依然存在，不排除后期微软更新之后，会逐步去除控制面板。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEcZZ1Ugo10l8B2FQ5jhicqmRuqWNBhHgn8KVL5uctqD4BWgv5C49ib6zw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEcZZ1Ugo10l8B2FQ5jhicqmRuqWNBhHgn8KVL5uctqD4BWgv5C49ib6zw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>Windows 11采用了新的图标风格，这在萝卜哥之前写的“<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI2Mzk4MjM4Mg==&mid=2247535773&idx=1&sn=936f03c08a42e1049091d1d09ea3bb9d&scene=21#wechat_redirect">太阳谷更新</a>”文章里，已经提到了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEibpe1qwW3P6RKkZFm71ibUWK1WZvOqJTdH9Q4DfqcAbibcdnbU3SE9ORQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEibpe1qwW3P6RKkZFm71ibUWK1WZvOqJTdH9Q4DfqcAbibcdnbU3SE9ORQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEZTeYGNugh7OyvKJF1X3xTxKjomekGqtg1Xr9nvRqFVqBT34TOMd6HQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEZTeYGNugh7OyvKJF1X3xTxKjomekGqtg1Xr9nvRqFVqBT34TOMd6HQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>此外，Windows 11还修改了很多系统声音特效，删除、错误、完成等提示音全部改了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEDovzT1gpnN8icugcgbBS1Q6LOdv3BkDGXAIzbNfDwhCAXag8lAd0Ubg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="lazyload" data-srcset="https://mmbiz.qpic.cn/mmbiz_jpg/kiciadc7CaaJ7YqDR6vb68RRTWiaujaOAQEDovzT1gpnN8icugcgbBS1Q6LOdv3BkDGXAIzbNfDwhCAXag8lAd0Ubg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>微软还给Windows 11换了新的内置壁纸和主题，以往存在于Windows 8、Windows 10上的壁纸，全部删除了，换成了新壁纸，具体看今天的第二篇推文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/picture/640" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/picture/640" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+</div><div class="story post-story"><h2 id="四、下载"><a href="#四、下载" class="headerlink" title="四、下载"></a>四、下载</h2><p>百度网盘：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1IxC39lBxCJuOWiNCY0e7Xg">https://pan.baidu.com/s/1IxC39lBxCJuOWiNCY0e7Xg</a> 提取码: 6666</p>
+<p>天翼云：<a target="_blank" rel="noopener" href="https://cloud.189.cn/web/share?code=FFFfQnNJneuy">https://cloud.189.cn/web/share?code=FFFfQnNJneuy</a></p>
+<p>OneDrive：<a target="_blank" rel="noopener" href="http://dwz.win/apE7">http://dwz.win/apE7</a> 密码：hlbz</p>
+<p>磁力链接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">magnet:?xt=urn:btih:209922c98ec03a2cbf0eebe631f9c1d577795645&amp;dn=21996.1.210529-1541.co_release_CLIENT_CONSUMER_x64FRE_en-us.iso</span><br><span class="line">magnet:?xt=urn:btih:7101c26a2ba10ab2374dcc171f92a443bdc986c5&amp;dn=21996.1.210529-1541.co_release_CLIENT_CONSUMER_x64FRE_en-us.iso</span><br></pre></td></tr></table></figure>
+
+<p>镜像校验值：</p>
+<p>MD5: 179bfe07f7050093ee595ddd85a30201</p>
+<p>SHA1: 3b6da9194ba303ac7dbbf2e521716c809500919c</p>
+<p>测试工具下载:<a target="_blank" rel="noopener" href="https://aka.ms/GetPCHealthCheckApp">https://aka.ms/GetPCHealthCheckApp</a></p>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/63659.html">window上帝模式</a></li><li><a href="https://qystudio.ltd/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystudio.ltd/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/wintips/">windows小技巧集锦,持续更新中......</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/wsl/">win11开启centos子系统</a></li></ul></div>
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+            
+            <!-- <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+ -->
+            
+            
+            
+            <p><svg id="icon-touxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
+                <path
+                  d="M614.72 554.538c-49.086-6.399-100.27-2.1-149.256-2.1-119.465 0-209.04 95.972-206.84 215.437 0 17.095 8.498 31.99 23.493 40.488 14.896 10.697 34.09 14.896 53.285 17.095 61.882 6.398 123.664 6.398 198.342 6.398 40.488 0 93.872-2.1 142.858-4.298 27.692 0 53.284-4.3 78.877-14.896 19.194-8.498 29.89-19.194 31.99-40.488 8.498-104.57-72.478-204.84-172.75-217.636zM680.8 375.39c0-87.474-74.678-162.053-164.251-162.053-89.574 0-162.053 74.679-162.053 162.053-2.1 87.474 74.678 164.252 162.053 164.252 89.673 0 164.252-74.678 164.252-164.252z"
+                  fill="#FFFFFF"></path>
+                <path
+                  d="M512.35 0C228.733 0 0.5 228.233 0.5 511.8qystudio.ltd5s228.233 511.85 511.85 511.85 511.85-228.233 511.85-511.85S795.967 0 512.35 0z m275.12 772.074c-2.1 21.294-12.797 31.99-31.991 40.488-25.593 10.697-51.185 14.896-78.877 14.896-49.086 2.099-102.37 4.298-142.858 4.298-74.678 0-136.46 0-198.342-6.398-19.195-2.1-38.389-6.398-53.285-17.095-14.895-8.497-23.493-23.493-23.493-40.488-2.1-119.465 87.475-215.437 206.84-215.437 49.085 0 100.27-4.299 149.256 2.1 100.27 12.896 181.247 113.166 172.75 217.636zM354.495 375.39c0-87.474 72.479-162.053 162.053-162.053S680.8 288.016 680.8 375.39c0 89.574-74.679 164.252-164.252 164.252-87.375 0-164.152-76.778-162.053-164.252z"
+                  fill="#249FF8"></path>
+              </svg>&nbsp;本文由 <a href="https://qystudio.ltd/" data-pjax-state="">QY studio Team</a> 创作，如果您觉得本文不错，请随意赞赏🌹</p>
+            <p><svg id="icon-ziyuan" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
+                <path
+                  d="M511.854421 0a511.854421 511.854421 0 1 0 512.145579 511.854421A511.854421 511.854421 0 0 0 511.854421 0z"
+                  fill="#39B54A"></path>
+                <path
+                  d="M576.491328 630.355417l-116.462895 116.462894a129.56497 129.56497 0 0 1-182.555587 0l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l81.232868-81.232868a179.644015 179.644015 0 0 0 13.102076 70.460051l-52.69946 52.408302a69.877737 69.877737 0 0 0 0 98.702303l2.038101 2.038101a70.168894 70.168894 0 0 0 98.702303 0l116.462895-116.462894a69.877737 69.877737 0 0 0 0-98.702304l-2.038101-2.0381a69.586579 69.586579 0 0 0-13.975547-10.772818l42.508956-42.508956a128.109184 128.109184 0 0 1 13.102076 11.355132l2.0381 2.0381a129.273813 129.273813 0 0 1 0 182.26443z"
+                  fill="#FFFFFF"></path>
+                <path
+                  d="M746.235997 460.901905l-81.232869 81.232869a179.352858 179.352858 0 0 0-13.102076-70.460051l52.69946-52.408303a69.877737 69.877737 0 0 0 0-98.702303l-2.038101-2.038101a69.877737 69.877737 0 0 0-98.702303 0l-116.462894 116.462895a69.877737 69.877737 0 0 0 0 98.702303l2.0381 2.038101a68.421951 68.421951 0 0 0 13.975548 10.772817l-42.508957 42.508957a136.552744 136.552744 0 0 1-13.102076-11.355132l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l116.462894-116.462894a129.56497 129.56497 0 0 1 182.555587 0l2.038101 2.0381a128.982656 128.982656 0 0 1 0 182.26443z"
+                  fill="#FFFFFF"></path>
+              </svg>&nbsp;本文永久链接是：<a href=https://qystudio.ltd/posts/48475.html>https://qystudio.ltd/posts/48475.html</a>
+            </p>
+            <p><svg id="icon-fenxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
+                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F3B243"></path>
+                <path d="M630.784 323.584m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
+                  fill="#FFFFFF"></path>
+                <path d="M630.784 688.128m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
+                  fill="#FFFFFF"></path>
+                <path d="M319.488 512m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
+                  fill="#FFFFFF"></path>
+                <path d="M341.037056 480.370688l257.343488-175.7184 27.713536 40.59136-257.339392 175.7184z" fill="#FFFFFF">
+                </path>
+                <path d="M349.052928 488.452096l252.854272 182.10816-28.725248 39.886848-252.874752-182.10816z"
+                  fill="#FFFFFF"></path>
+              </svg>&nbsp;博客内容遵循<a target="_blank" rel="noopener"
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
+                4.0)
+                协议</a></p>
+            <p><svg id="icon-juanzeng" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
+                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F24827" p-id="19155"></path>
+                <path
+                  d="M713.953882 364.318118a133.647059 133.647059 0 0 0-189.003294 0l-13.327059 13.327058-13.342117-13.327058a133.647059 133.647059 0 0 0-189.003294 0 133.632 133.632 0 0 0 0 188.988235l13.327058 13.342118 189.018353 160.918588 188.988236-160.933647 13.342117-13.327059a133.662118 133.662118 0 0 0 0-188.988235z"
+                  fill="#FFFFFF" p-id="19156"></path>
+              </svg>&nbsp;您的喜欢是作者写作最大的动力😁！</p>
+            
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://npm.elemecdn.com/qycdn@0.9.0/img/other/wechatpay.webp'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified">
+  <a class='notlink'>
+    <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：<time class="dataToShow" datetime="2021-06-21T15:15:18+08:00" title="2022年6月12日">2022年6月12日</time></p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/windows/" rel="nofollow"><i class="fad fa-hashtag fa-fw" aria-hidden="true"></i><p>windows</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="nofollow"><i class="fad fa-hashtag fa-fw" aria-hidden="true"></i><p>系统</p></a></div>
+  <span hidden itemprop="keywords">windows 系统</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://qystudio.ltd/posts/48475.html&title=win11安装初体验(副下载) - 青云工作室&summary="
+          
+          >
+          
+            <img src="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://qystudio.ltd/posts/48475.html&title=win11安装初体验(副下载) - 青云工作室&summary="
+          
+          >
+          
+            <img src="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://qystudio.ltd/posts/48475.html&title=win11安装初体验(副下载) - 青云工作室&summary="
+          
+          >
+          
+            <img src="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn1.tianli0.top/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/posts/14166.html'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>使用PicGO-Gitee搭建博客图床</p>
+          <p class='content'>建立gitee（码云）图床库注册码云的方法很简单，网站引导都是中文，不多说了，我们直接建立自己的图床库。
+软件关于软件的下载与安装，可以自行参考使用PicGo+GitHub搭建免费个人图床
+点击...</p>
+        </a>
+      
+      
+        <a class='next' href='/posts/78415.html'>
+          <p class='title'>Windows 10 21H2 太阳谷更新镜像发布<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>微软将于2021年下半年推出Windows 10大更新，代号叫“太阳谷”更新
+
+
+关于这个话题，撰写帖子了，比如：界面大变样，微软Win10太阳谷概念图曝光
+但这些资讯大都来自国外网站，只可惜微...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  
+    <article class="post white-box shadow" id="comments">
+      <span hidden>
+        <meta itemprop="discussionUrl" content="/posts/48475.html#comments">
+      </span>
+      <p ct><i class='fad fa-comments'></i> 评论</p>
+      
+      
+      <div id="layoutHelper-comments"></div>
+    </article>
+  
+
+
+
+
+
+
+</div>
+<aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
+    
+  <header>
+    
+      <span class="icon"><i class="fad fa-list NEPHRITIS fa-fw" aria-hidden="true"></i></span>
+      <span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">一、安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-text">二、测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6"><span class="toc-text">测试软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D"><span class="toc-text">修复</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E8%A7%84%E4%BF%AE%E5%A4%8D"><span class="toc-text">1.常规修复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5-TPM-%E6%98%AF%E5%90%A6%E5%B7%B2%E5%90%AF%E7%94%A8"><span class="toc-text">检查 TPM 是否已启用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-BIOS-%E8%8F%9C%E5%8D%95%E4%B8%AD%E5%90%AF%E7%94%A8-TPM"><span class="toc-text">在 BIOS 菜单中启用 TPM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">开启安全启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%90%AF%E7%94%A8%E4%BA%86%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">检查是否启用了安全启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-BIOS-%E8%8F%9C%E5%8D%95%E4%B8%AD%E5%90%AF%E7%94%A8%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">在 BIOS 菜单中启用安全启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E8%A1%A8%E5%A4%A7%E6%B3%95"><span class="toc-text">2.注册表大法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-dll%E7%A0%B4%E8%A7%A3"><span class="toc-text">3.dll破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BA%86%E8%A7%A3%E4%B8%BA%E4%BB%80%E4%B9%88%E6%82%A8%E7%9A%84-PC-%E4%B8%8E-Windows-11-%E4%B8%8D%E5%85%BC%E5%AE%B9"><span class="toc-text">4.了解为什么您的 PC 与 Windows 11 不兼容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%93%E9%AA%8C"><span class="toc-text">三、体验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E6%9C%BAlogo"><span class="toc-text">开机logo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E8%AF%AD%E8%A8%80"><span class="toc-text">改语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB"><span class="toc-text">激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F"><span class="toc-text">任务栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%86%E8%A7%92%E7%9F%A9%E5%BD%A2"><span class="toc-text">圆角矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E5%88%86%E5%B1%8F%E5%8A%9F%E8%83%BD"><span class="toc-text">新的分屏功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A"><span class="toc-text">高斯模糊</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF"><span class="toc-text">控制面板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-text">四、下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">推荐文章（由hexo文章推荐插件驱动）</span></a></li></ol>
+    </div>
+  </section>
+
+    
+  
+
+  
+    
+    
+      
+    
+  
+
+
+  <div class="widget-sticky">
+    
+    
+
+
+<section class="widget shadow desktop mobile pjax">
+  
+  <header>
+    
+      <span class="icon"><i class="fad fa-clock WISTERIA fa-fw" aria-hidden="true"></i></span>
+      <span class='name'>最近更新</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-12</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-12</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-12</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-12</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-12</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+  </div>
+</section>
+
+    
+  </div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+              <a href="/atom.xml"
+                class="social fad fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:admin@qystudio.ltd"
+                class="social fad fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/qystudio0"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
+
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2020-2021 青云工作室</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fal fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  top.location!=self.location&&(top.location=self.location);
+  
+  volantis.css("https://npm.elemecdn.com/font6pro@6.0.1/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+<script src="/js/app.54cf6e41.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-light fa-arrow-left PETERRIVE fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-light fa-arrow-right PETERRIVE fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-light fa-redo PETERRIVE fa-fw"></i></a>
+
+
+
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-light fa-arrow-up PETERRIVE fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-light PETERRIVE fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-light PETERRIVE fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-light PETERRIVE fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-light PETERRIVE fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="html2md" data-event="volantis.rightmenu.html2md()" data-group="seletctText">
+      <i class="fa-light PETERRIVE fa-file-signature fa-fw"></i>
+      复制为 MD
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-light PETERRIVE fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-light PETERRIVE fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-light PETERRIVE fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-light PETERRIVE fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-light PETERRIVE fa-image fa-fw"></i>
+      复制图片文件
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="prev" data-event="volantis.rightmenu.jump('prev')" data-group="prevNext">
+      <i class="fa-light fa-angles-left PETERRIVE fa-fw"></i>
+      查看上一篇
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="next" data-event="volantis.rightmenu.jump('next')" data-group="prevNext">
+      <i class="fa-light fa-angles-right PETERRIVE fa-fw"></i>
+      查看下一篇
+    </span>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="friends" href="/links/" data-group="link">
+      <i class="fa-light fa-link AMETHYST fa-fw"></i>
+      友情链接
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="archive" href="/archives/" data-group="link">
+      <i class="fa-light fa-box-archive CONCRETE fa-fw"></i>
+      文章归档
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="about" href="/about/" data-group="link">
+      <i class="fa-light fa-circle-info WISTERIA fa-fw"></i>
+      关于我
+    </a>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="info" href="/messages/" data-group="link">
+      <i class="fa-light fa-comments ALIZARIN fa-fw"></i>
+      留言板
+    </a>
+  </li>
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-light fa-print TURQUOISE fa-fw"></i>
+      打印页面
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-light fa-book-open EMERALD fa-fw"></i>
+      阅读模式
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-light fa-eclipse-alt WISTERIA fa-fw"></i>
+      暗黑模式
+    </span>
+  </li>
+
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script>
+  const RightMenusFunction = {};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+
+
+
+
+
+  RightMenusFunction['html2md'] = (__text__) => {volantis.rightmenu.html2md()}
+
+
+
+
+
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+
+
+
+
+
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+
+
+
+
+
+
+
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+
+
+
+
+
+  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+
+
+
+
+
+  RightMenusFunction['prev'] = () => {volantis.rightmenu.jump('prev')}
+
+
+
+
+
+  RightMenusFunction['next'] = () => {volantis.rightmenu.jump('next')}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+
+
+
+
+
+  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+
+
+
+
+
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+
+
+
+</script>
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "color-scheme";
+const rootElementDarkModeAttributeName = "color-scheme";
+const setLS = (k, v) => {
+    localStorage.setItem(k, v);
+};
+const removeLS = (k) => {
+    localStorage.removeItem(k);
+};
+const getLS = (k) => {
+    return localStorage.getItem(k);
+};
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+  getCustomDarkMode();
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+/**
+ * get target mode
+ */
+ const getCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  if(currentSetting=="dark"){
+    volantis.dark.mode="light";
+  }else{
+    volantis.dark.mode="dark";
+  }
+  // console.log(volantis.dark.mode)
+};
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+/**
+ * 暗黑模式触发器
+ */
+volantis.dark.toggle=()=>{
+  const mode = toggleCustomDarkMode();
+  applyCustomDarkModeSettings(mode);
+  // 使用 volantis.dark.push 方法传入volantis.dark.toggle回调函数 参见layout/_partial/scripts/global.ejs
+  volantis.dark.method.toggle.start();
+}
+/**
+ * bind event for toggle button
+ */
+
+function bindToggleButton() {
+  var btn= document.querySelectorAll("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn")
+  btn.forEach(function (e) {
+    volantis.dom.$(e).on('click',volantis.dark.toggle);
+  })
+}
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", ()=>{
+  volantis.requestAnimationFrame(bindToggleButton)
+});
+volantis.pjax.push(bindToggleButton);
+
+const darkModelListeners={
+  dark:(mediaQueryList )=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "dark";
+    }
+    volantis.dark.method.toggle.start();
+  },
+  light:(mediaQueryList)=>{
+    if(mediaQueryList.matches){
+      volantis.dark.mode = "light";
+    }
+    volantis.dark.method.toggle.start();
+  }
+}
+window.matchMedia('(prefers-color-scheme: dark)').addListener(darkModelListeners.dark)
+window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListeners.light)
+</script>
+
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.f372da57.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.aec80453.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://npm.elemecdn.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://cdn1.tianli0.top/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+
+
+
+
+
+   <script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal("#l_main .reveal", {
+      distance: "32px",
+      duration: "800",
+      interval: "20",
+      scale: "1",
+      easing: "ease-out",
+    });
+  }
+  function init_scrollrebeal() {
+    if (typeof ScrollReveal == "undefined") {
+      volantis.requestAnimationFrame(init_scrollrebeal);
+    } else {
+      pjax_scrollrebeal();
+    }
+  }
+  volantis.js("https://npm.elemecdn.com/scrollreveal@4.0.9/dist/scrollreveal.min.js");
+  document.addEventListener("DOMContentLoaded", init_scrollrebeal);
+  volantis.pjax.push(
+    pjax_scrollrebeal,
+    "pjax_scrollrebeal",
+    (setRequestAnimationFrame = false)
+  );
+</script>
+
+
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="waline"><i class="fa-solid fa-cog fa-spin fa-fw fa-2x"></i></div>`)
+  
+  function pjax_waline() {
+    if(!document.querySelector("#waline"))return;
+    let locale = {};
+    let path = pdata.commentPath;
+    let pagePlaceholder = pdata.commentPlaceholder || "";
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+    if(pagePlaceholder.length != 0) {
+      locale.placeholder = pagePlaceholder;
+    }
+
+    try {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+        el: '#waline',
+        path: path,
+        // https://github.com/volantis-x/hexo-theme-volantis/issues/713
+        
+        locale,
+      }),pdata.commentConfig));
+    } catch (error) {
+      alert(`Waline ${error}`)
+    }
+    fancybox_waline()
+  }
+
+  function fancybox_waline() {
+    if(typeof VolantisFancyBox === "undefined") {
+      const checkFancyBox = setInterval(() => {
+        if(typeof VolantisFancyBox === "undefined") return;
+        clearInterval(checkFancyBox);
+        VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
+      })
+    } else {
+      VolantisFancyBox.bind('#waline .wl-content img:not(.wl-emoji)');
+    }
+  }
+
+  volantis.css('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css')
+  volantis.js('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js').then(pjax_waline)
+  volantis.pjax.push(pjax_waline);
+</script>
+    
+
+
+
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.0e52f222.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://qystudio.ltd' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>
+    volantis.js("https://sdk.51.la/js-sdk-pro.min.js").then(() => {
+      LA.init({id: "JgfdvE9NYUjOrkIE",ck: "JgfdvE9NYUjOrkIE",autoTrack:true,hashMode:true})
+    })
+  </script>
+
+  
+
+
+
+  <script src="https://code.tidio.co/08xcwggjiysrqfuycntqca8abnbtkfbz.js" async></script>
+
+
+
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://npm.elemecdn.com/swiper@6/swiper-bundle.min.css");
+    volantis.js("https://npm.elemecdn.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+<script>
+  try {
+    // https://web.dev/content-visibility/
+    // https://www.caniuse.com/?search=content-visibility
+    // https://infrequently.org/2020/12/content-visibility-scroll-fix/
+    // https://infrequently.org/2020/12/resize-resilient-deferred-rendering/
+
+    // 备注 目前已知的问题:
+    // 动态修改导致的内容高度变化(例如评论框异步渲染的外部盒子高度变化) 无法提前获知, 进而导致的首次滚动条跳动无法去除 (wontfix) 事实上不使用 content-visibility 也会有跳动, 不过是比使用 content-visibility 跳动提前
+    // scrollreveal 插件潜在问题 目前尚不明确
+
+    let eqIsh = (a, b, fuzz = 2) => {
+      return Math.abs(a - b) <= fuzz;
+    };
+
+    let rectNotEQ = (a, b) => {
+      return !eqIsh(a.width, b.width) || !eqIsh(a.height, b.height);
+    };
+
+    // Keep a map of elements and the dimensions of
+    // their place-holders, re-setting the element's
+    // intrinsic size when we get updated measurements
+    // from observers.
+    let spaced = new WeakMap();
+
+    // Only call this when known cheap, post layout
+    let reserveSpace = (el, rect = el.getClientBoundingRect()) => {
+      let old = spaced.get(el);
+      // Set intrinsic size to prevent jumping on un-painting:
+      //    https://drafts.csswg.org/css-sizing-4/#intrinsic-size-override
+      if (!old || rectNotEQ(old, rect)) {
+        spaced.set(el, rect);
+        el.style["contain-intrinsic-size"] = `${rect.width}px ${rect.height}px`;
+      }
+    };
+
+    let iObs = new IntersectionObserver(
+      (entries, o) => {
+        entries.forEach((entry) => {
+          // We don't care if the element is intersecting or
+          // has been laid out as our page structure ensures
+          // they'll get the right width.
+          reserveSpace(entry.target, entry.boundingClientRect);
+        });
+      },
+      { rootMargin: "500px 0px 500px 0px" }
+    );
+
+    let rObs = new ResizeObserver((entries, o) => {
+      entries.forEach((entry) => {
+        reserveSpace(entry.target, entry.contentRect);
+      });
+    });
+
+    let resizeResilientDeferredRendering = (Selector) => {
+      let articles = document.querySelectorAll(Selector);
+
+      if (articles.length) {
+        articles.forEach((el) => {
+          iObs.observe(el);
+          rObs.observe(el);
+        });
+
+        // Workaround for Chrome bug, part 2.
+        //
+        // Re-enable browser management of rendering for the
+        // first article after the first paint. Double-rAF
+        // to ensure we get called after a layout.
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            articles[0].style["content-visibility"] = "auto";
+          });
+        });
+      }
+    };
+
+    let contentVisibilityScrollFix = () => {
+      if (!("content-visibility" in document.documentElement.style)) {
+        return;
+      }
+      resizeResilientDeferredRendering(".post-story");
+    };
+    contentVisibilityScrollFix();
+    volantis.pjax.push(contentVisibilityScrollFix);
+  } catch (error) {
+    console.log(error);
+  }
+</script>
+
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/系统/","name":"系统"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/48475.html","name":"win11安装初体验(副下载)"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"win11安装初体验(副下载)","description":"","datePublished":"2021-06-21T07:15:18.000Z","dateModified":"2022-06-12T10:10:00.984Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/48475.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/48475.html","wordCount":0,"articleSection":"系统","keywords":"windows,系统","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
+
+
+
+<script>
+  function pjax_macy() {
+    const nodeList = document.querySelectorAll('.friend-content');
+    if(nodeList.length === 0) return;
+    nodeList.forEach((element,i) => {
+      let container = 'friend-content-' + i;
+      load_macy(() => {
+        let macy = Macy({
+          container: '#' + container.toString(),
+          margin: {
+            x: 10,
+            y: 55
+          },
+          columns: 6,
+          breakAt: {
+            1000: {
+              columns: 5
+            },
+            800: {
+              columns: 4
+            },
+            600: {
+              columns: 3
+            }
+          }
+        })
+        setTimeout(() => {
+          macy.reInit();
+          if (typeof ScrollReveal === 'function') ScrollReveal().clean('#comments');
+          document.getElementById(container).style.opacity = 1;
+        }, 500)
+      })
+    });
+  }
+
+  function load_macy(done = null) {
+    if(typeof Macy === "undefined") {
+      volantis.js("https://npm.elemecdn.com/macy@2").then(() => {
+        if(done) done();
+      })
+    } else {
+      if(done) done();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    pjax_macy();
+  })
+
+  
+  volantis.pjax.push(pjax_macy);
+</script>     
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+<script src="/js/szyink/pjax.min.d810aff1.js"></script>
+
+<!-- 样式位于：source/css/_plugins/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+	<script>
+		volantis.pjax.push(window.HideLoading,'HideLoading');
+		volantis.pjax.send(window.ShowLoading,'ShowLoading');
+		volantis.pjax.error(window.HideLoading,'HideLoading');
+	</script>
+</div>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script", // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/artitalk/", "/links/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    <script type="text/javascript" src="https://npm.elemecdn.com/qycdn@0.9.6/js/h2m.js"></script>
+<script>
+  window.onkeydown = e => {
+    if (e.ctrlKey && e.key === 'a')
+      e.preventDefault();
+  }
+  ## 停更
+
+青云团队由于一
+  volantis.rightmenu.jump = (type) => {
+    const item = document.querySelector(type === 'prev' ? 'article .prev-next a.prev' : 'article .prev-next a.next');
+    if(!!item) {
+      if(typeof pjax !== 'undefined') {
+        pjax.loadUrl(item.href)
+      } else {
+        window.location.href = item.href;
+      }
+    }
+  }
+  volantis.rightmenu.html2md = () => {
+    const selectionObj = window.getSelection();
+    const rangObj = selectionObj.getRangeAt(0);
+    const docFragment = rangObj.cloneContents();
+    const htmlStr = volantis.rightmenu.htmlHandle(docFragment);
+    const markdown = h2m(htmlStr);
+    VolantisApp.utilWriteClipText(markdown);
+  }
+  volantis.rightmenu.htmlHandle = documentFragment => {
+    const element = document.createElement("div");
+    element.appendChild(documentFragment);
+    volantis.rightmenu.removeElement([
+      'div#bottom', 'div.new-meta-box', 'div.prev-next', 'div.atk-avatar',
+      'div.atk-footer', 'div.atk-main-editor', 'div.atk-list-header',
+      'div.atk-height-limit-btn', 'div.atk-list-read-more', 'div.references',
+      '#l_cover', '#rightmenu-wrapper', '#s-top',
+      'head', 'header', 'footer', 'script', 'pjax'
+    ], element)
+    window.selectHtml = element.innerHTML;
+    return element.innerHTML.replace(/(<button(.*?)btn-copy(.*?)<\/button>)/g, '')
+      .replace(/<figcaption>(.*?)<\/figcaption>/g, '')
+  }
+  volantis.rightmenu.removeElement = (selects = [], element = document) => {
+    selects.forEach(select => {
+      element.querySelectorAll(select).forEach(item => {
+        item.remove();
+      })
+    })
+  } 
+  volantis.rightmenu.handle(() => {
+    const prev = document.querySelector('#prev').parentElement,
+      next = document.querySelector('#next').parentElement,
+      articlePrev = document.querySelector('article .prev-next a.prev p.title'),
+      articleNext = document.querySelector('article .prev-next a.next p.title');
+    prev.style.display = articlePrev ? 'block' : 'none';
+    prev.title = articlePrev ? articlePrev.innerText : null;
+    next.style.display = articleNext ? 'block' : 'none';
+    next.title = articleNext ? articleNext.innerText : null;
+  }, 'prevNext', false)
+</script>
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>
