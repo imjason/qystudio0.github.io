@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
       highlightKeyWords.startFromURL();
     }, 'app.js');
     volantis.pjax.send(() => {
-      volantis.dom.switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.dom.header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.dom.wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-      volantis.EventListener.remove() // 移除事件监听器 see: layout/_partial/scripts/global.ejs
+      volantis.dom.switcher?.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.dom.header?.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.dom.wrapper?.removeClass('sub'); // 跳转页面时关闭二级导航
+      volantis.EventListener?.remove() // 移除事件监听器 see: layout/_partial/scripts/global.ejs
     }, 'app.js');
   });
 });
@@ -46,10 +46,11 @@ const locationHash = () => {
     if (target) {
       setTimeout(() => {
         if (window.location.hash.startsWith('#fn')) { // hexo-reference https://github.com/volantis-x/hexo-theme-volantis/issues/647
-          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant', observer:true })
+          let tempHeight = volantis.dom.header ? volantis.dom.header.offsetHeight : 0;
+          volantis.scroll.to(target, { addTop: - tempHeight - 5, behavior: 'instant', observer: true })
         } else {
           // 锚点中上半部有大片空白 高度大概是 volantis.dom.header.offsetHeight
-          volantis.scroll.to(target, { addTop: 5, behavior: 'instant', observer:true })
+          volantis.scroll.to(target, { addTop: 5, behavior: 'instant', observer: true })
         }
       }, 1000)
     }
@@ -84,7 +85,7 @@ const VolantisApp = (() => {
   }
 
   fn.event = () => {
-    volantis.dom.$(document.getElementById("scroll-down")).on('click', function () {
+    volantis.dom.$(document.getElementById("scroll-down"))?.on('click', function () {
       fn.scrolltoElement(volantis.dom.bodyAnchor);
     });
 
@@ -108,6 +109,73 @@ const VolantisApp = (() => {
     document.body.oncopy = function () {
       fn.messageCopyright()
     };
+
+    // artalk 侧边栏
+    fn.genArtalkContent('#widget-artalk-hotarticle', 'pv_most_pages', 10, 30); // 热门文章
+    fn.genArtalkContent('#widget-artalk-randpages', 'rand_pages', 10, 1); // 随机文章
+    fn.genArtalkContent('#widget-artalk-hotcomment', 'latest_comments', 10, 10); // 最新评论
+
+    // NextSite 侧边栏绑定事件
+    document.querySelector('.nextsite div.site-nav-toggle')?.addEventListener('click', () => {
+      let menu = document.querySelector('.nextsite nav.site-nav');
+      if (menu) {
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+      }
+    })
+  }
+
+  /**
+   * 填充侧边栏
+   * @param {*} selector Dom 选择器
+   * @param {*} type     Api
+   * @param {*} limit   请求数限制
+   * @param {*} time    时间（单位分 min）
+   */
+  fn.genArtalkContent = async (selector, type, limit, time) => {
+    const genArtalkTime = localStorage.getItem(`GenArtalkTime-${type}`) || 0;
+    const element = document.querySelector(selector);
+    if (!!element) {
+      const content = element.querySelector('.tab-pane-content');
+      try {
+        let json;
+        if (genArtalkTime > Date.now()) {
+          json = JSON.parse(localStorage.getItem(type))
+        } else {
+          json = await VolantisRequest.POST('https://artalk.szyink.com/api/stat', {
+            site_name: '枋柚梓的猫会发光',
+            type: type,
+            limit: limit
+          })
+          localStorage.setItem(type, JSON.stringify(json))
+          localStorage.setItem(`GenArtalkTime-${type}`, Date.now() + time * 60000)
+        }
+        let html = '';
+        json.forEach((item, index) => {
+          switch (type) {
+            case 'pv_most_pages':
+            case 'rand_pages':
+              const title = item?.title.replaceAll(' - 枋柚梓的猫会发光', '');
+              html = `${html}<li><span>${index + 1}</span><a title='${title}' href='${item?.key}'>${title}</a></li>`;
+              break;
+            case 'latest_comments':
+              let avatar = '';
+              if (item?.link === "") {
+                avatar = `<div class="avatar"><img src="https://cravatar.cn/avatar/${item?.email_encrypted}?d=mp&amp;s=80"></div>`
+              } else {
+                avatar = `<div class="avatar"><a target="_blank" rel="noreferrer noopener nofollow" href="${item?.link}"><img src="https://cravatar.cn/avatar/${item?.email_encrypted}?d=mp&amp;s=80"></a></div>`
+              }
+              let content = item?.content_marked.replace(/<img\b.*?(?:\>|\/>)/g, '[图片]');
+              html = `${html}<li>${avatar}<div class="main"><a href="${item?.page_key}#atk-comment-${item?.id}"><p>${item?.nick}</p>${content}</a></div></li>`;
+              break;
+          }
+        })
+        content.innerHTML = `<ul>${html}</ul>`;
+        if (typeof pjax !== 'undefined') pjax.refresh(content)
+      } catch (error) {
+        console.error(error)
+        content.innerHTML = `加载失败 /(ㄒoㄒ)/~~`
+      }
+    }
   }
 
   fn.restData = () => {
@@ -208,26 +276,28 @@ const VolantisApp = (() => {
     if (!pdata.ispage) return;
 
     // 填充二级导航文章标题 【移动端 PC】
-    volantis.dom.wrapper.find('.nav-sub .title').html(document.title.split(" - ")[0]);
+    volantis.dom.wrapper?.find('.nav-sub .title')?.html(document.title.split(" - ")[0]);
 
     // ====== bind events to every btn =========
     // 评论按钮 【移动端 PC】
     volantis.dom.comment = volantis.dom.$(document.getElementById("s-comment")); // 评论按钮  桌面端 移动端
     volantis.dom.commentTarget = volantis.dom.$(document.querySelector('#l_main article#comments')); // 评论区域
-    if (volantis.dom.commentTarget) {
+    if (volantis.dom.commentTarget && volantis.dom.comment) {
       volantis.dom.comment.click(e => { // 评论按钮点击后 跳转到评论区域
         e.preventDefault();
         e.stopPropagation();
         fn.scrolltoElement(volantis.dom.commentTarget);
         e.stopImmediatePropagation();
       });
-    } else volantis.dom.comment.style.display = 'none'; // 关闭了评论，则隐藏评论按钮
+    } else {
+      if (volantis.dom.comment) volantis.dom.comment.style.display = 'none'; // 关闭了评论，则隐藏评论按钮
+    }
 
     // 移动端toc目录按钮 【移动端】
     if (volantis.isMobile) {
       volantis.dom.toc = volantis.dom.$(document.getElementById("s-toc")); // 目录按钮  仅移动端
       volantis.dom.tocTarget = volantis.dom.$(document.querySelector('#l_side .toc-wrapper')); // 侧边栏的目录列表
-      if (volantis.dom.tocTarget) {
+      if (volantis.dom.tocTarget && volantis.dom.toc) {
         // 点击移动端目录按钮 激活目录按钮 显示侧边栏的目录列表
         volantis.dom.toc.click((e) => {
           e.stopPropagation();
@@ -240,9 +310,11 @@ const VolantisApp = (() => {
           if (volantis.dom.tocTarget) {
             volantis.dom.tocTarget.removeClass('active');
           }
-          volantis.dom.toc.removeClass('active');
+          volantis.dom.toc?.removeClass('active');
         });
-      } else volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
+      } else {
+        if (volantis.dom.toc) volantis.dom.toc.style.display = 'none'; // 隐藏toc目录按钮
+      }
     }
   }
 
@@ -286,6 +358,37 @@ const VolantisApp = (() => {
           volantis.dom.$(id).addClass('active')
         }
       });
+    }
+  }
+
+  // 导航栏激活设定
+  fn.nextSiteMenu = () => {
+    const element = document.querySelector('.widget.nextsite');
+    if (element) {
+      let activeItem = element.querySelector('li.menu-item-active');
+      if (activeItem) {
+        activeItem.removeClass('.menu-item-active');
+      }
+      let idname = location.pathname.replace(/\/|%|\./g, '');
+      if (idname.length == 0) {
+        idname = 'home';
+      }
+      var page = idname.match(/page\d{0,}$/g);
+      if (page) {
+        page = page[0];
+        idname = idname.split(page)[0];
+      }
+      var index = idname.match(/index.html/);
+      if (index) {
+        index = index[0];
+        idname = idname.split(index)[0];
+      }
+      // 转义字符如 [, ], ~, #, @
+      idname = idname.replace(/(\[|\]|~|#|@)/g, '\\$1');
+      let nowItem = element.querySelector("[active-action=action-" + idname + "]");
+      if (nowItem?.parentElement) {
+        volantis.dom.$(nowItem.parentElement).addClass('menu-item-active')
+      }
     }
   }
 
@@ -371,7 +474,7 @@ const VolantisApp = (() => {
 
   // 设置 tabs 标签  【移动端 PC】
   fn.setTabs = () => {
-    let tabs = document.querySelectorAll('#l_main .tabs .nav-tabs')
+    let tabs = document.querySelectorAll('#l_main .tabs .nav-tabs, .widget .tabs .nav-tabs')
     if (!tabs) return
     tabs.forEach(function (e) {
       e.querySelectorAll('a').forEach(function (e) {
@@ -433,7 +536,8 @@ const VolantisApp = (() => {
         let targetID = decodeURI(e.target.hash.split('#')[1]).replace(/\ /g, '-');
         let target = document.getElementById(targetID);
         if (target) {
-          volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+          let tempHeight = volantis.dom.header ? volantis.dom.header.offsetHeight : 0;
+          volantis.scroll.to(target, { addTop: - tempHeight - 5, behavior: 'instant' })
         }
       });
     })
@@ -487,74 +591,70 @@ const VolantisApp = (() => {
 
   // 工具类：复制字符串到剪切板
   fn.utilWriteClipText = (str) => {
-    try {
-      return navigator.clipboard
-        .writeText(str)
-        .then(() => {
-          return Promise.resolve()
-        })
-        .catch(err => {
-          return Promise.reject(err || '复制文本失败!')
-        })
-    } catch (e) {
-      const input = document.createElement('input');
-      input.setAttribute('readonly', 'readonly');
-      document.body.appendChild(input);
-      input.setAttribute('value', str);
-      input.select();
-      try {
-        let result = document.execCommand('copy')
-        document.body.removeChild(input);
-        if (!result || result === 'unsuccessful') {
-          return Promise.reject('复制文本失败!')
-        } else {
-          return Promise.resolve()
+    return navigator.clipboard
+      .writeText(str)
+      .then(() => {
+        return Promise.resolve()
+      })
+      .catch(e => {
+        const input = document.createElement('textarea');
+        input.setAttribute('readonly', 'readonly');
+        document.body.appendChild(input);
+        input.innerHTML = str;
+        input.select();
+        try {
+          let result = document.execCommand('copy')
+          document.body.removeChild(input);
+          if (!result || result === 'unsuccessful') {
+            return Promise.reject('复制文本失败!')
+          } else {
+            return Promise.resolve()
+          }
+        } catch (e) {
+          document.body.removeChild(input);
+          return Promise.reject(
+            '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
+          )
         }
-      } catch (e) {
-        document.body.removeChild(input);
-        return Promise.reject(
-          '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
-        )
-      }
-    }
+      })
   }
 
   // 工具类：返回时间间隔
-  fn.utilTimeAgo = (dateTimeStamp) => {
-    const minute = 1e3 * 60, hour = minute * 60, day = hour * 24, week = day * 7, month = day * 30;
-    const now = new Date().getTime();
-    const diffValue = now - dateTimeStamp;
-    const minC = diffValue / minute,
-      hourC = diffValue / hour,
-      dayC = diffValue / day,
-      weekC = diffValue / week,
-      monthC = diffValue / month;
-    if (diffValue < 0) {
-      result = ""
-    } else if (monthC >= 1 && monthC < 7) {
-      result = " " + parseInt(monthC) + " 月前"
-    } else if (weekC >= 1 && weekC < 4) {
-      result = " " + parseInt(weekC) + " 周前"
-    } else if (dayC >= 1 && dayC < 7) {
-      result = " " + parseInt(dayC) + " 天前"
-    } else if (hourC >= 1 && hourC < 24) {
-      result = " " + parseInt(hourC) + " 小时前"
-    } else if (minC >= 1 && minC < 60) {
-      result = " " + parseInt(minC) + " 分钟前"
-    } else if (diffValue >= 0 && diffValue <= minute) {
-      result = "刚刚"
-    } else {
-      const datetime = new Date();
-      datetime.setTime(dateTimeStamp);
-      const Nyear = datetime.getFullYear();
-      const Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-      const Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-      const Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-      const Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-      const Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-      result = Nyear + "-" + Nmonth + "-" + Ndate
+  fn.utilTimeAgo = (date, limit = 30) => {
+    try {
+      const oldTime = date.getTime()
+      const currTime = new Date().getTime()
+      const diffValue = currTime - oldTime
+      const days = Math.floor(diffValue / (24 * 3600 * 1000))
+      if (days === 0) {
+        const leave1 = diffValue % (24 * 3600 * 1000)
+        const hours = Math.floor(leave1 / (3600 * 1000))
+        if (hours === 0) {
+          const leave2 = leave1 % (3600 * 1000)
+          const minutes = Math.floor(leave2 / (60 * 1000))
+          if (minutes === 0) {
+            const leave3 = leave2 % (60 * 1000)
+            const seconds = Math.round(leave3 / 1000)
+            return `${seconds} 秒前`
+          }
+          return `${minutes} 分钟前`
+        }
+        return `${hours} 小时前`
+      }
+      if (days < 0) return '刚刚'
+
+      if (days < limit) {
+        return `${days} 天前`
+      }
+
+      const Nyear = date.getFullYear();
+      const Nmonth = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+      const Ndate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+      return `${Nyear}年${Nmonth}月${Ndate}日`
+    } catch (error) {
+      console.error(error)
+      return ' - '
     }
-    return result;
   }
 
   // 消息提示：标准
@@ -701,11 +801,11 @@ const VolantisApp = (() => {
 
   // 转换时间
   fn.dataToShow = () => {
-    document.querySelectorAll('time.dataToShow').forEach(item => {
+    document.querySelectorAll('.dataToShow').forEach(item => {
       try {
-        let time = fn.utilTimeAgo(new Date(item.getAttribute('datetime'))).trim();
+        let time = fn.utilTimeAgo(new Date(item.getAttribute('datetime')), 60).trim();
         item.textContent = time ? time : item.textContent;
-      } catch (error) {}
+      } catch (error) { }
     })
   }
 
@@ -724,6 +824,7 @@ const VolantisApp = (() => {
       fn.setTabs();
       fn.footnotes();
       fn.dataToShow();
+      fn.nextSiteMenu();
       // fn.switchComment();
     },
     pjaxReload: () => {
@@ -736,13 +837,14 @@ const VolantisApp = (() => {
       fn.setTabs();
       fn.footnotes();
       fn.dataToShow();
+      fn.nextSiteMenu();
       // fn.switchComment();
 
       // 移除小尾巴的移除
-      document.querySelector("#l_header .nav-main").querySelectorAll('.list-v:not(.menu-phone)').forEach(function (e) {
+      document.querySelector("#l_header .nav-main")?.querySelectorAll('.list-v:not(.menu-phone)')?.forEach(function (e) {
         e.removeAttribute("style")
       })
-      document.querySelector("#l_header .menu-phone.list-v").removeAttribute("style");
+      document.querySelector("#l_header .menu-phone.list-v")?.removeAttribute("style");
       messageCopyrightShow = 0;
     },
     utilCopyCode: fn.utilCopyCode,
@@ -914,7 +1016,8 @@ const highlightKeyWords = (() => {
       target = document.getElementById("keyword-mark-" + fn.markNextId);
     }
     if (target) {
-      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+      let tempHeight = volantis.dom.header ? volantis.dom.header.offsetHeight : 0;
+      volantis.scroll.to(target, { addTop: - tempHeight - 5, behavior: 'instant' })
     }
     // Current target
     return target
@@ -929,7 +1032,8 @@ const highlightKeyWords = (() => {
       target = document.getElementById("keyword-mark-" + fn.markNextId);
     }
     if (target) {
-      volantis.scroll.to(target, { addTop: - volantis.dom.header.offsetHeight - 5, behavior: 'instant' })
+      let tempHeight = volantis.dom.header ? volantis.dom.header.offsetHeight : 0;
+      volantis.scroll.to(target, { addTop: - tempHeight - 5, behavior: 'instant' })
     }
     // Current target
     return target
@@ -1194,3 +1298,43 @@ const DOMController = {
   }
 }
 Object.freeze(DOMController);
+
+const VolantisRequest = {
+  timeoutFetch: (url, ms, requestInit) => {
+    const controller = new AbortController()
+    requestInit.signal?.addEventListener('abort', () => controller.abort())
+    let promise = fetch(url, { ...requestInit, signal: controller.signal })
+    if (ms > 0) {
+      const timer = setTimeout(() => controller.abort(), ms)
+      promise.finally(() => { clearTimeout(timer) })
+    }
+    promise = promise.catch((err) => {
+      throw ((err || {}).name === 'AbortError') ? new Error(`Fetch timeout: ${url}`) : err
+    })
+    return promise
+  },
+
+  Fetch: async (url, requestInit, timeout = 15000) => {
+    const resp = await VolantisRequest.timeoutFetch(url, timeout, requestInit);
+    if (!resp.ok) throw new Error(`Fetch error: ${url} | ${resp.status}`);
+    let json = await resp.json()
+    if (!json.success) throw json
+    return json
+  },
+
+  POST: async (url, data) => {
+    const requestInit = {
+      method: 'POST',
+    }
+    if (data) {
+      const formData = new FormData();
+      Object.keys(data).forEach(key => formData.append(key, String(data[key])))
+      requestInit.body = formData;
+    }
+    const json = await VolantisRequest.Fetch(url, requestInit)
+    return json.data;
+  }
+}
+Object.freeze(VolantisRequest);
+
+
