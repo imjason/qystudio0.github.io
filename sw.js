@@ -13,17 +13,13 @@ const config = {
         [
             "https://cdn.jsdelivr.net/gh",
             "https://fastly.jsdelivr.net/gh",
-            "https://cdn1.tianli0.top/gh",
-            "https://cdn.oplog.cn/gh",
-            "https://jsdelivr.panbaidu.cn/gh"
+            "https://cdn1.tianli0.top/gh"
         ],
         //JsDelivr Combine
         [
             "https://cdn.jsdelivr.net/combine",
             "https://fastly.jsdelivr.net/combine",
-            "https://cdn1.tianli0.top/combine",
-            "https://cdn.oplog.cn/combine",
-            "https://jsdelivr.panbaidu.cn/combine"
+            "https://cdn1.tianli0.top/combine"
         ],
         //NPM
         [
@@ -31,18 +27,14 @@ const config = {
             "https://fastly.jsdelivr.net/npm",
             "https://npm.elemecdn.com",
             "https://cdn1.tianli0.top/npm",
-            "https://cdn.oplog.cn/npm",
-            "https://unpkg.zhimg.com",
             "https://unpkg.com",
-            "https://code.bdstatic.com/npm",
-            "https://jsdelivr.panbaidu.cn/npm"
+            "https://npm.sourcegcdn.com"
         ]
     ],
     blog: {
         accelerator: true,
         origin: [
-            "qystudio.ltd",
-            "ayrwjs-ofueyd-4000.preview.myide.io"
+            "qystudio.ltd"
         ],
         mode: "npm",//加速模式：mirror|npm
         mirrors: [
@@ -54,7 +46,7 @@ const config = {
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.1.4"
+            version: "0.1.6"
         }
     }
 }
@@ -67,11 +59,38 @@ config.blog.npm.urls = [
   	`https://jsdelivr.panbaidu.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
-
+const mirror = [
+    `https://registry.npmmirror.com/chenyfan-blog/latest`,
+    `https://registry.npmjs.org/chenyfan-blog/latest`,
+    `https://mirrors.cloud.tencent.com/npm/chenyfan-blog/latest`
+]
+const get_newest_version = async (mirror) => {
+return lfetch(mirror, mirror[0])
+    .then(res => res.json())
+    .then(res.version)
+}
 
 
 //以下源代码，看不懂勿动
 
+
+self.cons = {
+    s: (m) => {
+        console.log(`%c[SUCCESS]%c ${m}`, 'color:white;background:green;', '')
+    },
+    w: (m) => {
+        console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
+    },
+    i: (m) => {
+        console.log(`%c[INFO]%c ${m}`, 'color:white;background:blue;', '')
+    },
+    e: (m) => {
+        console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
+    },
+    d: (m) => {
+        console.log(`%c[DEBUG]%c ${m}`, 'color:white;background:black;', '')
+    }
+}
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
