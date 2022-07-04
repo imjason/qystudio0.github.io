@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-  <meta name="generator" content="Hexo 5.4.0">
+  <meta name="generator" content="Hexo 5.4.2">
   <meta charset="utf-8">
   
   <!-- SEO相关 -->
@@ -10,6 +10,9 @@
   
   
   <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -39,16 +42,18 @@
     const $ = document.querySelector.bind(document);//语法糖
     if ('serviceWorker' in navigator) { //如果支持sw
         if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
-            window.stop()
+            console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
             window.localStorage.setItem('QYBlogHelper_Set', 1)
-            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
-            document.body.innerHTML = await replacehtml.text()
+            window.stop()
+            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')).text()
+            $('#info').innerText = '尝试安装QYBlogHelper...';
         }
         navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
             .then(async () => {
                 if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
                     setTimeout(() => {
                         window.localStorage.setItem('QYBlogHelper_Set', 2)
+                        $('#info').innerText = '安装成功,稍等片刻...';
                         window.location.reload()//刷新,以载入sw
                     }, 500)//安装后等待500ms使其激活
                 }
@@ -58,7 +63,7 @@
 })()
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.1bcfbf25.css" as="style">
+  <link rel="preload" href="/css/style.9cc4d139.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
@@ -77,7 +82,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
 <meta property="article:published_time" content="2021-12-25T05:42:12.000Z">
-<meta property="article:modified_time" content="2022-06-10T11:39:24.179Z">
+<meta property="article:modified_time" content="2022-07-04T07:31:11.552Z">
 <meta property="article:author" content="青云工作室">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="tools">
@@ -129,6 +134,7 @@ details summary {
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
   --color-white-png: #fff;
   --color-img-error: #f5f5f5;
 }
@@ -226,8 +232,6 @@ ol li {
   list-style: none;
 }
 header {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 img {
@@ -248,6 +252,19 @@ hr {
   border-radius: 1px;
   -webkit-border-radius: 1px;
   border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+article hr {
+  background-image: none;
+  height: 2em;
+  border: none;
+  margin: 1em 0 1em;
+  text-align: center;
+}
+article hr:after {
+  content: "···";
+  letter-spacing: 2em;
+  padding-left: 2em;
+  font-weight: 700;
 }
 button,
 input {
@@ -271,6 +288,9 @@ button {
   .blur#comments {
     backdrop-filter: unset;
   }
+}
+#layoutHelper-comments {
+  margin-bottom: 100px;
 }
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -296,11 +316,6 @@ button {
   left: 0;
   max-width: 100%;
   height: 100vh;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
@@ -326,6 +341,7 @@ button {
   -ms-user-select: none;
   position: relative;
   overflow: hidden;
+  margin-bottom: -100px;
 }
 .cover-wrapper .cover-bg {
   position: absolute;
@@ -549,11 +565,6 @@ button {
 .cover-wrapper .cover-body,
 .cover-wrapper .cover-body .top,
 .cover-wrapper .cover-body .bottom {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
@@ -606,8 +617,6 @@ button {
 }
 .cover-wrapper .cover-body .m_search .form {
   position: relative;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   width: 100%;
 }
@@ -622,8 +631,6 @@ button {
 }
 .cover-wrapper .cover-body .m_search .icon {
   position: absolute;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   line-height: 2.5rem;
   width: 32px;
@@ -632,8 +639,6 @@ button {
   color: rgba(68,68,68,0.75);
 }
 .cover-wrapper .cover-body .m_search .input {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   height: 2.5rem;
   width: 100%;
@@ -664,11 +669,6 @@ button {
   background: #fff;
 }
 .cover-wrapper .list-h {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
@@ -697,17 +697,10 @@ button {
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   font-weight: 600;
 }
 .cover-wrapper .list-h a img {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -800,6 +793,7 @@ button {
     --color-list-hl: #69dfc4;
     --color-meta: #888;
     --color-link: #888;
+    --color-copyright-bkg: #21252b;
     --color-white-png: #b2b2b2;
     --color-img-error: #21252b;
   }
@@ -875,6 +869,7 @@ button {
   --color-list-hl: #69dfc4;
   --color-meta: #888;
   --color-link: #888;
+  --color-copyright-bkg: #21252b;
   --color-white-png: #b2b2b2;
   --color-img-error: #21252b;
 }
@@ -983,11 +978,6 @@ button {
 }
 .l_header #wrapper .nav-main,
 .l_header #wrapper .nav-sub {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
@@ -1034,8 +1024,6 @@ button {
   position: absolute;
 }
 .l_header #wrapper .nav-sub ::-webkit-scrollbar {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
 }
 @media screen and (min-width: 2048px) {
@@ -1081,24 +1069,15 @@ button {
   flex-shrink: 1;
 }
 .l_header .switcher {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   line-height: 64px;
   align-items: center;
 }
 .l_header .switcher .s-toc {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
 }
 @media screen and (max-width: 768px) {
   .l_header .switcher .s-toc {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-    display: -ms-flexbox /* TWEENER - IE 10 */;
-    display: -webkit-flex /* NEW - Chrome */;
-    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
     display: flex;
   }
 }
@@ -1119,11 +1098,6 @@ button {
   }
 }
 .l_header .switcher >li >a {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   justify-content: center;
   -webkit-justify-content: center;
@@ -1161,19 +1135,9 @@ button {
   }
 }
 .l_header .nav-sub .switcher {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
 }
 .l_header .m_search {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   height: 64px;
   width: 240px;
@@ -1225,11 +1189,6 @@ button {
 }
 .l_header .m_search .form {
   position: relative;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   width: 100%;
   align-items: center;
@@ -1242,14 +1201,10 @@ button {
 }
 @media screen and (max-width: 500px) {
   .l_header .m_search .icon {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: none;
   }
 }
 .l_header .m_search .input {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1320,16 +1275,9 @@ button {
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 ul.nav-list-h {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   align-items: stretch;
 }
@@ -1355,8 +1303,6 @@ ul.nav-list-h>li > a span {
 }
 ul.list-v {
   z-index: 1;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   position: absolute;
   background: var(--color-card);
@@ -1368,8 +1314,6 @@ ul.list-v {
   padding: 8px 0;
 }
 ul.list-v.show {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 ul.list-v hr {
@@ -1392,8 +1336,6 @@ ul.list-v >li.header i {
 }
 ul.list-v >li ul {
   margin-left: 0;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   margin-top: -40px;
 }
@@ -1408,8 +1350,6 @@ ul.list-v >li>a {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   color: var(--color-list);
   font-size: 0.875rem;
@@ -1437,15 +1377,8 @@ ul.list-v >li>a:hover {
   background: var(--color-site-bg);
 }
 .l_header .menu >ul>li>a {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   padding: 0 8px;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
 }
 .l_header .menu >ul>li>a .icon {
@@ -1453,8 +1386,6 @@ ul.list-v >li>a:hover {
   margin-right: 6px;
 }
 .l_header .menu >ul>li>a .icon i {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: inline-block;
 }
 .l_header .menu >ul>li>ul .icon {
@@ -1462,8 +1393,6 @@ ul.list-v >li>a:hover {
   margin-right: 2px;
 }
 .l_header .menu >ul>li>ul .icon i {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: inline-block;
 }
 .l_header ul.nav-list-h>li {
@@ -1685,8 +1614,6 @@ ul.list-v >li>a:hover {
   left: calc(100% - 0.5 * 16px);
 }
 .menu-phone {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   margin-top: 16px;
   right: 8px;
@@ -1702,8 +1629,6 @@ ul.list-v >li>a:hover {
 }
 @media screen and (max-width: 500px) {
   .menu-phone {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: block;
   }
 }
@@ -1745,18 +1670,11 @@ ul.list-v >li>a:hover {
     padding: 8px 16px;
   }
   .l_header #wrapper .switcher {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-    display: -ms-flexbox /* TWEENER - IE 10 */;
-    display: -webkit-flex /* NEW - Chrome */;
-    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
     display: flex;
     margin-right: 8px;
     height: 64px;
   }
   .l_header .menu {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: none;
   }
 }
@@ -1766,8 +1684,6 @@ ul.list-v >li>a:hover {
   }
 }
 #u-search {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   position: fixed;
   top: 0;
@@ -1889,8 +1805,6 @@ h3 {
   text-indent: 0;
 }
 #l_main>article.cus-indent p img {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 .sayhi {
@@ -1903,11 +1817,6 @@ h3 {
 .bloggerpro .contactme {
   margin-top: 20px;
   width: 80px;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1918,11 +1827,6 @@ h3 {
   -ms-justify-content: space-between;
 }
 .bloggerpro .contactme .icon {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -1959,8 +1863,8 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1bcfbf25.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1bcfbf25.css"></noscript>
+  <link rel="stylesheet" href="/css/style.9cc4d139.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.9cc4d139.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2059,9 +1963,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.1bcfbf25.css"}},
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654861204208),
+    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1656919905303),
     sidebar: {
       for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2077,7 +1981,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     },
     plugins: {
-      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.css","js":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"},
       aplayer: {
         id: 6821246154,
@@ -2306,7 +2210,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654861204208");
+        script.setAttribute("src", src + "?time=1656919905303");
         HEAD.appendChild(script);
       });
     });
@@ -2316,7 +2220,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654861204208";
+        link.href = src + "?time=1656919905303";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2465,11 +2369,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
@@ -3041,7 +2945,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
       <div id="none" class='cover-wrapper post search' style="display: none;">
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
+  <div class='cover-bg lazyload placeholder' data-bg=""></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -3110,16 +3014,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/59121.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="青云工作室">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="青云工作室">
-    <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
-  </span>
   
+  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+    <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/59121.html">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青云工作室">
+    </span>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+      <meta itemprop="name" content="青云工作室">
+      <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
+    </span>
+    
 
 
   
@@ -3176,17 +3081,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="做一个特殊的ppt" data-path="/posts/59121.html">
-        <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
 
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="lc-pv" data-title="做一个特殊的ppt" data-path="/posts/59121">
+        <span id='number'><i class="fa-light fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      </span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
 
           
         
@@ -3210,16 +3119,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-<div class="new-meta-item comments-count">
+  <div class="new-meta-item comments-count">
+     
+    
+    <a href="/posts/59121#comments">
+      <i class="fad fa-comment-dots fa-fw"></i>
+      <p>
+        <span data-path="/posts/59121" class="waline-comment-count">
+          <i class="fa-light fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+        </span> 
+         
+          <span class="leancloud-comments-count">&nbsp;条评论</span> 
+         
+      </p>
+    </a>
+  </div>
   
-  <a href="/posts/59121.html#comments">
-    <i class="fad fa-comment-dots fa-fw"></i>
-    <span data-path="/posts/59121.html" class="waline-comment-count"></span>
-    <span class="leancloud-comments-count">&nbsp;条评论</span>
-  </a>
-</div>
-
-
           
         
         <!-- Custom Files topMeta begin-->
@@ -3230,15 +3145,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="居然可以用js写ppt"><a href="#居然可以用js写ppt" class="headerlink" title="居然可以用js写ppt"></a>居然可以用js写ppt</h2><p>用powerpoint或者keynote写演示文稿，对于代码、数学公式等的支持一直是个痛点。而且对于前端同学来说，一身的css功力用不上也是个痛点。对于使用markdown来写文档的同学来说，将文档转成ppt需要重新排版也是件重复性的工作量。</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      <div class="story post-story"><h2 id="居然可以用js写ppt"><a href="#居然可以用js写ppt" class="headerlink" title="居然可以用js写ppt"></a>居然可以用js写ppt</h2><p>用powerpoint或者keynote写演示文稿，对于代码、数学公式等的支持一直是个痛点。而且对于前端同学来说，一身的css功力用不上也是个痛点。对于使用markdown来写文档的同学来说，将文档转成ppt需要重新排版也是件重复性的工作量。</p>
 <p>于是我们需要一个基于web技术的ppt框架，reveal.js在这个领域成名已久了，而且上个月还有发布新版本，维护得还蛮好，第一步我们就选它了。</p>
 </div><div class="story post-story"><h2 id="将-reveal-js-运行起来"><a href="#将-reveal-js-运行起来" class="headerlink" title="将 reveal.js 运行起来"></a>将 reveal.js 运行起来</h2><p>首先clone一份reveal.js最新的代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hakimel/reveal.js</span><br></pre></td></tr></table></figure>
 
 <p>我们照抄一份index.html，比如叫做study.html：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="meta-keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span> <span class="tag">&lt;<span class="name">head</span>&gt;</span>  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">title</span>&gt;</span>reveal.js<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reset.css&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reveal.css&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/theme/black.css&quot;</span>&gt;</span>  <span class="comment">&lt;!-- Theme used for syntax highlighted code --&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;plugin/highlight/monokai.css&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">head</span>&gt;</span> <span class="tag">&lt;<span class="name">body</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;reveal&quot;</span>&gt;</span>   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slides&quot;</span>&gt;</span>    <span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 1<span class="tag">&lt;/<span class="name">section</span>&gt;</span>    <span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 2<span class="tag">&lt;/<span class="name">section</span>&gt;</span>   <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;dist/reveal.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/notes/notes.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/markdown/markdown.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/highlight/highlight.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">   <span class="comment">// More info about initialization &amp; config:   // - https://revealjs.com/initialization/   // - https://revealjs.com/config/   Reveal.initialize(&#123;    hash: true,    // Learn about plugins: https://revealjs.com/plugins/    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]   &#125;);</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype <span class="keyword">html</span>&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span> <span class="tag">&lt;<span class="name">head</span>&gt;</span>  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">title</span>&gt;</span>reveal.js<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reset.css&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reveal.css&quot;</span>&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/theme/black.css&quot;</span>&gt;</span>  <span class="comment">&lt;!-- Theme used for syntax highlighted code --&gt;</span>  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;plugin/highlight/monokai.css&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">head</span>&gt;</span> <span class="tag">&lt;<span class="name">body</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;reveal&quot;</span>&gt;</span>   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slides&quot;</span>&gt;</span>    <span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 1<span class="tag">&lt;/<span class="name">section</span>&gt;</span>    <span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 2<span class="tag">&lt;/<span class="name">section</span>&gt;</span>   <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;dist/reveal.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/notes/notes.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/markdown/markdown.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/highlight/highlight.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">   <span class="comment">// More info about initialization &amp; config:   // - https://revealjs.com/initialization/   // - https://revealjs.com/config/   Reveal.initialize(&#123;    hash: true,    // Learn about plugins: https://revealjs.com/plugins/    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]   &#125;);</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="tag">&lt;/<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>在reveal.js目录下运行npm install, 然后运行npm start就可以启动一个server来查看上面的ppt网页。默认使用8000端口，如果被占用了可以通过指定port参数换一个，比如我们换成30800吧：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start -- --port=30800</span><br></pre></td></tr></table></figure>
@@ -3276,7 +3191,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],      &#125;);</span><br></pre></td></tr></table></figure>
 
 <p>完整的代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/math/math.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">  Reveal.initialize(&#123;</span></span><br><span class="line"><span class="javascript"><span class="attr">hash</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript"><span class="attr">math</span>: &#123;</span></span><br><span class="line"><span class="javascript"><span class="attr">mathjax</span>:</span></span><br><span class="line"><span class="javascript"><span class="string">&quot;https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js&quot;</span>,</span></span><br><span class="line"><span class="javascript"><span class="attr">config</span>: <span class="string">&quot;TeX-AMS_HTML-full&quot;</span>,</span></span><br><span class="line"><span class="javascript"><span class="comment">// pass other options into `MathJax.Hub.Config()`</span></span></span><br><span class="line"><span class="javascript">      <span class="attr">TeX</span>: &#123; <span class="attr">Macros</span>: &#123; <span class="attr">RR</span>: <span class="string">&quot;&#123;\\bf R&#125;&quot;</span> &#125; &#125;,</span></span><br><span class="line"><span class="javascript">    &#125;,</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="attr">plugins</span>: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],</span></span><br><span class="line"><span class="javascript">  &#125;);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/math/math.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title class_">Reveal</span>.<span class="title function_">initialize</span>(&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">hash</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">math</span>: &#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">mathjax</span>:</span></span><br><span class="line"><span class="language-javascript"><span class="string">&quot;https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js&quot;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">config</span>: <span class="string">&quot;TeX-AMS_HTML-full&quot;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// pass other options into `MathJax.Hub.Config()`</span></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">TeX</span>: &#123; <span class="title class_">Macros</span>: &#123; <span class="attr">RR</span>: <span class="string">&quot;&#123;\\bf R&#125;&quot;</span> &#125; &#125;,</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="attr">plugins</span>: [<span class="title class_">RevealMarkdown</span>, <span class="title class_">RevealHighlight</span>, <span class="title class_">RevealNotes</span>, <span class="title class_">RevealMath</span>],</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>插件引入之后我们就可以在幻灯片中写公式了。</p>
 <p>可以直接在section中写：</p>
@@ -3304,7 +3219,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>效果变成下面这样：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157084000.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157084000.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>我们汇总下上面的代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag"><span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>reveal.js学习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reset.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reveal.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/theme/moon.css&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Theme used for syntax highlighted code --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;plugin/highlight/monokai.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;reveal&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slides&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 1<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">            \[\begin&#123;aligned&#125;</span><br><span class="line">            \ MAE(X,h)=\frac&#123;1&#125;&#123;m&#125; \sum_&#123;i=1&#125;^m|h(x^i)-y^&#123;(i)&#125;| \</span><br><span class="line">            \end&#123;aligned&#125; \]</span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line">推荐系统的主要算法包括：</span><br><span class="line">- 矩阵分解</span><br><span class="line">- 线性模型</span><br><span class="line">- 树模型</span><br><span class="line">- 深度学习模型                        </span><br><span class="line">&lt;/textarea</span><br><span class="line">          &gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line">                        $MAE(X,h)=\frac&#123;1&#125;&#123;m&#125; \sum_&#123;i=1&#125;^m|h(x^i)-y^&#123;(i)&#125;|$                      </span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">&quot;language-javascript&quot;</span>&gt;</span></span><br><span class="line">                    model.compile(&#123;</span><br><span class="line">                        optimizer: tf.train.sgd(0.000001),</span><br><span class="line">                        loss: &#x27;meanSquaredError&#x27;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">                    return model.fitDataset(flattenedDataset, &#123;</span><br><span class="line">                        epochs: 10,</span><br><span class="line">                        callbacks: &#123;</span><br><span class="line">                            onEpochEnd: async (epoch, logs) =&gt; &#123;</span><br><span class="line">                                console.log(epoch + &#x27;:&#x27; + logs.loss);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;dist/reveal.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/notes/notes.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/markdown/markdown.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/highlight/highlight.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/math/math.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="comment">// More info about initialization &amp; config:</span></span></span><br><span class="line"><span class="javascript"><span class="comment">// - https://revealjs.com/initialization/</span></span></span><br><span class="line"><span class="javascript"><span class="comment">// - https://revealjs.com/config/</span></span></span><br><span class="line"><span class="javascript">      Reveal.initialize(&#123;</span></span><br><span class="line"><span class="javascript"><span class="attr">hash</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript"><span class="attr">math</span>: &#123;</span></span><br><span class="line"><span class="javascript"><span class="attr">mathjax</span>:</span></span><br><span class="line"><span class="javascript"><span class="string">&quot;https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js&quot;</span>,</span></span><br><span class="line"><span class="javascript"><span class="attr">config</span>: <span class="string">&quot;TeX-AMS_HTML-full&quot;</span>,</span></span><br><span class="line"><span class="javascript"><span class="comment">// pass other options into `MathJax.Hub.Config()`</span></span></span><br><span class="line"><span class="javascript">          <span class="attr">TeX</span>: &#123; <span class="attr">Macros</span>: &#123; <span class="attr">RR</span>: <span class="string">&quot;&#123;\\bf R&#125;&quot;</span> &#125; &#125;,</span></span><br><span class="line"><span class="javascript">        &#125;,</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript"><span class="comment">// Learn about plugins: https://revealjs.com/plugins/</span></span></span><br><span class="line"><span class="javascript">        <span class="attr">plugins</span>: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath],</span></span><br><span class="line"><span class="javascript">      &#125;);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span></span></span><br><span class="line"><span class="tag"><span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>reveal.js学习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reset.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/reveal.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;dist/theme/moon.css&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Theme used for syntax highlighted code --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;plugin/highlight/monokai.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;reveal&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;slides&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span>Slide 1<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">            \[\begin&#123;aligned&#125;</span><br><span class="line">            \ MAE(X,h)=\frac&#123;1&#125;&#123;m&#125; \sum_&#123;i=1&#125;^m|h(x^i)-y^&#123;(i)&#125;| \</span><br><span class="line">            \end&#123;aligned&#125; \]</span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line">推荐系统的主要算法包括：</span><br><span class="line">- 矩阵分解</span><br><span class="line">- 线性模型</span><br><span class="line">- 树模型</span><br><span class="line">- 深度学习模型                        </span><br><span class="line">&lt;/textarea</span><br><span class="line">          &gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">data-markdown</span>&gt;</span></span><br><span class="line">                        $MAE(X,h)=\frac&#123;1&#125;&#123;m&#125; \sum_&#123;i=1&#125;^m|h(x^i)-y^&#123;(i)&#125;|$                      </span><br><span class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">&quot;language-javascript&quot;</span>&gt;</span></span><br><span class="line">                    model.compile(&#123;</span><br><span class="line">                        optimizer: tf.train.sgd(0.000001),</span><br><span class="line">                        loss: &#x27;meanSquaredError&#x27;</span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">                    return model.fitDataset(flattenedDataset, &#123;</span><br><span class="line">                        epochs: 10,</span><br><span class="line">                        callbacks: &#123;</span><br><span class="line">                            onEpochEnd: async (epoch, logs) =&gt; &#123;</span><br><span class="line">                                console.log(epoch + &#x27;:&#x27; + logs.loss);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;dist/reveal.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/notes/notes.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/markdown/markdown.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/highlight/highlight.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;plugin/math/math.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// More info about initialization &amp; config:</span></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// - https://revealjs.com/initialization/</span></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// - https://revealjs.com/config/</span></span></span><br><span class="line"><span class="language-javascript">      <span class="title class_">Reveal</span>.<span class="title function_">initialize</span>(&#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">hash</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">math</span>: &#123;</span></span><br><span class="line"><span class="language-javascript"><span class="attr">mathjax</span>:</span></span><br><span class="line"><span class="language-javascript"><span class="string">&quot;https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js&quot;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="attr">config</span>: <span class="string">&quot;TeX-AMS_HTML-full&quot;</span>,</span></span><br><span class="line"><span class="language-javascript"><span class="comment">// pass other options into `MathJax.Hub.Config()`</span></span></span><br><span class="line"><span class="language-javascript">          <span class="title class_">TeX</span>: &#123; <span class="title class_">Macros</span>: &#123; <span class="attr">RR</span>: <span class="string">&quot;&#123;\\bf R&#125;&quot;</span> &#125; &#125;,</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="comment">// Learn about plugins: https://revealjs.com/plugins/</span></span></span><br><span class="line"><span class="language-javascript">        <span class="attr">plugins</span>: [<span class="title class_">RevealMarkdown</span>, <span class="title class_">RevealHighlight</span>, <span class="title class_">RevealNotes</span>, <span class="title class_">RevealMath</span>],</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </div><div class="story post-story"><h2 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h2><p>section支持data-background-image属性来指定背景图片。例：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">data-background-image</span>=<span class="string">&quot;https://cdn.jsdelivr.net/www.jsdelivr.com/000a3f2b6a7baa6ae0f786a251fd105e4b230d8e/img/landing/network-map@2x.png&quot;</span>&gt;</span>        section&gt;</span><br></pre></td></tr></table></figure>
@@ -3315,7 +3230,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <p>我们也可以在header中写style属性给section中使用。</p>
 <p>比如默认字体太大了，我们可以给调一调：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css"><span class="selector-tag">ul</span> &#123;</span></span><br><span class="line"><span class="css"><span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css"><span class="selector-tag">ul</span> &#123;</span></span><br><span class="line"><span class="language-css"><span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </div><div class="story post-story"><h2 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h2><p>结合html标签，可以指定淡入淡出的效果。这可以通过给标签添加class属性为fragment实现。</p>
 <p>我们来看个淡入的例子：</p>
@@ -3333,103 +3248,82 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div><div class="story post-story"><h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><p>除了上面介绍的基本特性之外，reveal.js支持自动播放、自制插件、支持处理事件等等有利于开发人员写slides的特性。相信能给你的slides带来新的好玩的东西，将汇报与分享变成乐趣。Enjoy it!</p>
 <div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
 </div>
-  </div>
-  
-  
-    
-    <div class='footer'>
-      
-        <div class='references'>
-          <section class='header'>
-            
-              <i class="fad fa-quote-left fa-fw" aria-hidden="true"></i>
-            
-            <span>参考资料</span>
-          </section>
-          <section class='body'>
-            <ul>
-              
-                <li>
-                  <a href="https://mp.weixin.qq.com/s/H1dtH_JyuCZotGrL5rs66Q" rel="external nofollow noopener noreferrer" target="_blank">
-                  阿里云云栖号
-                  </a>
-                </li>
-              
-            </ul>
-          </section>
-        </div>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-            
-            <!-- <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
- -->
-            
-            
-            
-            <p><svg id="icon-touxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path
-                  d="M614.72 554.538c-49.086-6.399-100.27-2.1-149.256-2.1-119.465 0-209.04 95.972-206.84 215.437 0 17.095 8.498 31.99 23.493 40.488 14.896 10.697 34.09 14.896 53.285 17.095 61.882 6.398 123.664 6.398 198.342 6.398 40.488 0 93.872-2.1 142.858-4.298 27.692 0 53.284-4.3 78.877-14.896 19.194-8.498 29.89-19.194 31.99-40.488 8.498-104.57-72.478-204.84-172.75-217.636zM680.8 375.39c0-87.474-74.678-162.053-164.251-162.053-89.574 0-162.053 74.679-162.053 162.053-2.1 87.474 74.678 164.252 162.053 164.252 89.673 0 164.252-74.678 164.252-164.252z"
-                  fill="#FFFFFF"></path>
-                <path
-                  d="M512.35 0C228.733 0 0.5 228.233 0.5 511.8qystudio.ltd5s228.233 511.85 511.85 511.85 511.85-228.233 511.85-511.85S795.967 0 512.35 0z m275.12 772.074c-2.1 21.294-12.797 31.99-31.991 40.488-25.593 10.697-51.185 14.896-78.877 14.896-49.086 2.099-102.37 4.298-142.858 4.298-74.678 0-136.46 0-198.342-6.398-19.195-2.1-38.389-6.398-53.285-17.095-14.895-8.497-23.493-23.493-23.493-40.488-2.1-119.465 87.475-215.437 206.84-215.437 49.085 0 100.27-4.299 149.256 2.1 100.27 12.896 181.247 113.166 172.75 217.636zM354.495 375.39c0-87.474 72.479-162.053 162.053-162.053S680.8 288.016 680.8 375.39c0 89.574-74.679 164.252-164.252 164.252-87.375 0-164.152-76.778-162.053-164.252z"
-                  fill="#249FF8"></path>
-              </svg>&nbsp;本文由 <a href="https://qystudio.ltd/" data-pjax-state="">QY studio Team</a> 创作，如果您觉得本文不错，请随意赞赏🌹</p>
-            <p><svg id="icon-ziyuan" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path
-                  d="M511.854421 0a511.854421 511.854421 0 1 0 512.145579 511.854421A511.854421 511.854421 0 0 0 511.854421 0z"
-                  fill="#39B54A"></path>
-                <path
-                  d="M576.491328 630.355417l-116.462895 116.462894a129.56497 129.56497 0 0 1-182.555587 0l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l81.232868-81.232868a179.644015 179.644015 0 0 0 13.102076 70.460051l-52.69946 52.408302a69.877737 69.877737 0 0 0 0 98.702303l2.038101 2.038101a70.168894 70.168894 0 0 0 98.702303 0l116.462895-116.462894a69.877737 69.877737 0 0 0 0-98.702304l-2.038101-2.0381a69.586579 69.586579 0 0 0-13.975547-10.772818l42.508956-42.508956a128.109184 128.109184 0 0 1 13.102076 11.355132l2.0381 2.0381a129.273813 129.273813 0 0 1 0 182.26443z"
-                  fill="#FFFFFF"></path>
-                <path
-                  d="M746.235997 460.901905l-81.232869 81.232869a179.352858 179.352858 0 0 0-13.102076-70.460051l52.69946-52.408303a69.877737 69.877737 0 0 0 0-98.702303l-2.038101-2.038101a69.877737 69.877737 0 0 0-98.702303 0l-116.462894 116.462895a69.877737 69.877737 0 0 0 0 98.702303l2.0381 2.038101a68.421951 68.421951 0 0 0 13.975548 10.772817l-42.508957 42.508957a136.552744 136.552744 0 0 1-13.102076-11.355132l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l116.462894-116.462894a129.56497 129.56497 0 0 1 182.555587 0l2.038101 2.0381a128.982656 128.982656 0 0 1 0 182.26443z"
-                  fill="#FFFFFF"></path>
-              </svg>&nbsp;本文永久链接是：<a href=https://qystudio.ltd/posts/59121.html>https://qystudio.ltd/posts/59121.html</a>
-            </p>
-            <p><svg id="icon-fenxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F3B243"></path>
-                <path d="M630.784 323.584m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M630.784 688.128m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M319.488 512m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M341.037056 480.370688l257.343488-175.7184 27.713536 40.59136-257.339392 175.7184z" fill="#FFFFFF">
-                </path>
-                <path d="M349.052928 488.452096l252.854272 182.10816-28.725248 39.886848-252.874752-182.10816z"
-                  fill="#FFFFFF"></path>
-              </svg>&nbsp;博客内容遵循<a target="_blank" rel="noopener"
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-                4.0)
-                协议</a></p>
-            <p><svg id="icon-juanzeng" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F24827" p-id="19155"></path>
-                <path
-                  d="M713.953882 364.318118a133.647059 133.647059 0 0 0-189.003294 0l-13.327059 13.327058-13.342117-13.327058a133.647059 133.647059 0 0 0-189.003294 0 133.632 133.632 0 0 0 0 188.988235l13.327058 13.342118 189.018353 160.918588 188.988236-160.933647 13.342117-13.327059a133.662118 133.662118 0 0 0 0-188.988235z"
-                  fill="#FFFFFF" p-id="19156"></path>
-              </svg>&nbsp;您的喜欢是作者写作最大的动力😁！</p>
-            
-            
-          </blockquote>
-        </div>
-      
-      
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='https://npm.elemecdn.com/qycdn@0.9.0/img/other/wechatpay.webp'>
-            
-          </div>
-        </div>
-      
     </div>
-  
-  
     
+    
+      
+      <div class='footer'>
+        <!-- 参考资料、相关资料等 -->
+        
+          <div class='references'>
+            <section class='header'>
+              
+                <i class="fad fa-quote-left fa-fw" aria-hidden="true"></i>
+              
+              <span>参考资料</span>
+            </section>
+            <section class='body'>
+              <ul>
+                
+                  <li>
+                    <a href="https://mp.weixin.qq.com/s/H1dtH_JyuCZotGrL5rs66Q" rel="external nofollow noopener noreferrer" target="_blank">
+                    阿里云云栖号
+                    </a>
+                  </li>
+                
+              </ul>
+            </section>
+          </div>
+        
+        <!-- 相关文章 -->
+        
+        <!-- 版权声明组件 -->
+        
+          
+            
+            <div class="copyright license">
+              <div class="license-title">做一个特殊的ppt</div>
+              <div class="license-link"><a href="https://qystudio.ltd/posts/59121.html">https://qystudio.ltd/posts/59121.html</a>
+              </div>
+              <div class="license-meta">
+                <div class="license-meta-item">
+                  <div class="license-meta-title">本文作者</div>
+                  <div class="license-meta-text">青云工作室团队</div>
+                </div>
+                <div class="license-meta-item">
+                  <div class="license-meta-title">发布于</div>
+                  <div class="license-meta-text">2021年12月25日</div>
+                </div>
+                
+                <div class="license-meta-item">
+                  <div class="license-meta-title">更新于</div>
+                  <div class="license-meta-text">2022年7月4日</div>
+                </div>
+                
+                
+                <div class="license-meta-item">
+                  <div class="license-meta-title">许可协议</div>
+                  <div class="license-meta-text"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh#" target="_blank">CC BY-NC-SA 4.0</a></div>
+                </div>
+              </div>
+              <div class="license-statement">署名-非商业性使用-相同方式共享 4.0 国际。</div>
+            </div>
+          
+        
+        <!-- 打赏组件 -->
+        
+          <div class='donate'>
+            <div class='imgs'>
+              
+                <img src='https://npm.elemecdn.com/qycdn@0.9.0/img/other/wechatpay.webp'>
+              
+            </div>
+          </div>
+        
+      </div>
+    
+    
+      
 
 
   <div class='article-meta' id="bottom">
@@ -3439,7 +3333,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <div class="new-meta-item date" itemprop="dateModified">
   <a class='notlink'>
     <i class="fad fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：<time class="dataToShow" datetime="2021-12-25T13:42:12+08:00" title="2022年6月10日">2022年6月10日</time></p>
+    <p>更新于：<time class="dataToShow" datetime="2021-12-25T13:42:12+08:00" title="2022年7月4日">2022年7月4日</time></p>
   </a>
 </div>
 
@@ -3513,35 +3407,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/posts/25250.html'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</p>
-          <p class='content'>前言或是出于优化 SEO，或是出于加强网站体验，很多博客都给文章中的外部链接加上了个二次跳转，本博客也不例外。
+    
+    
+    
+      <div class="prev-next">
+        
+          <a class='prev' href='/posts/25250.html'>
+            <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</p>
+            <p class='content'>前言或是出于优化 SEO，或是出于加强网站体验，很多博客都给文章中的外部链接加上了个二次跳转，本博客也不例外。
 在逛别人的博客的时候，发现了有一种叫 go.php的东西，可以经过自己站点的网页再...</p>
-        </a>
-      
-      
-        <a class='next' href='/posts/64280.html'>
-          <p class='title'>软件屏蔽器 秒杀流氓软件<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>为什么要软件屏蔽器我在网上冲浪十多年，经历过的套路，安装过的流氓软件数不清。
+          </a>
+        
+        
+          <a class='next' href='/posts/64280.html'>
+            <p class='title'>软件屏蔽器 秒杀流氓软件<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+            <p class='content'>为什么要软件屏蔽器我在网上冲浪十多年，经历过的套路，安装过的流氓软件数不清。
 其中有一种套路，是当之无愧的小白杀手，老司机也时常中招，肆虐互联网二十余年未曾消失，至今仍然盛行。
 屏幕前的小伙伴或...</p>
-        </a>
-      
-    </div>
+          </a>
+        
+      </div>
+    
+    <!-- Custom Files postEnd begin-->
+    
+    <!-- Custom Files postEnd end-->
+  </article>
   
-  <!-- Custom Files postEnd begin-->
   
-  <!-- Custom Files postEnd end-->
-</article>
-
-
-  
+    
 
   
   
@@ -3557,10 +3450,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-
-
-
-
+  
+  
 </div>
 <aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3572,7 +3463,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
+  <section class="widget toc-wrapper sticky shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
@@ -3594,13 +3485,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-    
-  
-
-
-  <div class="widget-sticky">
-    
-    
 
 
 <section class="widget shadow desktop mobile pjax">
@@ -3614,12 +3498,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-10</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-10</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-10</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-04</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-04</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-07-04</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li></ul>
   </div>
 </section>
 
     
-  </div>
+  
+
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3759,19 +3644,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
         
       
     
       
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
+        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
 
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3818,7 +3703,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- internal -->
-<script src="/js/app.54cf6e41.js"></script>
+<script src="/js/app.2d353ba5.js"></script>
 
 
 
@@ -4049,7 +3934,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.4825b4ea.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -4752,11 +4637,15 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     })
   </script>
 
-  
 
 
+  <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+  <script>
+    volantis.js("https://sdk.51.la/perf/js-sdk-perf.min.js").then(() => {
+      new LingQue.Monitor().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true});
+    })
+  </script>
 
-  <script src="https://code.tidio.co/08xcwggjiysrqfuycntqca8abnbtkfbz.js" async></script>
 
 
 
@@ -5010,7 +4899,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/前端/","name":"前端"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/59121.html","name":"做一个特殊的ppt"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"做一个特殊的ppt","description":"","datePublished":"2021-12-25T05:42:12.000Z","dateModified":"2022-06-10T11:39:24.179Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/59121.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/59121.html","wordCount":0,"articleSection":"前端","keywords":"前端,tools,PPT","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157019000.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/前端/","name":"前端"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/59121.html","name":"做一个特殊的ppt"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystudio.ltd/","keywords":["青云工作室","qystudio"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystudio.ltd?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"做一个特殊的ppt","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/59121.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/59121.html","wordCount":0,"datePublished":"2021-12-25T05:42:12.000Z","dateModified":"2022-07-04T07:31:11.552Z","articleSection":"前端","keywords":"前端,tools,PPT","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157019000.png","width":1024,"height":768}}]</script>
 
 
 
@@ -5173,9 +5062,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     if (e.ctrlKey && e.key === 'a')
       e.preventDefault();
   }
-  ## 停更
-
-青云团队由于一
   volantis.rightmenu.jump = (type) => {
     const item = document.querySelector(type === 'prev' ? 'article .prev-next a.prev' : 'article .prev-next a.next');
     if(!!item) {

@@ -90,7 +90,7 @@ self.addEventListener('fetch', async event => {
     }
 });
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>Redish101BlogHelper Error</h1>
+    return new Response(`<h1>QYBlogHelper Error</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
 const handle = async (req) => {

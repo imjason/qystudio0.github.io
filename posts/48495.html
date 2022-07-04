@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-  <meta name="generator" content="Hexo 5.4.0">
+  <meta name="generator" content="Hexo 5.4.2">
   <meta charset="utf-8">
   
   <!-- SEO相关 -->
@@ -10,6 +10,9 @@
   
   
   <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -39,16 +42,18 @@
     const $ = document.querySelector.bind(document);//语法糖
     if ('serviceWorker' in navigator) { //如果支持sw
         if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
-            window.stop()
+            console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
             window.localStorage.setItem('QYBlogHelper_Set', 1)
-            const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
-            document.body.innerHTML = await replacehtml.text()
+            window.stop()
+            document.body.innerHTML = await (await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')).text()
+            $('#info').innerText = '尝试安装QYBlogHelper...';
         }
         navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
             .then(async () => {
                 if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
                     setTimeout(() => {
                         window.localStorage.setItem('QYBlogHelper_Set', 2)
+                        $('#info').innerText = '安装成功,稍等片刻...';
                         window.location.reload()//刷新,以载入sw
                     }, 500)//安装后等待500ms使其激活
                 }
@@ -58,7 +63,7 @@
 })()
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.1bcfbf25.css" as="style">
+  <link rel="preload" href="/css/style.9cc4d139.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
@@ -128,6 +133,7 @@ details summary {
   --color-meta: #888;
   --color-read-bkg: #e0d8c8;
   --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
   --color-white-png: #fff;
   --color-img-error: #f5f5f5;
 }
@@ -225,8 +231,6 @@ ol li {
   list-style: none;
 }
 header {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 img {
@@ -247,6 +251,19 @@ hr {
   border-radius: 1px;
   -webkit-border-radius: 1px;
   border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+article hr {
+  background-image: none;
+  height: 2em;
+  border: none;
+  margin: 1em 0 1em;
+  text-align: center;
+}
+article hr:after {
+  content: "···";
+  letter-spacing: 2em;
+  padding-left: 2em;
+  font-weight: 700;
 }
 button,
 input {
@@ -270,6 +287,9 @@ button {
   .blur#comments {
     backdrop-filter: unset;
   }
+}
+#layoutHelper-comments {
+  margin-bottom: 100px;
 }
 .shadow {
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
@@ -295,11 +315,6 @@ button {
   left: 0;
   max-width: 100%;
   height: 100vh;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
@@ -325,6 +340,7 @@ button {
   -ms-user-select: none;
   position: relative;
   overflow: hidden;
+  margin-bottom: -100px;
 }
 .cover-wrapper .cover-bg {
   position: absolute;
@@ -548,11 +564,6 @@ button {
 .cover-wrapper .cover-body,
 .cover-wrapper .cover-body .top,
 .cover-wrapper .cover-body .bottom {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
@@ -605,8 +616,6 @@ button {
 }
 .cover-wrapper .cover-body .m_search .form {
   position: relative;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   width: 100%;
 }
@@ -621,8 +630,6 @@ button {
 }
 .cover-wrapper .cover-body .m_search .icon {
   position: absolute;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   line-height: 2.5rem;
   width: 32px;
@@ -631,8 +638,6 @@ button {
   color: rgba(68,68,68,0.75);
 }
 .cover-wrapper .cover-body .m_search .input {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   height: 2.5rem;
   width: 100%;
@@ -663,11 +668,6 @@ button {
   background: #fff;
 }
 .cover-wrapper .list-h {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
@@ -696,17 +696,10 @@ button {
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   font-weight: 600;
 }
 .cover-wrapper .list-h a img {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -799,6 +792,7 @@ button {
     --color-list-hl: #69dfc4;
     --color-meta: #888;
     --color-link: #888;
+    --color-copyright-bkg: #21252b;
     --color-white-png: #b2b2b2;
     --color-img-error: #21252b;
   }
@@ -874,6 +868,7 @@ button {
   --color-list-hl: #69dfc4;
   --color-meta: #888;
   --color-link: #888;
+  --color-copyright-bkg: #21252b;
   --color-white-png: #b2b2b2;
   --color-img-error: #21252b;
 }
@@ -982,11 +977,6 @@ button {
 }
 .l_header #wrapper .nav-main,
 .l_header #wrapper .nav-sub {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   flex-wrap: nowrap;
   -webkit-flex-wrap: nowrap;
@@ -1033,8 +1023,6 @@ button {
   position: absolute;
 }
 .l_header #wrapper .nav-sub ::-webkit-scrollbar {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
 }
 @media screen and (min-width: 2048px) {
@@ -1080,24 +1068,15 @@ button {
   flex-shrink: 1;
 }
 .l_header .switcher {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   line-height: 64px;
   align-items: center;
 }
 .l_header .switcher .s-toc {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
 }
 @media screen and (max-width: 768px) {
   .l_header .switcher .s-toc {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-    display: -ms-flexbox /* TWEENER - IE 10 */;
-    display: -webkit-flex /* NEW - Chrome */;
-    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
     display: flex;
   }
 }
@@ -1118,11 +1097,6 @@ button {
   }
 }
 .l_header .switcher >li >a {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   justify-content: center;
   -webkit-justify-content: center;
@@ -1160,19 +1134,9 @@ button {
   }
 }
 .l_header .nav-sub .switcher {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
 }
 .l_header .m_search {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   height: 64px;
   width: 240px;
@@ -1224,11 +1188,6 @@ button {
 }
 .l_header .m_search .form {
   position: relative;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   width: 100%;
   align-items: center;
@@ -1241,14 +1200,10 @@ button {
 }
 @media screen and (max-width: 500px) {
   .l_header .m_search .icon {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: none;
   }
 }
 .l_header .m_search .input {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1319,16 +1274,9 @@ button {
 }
 ul.m-pc li:hover >ul.list-v,
 ul.list-v li:hover >ul.list-v {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 ul.nav-list-h {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   align-items: stretch;
 }
@@ -1354,8 +1302,6 @@ ul.nav-list-h>li > a span {
 }
 ul.list-v {
   z-index: 1;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   position: absolute;
   background: var(--color-card);
@@ -1367,8 +1313,6 @@ ul.list-v {
   padding: 8px 0;
 }
 ul.list-v.show {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 ul.list-v hr {
@@ -1391,8 +1335,6 @@ ul.list-v >li.header i {
 }
 ul.list-v >li ul {
   margin-left: 0;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   margin-top: -40px;
 }
@@ -1407,8 +1349,6 @@ ul.list-v >li>a {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   color: var(--color-list);
   font-size: 0.875rem;
@@ -1436,15 +1376,8 @@ ul.list-v >li>a:hover {
   background: var(--color-site-bg);
 }
 .l_header .menu >ul>li>a {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
   padding: 0 8px;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
 }
 .l_header .menu >ul>li>a .icon {
@@ -1452,8 +1385,6 @@ ul.list-v >li>a:hover {
   margin-right: 6px;
 }
 .l_header .menu >ul>li>a .icon i {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: inline-block;
 }
 .l_header .menu >ul>li>ul .icon {
@@ -1461,8 +1392,6 @@ ul.list-v >li>a:hover {
   margin-right: 2px;
 }
 .l_header .menu >ul>li>ul .icon i {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: inline-block;
 }
 .l_header ul.nav-list-h>li {
@@ -1684,8 +1613,6 @@ ul.list-v >li>a:hover {
   left: calc(100% - 0.5 * 16px);
 }
 .menu-phone {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   margin-top: 16px;
   right: 8px;
@@ -1701,8 +1628,6 @@ ul.list-v >li>a:hover {
 }
 @media screen and (max-width: 500px) {
   .menu-phone {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: block;
   }
 }
@@ -1744,18 +1669,11 @@ ul.list-v >li>a:hover {
     padding: 8px 16px;
   }
   .l_header #wrapper .switcher {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-    display: -ms-flexbox /* TWEENER - IE 10 */;
-    display: -webkit-flex /* NEW - Chrome */;
-    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
     display: flex;
     margin-right: 8px;
     height: 64px;
   }
   .l_header .menu {
-    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
     display: none;
   }
 }
@@ -1765,8 +1683,6 @@ ul.list-v >li>a:hover {
   }
 }
 #u-search {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: none;
   position: fixed;
   top: 0;
@@ -1888,8 +1804,6 @@ h3 {
   text-indent: 0;
 }
 #l_main>article.cus-indent p img {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: block;
 }
 .sayhi {
@@ -1902,11 +1816,6 @@ h3 {
 .bloggerpro .contactme {
   margin-top: 20px;
   width: 80px;
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1917,11 +1826,6 @@ h3 {
   -ms-justify-content: space-between;
 }
 .bloggerpro .contactme .icon {
-  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
-  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
-  display: -ms-flexbox /* TWEENER - IE 10 */;
-  display: -webkit-flex /* NEW - Chrome */;
-  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
   display: flex;
   transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -1958,8 +1862,8 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.1bcfbf25.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.1bcfbf25.css"></noscript>
+  <link rel="stylesheet" href="/css/style.9cc4d139.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.9cc4d139.css"></noscript>
   <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2058,9 +1962,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.54cf6e41.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.cd02aa19.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.1bcfbf25.css"}},
-    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1654861204208),
+    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1656919905303),
     sidebar: {
       for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2076,7 +1980,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     },
     plugins: {
-      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fad fa-info-circle light-blue","quection":"fad fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fas fa-play","pause":"fas fa-pause"},"rightmenu":{"enable":true,"notice":true}},
       fancybox: {"css":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.css","js":"https://npm.elemecdn.com/@fancyapps/ui@4.0.12/dist/fancybox.umd.js"},
       aplayer: {
         id: 6821246154,
@@ -2305,7 +2209,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1654861204208");
+        script.setAttribute("src", src + "?time=1656919905303");
         HEAD.appendChild(script);
       });
     });
@@ -2315,7 +2219,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1654861204208";
+        link.href = src + "?time=1656919905303";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2464,11 +2368,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "https://unpkg.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
@@ -3040,7 +2944,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
       <div id="none" class='cover-wrapper post search' style="display: none;">
         
-  <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
+  <div class='cover-bg lazyload placeholder' data-bg=""></div>
 
 <div class='cover-body'>
   <div class='top'>
@@ -3109,16 +3013,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/48495.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="青云工作室">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="青云工作室">
-    <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
-  </span>
   
+  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+    <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/48495.html">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青云工作室">
+    </span>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+      <meta itemprop="name" content="青云工作室">
+      <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
+    </span>
+    
 
 
   
@@ -3173,17 +3078,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="建站博客折腾之路" data-path="/posts/48495.html">
-        <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fal fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
 
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fad fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="lc-pv" data-title="建站博客折腾之路" data-path="/posts/48495">
+        <span id='number'><i class="fa-light fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+      </span>
+      
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
 
           
         
@@ -3207,16 +3116,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-<div class="new-meta-item comments-count">
+  <div class="new-meta-item comments-count">
+     
+    
+    <a href="/posts/48495#comments">
+      <i class="fad fa-comment-dots fa-fw"></i>
+      <p>
+        <span data-path="/posts/48495" class="waline-comment-count">
+          <i class="fa-light fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+        </span> 
+         
+          <span class="leancloud-comments-count">&nbsp;条评论</span> 
+         
+      </p>
+    </a>
+  </div>
   
-  <a href="/posts/48495.html#comments">
-    <i class="fad fa-comment-dots fa-fw"></i>
-    <span data-path="/posts/48495.html" class="waline-comment-count"></span>
-    <span class="leancloud-comments-count">&nbsp;条评论</span>
-  </a>
-</div>
-
-
           
         
         <!-- Custom Files topMeta begin-->
@@ -3227,9 +3142,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想必很多人都有一个属于自己的草根站长梦想，但却由于技术水平、资金、关系资源等种种原因，往往徘徊在坚持与放弃之间！“梦想还是要有的，万一实现了呢！”没错，今天我就要帮助那些有站长梦的人实现这个梦想，不需要你会敲代码，今天我们攻克技术、资金、资源难关拿下一个网站！</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      <div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想必很多人都有一个属于自己的草根站长梦想，但却由于技术水平、资金、关系资源等种种原因，往往徘徊在坚持与放弃之间！“梦想还是要有的，万一实现了呢！”没错，今天我就要帮助那些有站长梦的人实现这个梦想，不需要你会敲代码，今天我们攻克技术、资金、资源难关拿下一个网站！</p>
 <p>现在市面上的博客很多，如CSDN，博客园，简书等平台，可以直接在上面发表，用户交互做的好，写的文章百度也能搜索的到。缺点是比较不自由，会受到平台的各种限制和恶心的广告。</p>
 <p>作为一个coder，我无时无刻不想拥有一个自己的个人博客网站，也从未放弃过探索这条道路，从网站编程开始，慢慢接触云服务器。中间经历了很多曲折的路，技术不达标、不够资金买云服务</p>
 <p>而自己购买域名和服务器，搭建博客的成本实在是太高了，不光是说这些购买成本，单单是花力气去自己搭这么一个网站，还要定期的维护它，对于我们大多数人来说，实在是没有这样的精力和时间。</p>
@@ -3242,83 +3157,62 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
 <div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a target="_blank" rel="noopener" href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/hashover/">搭建hashover为hexo提供评论服务</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/wordpressbt/">wordpress网站搭建</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li><li><a target="_blank" rel="noopener" href="https://blog.ours1984.top/posts/hexnext/">搭建hexo+next全功能博客</a></li></ul></div>
 </div>
-  </div>
-  
-  
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-            
-            <!-- <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
- -->
-            
-            
-            
-            <p><svg id="icon-touxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path
-                  d="M614.72 554.538c-49.086-6.399-100.27-2.1-149.256-2.1-119.465 0-209.04 95.972-206.84 215.437 0 17.095 8.498 31.99 23.493 40.488 14.896 10.697 34.09 14.896 53.285 17.095 61.882 6.398 123.664 6.398 198.342 6.398 40.488 0 93.872-2.1 142.858-4.298 27.692 0 53.284-4.3 78.877-14.896 19.194-8.498 29.89-19.194 31.99-40.488 8.498-104.57-72.478-204.84-172.75-217.636zM680.8 375.39c0-87.474-74.678-162.053-164.251-162.053-89.574 0-162.053 74.679-162.053 162.053-2.1 87.474 74.678 164.252 162.053 164.252 89.673 0 164.252-74.678 164.252-164.252z"
-                  fill="#FFFFFF"></path>
-                <path
-                  d="M512.35 0C228.733 0 0.5 228.233 0.5 511.8qystudio.ltd5s228.233 511.85 511.85 511.85 511.85-228.233 511.85-511.85S795.967 0 512.35 0z m275.12 772.074c-2.1 21.294-12.797 31.99-31.991 40.488-25.593 10.697-51.185 14.896-78.877 14.896-49.086 2.099-102.37 4.298-142.858 4.298-74.678 0-136.46 0-198.342-6.398-19.195-2.1-38.389-6.398-53.285-17.095-14.895-8.497-23.493-23.493-23.493-40.488-2.1-119.465 87.475-215.437 206.84-215.437 49.085 0 100.27-4.299 149.256 2.1 100.27 12.896 181.247 113.166 172.75 217.636zM354.495 375.39c0-87.474 72.479-162.053 162.053-162.053S680.8 288.016 680.8 375.39c0 89.574-74.679 164.252-164.252 164.252-87.375 0-164.152-76.778-162.053-164.252z"
-                  fill="#249FF8"></path>
-              </svg>&nbsp;本文由 <a href="https://qystudio.ltd/" data-pjax-state="">QY studio Team</a> 创作，如果您觉得本文不错，请随意赞赏🌹</p>
-            <p><svg id="icon-ziyuan" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path
-                  d="M511.854421 0a511.854421 511.854421 0 1 0 512.145579 511.854421A511.854421 511.854421 0 0 0 511.854421 0z"
-                  fill="#39B54A"></path>
-                <path
-                  d="M576.491328 630.355417l-116.462895 116.462894a129.56497 129.56497 0 0 1-182.555587 0l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l81.232868-81.232868a179.644015 179.644015 0 0 0 13.102076 70.460051l-52.69946 52.408302a69.877737 69.877737 0 0 0 0 98.702303l2.038101 2.038101a70.168894 70.168894 0 0 0 98.702303 0l116.462895-116.462894a69.877737 69.877737 0 0 0 0-98.702304l-2.038101-2.0381a69.586579 69.586579 0 0 0-13.975547-10.772818l42.508956-42.508956a128.109184 128.109184 0 0 1 13.102076 11.355132l2.0381 2.0381a129.273813 129.273813 0 0 1 0 182.26443z"
-                  fill="#FFFFFF"></path>
-                <path
-                  d="M746.235997 460.901905l-81.232869 81.232869a179.352858 179.352858 0 0 0-13.102076-70.460051l52.69946-52.408303a69.877737 69.877737 0 0 0 0-98.702303l-2.038101-2.038101a69.877737 69.877737 0 0 0-98.702303 0l-116.462894 116.462895a69.877737 69.877737 0 0 0 0 98.702303l2.0381 2.038101a68.421951 68.421951 0 0 0 13.975548 10.772817l-42.508957 42.508957a136.552744 136.552744 0 0 1-13.102076-11.355132l-2.0381-2.038101a128.982656 128.982656 0 0 1 0-182.26443l116.462894-116.462894a129.56497 129.56497 0 0 1 182.555587 0l2.038101 2.0381a128.982656 128.982656 0 0 1 0 182.26443z"
-                  fill="#FFFFFF"></path>
-              </svg>&nbsp;本文永久链接是：<a href=https://qystudio.ltd/posts/48495.html>https://qystudio.ltd/posts/48495.html</a>
-            </p>
-            <p><svg id="icon-fenxiang" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F3B243"></path>
-                <path d="M630.784 323.584m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M630.784 688.128m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M319.488 512m-90.112 0a90.112 90.112 0 1 0 180.224 0 90.112 90.112 0 1 0-180.224 0Z"
-                  fill="#FFFFFF"></path>
-                <path d="M341.037056 480.370688l257.343488-175.7184 27.713536 40.59136-257.339392 175.7184z" fill="#FFFFFF">
-                </path>
-                <path d="M349.052928 488.452096l252.854272 182.10816-28.725248 39.886848-252.874752-182.10816z"
-                  fill="#FFFFFF"></path>
-              </svg>&nbsp;博客内容遵循<a target="_blank" rel="noopener"
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA
-                4.0)
-                协议</a></p>
-            <p><svg id="icon-juanzeng" viewBox="0 0 1024 1024" width="17" height="17" style="vertical-align:-3.2px">
-                <path d="M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z" fill="#F24827" p-id="19155"></path>
-                <path
-                  d="M713.953882 364.318118a133.647059 133.647059 0 0 0-189.003294 0l-13.327059 13.327058-13.342117-13.327058a133.647059 133.647059 0 0 0-189.003294 0 133.632 133.632 0 0 0 0 188.988235l13.327058 13.342118 189.018353 160.918588 188.988236-160.933647 13.342117-13.327059a133.662118 133.662118 0 0 0 0-188.988235z"
-                  fill="#FFFFFF" p-id="19156"></path>
-              </svg>&nbsp;您的喜欢是作者写作最大的动力😁！</p>
-            
-            
-          </blockquote>
-        </div>
-      
-      
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='https://npm.elemecdn.com/qycdn@0.9.0/img/other/wechatpay.webp'>
-            
-          </div>
-        </div>
-      
     </div>
-  
-  
     
+    
+      
+      <div class='footer'>
+        <!-- 参考资料、相关资料等 -->
+        
+        <!-- 相关文章 -->
+        
+        <!-- 版权声明组件 -->
+        
+          
+            
+            <div class="copyright license">
+              <div class="license-title">建站博客折腾之路</div>
+              <div class="license-link"><a href="https://qystudio.ltd/posts/48495.html">https://qystudio.ltd/posts/48495.html</a>
+              </div>
+              <div class="license-meta">
+                <div class="license-meta-item">
+                  <div class="license-meta-title">本文作者</div>
+                  <div class="license-meta-text">青云工作室团队</div>
+                </div>
+                <div class="license-meta-item">
+                  <div class="license-meta-title">发布于</div>
+                  <div class="license-meta-text">2021年3月6日</div>
+                </div>
+                
+                <div class="license-meta-item">
+                  <div class="license-meta-title">更新于</div>
+                  <div class="license-meta-text">2021年3月7日</div>
+                </div>
+                
+                
+                <div class="license-meta-item">
+                  <div class="license-meta-title">许可协议</div>
+                  <div class="license-meta-text"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh#" target="_blank">CC BY-NC-SA 4.0</a></div>
+                </div>
+              </div>
+              <div class="license-statement">署名-非商业性使用-相同方式共享 4.0 国际。</div>
+            </div>
+          
+        
+        <!-- 打赏组件 -->
+        
+          <div class='donate'>
+            <div class='imgs'>
+              
+                <img src='https://npm.elemecdn.com/qycdn@0.9.0/img/other/wechatpay.webp'>
+              
+            </div>
+          </div>
+        
+      </div>
+    
+    
+      
 
 
   <div class='article-meta' id="bottom">
@@ -3402,36 +3296,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/posts/51935.html'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>hexo史上最全搭建教程</p>
-          <p class='content'>前言现在市面上的博客很多，如CSDN，博客园，简书等平台，可以直接在上面发表，用户交互做的好，写的文章百度也能搜索的到。缺点是比较不自由，会受到平台的各种限制和恶心的广告。
+    
+    
+    
+      <div class="prev-next">
+        
+          <a class='prev' href='/posts/51935.html'>
+            <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>hexo史上最全搭建教程</p>
+            <p class='content'>前言现在市面上的博客很多，如CSDN，博客园，简书等平台，可以直接在上面发表，用户交互做的好，写的文章百度也能搜索的到。缺点是比较不自由，会受到平台的各种限制和恶心的广告。
 而自己购买域名和服务...</p>
-        </a>
-      
-      
-        <a class='next' href='/posts/61939.html'>
-          <p class='title'>无广告、无推送，最最纯净的WPS版本<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>无广告、无推送，最最纯净的WPS版本另附四大权限与下载地址
+          </a>
+        
+        
+          <a class='next' href='/posts/61939.html'>
+            <p class='title'>无广告、无推送，最最纯净的WPS版本<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+            <p class='content'>无广告、无推送，最最纯净的WPS版本另附四大权限与下载地址
 
 
 前言就在去年12月，教育部考试中心突然发布《关于做好2021年全国计算机等级考试工作的通知》，新增计算机考试科目，正式将国产办公软...</p>
-        </a>
-      
-    </div>
+          </a>
+        
+      </div>
+    
+    <!-- Custom Files postEnd begin-->
+    
+    <!-- Custom Files postEnd end-->
+  </article>
   
-  <!-- Custom Files postEnd begin-->
   
-  <!-- Custom Files postEnd end-->
-</article>
-
-
-  
+    
 
   
   
@@ -3447,10 +3340,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-
-
-
-
+  
+  
 </div>
 <aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3462,7 +3353,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
+  <section class="widget toc-wrapper sticky shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
@@ -3484,13 +3375,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-    
-  
-
-
-  <div class="widget-sticky">
-    
-    
 
 
 <section class="widget shadow desktop mobile pjax">
@@ -3504,12 +3388,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-06-10</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-06-10</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-06-10</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-06-10</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-04</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-04</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li><li><a class="widget-last" href="/posts/59121.html"><div class="item"><time>2022-07-04</time><span>前端</span></div><span>做一个特殊的ppt</span></a></li><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li></ul>
   </div>
 </section>
 
     
-  </div>
+  
+
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
@@ -3649,19 +3534,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fad fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
         
       
     
       
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
+        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
 
       
     
       
         本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0" target="_blank" class="codename">Volantis</a>
         作为主题
       
     
@@ -3708,7 +3593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- internal -->
-<script src="/js/app.54cf6e41.js"></script>
+<script src="/js/app.2d353ba5.js"></script>
 
 
 
@@ -3939,7 +3824,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   </ul>
 </div>
-<script src="/js/plugins/rightMenus.cd02aa19.js"></script>
+<script src="/js/plugins/rightMenus.4825b4ea.js"></script>
 <script>
   const RightMenusFunction = {};
   
@@ -4642,11 +4527,15 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     })
   </script>
 
-  
 
 
+  <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+  <script>
+    volantis.js("https://sdk.51.la/perf/js-sdk-perf.min.js").then(() => {
+      new LingQue.Monitor().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true});
+    })
+  </script>
 
-  <script src="https://code.tidio.co/08xcwggjiysrqfuycntqca8abnbtkfbz.js" async></script>
 
 
 
@@ -4900,7 +4789,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/48495.html","name":"建站博客折腾之路"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"建站博客折腾之路","description":"","datePublished":"2021-03-06T06:32:55.000Z","dateModified":"2021-03-07T06:01:37.000Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/48495.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/48495.html","wordCount":0,"articleSection":"web","keywords":"博客,建站","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/categories/web/","name":"web"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/posts/48495.html","name":"建站博客折腾之路"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystudio.ltd/","keywords":["青云工作室","qystudio"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystudio.ltd?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"建站博客折腾之路","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/posts/48495.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/posts/48495.html","wordCount":0,"datePublished":"2021-03-06T06:32:55.000Z","dateModified":"2021-03-07T06:01:37.000Z","articleSection":"web","keywords":"博客,建站","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
 
 
 
@@ -5063,9 +4952,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     if (e.ctrlKey && e.key === 'a')
       e.preventDefault();
   }
-  ## 停更
-
-青云团队由于一
   volantis.rightmenu.jump = (type) => {
     const item = document.querySelector(type === 'prev' ? 'article .prev-next a.prev' : 'article .prev-next a.next');
     if(!!item) {
