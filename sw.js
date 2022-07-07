@@ -12,20 +12,20 @@ const config = {
         //JsDelivr Github
         [
             "https://cdn.jsdelivr.net/gh",
-            "https://fastly.jsdelivr.net/gh",
+            "https://cdn.oplog.cn/gh",
             "https://cdn1.tianli0.top/gh"
         ],
         //JsDelivr Combine
         [
             "https://cdn.jsdelivr.net/combine",
-            "https://fastly.jsdelivr.net/combine",
+            "https://cdn.oplog.cn/combine",
             "https://cdn1.tianli0.top/combine"
         ],
         //NPM
         [
             "https://cdn.jsdelivr.net/npm",
-            "https://fastly.jsdelivr.net/npm",
             "https://npm.elemecdn.com",
+            "https://cdn.oplog.cn/npm",
             "https://cdn1.tianli0.top/npm",
             "https://unpkg.com",
             "https://npm.sourcegcdn.com"
