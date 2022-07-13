@@ -29,7 +29,56 @@
       <link href="https://cdn1.tianli0.top/gh/inkss/common@master/css/jetbrains.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
-  
+  <!-- sw前端竞速 -->
+<script>
+(async () => {//使用匿名函数确保body已载入
+    /*
+    QYBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态
+    0 或不存在 未安装
+    1 已打断
+    2 已安装
+    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)
+    */
+    if (Number(window.localStorage.getItem('QYBlogHelper_Set')) > 2) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+            registration.unregister()
+        } })
+    } else {
+        if ('serviceWorker' in navigator) { //如果支持sw
+            if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
+                setTimeout(async () => {
+                    console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
+                    window.stop()
+                    window.localStorage.setItem('QYBlogHelper_Set', 1)
+                    const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+                    document.body.innerHTML = await replacehtml.text()
+                    $('#info').innerText = '尝试安装QYBlogHelper...';
+                }, 0);
+            }
+            const $ = document.querySelector.bind(document);//语法糖
+            navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
+                .then(async () => {
+                    if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
+                        setTimeout(() => {
+                            $('#info').innerText = '安装成功,稍等片刻...';
+                        }, 0);
+                        setTimeout(() => {
+                            window.localStorage.setItem('QYBlogHelper_Set', 2)
+                            console.log('准备跳转')
+                            window.location.reload()//刷新,以载入sw
+                        }, 500)//安装后等待500ms使其激活
+                    }
+                })
+                .catch(err => console.error(`QYBlogHelperError:${err}`))
+        } else {
+            setTimeout(() => {
+                $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
+            }, 0);
+        }
+    }
+})()
+</script>
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.9cc4d139.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -1930,7 +1979,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1657638974417),
+    lastupdate: new Date(1657724714321),
     sidebar: {
       for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2175,7 +2224,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1657638974417");
+        script.setAttribute("src", src + "?time=1657724714321");
         HEAD.appendChild(script);
       });
     });
@@ -2185,7 +2234,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1657638974417";
+        link.href = src + "?time=1657724714321";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3390,7 +3439,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/18567.html"><div class="item"><time>2022-07-12</time><span>系统</span></div><span>华为宣布将发布操作系统openEuler欧拉</span></a></li><li><a class="widget-last" href="/posts/42493.html"><div class="item"><time>2022-07-12</time><span>software</span></div><span>卸载工具 IObit Uninstaller</span></a></li><li><a class="widget-last" href="/posts/35934.html"><div class="item"><time>2022-07-12</time><span>系统</span></div><span>数字基础设施开源操作系统欧拉全新发布</span></a></li><li><a class="widget-last" href="/posts/64280.html"><div class="item"><time>2022-07-12</time><span>software</span></div><span>软件屏蔽器 秒杀流氓软件</span></a></li><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-12</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/64280.html"><div class="item"><time>2022-07-13</time><span>software</span></div><span>软件屏蔽器 秒杀流氓软件</span></a></li><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-13</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-07-13</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-13</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-13</time><span>tools</span></div><span>window上帝模式</span></a></li></ul>
   </div>
 </section>
 
@@ -3457,7 +3506,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-07-12 日</div>
+          <div id="last-update-show">2022-07-13 日</div>
         </div>
       
     </div>
