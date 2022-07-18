@@ -119,6 +119,15 @@
   </url>
   
   <url>
+    <loc>https://qystudio.ltd/posts/61056.html</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qystudio.ltd/links/index.html</loc>
     
     <lastmod>2022-07-18</lastmod>
@@ -335,6 +344,13 @@
   </url>
   
   <url>
+    <loc>https://qystudio.ltd/tags/action/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qystudio.ltd/tags/%E5%BB%BA%E7%AB%99/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -484,6 +500,13 @@
   </url>
   
   <url>
+    <loc>https://qystudio.ltd/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qystudio.ltd/categories/tools/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -491,7 +514,7 @@
   </url>
   
   <url>
-    <loc>https://qystudio.ltd/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://qystudio.ltd/categories/%E5%89%8D%E7%AB%AF/hexo/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

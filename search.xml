@@ -91,7 +91,7 @@
 </div><div class="story post-story"><h2 id="其他方案-前端竞速"><a href="#其他方案-前端竞速" class="headerlink" title="其他方案(前端竞速)"></a>其他方案(前端竞速)</h2><p>去看<a href="https://blog.cyfan.top/">cyfan的博客</a></p>
 </div><div class="story post-story"><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这篇文章在2月就准备开始写了，憋到今天才发布</p>
 <p>前端竞速不会的还在问，会用的同学已经用起来了，我的博客速度怎么样，留言告诉我</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li><li><a href="https://blog.ours1984.top/posts/banneryiyan/">hexo博客next主题添加banner图和一言</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li><li><a href="https://blog.ours1984.top/posts/banneryiyan/">hexo博客next主题添加banner图和一言</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -130,7 +130,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
 </div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -139,6 +139,61 @@
         <tag>前端</tag>
         <tag>gulp</tag>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为hexo加一个自动部署</title>
+    <url>/posts/61056.html</url>
+    <content><![CDATA[<p><img src="https://assets.qystudio.ml/img/1658139167.6203759.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658139167.6203759.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658139167.6203759.jpg"></p>
+<div class="story post-story"><h2 id="Hexo-博客的Github-Action自动化部署是什么？"><a href="#Hexo-博客的Github-Action自动化部署是什么？" class="headerlink" title="Hexo 博客的Github Action自动化部署是什么？"></a>Hexo 博客的Github Action自动化部署是什么？</h2><p>简单说，就是把hexo博客的源代码上传到github代码仓库，github在代码发生变动的时候，自动通过安装一系列nodejs环境和相关依赖，生成html页面到github pages仓库。</p>
+<p>再简单点说，就是把本地生成博客的工作，全部交给github执行。</p>
+</div><div class="story post-story"><h2 id="为什么要action"><a href="#为什么要action" class="headerlink" title="为什么要action"></a>为什么要action</h2><p>hexo 是一款快速、简洁且高效的静态博客框架，因为它的高可定制性，所以深受各个程序员的喜爱，我也曾一头扎进去研究过，魔改了vlts主题，在使用过程中，也渐渐的发现了一些问题</p>
+<p>情景一，当浏览自己某篇博客时发现了一些错误之后想要马上修改时，将要经历经历一下步骤<br>在本地的hexo博客文件夹中找到source/_post文件夹<br>找到那个md文件，打开修改<br>然后还要经历<code>hexo clean</code>,<code>hexo g</code>，<code>hexo d</code></p>
+<p>情景二，当想要马上写一篇博客时，需要经历以下步骤<br>在博客根目录中hexo n “博客名”<br>点击进入source/_post文件夹中找到这个md文件并打开写博客<br>然后还要经历<code>hexo clean</code>,<code>hexo g</code>，<code>hexo d</code><br>且hexo是由nodejs编写的，性能不佳，生产需要较长时间<br>action的高性能可以解决这些问题</p>
+</div><div class="story post-story"><h2 id="这样做的好处"><a href="#这样做的好处" class="headerlink" title="这样做的好处"></a>这样做的好处</h2><p>随时随地都能修改或增加博文</p>
+<p>使用<code>hpp</code>,<code>qexo</code>,<code>wexa</code>等编辑器</p>
+</div><div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>网上这种教程一大堆，有的装了插件不一样（gulp等等），有的部署方法（ssh、令牌）不一样，以至于自动化部署的文件写法也不一样。</p>
+<p>我这里尽量写一个适合小白和大多数hexo博客的一个自动化部署的教程。</p>
+<p><strong>总体步骤</strong> ：</p>
+<ul>
+<li>使用Github令牌部署hexo博客</li>
+<li>Github新建一个私有仓库，并上传hexo博客源码</li>
+<li>配置Github Action实现自动化部署</li>
+</ul>
+</div><div class="story post-story"><h2 id="How-to-do"><a href="#How-to-do" class="headerlink" title="How to do"></a>How to do</h2><h3 id="获取github令牌"><a href="#获取github令牌" class="headerlink" title="获取github令牌"></a>获取github令牌</h3><p>前往<a href="https://github.com/settings/tokens">github</a>新建一个token</p>
+<blockquote>
+<p>注意token只会显示一次注意保存，同时<code>注意``注意``注意</code>千万不要暴露token</p>
+</blockquote>
+<p>注意先保存，等新建仓库后填入</p>
+<p>在源码仓库的密钥处填入</p>
+<p><img src="https://assets.qystudio.ml/img/1658138422.8459709.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658138422.8459709.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658138422.8459709.jpg"></p>
+<p><code>PERSONAL_TOKEN</code>里面写密钥即可</p>
+<h3 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h3><p>首先初始化本地仓库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init </span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span> </span><br><span class="line">git branch -M main git remote add origin https://github.com/username/xxx.git </span><br></pre></td></tr></table></figure>
+
+<p>注意自己看着改</p>
+<p>然后把在<code>.git/config</code>里面修改类似这样的远程路径<a href="https://github.com/username/xxx.git%E6%94%B9%E6%88%90https://TOKEN@github.com/username/xxx.git">https://github.com/username/xxx.git改成https://TOKEN@github.com/username/xxx.git</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<p>然后你就可以看到你的源码被推送到了远程仓库</p>
+<h3 id="配置自动流程"><a href="#配置自动流程" class="headerlink" title="配置自动流程"></a>配置自动流程</h3><p>既然做的这一步了，就只差一步了配置自动化流程，帮助我们自动生成网页文件并推送到静态页面仓库</p>
+<p>打开action new workflow 或者在本地新建<code>.github/workflows/main.yml</code>的文件</p>
+<p>填入以下代码</p>
+<blockquote>
+<p>已经很详细的看了上面的阐述，并且我不会直接照搬</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">&#x27;on&#x27;:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">workflow_dispatch</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">push</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ref:</span> <span class="string">main</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install hexo-cli -g</span></span><br><span class="line"><span class="string">          npm install -g gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">Modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2.1.1</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">cache-modules</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles(&#x27;**/package-lock.json&#x27;)&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">if:</span> <span class="string">steps.cache-modules.outputs.cache-hit</span> <span class="type">!=</span> <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm ci</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setting</span> <span class="string">Token</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sed -i &quot;s/.Baidu_Token/$&#123;&#123; secrets.BAIDU_TOKEN &#125;&#125;/&quot; _config.yml</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo recommend</span></span><br><span class="line"><span class="string">          hexo generate</span></span><br><span class="line"><span class="string">          gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string">          git clone https://github.com/username/username.github.io.git .public</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">username/username.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">main</span></span><br><span class="line">          <span class="attr">exclude_assets:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">github-actions[bot]</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">github-actions[bot]@users.noreply.github.com</span></span><br></pre></td></tr></table></figure>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>action</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -625,7 +680,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://blog.ours1984.top/posts/motion/">next主题的hexo页面无法显示</a></li><li><a href="https://blog.ours1984.top/posts/darkmode/">Hexo安装暗黑模式</a></li><li><a href="https://blog.ours1984.top/posts/busuanzi/">busuanzi不显示问题</a></li><li><a href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a href="https://blog.ours1984.top/posts/musime/">养一只萌萌哒看板娘</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -928,7 +983,7 @@
 
 </div><div class="story post-story"><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>去问abudu</p>
 <p>终于水完这篇文章了</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystudio.ltd/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -1184,7 +1239,7 @@
 <p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。</p>
 <p>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。</p>
 <p>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1223,7 +1278,7 @@
 <li><p>别忘了设置后保存设置并点击“设为默认图床”按钮</p>
 </li>
 </ol>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1466,7 +1521,7 @@
 <li>discuz论坛建站系列文章</li>
 </ul>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a href="https://blog.ours1984.top/posts/hashover/">搭建hashover为hexo提供评论服务</a></li><li><a href="https://blog.ours1984.top/posts/wordpressbt/">wordpress网站搭建</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li><li><a href="https://blog.ours1984.top/posts/hexnext/">搭建hexo+next全功能博客</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/mailserver/">个人邮件服务搭建详解</a></li><li><a href="https://blog.ours1984.top/posts/hashover/">搭建hashover为hexo提供评论服务</a></li><li><a href="https://blog.ours1984.top/posts/wordpressbt/">wordpress网站搭建</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li><li><a href="https://blog.ours1984.top/posts/hexnext/">搭建hexo+next全功能博客</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1572,7 +1627,7 @@
 </div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
 <p>源码参考自<a href="https://github.com/pai233/go-jumper/">go-jumper</a></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystudio.ltd/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystudio.ltd/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystudio.ltd/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystudio.ltd/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://blog.ours1984.top/posts/hexoseo/">Hexo博客seo优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
