@@ -1981,7 +1981,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1658139368025),
+    lastupdate: new Date(1658715226904),
     sidebar: {
       for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2226,7 +2226,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1658139368025");
+        script.setAttribute("src", src + "?time=1658715226904");
         HEAD.appendChild(script);
       });
     });
@@ -2236,7 +2236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1658139368025";
+        link.href = src + "?time=1658715226904";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3094,7 +3094,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fad fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：198 字</p>
+      <p>字数：243 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3146,7 +3146,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>3048503496#qq.com</li>
 <li>admin#qystudio.ltd</li>
 </ul>
-</div><div class="story post-story"><h2 id="网站数据"><a href="#网站数据" class="headerlink" title="网站数据"></a>网站数据</h2><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/JgfdvE9NYUjOrkIE/quote.js?theme=#3AA0FE,#2F2F2F,#8E8D8D,#232323,#FFFFFF00,#2B9AFF,13&col=true&f=12&display=1,0,0,0,1,1,1,1"></script>
+</div><div class="story post-story"><h2 id="网站数据"><a href="#网站数据" class="headerlink" title="网站数据"></a>网站数据</h2><div id="statistic"></div>
+<script>
+fetch('https://v6-widget.51.la/v6/JgfdvE9NYUjOrkIE/quote.js').then(res => res.text()).then((data) => {
+    let title = ['最近活跃访客', '今日访问人数', '今日访问量', '昨日访问人数', '昨日访问量', '本月访问量', '总访问量']
+    let num = data.match(/(?<=<\/span><span>).*?(?=<\/span><\/p>)/g)
+    let s = document.getElementById('statistic')
+    // 自定义不显示哪个或者显示哪个，如下为不显示 最近活跃访客 和 总访问量
+    for (let i = 0; i < num.length; i++) {
+        if (i == 0 || i == num.length - 1) continue;
+        s.innerHTML += '<div><span>' + title[i] + '</span><span>' + num[i] + '</span></div>'
+    }
+</script>
 
 </div><div class="story post-story"><h2 id="团队提交"><a href="#团队提交" class="headerlink" title="团队提交"></a>团队提交</h2><p><img src="https://github-readme-stats.vercel.app/api?username=qystudio0&show_icons=true&count_private=true&include_all_commits=true&locale=cn&icon_color=CE1D2D&text_color=718096&bg_color=ffffff00" class="lazyload" data-srcset="https://github-readme-stats.vercel.app/api?username=qystudio0&show_icons=true&count_private=true&include_all_commits=true&locale=cn&icon_color=CE1D2D&text_color=718096&bg_color=ffffff00" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="QY studio&#39;s github stats"></p>
 <p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qystudio0&bg_color=ffffff00&locale=cn&text_color=718096&layout=compact" class="lazyload" data-srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=qystudio0&bg_color=ffffff00&locale=cn&text_color=718096&layout=compact" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="language"></p>
@@ -3295,7 +3306,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-18</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-07-18</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-18</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-18</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-18</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-25</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-07-25</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-25</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-25</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-25</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
