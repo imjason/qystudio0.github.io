@@ -11,86 +11,117 @@ const config = {
         //加速组，同一组内的url会被并发请求其余的url
         //JsDelivr Github
         [
-            "https://cdn.jsdelivr.net/gh",
-            "https://fastly.jsdelivr.net/gh",
-            "https://cdn1.tianli0.top/gh"
+            "https://cdn1.tianli0.top/gh",
+            "https://cdn.oplog.cn/gh",
+            "https://jsd.8b9.cn/gh"
         ],
         //JsDelivr Combine
         [
-            "https://cdn.jsdelivr.net/combine",
-            "https://fastly.jsdelivr.net/combine",
-            "https://cdn1.tianli0.top/combine"
+            "https://cdn1.tianli0.top/combine",
+            "https://cdn.oplog.cn/combine",
+            "https://jsd.8b9.cn/combine"
         ],
         //NPM
         [
-            "https://cdn.jsdelivr.net/npm",
-            "https://fastly.jsdelivr.net/npm",
             "https://npm.elemecdn.com",
+            "https://cdn.oplog.cn/npm",
+            "https://jsd.8b9.cn/npm",
+            "https://adn.arcitcgn.cn/npm",
+            "https://cdn.cnortles.top/npm",
             "https://cdn1.tianli0.top/npm",
             "https://unpkg.com",
             "https://npm.sourcegcdn.com"
+        ],
+        //cdnjs
+        [
+            "https://cdn.bootcdn.net/ajax/libs",
+            "https://lib.baomitu.com",
+            "https://cdn.staticfile.org",
+            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs",
+            "https://cdnjs.sourcegcdn.com/ajax/libs"
         ]
     ],
     blog: {
         accelerator: true,
         origin: [
-            "qystudio.ltd"
+            "qystudio.ltd",
+            "qystu.cc"
         ],
         mode: "npm",//加速模式：mirror|npm
         mirrors: [
-            "vercel.qystudio.ltd",
-            "cf.qystudio.ltd",
             "qyblog.qystudio.workers.dev",
             "qy.beixibaobao.com"
         ],
         npm: {
             accelerator: true,
             package: "qy-blog",
-            version: "0.1.6"
+            version: "0.1.7"
         }
     }
 }
 
 config.blog.npm.urls = [
-
     `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
     `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://cdn.oplog.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-  	`https://jsdelivr.panbaidu.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
+    `https://jsd.8b9.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
+    `https://adn.arcitcgn.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
 ]
 
 const mirror = [
-    `https://registry.npmmirror.com/chenyfan-blog/latest`,
-    `https://registry.npmjs.org/chenyfan-blog/latest`,
-    `https://mirrors.cloud.tencent.com/npm/chenyfan-blog/latest`
+    `https://registry.npmmirror.com/qy-blog/latest`,
+    `https://registry.npmjs.org/qy-blog/latest`,
+    `https://mirrors.cloud.tencent.com/npm/qy-blog/latest`
 ]
-const get_newest_version = async (mirror) => {
-return lfetch(mirror, mirror[0])
-    .then(res => res.json())
-    .then(res.version)
-}
-
 
 //以下源代码，看不懂勿动
-
-
-self.cons = {
-    s: (m) => {
-        console.log(`%c[SUCCESS]%c ${m}`, 'color:white;background:green;', '')
+const get_newest_version = async (mirror) => {
+    return lfetch(mirror, mirror[0])
+        .then(res => res.json())
+        .then(res.version)
+}
+self.db = { //全局定义db,只要read和write,看不懂可以略过
+    read: (key, config) => {
+        if (!config) { config = { type: "text" } }
+        return new Promise((resolve, reject) => {
+            caches.open(CACHE_NAME).then(cache => {
+                cache.match(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`)).then(function (res) {
+                    if (!res) resolve(null)
+                    res.text().then(text => resolve(text))
+                }).catch(() => {
+                    resolve(null)
+                })
+            })
+        })
     },
-    w: (m) => {
-        console.log(`%c[WARNING]%c ${m}`, 'color:brown;background:yellow;', '')
-    },
-    i: (m) => {
-        console.log(`%c[INFO]%c ${m}`, 'color:white;background:blue;', '')
-    },
-    e: (m) => {
-        console.log(`%c[ERROR]%c ${m}`, 'color:white;background:red;', '')
-    },
-    d: (m) => {
-        console.log(`%c[DEBUG]%c ${m}`, 'color:white;background:black;', '')
+    write: (key, value) => {
+        return new Promise((resolve, reject) => {
+            caches.open(CACHE_NAME).then(function (cache) {
+                cache.put(new Request(`https://LOCALCACHE/${encodeURIComponent(key)}`), new Response(value));
+                resolve()
+            }).catch(() => {
+                reject()
+            })
+        })
     }
 }
+
+const set_newest_version = async (mirror) => { //改为最新版本写入数据库
+    return lfetch(mirror, mirror[0])
+        .then(res => res.json()) //JSON Parse
+        .then(async res => {
+            await db.write('blog_version', res.version) //写入
+            return;
+        })
+}
+
+setInterval(async() => {
+    await set_newest_version(mirror) //定时更新,一分钟一次
+}, 60*1000);
+
+setTimeout(async() => { 
+    await set_newest_version(mirror)//打开五秒后更新,避免堵塞
+},5000)
+
 
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
@@ -119,8 +150,6 @@ const handle = async (req) => {
     const query = (q) => urlObj.searchParams.get(q);
     const domain = urlObj.hostname;
     //accelerator 加速
-
-
     let ansUrl = [];
     config.accelerator.forEach(group => {
         group.forEach(url => {
@@ -149,7 +178,6 @@ const handle = async (req) => {
     //blog 加速
     if (config.blog.accelerator) {
         if (config.blog.origin.includes(domain)) {
-
             return caches.open(config.cache.name).then(cache => {
                 return cache.match(urlStr).then(res => {
                     return new Promise((resolve, reject) => {
@@ -158,7 +186,6 @@ const handle = async (req) => {
                                 resolve(res)
                             }, 20);
                         }
-
                         setTimeout(() => {
                             if (config.blog.mode === "mirror") {
                                 config.blog.mirrors.forEach(mirror => {
@@ -195,10 +222,6 @@ const handle = async (req) => {
                         }, 0);
                     })
                 })
-
-
-
-
             })
         }
     }

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.2'>
   <meta name="generator" content="Hexo 5.4.2">
+  <meta name="Volantis" content="5.7.2">
   <meta charset="utf-8">
-  
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://qystudio.ltd/setting/"/>
-  
-  
+  <link rel="canonical" href="https://qystu.cc/setting/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -26,7 +24,6 @@
       <link rel="apple-touch-icon" sizes="180x180" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/apple-touch-icon-qy.png">
       <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-32x32-qy.ico">
       <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-16x16-qy.ico">
-      <link href="https://cdn1.tianli0.top/gh/inkss/common@master/css/jetbrains.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
   <!-- sw前端竞速 -->
@@ -71,25 +68,22 @@
         }, 0);
     }
 })()
-
-
-
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.9cc4d139.css" as="style">
+  <link rel="preload" href="/css/style.0d530efb.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
   <!-- 页面元数据 -->
   <title>setting - 青云工作室</title>
-  <meta name="keywords" content="青云工作室,qystudio">
+  <meta name="keywords" content="青云工作室,青云博客,qystudio,qystu">
   <meta desc name="description" content="有东西被加密了, 请输入密码查看. - 青云工作室 - 青云工作室">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="setting">
-<meta property="og:url" content="https://qystudio.ltd/setting/index.html">
+<meta property="og:url" content="https://qystu.cc/setting/index.html">
 <meta property="og:site_name" content="青云工作室">
 <meta property="og:description" content="有东西被加密了, 请输入密码查看.">
 <meta property="og:locale" content="zh_CN">
@@ -98,7 +92,9 @@
 <meta property="article:modified_time" content="2021-04-11T08:16:37.000Z">
 <meta property="article:author" content="青云工作室">
 <meta property="article:tag" content="青云工作室">
+<meta property="article:tag" content="青云博客">
 <meta property="article:tag" content="qystudio">
+<meta property="article:tag" content="qystu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
   <style>
@@ -940,7 +936,7 @@ button {
 }
 @font-face {
   font-family: 'Moe';
-  src: url("https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2");
+  src: url("https://npm.elemecdn.com/qycdn/fonts/fzlty.woff2");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -1875,35 +1871,14 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.9cc4d139.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.9cc4d139.css"></noscript>
-  <script>
+  <link rel="stylesheet" href="/css/style.0d530efb.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.0d530efb.css"></noscript>
+    <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
         document.documentElement.setAttribute("color-scheme", userColorScheme);
       }
-    document.addEventListener("error", function(e) {
-      const elem = e.target;
-      const parentElem = e.target.parentElement;
-      const parentElemClass = parentElem.classList.toString();
-      const pParentElemClass = parentElem.parentElement.classList.toString();
-      if (elem.tagName.toLowerCase() !== 'img') {
-          return;
-      }
-      elem.classList.add('fix-cursor-default', 'error');
-      if(parentElemClass === 'fancybox' && pParentElemClass === 'fancybox') {
-        parentElem.parentElement.classList.add('hideFancybox');
-        parentElem.parentElement.classList.remove('fancybox');
-        parentElem.classList.remove('fancybox');
-      } else if(parentElemClass === 'img-bg' && pParentElemClass === 'img-wrap') {
-        parentElem.parentElement.classList.add('hideFancybox');
-      } else if(parentElemClass === 'author') {
-        parentElem.parentElement.classList.add('fix-author-imgError');
-      } else if(parentElemClass.indexOf('tk-avatar') != -1 ) {
-        parentElem.parentElement.classList.add('fix-avatar-imgError');
-      }
-    }, true);
-  </script>
+    </script>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1975,11 +1950,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
+    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.0d530efb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1656936826252),
+    lastupdate: new Date(1662965150715),
     sidebar: {
-      for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
+      for_page: ["navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
       webinfo: {
         lastupd: {
@@ -2222,7 +2197,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1656936826252");
+        script.setAttribute("src", src + "?time=1662965150715");
         HEAD.appendChild(script);
       });
     });
@@ -2232,7 +2207,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1656936826252";
+        link.href = src + "?time=1662965150715";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2243,7 +2218,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("https://npm.elemecdn.com/jquery/dist/jquery.min.js") 
+        return volantis.js("https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js") 
       } else {
         return new Promise(resolve => {
           resolve()
@@ -2394,10 +2369,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- import head_end begin -->
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
-  
+  <script>
+    !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"JgfdvE9NYUjOrkIE",ck:"JgfdvE9NYUjOrkIE",hashMode:true});
+</script>
+<script>
+    !(function(c,i,e,b){
+    var h=i.createElement("script");
+    var f=i.getElementsByTagName("script")[0];
+    h.type="text/javascript";
+    h.crossorigin=true;
+    h.onload=function(){new c[b]["Monitor"]().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true,sendSpaPv:true});};
+    f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");
+</script>
   <!-- Custom Files headEnd end-->
-</head>
-  <body itemscope itemtype="http://schema.org/WebPage">
+</head>  <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
     <!-- Custom Files bodyBegin begin-->
@@ -2573,11 +2558,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/artitalk/" title="闲言碎语"
+                href="/talks/" title="闲言碎语"
                   
                   
                   
-                    active-action="action-artitalk"
+                    active-action="action-talks"
                   >
                   <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
                 </a>
@@ -2624,11 +2609,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                target="_blank" rel="noopener" href="https://music.qystu.cc" title="享受音乐"
                   
                   
                   
-                    active-action="action-https:musicqystudioltd"
+                    active-action="action-https:musicqystucc"
                   >
                   <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
                 </a>
@@ -2641,11 +2626,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                target="_blank" rel="noopener" href="https://ulmusic.qystu.cc" title="解锁音乐"
                   
                   
                   
-                    active-action="action-https:ulmusicqystudioltd"
+                    active-action="action-https:ulmusicqystucc"
                   >
                   <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
                 </a>
@@ -2664,11 +2649,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                target="_blank" rel="noopener" href="https://travellings.cn" title="开往"
                   
                   
                   
-                    active-action="action-https:travellingslink"
+                    active-action="action-https:travellingscn"
                   >
                   <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
                 </a>
@@ -2834,11 +2819,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/artitalk/" title="闲言碎语"
+                href="/talks/" title="闲言碎语"
                   
                   
                   
-                    active-action="action-artitalk"
+                    active-action="action-talks"
                   >
                   <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
                 </a>
@@ -2885,11 +2870,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                target="_blank" rel="noopener" href="https://music.qystu.cc" title="享受音乐"
                   
                   
                   
-                    active-action="action-https:musicqystudioltd"
+                    active-action="action-https:musicqystucc"
                   >
                   <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
                 </a>
@@ -2902,11 +2887,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                target="_blank" rel="noopener" href="https://ulmusic.qystu.cc" title="解锁音乐"
                   
                   
                   
-                    active-action="action-https:ulmusicqystudioltd"
+                    active-action="action-https:ulmusicqystucc"
                   >
                   <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
                 </a>
@@ -2925,11 +2910,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                target="_blank" rel="noopener" href="https://travellings.cn" title="开往"
                   
                   
                   
-                    active-action="action-https:travellingslink"
+                    active-action="action-https:travellingscn"
                   >
                   <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
                 </a>
@@ -3026,17 +3011,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://qystu.cc/setting/index.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="青云工作室">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="青云工作室">
+    <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
+  </span>
   
-  <article itemscope itemtype="http://schema.org/Article" class=" article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
-    <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/setting/index.html">
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青云工作室">
-    </span>
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-      <meta itemprop="name" content="青云工作室">
-      <meta itemprop="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
-    </span>
-    
 
 
   
@@ -3131,10 +3115,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-    <div id="layoutHelper-page-plugins"></div>
-    <div id="post-body" itemprop="articleBody">
-      <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码错误, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3b75869879ff1656d0bc2e6134403c6d22aab5a86c9ede7ce62bec353c0413b6">71a1a954455ab6da2f1b5d082074dda6b274de2c03397887b05f318707c9908b15ca3bfaae0ca1a3dc1949f92aad67bdadbcdb5c0184262a2d36010b8bccc51a19abbce5cf3cb740f77a1b40369c29d2094e915ec65cd7be35e9229b6abb3702558903115211d0f162b26391d9dd3983f637ab28f8bfad40afc2c3d3de59996264a912e242d748463dd0295d2492c25106b6c0cce12769b04087324c95059cd321660ed5cf1b75b0a4e5cf9f8379ebaea7002fc1167ef06d7cbdf70022b2a9cc9a0394c75efea9aeb4c1e85704b0e39065f0f2444bd20a563ee7dab631798126ae0898603db51be1d676bd99755b0eaa7456c14d25e3d0b6fe2c3f28b60049ba6dea7a6de77d0eea9e67abcf2e1d018162d075579083f809b4ede3e7f843f070ebd6704154bf12486359d2cf6adf8513dc01a6344088f37c16c62b9ee5ed55f8b01e524d1cf85d0ab94a41ec8e9be54d833cf3b7cb146f94802bb4b807f2934c1c6318abd1afc368d6b54b15131241e8862b96e40c437e89ddba4f39bfad7579173c732b79980a39a1f92ae9de01dedc72521e2df62eb23ed2352b033fa806dbf7ccd240ee14ad39a050efca366607dcba4a634d65fad3f161cc316719523ee52c4a254bba8ae3e740b216d2d7b85e99da60d9188b013453f5849b9c4b335b50e61f1ee8a69a28f658ec07f5667d7cde0ef5637f46c96427f0b98c7acbf54bbabade2479206e78e26180ddef888aed5e1ea3a3296b67120674b46deaa135d8d99b65e5b0b91aca9b4bbfc9762c6c10b1f589bb0b4609923d9544e39fa875ade4ab3574514ebbf829598d41a298b3d6585a6a416440052ed6c60a92b4f12bc390114515311791c329f1d1059df258a85db56da4c1644fdd116ad172b68a7cc38fd51725e54bec553e7104c78eef1caf6421ccbe38940138a44b1faba1ed9e7104e18600c552f200d5cf27e278b9f5d76d99bac2ba7321ffe60dfc416e165c5339d34b219b6b2e80fcc328c03068a4fb5f368b645cc7d8790069e8e2c0d4785e33a2682b3e31e15a3fee3c9feb307409a9687fd1e3ae9affdd5736a0bcacaa318e4c9ae551490e02123af0ae5dc76b7c367866c23091dcb9a1d0966aeefbe9770e1da77ad985108479fa27af4929c3a06254053a9b63f1e87d5d86e80b145da6cb3a5ff72b1dd796ee2e440a8fedf43375e329c0329dcbd2b6ea22d2d21905d16b0e145939edf2e36d58e1b9b48fd5102ac34c9c374d2f3706840e1360a4b9399704d9d64a1f4269f6731b3e9ffec100ce3e78b956d9a7c9a083c59397ea3bdf3c42603b4202bea9dffca6d71264d5bc25895cba9e9e7183e7bbaa00c5feff6bc602344d42366bb8902d0069a3cc428ef428da0f13365afa1f51b790d4433b71ee541c58642c6952544ccea83e9067da69487a46f1dca34063d43fa8be78e1e41cbbe87890e44a85c649585a1bd4a4975cfd15a0936d80d8f40e04abb662e857569c3a5219b940f0134f6c81b67898c6f8e1f2c30c66c7b68a42132207fcb8fe2ac8c05b7ad3bb8603823ca58e5948a9aa03dffda6679f358a3018e0dc785d89efa6642f599216a5a3c8311d56b35351e417d0537f2e0afe6bf9cff7fa6912b722022f27c0cef2ba39c03afd5dbb7884f4a95a5dfca1b67cd09ec432a953e110c97b587a57f95c0541ef26eea96ee8a84afb7ab785c1733cc8376ed11146265f2fd65f133f9db8f5f33a5f590a723dcd07a55c60a741df153e59d6cd150c38017bc7fe141f312d3825068a7b2b422b7653f9d8c2a560365981437298ad58c8757988be914dc81a3a4cb4d4b8176333cdd25620911a5854ff2467a3508ab2504e92cbcfe993da77f89986a8d27150d14c0ab6ee68e6ce44522ecb26cb455421c04932431f67b27eec2e9f0251f093e860cbb19790687afae47a0aff76a1efa11538732d1c9ed2f66cc1704657e17ca4c6ddf5552f7e2a6b0cd4741f1ba7c56eb0c96f3fad1ad5e372ced9e8df2b0de9c721056d5a3c37821139a93c267da554fc04f0e384c6f108fda94f2a9af01ed4d62775a364b0131fbfcb01f315d034aca73911870248e323b30cfbc1cf13002223e627d72740c6fc0233fa735ac110233276436144dc781b630d8bd9b1cd1feeda199581901ab9c52a484f9a4c89d180b8bbc0557dbc120a12061775a4060c272be01c87b49fcb00352548281442e714138c9faaeda1f5b0facb1a49691edb7fe006cb695c60bd94de7f7d7007dc62c280d777f2936a005dfbecab4343c36421b09d810ec42e1c67cc0ca5238c1d643d680e27611c7009c65e83f959f7b28761eb9b54017ef18d73b6f059563ad4ad81d0ee7ab8ea40b769efe81d1879291979b0b9f4a7cadfa275926aca753acb5f980c1c54de87b83961b1ecfa123cffe9097912d6c2409d542e701699483745a5187f7af6d6c97e22c2b22bc4937808ad86aa7d81bf39b9660d65c9d2ca5f116c9d99870db8be2139bd8509b425ddc4ea4517a7e744a8ddffbf55fb586632f2042dfba1a468510e456c3a013ec47606033d12e43a02efff001016a8c97d81121c737392c8805e735474243b489a82718a65c7157ac06f505be7a42df7d7e9d9715edb4b483a927a4b507a4cd455004f4e60104c400dd333465363da115d5c39fe017520873a16c5b3c4792664bff537cea4e351dfbb1abf85c066ab9c6c38380a3ec1f2cdc0b2211c2e928d2d95ce67dfc0c18d84a09c066b2e1d548b84a6542a4682b4a4e38a985a32b0ced065afe8918a98e7cdcac9c2750ff3fa4929acb114ebbb6ced1a1c5a253569a96d6ba7929d665e932a1932035b98a3212bc0c8d8ac4b1ea3b6e9710e4537ea622337bf26d99b8cdc384f5ee39bd271e5ef68e7d47efb194f2973b111bfa2f74cfd889862da63d9e302729fc587d8a6a5c82ebc8ddab70fa6e3a6cd2058a23c3530ca461e0ee48477e8fd09b4badb5140a7a6f726b81caabd865cecf2ba0c0a57d4c84ba9be9e610e63cf19dce7d3f062342c49cd4405fd7051da7a5822a8ee3f78cc07968dc7e67d4beef260b0f135b18a5a8a0e5f55809bdabfaa167e2b7b04dc597d3322e908345f69be26661c8bdc98467c903054870d55e97e9bd8e336d763d8d5c20f772828adb799ea237fc38477819835fd8342aa59c027af44540bc89f1a0647631881a28b39ff16f8e2a60f225bec5f8cace87d7210bf229fc5914a5efc2d8261bf2e3c9f8aa89d5fa350e10c2bf6c72bb1613c301099fecf73b1ac4d34510bac829a58fb48dfac98eafaef53b15e440c61e8ad2f9b4de41b3c10cad8704a0a74a004be29dd4690bbb2acb4ef321e65ed29a7d24073b6cead254a870e736073831e2c6359cc244f5e8ea43e6e16eecc3d1bfd1dc2050cbc7378ea21988e45e87d8faa1436a00babd2adc00cda998cc48b189a572a41ff5e5e6f99551f6acc0dfc5c943a7dabb6cd890177485cea914a5291bb33a686ee3585b128acadffadb9eab4bbb488072edc1edd8de692ad75a6642157d715d8b04e2fbb3958f9cf17035e5ac2c4dd5437dc9696d212847601fb6c85f4220a006a351e85d3a1f59502df3c68d105744a501be2ff83ade68c06eab74943fc76abf8062da5fcf21f86299fea82bd4990e544b5ae2050c9d482d08688d99fcd0731f67cde7f6ace7711876cf56c6007eb230f3c2485548df1d69e8e45d614b3fab75496dcd8c1596acd5612c497db446a8dcff38ee61e4f30a8302c1bceb0bdcdfa79baf58b08cbc921266bcec1688eb8cd50ebff95a2d571a5c60ec58ea1191ef44ce853ee0bfa9999a0bd49d6b6d83eee8866878ff4b23b876dbf303b03c3834b328bf75179d7f27aa9405bf0e96de6c81b3ce92581ad53020dc24aad10ad77dc0f4ee044fb67cda358b4e753e6f3beeb3c00235be8fff6c86d2916ba2e32af96d3bc739c29554b07e76be4468bcdfd5d9445b2a172e35edabb03ff98c6f740327387b7836b6acad3abf7e6200b25eaa47e48c7a4669b3d80ad5dd36c44c8a4661838f557fb02fc8165b2f2d4011737bb3d99c20ce3e16ffaa49dd33142cfd510e32dc507f773f4e60b2415bb21ec6ef2c33d1989042a43718190b6bf25aca4f5081775e6fd7360849c745076c335627a4cf9df508f4108638315804d5a9f6de77046ce8c7848e2f80a8f636f4c9d666f9790eb7008dfc1e2baec661530eccc38ff41984fb151c41b765b3dda59c554e6e55c922bc226b30c6e32094a76ca3ec3f3c228640c46296c36d3dd07d63e7bfe30373cf36fcbfca8d53c20d440feb501f0b676c40d8e614362c3753141a40b426293e465d97a9da5429c7595123342089ad28911257a204fcd71a88c541881ef2ec9adf27c6feac5a45c155faaa41232424abb543a8ecd2526f0004bc7aecd35d2467e8f2e4d5a7e3fc39492302e5e46d3d14cac91b83d144f7ff5efe091c0ded4c6c3041e479fee0b890675c9b71d5c214194df819c9848134a08914059cb0b627801ca6ff29af91402706c621ad56bccfd2d8f2b9ba222237e830d281a29517f38a214179152fa1b31f62315f05afa6cfeb7cc6791b7cc5ab12102a610e4983145aca17fd2e9309439457bc2e50522ae9126f354207c46143f16882253be56942182be0e5945169d31d1e7d5698100c09ff4efd4efa6e715d1593a19eda0a54812e9c092b6992c62a2c4a3514b9bb0383c6c5b3fb7cfb540a527c1bf16b32be39a02ebbdc8876ed2255c372e8f4a5c004434c7fd683ccd25b93f0293bbf904facb0c7050545b4032389fd3bcacc39b8aa299b1dcb74adf261002611036c272463992d3245bf058b1be3ff05b7cccd9b10ac10ef07a1c69532013c7db6a0ffbe956cad51d4c789ada4a47147a3ec2a8536eaee1e32b961a9185e7f61573429fe8802f11356a0674b05dd8afda6950b996616076164b0d01937ae4050f95251912f4a2d93801af526597de6a345c501244c47a40e500fdb538ebd165a807181fc7c3a2bb3048269da8744b32a392074846d1b641235ac06ff53caa2ed2237e956fe0e0e8164b91c896b113b7322c7b9541252fac6008c6a06d5488999c8ed963cca72151b7be9b5af46323abd168545e3c30c1680c3226cac0643c9fbc47cf18ff70610bcb9d4185ce022500a6e5709461ea653da13e57d1d6020dadf22d165d583e8834dc14d91b661de98c6763b93bd6ddcf16fb65cf5288cae8f8cb6341d51e7fa3a492db9322fd2531a1b75c329d90078a355a96cb23402365b6e07a</script>
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码错误, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="aad648c838f955e37a5aec0a60ee48763df43c841e8dda2da6f605a879f091ba">71a1a954455ab6da2f1b5d082074dda6b274de2c03397887b05f318707c9908b15ca3bfaae0ca1a3dc1949f92aad67bdadbcdb5c0184262a2d36010b8bccc51a19abbce5cf3cb740f77a1b40369c29d2094e915ec65cd7be35e9229b6abb3702558903115211d0f162b26391d9dd3983f637ab28f8bfad40afc2c3d3de59996264a912e242d748463dd0295d2492c25106b6c0cce12769b04087324c95059cd321660ed5cf1b75b0a4e5cf9f8379ebaea7002fc1167ef06d7cbdf70022b2a9cc9a0394c75efea9aeb4c1e85704b0e39065f0f2444bd20a563ee7dab631798126ae0898603db51be1d676bd99755b0eaa7456c14d25e3d0b6fe2c3f28b60049baeb834c93ac5ce9314d8dd263150aa7dffb5e3dce2f0beb95758d6ac8707183a43a8adb99031b1e205a1d878fd88b7b29f53ff135adfc5a35b0a9ba643d4097e0151460b1cf2d4287c9820fdcc98f6774165646daf037997d9009c12bae3fd94634c37ee33e31b46692368a6915562d2afb40b0e430afa85d41d5d4aa305f133728604057ad82201bcedaa4bcd94c21fd97dafc46c59b9b5d90ee80fee747b267025a5358946bb21b7aa0b38eb945a2850de19877b0dc87ce83e28e6e3e4ac2f21d793a9ea33e24a201a7ed9b2cd374a4195ece7ab6ca634a0ed88557c842d64526eea8dd4826d2b6958ca5861161c9e1a6a241d3ac75f19837e2739e068aaf5745054d266017afb1eec9e70e7f5d74e45f3ad45cebc21530d6b42f0443c18eb2819234741982daa93025bdbe095b76d26a7ff78bc7869187e4ed2890638ebce996c307e811eeaf3d22e8c6eb0e059584923395c561c1a7dd2854ff7d99bcff20f6f9f43388156381842aca79e89b1e56368b88f53183cc39b614fdaf32a149e320a26921528d5066074545e2e56f0a7c10b1072b0c87b185894d11c4fd307e88b51b381101e4c488f6fc75e1882b575fedbfb5bb51b328a15594d063576b91457607b72c6965148fd1b6ac1832ba842b302020fc171d1bd78df27d52846bba20c0d8fa0ed97895fa009ff69490f030aeaae86bdb2ca40b806933775f93e0f66bf956a223c75de67d69c45a0b9cf70857c6b6e0b837a31081f75994948a5b98597e5c003ac2bb58fd8ced7e46f2b2cd56fb1ef98e207f179506f633bef283a8dc84c91a042d44c47e4da69345a7140043a8bfeec1db08a76821fe6929602008a0daea628d658338d558c54e324dfd34a4225e934b104c17982a2c2642f39144c91aec560b27acb06f890e79748643e7329c00f6f4b99ceb988d8b6aad5a48fa0fab2db17049bdd980630440638af63f74d8383ac2cfecad57ed539a628ccc9d8216543772455ba8c51c3e86c30b2be4b85ae4f1f9eafffd912155531a3799b69b46d7b34d0bc1642b046c2ca065261376ea1162cf1ba4c6f8f8106de8f7d6b464977080b1305303938e3db36cff04fddf223afa756c5296a370bbb3845c90a8b2b27b02d32ba0156281a9bccb4e69eacdd268595e1e717669407c9376c50a840768b4cc450704d69592400433cd09f49c1c9ebff5ba4774586655077295919682b70f89a622aceea4d29e49aefd4c6bed698938242e96a7548855b8c139ab4d049db72092dce7076a3ff4f5a34f54f059bea7325b573f3c8e02f7611f1e9b0d5a9f459ce74fb6ef3a4d104b5027b5fdffe392f79aed305f34ba4a9f332ef62a567e796655f85af741404b43bd8e01e22658ff894b54bbf7242693a482e03637e4b3bbe72c06147ce5a871db271247b313a962822526877487b6e4ac07ae499e0a34abfb9e10dcee4a86c2454793e400ca8d36fdd1863acd452aa091a48c703fe1b9e2ba4c0e2651517427e6dca713e141225f5d59f99324715cf77316eaea9af8f0c768ae6d0f2c188b620221ac209165e84e8bf8bf7d4d40afaa463d7ea9808324580c16083456c2704a53d41b668d5c13fe007675a7040eb6c5f7331194ef25777c4b551cf5996fccee4f30954be8e09541ac07486840322ddf4546cfb338a10dfc024f12b4c4bde00e423e9e38ec6be96bd1561713b8e2edf0b63d5762c83b31856b82114597ef4d5e3715f6629eb9381a7b850a04371c6a1ea99cdeebd75ca220f9afc0f9117426f23421505229cd38a8946eb6e637ea65e3c520dfbc8a229cadd58db779925a39be0049b8b5c1f1883f0c0a55cb9cad45f1675325cbde79bdc04edc49eb6784c26062da2ac7f014329121a9ee40682c61cb347410d70fbdd94644bd49e3d5f9bedbd6a666501e28147b6e195f646fe10ccb0600a61dcefc9623349f122342464ff920e9ded365ece727fbcf4fb4ff79a2b1f503b0df0f7e0cdec210a35331b80fa7c7ecdcc51084b5486258a4e73f8fa4fd5528ef5657f6aa80425b7ae9ef08a1cb441c21f0c28cc219291c0e42289170343195e7fdd18a76e2f02a77f1d7434d848adae9994e17964349c66cf1558bbaaa17c6fd7a13311f4c64c3eb200bafb141d94d6036fece729831241c85067b2cbdef9644d61aae926c21193ad39768410b45e39f39deec8b257e8610d241e35b29a0c7211f844df8535c14de027a55e0eaa1f637486c6305ec380418ba4946b5e4f869a33d7d4aabae54492c7c195e71c22dba279d1a8e024604b5398875f69ee8ac48d23e9508e2aeb6e8a4e7d66d85818005037198024c9254f16b2e0e507920013cff58fab37b23465957702c4d47f4612292dc6533e05ad24028d0f947c8d7181787d81a10497c7e129d48b9b35debd7ef52d9cbac96fa5af038b91c710891b2e01a3653ea1a95fcdd5ef7868bc816027a187179034f139039b1e87bee13b706fe779e6e0c5b0f9c2625ae398abb6b6792c3238d6501090dd090f68d6e365570db5d099d86a07d6cee8a3c9e085103c83ec782ca380b1a003c1f3b22c60b47fbd7ba71ff3073fa845afa785aefdd78e09fd19b080d30bc1d37b69e0c47c7ecd762ec677451068eeda65764dd1df8931c2e23501c9197600a6302f9a85327997f4733aadf85483e84ad799c544a4fbba1174ab4f3b1b869e1322b6c8a7246814c362e44488d4e770e496b75b304ae826f17239c7cf1b5fe0da889afe4d7f677e675f789f5564d4da4f1bcc0457cd3052fa82bcf269c5078c4da5785d695af21242cfc1748ed7ab04aa53bf72a1d30b3b9b05ca3256830c74027cea2a27e0f99f6bfb5d87eedeaa92df3ba23d1fb320676d848402acac91b2de5781e442488fb45c37259ce56dbfe19968dc3c89e5c5ed2416fdd24d0693fd277dea6d5de16efae24cf6519c770fb6e54cc33b529902443d21f3bce529c73895bbfde99854f8649bf31f5240e07192dd8b0f29505e39289a6a82d25744d4ebcdb1511cade54cdf7490ed62f12d1dfe651f88f286623277775de9767c0ef6bae5274bffad362e03427b87f568a9afb5538bbe087893ef8b33f4a64b6c05b64912d39e30d880b713b786ff7b37b9df6aa58741c15a007f211ec4272348a664968c25a9fee8b87f9c481295e345e4364aa3be12ab742450b318595de69d1160b02d108732b51ba5561acf8f5d338f7ef3147f046beee294d5a687adb52aecaea58c79a57e213bcbf169b8bd436fba3e659c8e4312e4644c63be46f3695538a99752558c69ed7fc89e92a128c94eb90968b6fca3434e5a32e469ceaf3ee945228da3177da5216b3bd13cb2356fe1302a1f1ae471c0e2e6d06ef0d22f4c98a9193aeea122366232484a5153e908613cb4dfd95a314bc09e735f7048977d980e739449e77dbae96ecbcbb3b0317793a6b526ac3216236bee0a7e00210980287699bbb16083401cc080ea9cf77b675dd92bd9227a49af67a5825e3f3c4c2610ec4799e6bd614012ef454e39c676a7f75bd97ea20dc253ce0e7ccc665bba1e75f9d9f33ce3178756f251617e028e0f87ca51dbece7c1fc7b2a092922921637f060c0003a4f5ebfe6d91df3b4989ac0e9c03b4c455107add22ab978df849dccfbe094923f23655186e8c59fdfc3a19cc536c923bebc7db60703435fdfbdbb310a122e722cdfaada4c231b84520f0c779cbf457dbe67ab0f224207ecb1ac8bcd933611ec36011993b5217573f074629a31117a170dbb9d2f1327824e8d2d4749a262756ff3d8b758d0591ebaa71e26069db854708e13581102cf5f1c82c4b70eafbac12bb6e19c75701c274908c5385e6e8b2feb4fe6dfcaae192e87860e582a9d9648c4ca7ac154e365b4a8e8c2286e2d9361623dce06e041c167cbc313b7e568df430a8041fe6c9f2adbc2391574708721cd01fd4490a926fca7ebd73771244bc996677f9e996ca42971243e2bb069dc04f1cd025a1a4e982245cd155a949f3fdb8776868b07d0032ebb2276153fe76d8ec6ecad31c2e5fcfc8500e8e75f3d2aed50849e41d8116f545de0e4f6049c6e1047b981d098c8ab463c6d91a938b5daa4aefda1d9bfe73e92a63dbece44db7b94ae0bb6ef1557a5af64d160f593af4356704d702bf549a23b44df129dae0a4c095ae2e5ef713b9cc344101f2a8a107908457e17fc318191a507ca0eab1c6eef2162286fd8f3225ec2332fcfa1386ad648aaa1764549de79465149567872b2e158981911b107f4e6c3571751d7fb1c461e170efc4274bc4bee8864e074267786246b8f2a956d5e60b6a4c1b748d2551a0e6ccd9b7f630cdad8f0e9c22426a93e91415bb70d453f67f5b6d0032eab8a67bd9c0b05b099b87268dee66189135b51ec83ae9291b2c4dacc58577f445ebbed5df93c5eeab59adbb8d4a89ada4c76a9b90abddfdcd661cc1e6612ed121dd0f18a95a9b1efd520fecdb9d448c866f9820c5350e4e0ebddba88d5d66dc2f3d2ecfc4a7630af8489724b957d347e7814eb1be60fec80a2733c8ce178e2da8bc2552e1503586eff1709c120343d54ee2b676065e387ef4a38ce23701ea186ec821017bf68c529e1684c04cf4f881518b254a5ab17cfc46dd7ba23296ed5e944ae3390602998b4409686f89dce4e32147c8cab7d912d4ad4b16abfb2a9ef09fc8d25cec1870fa58e2ad49bf8d0a10ec618cfa850bd2331f3876247dc2c73a6cfa174c966b67b43c3ac285f3fe52557525d09331530ae6b1d66630a3190f89395bc777c3302cae3fec68cdd1df70d0fdcc360eda7abc41d335b84809e7245fd8e3ba80f354b36f71e109624d0c7026451bef0f95aa238289e9c5309e55160b279c49cb</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-wave">
       <input class="hbe hbe-input-field hbe-input-field-wave" type="password" id="hbePass">
@@ -3148,11 +3132,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-    </div>
+  </div>
+  
+  
+  
     
-    
-    
-      
 
 
   <div class='article-meta' id="bottom">
@@ -3181,7 +3165,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://qystudio.ltd/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://qystu.cc/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
           
           >
           
@@ -3193,7 +3177,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://qystudio.ltd/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://qystu.cc/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
           
           >
           
@@ -3205,7 +3189,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://qystudio.ltd/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://qystu.cc/setting/index.html&title=setting - 青云工作室&summary=有东西被加密了, 请输入密码查看."
           
           >
           
@@ -3232,16 +3216,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-    
-    
-    
-    <!-- Custom Files postEnd begin-->
-    
-    <!-- Custom Files postEnd end-->
-  </article>
   
   
   
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
 </div>
 <aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3288,7 +3270,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-07-04</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-04</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-04</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-04</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-09-12</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-09-12</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-09-12</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3298,10 +3280,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3378,85 +3356,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </div>
         
   
-  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
-
-
+  <footer class="site-footer"  itemscope itemtype="http://schema.org/WPFooter">
+    <div id="footer_icon">
+      <div class="icon_left">
+        <a class="icon_link" target="_blank" rel="noopener" href="https://travellings.cn" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a>
+        <a class="icon_link" target="_blank" rel="noopener" href="https://github.com/qystudio0" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a>
+        <a class="icon_link" href="/about" title="关于本站"><i class="fa-solid fa-info-circle fa-fw"></i></a>
+      </div>
+      <div class="icon_left">
+        <a class="icon_link" href="https://qystu.cc/atom.xml" title="网站订阅"><i class="fa-solid fa-compass fa-fw"></i></a>
+        <a class="icon_link" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=TjbIk84fDNYu4UAzA4xDzRk53hkKABh_&authKey=St%2F%2B%2FHaVkOvMkzZAqWXC5jfovqmrVqIStz5FL9o2oOCxZYAVth5ywkwnShxmf8X%2B&noverify=0&group_code=660414614" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a>
+        <a class="icon_link" href="mailto:admin@qystu.cc" title="联系邮箱"><i class="fa-solid fa-envelope fa-fw"></i></a>
+      </div>
+    </div>
+    <div id="crl-footer">
+      <div class="footer-group">
+          <h3 class="footer-title">直达</h3>
+          <div class="footer-links">
+              <a class="footer-item" href="/talk">我的说说</a>
+              <a class="footer-item" href="/messages">网站留言</a>
+              <a class="footer-item" href="/archives">文章归档</a>
+              <a class="footer-item" href="about/#网站数据">站点统计</a>
+              <a class="footer-item" href=""></a>
+          </div>
+      </div>
+      <div class="footer-group">
+          <h3 class="footer-title">分类</h3>
+          <div class="footer-links">
+            <a class="footer-item" href="/tags/博客/">博客</a>
+            <a class="footer-item" href="/tags/系统/">系统</a>
+            <a class="footer-item" href="/tags/前端/">前端</a>
+            <a class="footer-item" href="/tags/图床/">图床</a>
+          </div>
+      </div>
+      <div class="footer-group">
+          <h3 class="footer-title">其他</h3>
+          <div class="footer-links">
+            <a class="footer-item" href="/privacy">隐私协议</a>
+            <a class="footer-item" href="https://qystu.cc/sitemap.xml">网站地图</a>
+            <a class="footer-item" href="https://qystu.cc/atom.xml">我的订阅</a>
+            <a class="footer-item" href="/join">加入我们</a>
+          </div>
+      </div>
+      <div class="footer-group" id="friend-links-in-footer">
+        <h3 class="footer-title">友链</h3>
+        <div class="footer-links">
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="/links">查看更多</a>
         </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          
-            
-              <a href="/atom.xml"
-                class="social fad fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-              <a href="mailto:admin@qystudio.ltd"
-                class="social fad fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-              <a href="https://github.com/qystudio0"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
-      
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
-
-      
-    
-      
-        本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0" target="_blank" class="codename">Volantis</a>
-        作为主题
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2020-2021 青云工作室</a></p>
-
-        </div>
-      
-    
+      </div>
+    </div>
+    <div id="footer-bottom">
+      <div class="footer-bottom-links">
+          <div class="footer-bottom-left">
+              <div id="footer-bottom-tips">©2020 - 2022 By QY Studio</div>
+          </div>
+          <div class="footer-bottom-right">
+              <a class="footer-bottom-link">|</a><a class="footer-bottom-link" target="_blank" rel="noopener" href="https://vlts.cc/" title="主题">Volantis</a>
+              <a class="footer-bottom-link">|</a><a class="footer-bottom-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="备案号">沪ICP备2021023713号-16</a>
+          </div>
+      </div>
+    </div>
     <!-- Custom Files footer begin-->
     
     <!-- Custom Files footer end-->
@@ -4089,7 +4051,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystu.cc","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -4202,239 +4164,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://qystudio.ltd' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-  
-
-
-
-
-
-
-  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-  <script>
-    volantis.js("https://sdk.51.la/js-sdk-pro.min.js").then(() => {
-      LA.init({id: "JgfdvE9NYUjOrkIE",ck: "JgfdvE9NYUjOrkIE",autoTrack:true,hashMode:true})
-    })
-  </script>
-
-
-
-  <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
-  <script>
-    volantis.js("https://sdk.51.la/perf/js-sdk-perf.min.js").then(() => {
-      new LingQue.Monitor().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true});
-    })
-  </script>
 
 
 
@@ -4689,7 +4418,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystudio.ltd/","keywords":["青云工作室","qystudio"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystudio.ltd?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"setting","description":"有东西被加密了, 请输入密码查看.","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystudio.ltd/setting/index.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystudio.ltd/setting/index.html","wordCount":17,"datePublished":"2021-04-11T08:15:23.000Z","dateModified":"2021-04-11T08:16:37.000Z","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/","sameAs":["https://qystu.cc"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystu.cc/","name":"青云工作室"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystu.cc/","keywords":["青云工作室","青云博客","qystudio","qystu"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystu.cc?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"setting","description":"有东西被加密了, 请输入密码查看.","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://qystu.cc/setting/index.html"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"url":"https://qystu.cc/setting/index.html","wordCount":17,"datePublished":"2021-04-11T08:15:23.000Z","dateModified":"2021-04-11T08:16:37.000Z","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
 
 
 
@@ -4810,7 +4539,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["/artitalk/", "/links/"];
+        var banUrl = ["/artitalk/"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
