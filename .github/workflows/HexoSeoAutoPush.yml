@@ -3,7 +3,7 @@ name: Hexo SEO Auto Push
 
 on:
   schedule:
-    - cron: 0 4 * * *
+    - cron: 30 10 * * 5
   watch:
     types: [started]
 jobs:
@@ -27,7 +27,7 @@ jobs:
 
       - name: 4. 自动提交
         run: |
-          curl -H 'Content-Type:text/plain' --data-binary @baidu.txt 'http://data.zz.baidu.com/urls?site=https://qystudio.ltd&token=${{secrets.baidu_token}}'
+          curl -H 'Content-Type:text/plain' --data-binary @baidu.txt 'http://data.zz.baidu.com/urls?site=https://qystu.cc&token=${{secrets.baidu_token}}'
           curl -X POST 'https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=${{secrets.bing_apikey}}' -H 'Content-Type: application/json' -H 'charset: utf-8' -d @bing.json
           
   

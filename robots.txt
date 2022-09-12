@@ -1,4 +1,4 @@
 User-agent: *
 
-Sitemap: https://www.qystudio.ltd/sitemap.xml
-Sitemap: https://www.qystudio.ltd/baidusitemap.xml
+Sitemap: https://www.qystu.cc/sitemap.xml
+Sitemap: https://www.qystu.cc/baidusitemap.xml

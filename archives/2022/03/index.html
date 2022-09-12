@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.2'>
   <meta name="generator" content="Hexo 5.4.2">
+  <meta name="Volantis" content="5.7.2">
   <meta charset="utf-8">
-  
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow,noarchive">
-  <link rel="canonical" href="https://qystudio.ltd/archives/2022/03/"/>
-  
-  
+  <link rel="canonical" href="https://qystu.cc/archives/2022/03/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -26,7 +24,6 @@
       <link rel="apple-touch-icon" sizes="180x180" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/apple-touch-icon-qy.png">
       <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-32x32-qy.ico">
       <link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="https://cdn1.tianli0.top/npm/qycdn@0.9.5/img/logo/favicon-16x16-qy.ico">
-      <link href="https://cdn1.tianli0.top/gh/inkss/common@master/css/jetbrains.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
   <!-- sw前端竞速 -->
@@ -39,68 +36,63 @@
     2 已安装
     3 已激活,并且已缓存必要的文件(此处未写出,无需理会)
     */
-    if (Number(window.localStorage.getItem('QYBlogHelper_Set')) > 2) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            for(let registration of registrations) {
-            registration.unregister()
-        } })
-    } else {
-        if ('serviceWorker' in navigator) { //如果支持sw
-            if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
-                setTimeout(async () => {
-                    console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
-                    window.stop()
-                    window.localStorage.setItem('QYBlogHelper_Set', 1)
-                    const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
-                    document.body.innerHTML = await replacehtml.text()
-                    $('#info').innerText = '尝试安装QYBlogHelper...';
-                }, 0);
-            }
-            const $ = document.querySelector.bind(document);//语法糖
-            navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
-                .then(async () => {
-                    if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
-                        setTimeout(() => {
-                            $('#info').innerText = '安装成功,稍等片刻...';
-                        }, 0);
-                        setTimeout(() => {
-                            window.localStorage.setItem('QYBlogHelper_Set', 2)
-                            console.log('准备跳转')
-                            window.location.reload()//刷新,以载入sw
-                        }, 500)//安装后等待500ms使其激活
-                    }
-                })
-                .catch(err => console.error(`QYBlogHelperError:${err}`))
-        } else {
-            setTimeout(() => {
-                $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
+    if ('serviceWorker' in navigator) { //如果支持sw
+        if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 1) {
+            setTimeout(async () => {
+                console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
+                window.stop()
+                window.localStorage.setItem('QYBlogHelper_Set', 1)
+                const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+                document.body.innerHTML = await replacehtml.text()
+                $('#info').innerText = '尝试安装QYBlogHelper...';
             }, 0);
         }
+        const $ = document.querySelector.bind(document);//语法糖
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
+            .then(async () => {
+                if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
+                    setTimeout(() => {
+                        $('#info').innerText = '安装成功,稍等片刻...';
+                    }, 0);
+                    setTimeout(() => {
+                        window.localStorage.setItem('QYBlogHelper_Set', 2)
+                        console.log('准备跳转')
+                        window.location.reload()//刷新,以载入sw
+                    }, 500)//安装后等待500ms使其激活
+                }
+            })
+            .catch(err => console.error(`QYBlogHelperError:${err}`))
+    } else {
+        setTimeout(() => {
+            $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
+        }, 0);
     }
 })()
 </script>
   <!-- Custom Files headBegin end-->
-  <link rel="preload" href="/css/style.9cc4d139.css" as="style">
+  <link rel="preload" href="/css/style.0d530efb.css" as="style">
   <link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/SentySnowMountain.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://npm.elemecdn.com/qycdn/fonts/fzlty.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="青云工作室" type="application/atom+xml">
   <!-- 页面元数据 -->
   <title>归档：2022/3 - 青云工作室</title>
-  <meta name="keywords" content="青云工作室,qystudio">
+  <meta name="keywords" content="青云工作室,青云博客,qystudio,qystu">
   <meta desc name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客 - 青云工作室 - 青云工作室">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="青云工作室">
-<meta property="og:url" content="https://qystudio.ltd/archives/2022/03/index.html">
+<meta property="og:url" content="https://qystu.cc/archives/2022/03/index.html">
 <meta property="og:site_name" content="青云工作室">
 <meta property="og:description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
 <meta property="article:author" content="青云工作室">
 <meta property="article:tag" content="青云工作室">
+<meta property="article:tag" content="青云博客">
 <meta property="article:tag" content="qystudio">
+<meta property="article:tag" content="qystu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
   <style>
@@ -942,7 +934,7 @@ button {
 }
 @font-face {
   font-family: 'Moe';
-  src: url("https://cdn1.tianli0.top/gh/muwenhuan/Coolimg/fzlty.woff2");
+  src: url("https://npm.elemecdn.com/qycdn/fonts/fzlty.woff2");
   font-weight: 'normal';
   font-style: 'normal';
   font-display: swap;
@@ -1877,35 +1869,14 @@ h3 {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.9cc4d139.css" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.9cc4d139.css"></noscript>
-  <script>
+  <link rel="stylesheet" href="/css/style.0d530efb.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.0d530efb.css"></noscript>
+    <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
         document.documentElement.setAttribute("color-scheme", userColorScheme);
       }
-    document.addEventListener("error", function(e) {
-      const elem = e.target;
-      const parentElem = e.target.parentElement;
-      const parentElemClass = parentElem.classList.toString();
-      const pParentElemClass = parentElem.parentElement.classList.toString();
-      if (elem.tagName.toLowerCase() !== 'img') {
-          return;
-      }
-      elem.classList.add('fix-cursor-default', 'error');
-      if(parentElemClass === 'fancybox' && pParentElemClass === 'fancybox') {
-        parentElem.parentElement.classList.add('hideFancybox');
-        parentElem.parentElement.classList.remove('fancybox');
-        parentElem.classList.remove('fancybox');
-      } else if(parentElemClass === 'img-bg' && pParentElemClass === 'img-wrap') {
-        parentElem.parentElement.classList.add('hideFancybox');
-      } else if(parentElemClass === 'author') {
-        parentElem.parentElement.classList.add('fix-author-imgError');
-      } else if(parentElemClass.indexOf('tk-avatar') != -1 ) {
-        parentElem.parentElement.classList.add('fix-avatar-imgError');
-      }
-    }, true);
-  </script>
+    </script>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1977,11 +1948,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.GLOBAL_CONFIG ={
     debug: false,
-    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.9cc4d139.css"}},
+    cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.0d530efb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1658715226904),
+    lastupdate: new Date(1662965153797),
     sidebar: {
-      for_page: ["board","navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
+      for_page: ["navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
       webinfo: {
         lastupd: {
@@ -2224,7 +2195,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1658715226904");
+        script.setAttribute("src", src + "?time=1662965153797");
         HEAD.appendChild(script);
       });
     });
@@ -2234,7 +2205,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1658715226904";
+        link.href = src + "?time=1662965153797";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -2245,7 +2216,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("https://npm.elemecdn.com/jquery/dist/jquery.min.js") 
+        return volantis.js("https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js") 
       } else {
         return new Promise(resolve => {
           resolve()
@@ -2396,10 +2367,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- import head_end begin -->
   <!-- import head_end end -->
   <!-- Custom Files headEnd begin-->
-  
+  <script>
+    !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"JgfdvE9NYUjOrkIE",ck:"JgfdvE9NYUjOrkIE",hashMode:true});
+</script>
+<script>
+    !(function(c,i,e,b){
+    var h=i.createElement("script");
+    var f=i.getElementsByTagName("script")[0];
+    h.type="text/javascript";
+    h.crossorigin=true;
+    h.onload=function(){new c[b]["Monitor"]().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true,sendSpaPv:true});};
+    f.parentNode.insertBefore(h,f);h.src=e;})(window,document,"https://sdk.51.la/perf/js-sdk-perf.min.js","LingQue");
+</script>
   <!-- Custom Files headEnd end-->
-</head>
-  <body itemscope itemtype="http://schema.org/WebPage">
+</head>  <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
     <!-- Custom Files bodyBegin begin-->
@@ -2575,11 +2556,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/artitalk/" title="闲言碎语"
+                href="/talks/" title="闲言碎语"
                   
                   
                   
-                    active-action="action-artitalk"
+                    active-action="action-talks"
                   >
                   <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
                 </a>
@@ -2626,11 +2607,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                target="_blank" rel="noopener" href="https://music.qystu.cc" title="享受音乐"
                   
                   
                   
-                    active-action="action-https:musicqystudioltd"
+                    active-action="action-https:musicqystucc"
                   >
                   <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
                 </a>
@@ -2643,11 +2624,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                target="_blank" rel="noopener" href="https://ulmusic.qystu.cc" title="解锁音乐"
                   
                   
                   
-                    active-action="action-https:ulmusicqystudioltd"
+                    active-action="action-https:ulmusicqystucc"
                   >
                   <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
                 </a>
@@ -2666,11 +2647,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                target="_blank" rel="noopener" href="https://travellings.cn" title="开往"
                   
                   
                   
-                    active-action="action-https:travellingslink"
+                    active-action="action-https:travellingscn"
                   >
                   <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
                 </a>
@@ -2836,11 +2817,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/artitalk/" title="闲言碎语"
+                href="/talks/" title="闲言碎语"
                   
                   
                   
-                    active-action="action-artitalk"
+                    active-action="action-talks"
                   >
                   <span class="icon"><i class='fad fa-user EMERALD fa-fw'></i></span> <span>闲言碎语</span>
                 </a>
@@ -2887,11 +2868,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://music.qystudio.ltd" title="享受音乐"
+                target="_blank" rel="noopener" href="https://music.qystu.cc" title="享受音乐"
                   
                   
                   
-                    active-action="action-https:musicqystudioltd"
+                    active-action="action-https:musicqystucc"
                   >
                   <span class="icon"><i class='fad fa-music POMEGRANATE fa-fw'></i></span> <span>享受音乐</span>
                 </a>
@@ -2904,11 +2885,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://ulmusic.qystudio.ltd" title="解锁音乐"
+                target="_blank" rel="noopener" href="https://ulmusic.qystu.cc" title="解锁音乐"
                   
                   
                   
-                    active-action="action-https:ulmusicqystudioltd"
+                    active-action="action-https:ulmusicqystucc"
                   >
                   <span class="icon"><i class='fad fa-unlock-alt SUNFLOWER fa-fw'></i></span> <span>解锁音乐</span>
                 </a>
@@ -2927,11 +2908,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                target="_blank" rel="noopener" href="https://travellings.link" title="开往"
+                target="_blank" rel="noopener" href="https://travellings.cn" title="开往"
                   
                   
                   
-                    active-action="action-https:travellingslink"
+                    active-action="action-https:travellingscn"
                   >
                   <span class="icon"><i class='fad fa-subway WISTERIA fa-fw'></i></span> <span>开往</span>
                 </a>
@@ -3045,7 +3026,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/25002.html">
+  <link itemprop="mainEntityOfPage" href="https://qystu.cc/posts/25002.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="青云工作室">
   </span>
@@ -3105,7 +3086,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://qystudio.ltd/posts/37212.html">
+  <link itemprop="mainEntityOfPage" href="https://qystu.cc/posts/37212.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="青云工作室">
   </span>
@@ -3199,38 +3180,6 @@ Webhook 清除缓存
 	
 </div>
 <aside id='l_side' class='not-select default-cursor' itemscope itemtype="http://schema.org/WPSideBar">
-  
-
-  
-    
-    
-      
-
-<section class="widget text shadow desktop pjax">
-  
-  <header>
-    
-      <span class="icon"><i class="fad fa-bullhorn SUNFLOWER fa-fw" aria-hidden="true"></i></span>
-      <span class='name'>公告</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <p>欢迎来访</p>
-
-    
-      <p>扯淡聊天加群</p>
-
-    
-      <p><a target="_blank" rel="noopener" href="https://jq.qq.com/?_wv=1027&k=6fMOhKtn"><img src="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" class="lazyload" data-srcset="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></p>
-
-    
-  </div>
-</section>
-
-    
   
 
   
@@ -3409,7 +3358,7 @@ Webhook 清除缓存
     
   <header>
     
-      <a href='/blog/categories/'>
+      <a href='/categories/'>
         <span class="icon"><i class="fad fa-folder-open NEPHRITIS fa-fw" aria-hidden="true"></i></span>
         <span class='name'>文章分类</span>
       </a>
@@ -3421,14 +3370,9 @@ Webhook 清除缓存
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/categories/" href="/categories/categories/"
-            active-action="action-categoriescategories"
-            ><div class='name'>categories</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/hexo/" href="/categories/hexo/"
             active-action="action-categorieshexo"
-            ><div class='name'>hexo</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>hexo</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/software/" href="/categories/software/"
@@ -3449,11 +3393,6 @@ Webhook 清除缓存
             title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
             active-action="action-categoriesE5898DE7ABAF"
             ><div class='name'>前端</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/hexo/" href="/categories/%E5%89%8D%E7%AB%AF/hexo/"
-            active-action="action-categoriesE5898DE7ABAFhexo"
-            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E5%93%94%E5%93%94/" href="/categories/%E5%93%94%E5%93%94/"
@@ -3488,7 +3427,7 @@ Webhook 清除缓存
     
   <header>
     
-      <a href='/blog/tags/'>
+      <a href='/tags/'>
         <span class="icon"><i class="fad fa-tags CARROT fa-fw" aria-hidden="true"></i></span>
         <span class='name'>热门标签</span>
       </a>
@@ -3497,7 +3436,7 @@ Webhook 清除缓存
 
 
     <div class='content'>
-      <a href="/tags/IObit/" style="font-size: 14px; color: #999">IObit</a> <a href="/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/tags/WPS/" style="font-size: 14px; color: #999">WPS</a> <a href="/tags/action/" style="font-size: 14px; color: #999">action</a> <a href="/tags/cdn/" style="font-size: 14px; color: #999">cdn</a> <a href="/tags/gulp/" style="font-size: 14px; color: #999">gulp</a> <a href="/tags/hexo/" style="font-size: 19px; color: #777">hexo</a> <a href="/tags/software/" style="font-size: 16.5px; color: #888">software</a> <a href="/tags/tags/" style="font-size: 14px; color: #999">tags</a> <a href="/tags/tools/" style="font-size: 19px; color: #777">tools</a> <a href="/tags/windows/" style="font-size: 19px; color: #777">windows</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19px; color: #777">前端</a> <a href="/tags/%E5%8A%A0%E9%80%9F/" style="font-size: 14px; color: #999">加速</a> <a href="/tags/%E5%8D%8E%E4%B8%BA/" style="font-size: 14px; color: #999">华为</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 24px; color: #555">博客</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 14px; color: #999">卸载</a> <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 14px; color: #999">去广告</a> <a href="/tags/%E5%90%8E%E5%8F%B0/" style="font-size: 14px; color: #999">后台</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 16.5px; color: #888">图床</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 19px; color: #777">建站</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%AC%A7%E6%8B%89/" style="font-size: 16.5px; color: #888">欧拉</a> <a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 21.5px; color: #666">系统</a> <a href="/tags/%E8%AF%AD%E6%96%87/" style="font-size: 14px; color: #999">语文</a> <a href="/tags/%E8%B5%B7%E8%88%AA/" style="font-size: 14px; color: #999">起航</a> <a href="/tags/%E8%B7%B3%E8%BD%AC/" style="font-size: 14px; color: #999">跳转</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 16.5px; color: #888">软件</a>
+      <a href="/tags/IObit/" style="font-size: 14px; color: #999">IObit</a> <a href="/tags/PPT/" style="font-size: 14px; color: #999">PPT</a> <a href="/tags/WPS/" style="font-size: 14px; color: #999">WPS</a> <a href="/tags/action/" style="font-size: 14px; color: #999">action</a> <a href="/tags/cdn/" style="font-size: 14px; color: #999">cdn</a> <a href="/tags/gulp/" style="font-size: 14px; color: #999">gulp</a> <a href="/tags/hexo/" style="font-size: 19px; color: #777">hexo</a> <a href="/tags/software/" style="font-size: 16.5px; color: #888">software</a> <a href="/tags/tools/" style="font-size: 19px; color: #777">tools</a> <a href="/tags/windows/" style="font-size: 19px; color: #777">windows</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 19px; color: #777">前端</a> <a href="/tags/%E5%8A%A0%E9%80%9F/" style="font-size: 14px; color: #999">加速</a> <a href="/tags/%E5%8D%8E%E4%B8%BA/" style="font-size: 14px; color: #999">华为</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 24px; color: #555">博客</a> <a href="/tags/%E5%8D%B8%E8%BD%BD/" style="font-size: 14px; color: #999">卸载</a> <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 14px; color: #999">去广告</a> <a href="/tags/%E5%90%8E%E5%8F%B0/" style="font-size: 14px; color: #999">后台</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 16.5px; color: #888">图床</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 19px; color: #777">建站</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 14px; color: #999">服务器</a> <a href="/tags/%E6%AC%A7%E6%8B%89/" style="font-size: 16.5px; color: #888">欧拉</a> <a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 21.5px; color: #666">系统</a> <a href="/tags/%E8%AF%AD%E6%96%87/" style="font-size: 14px; color: #999">语文</a> <a href="/tags/%E8%B5%B7%E8%88%AA/" style="font-size: 14px; color: #999">起航</a> <a href="/tags/%E8%B7%B3%E8%BD%AC/" style="font-size: 14px; color: #999">跳转</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 16.5px; color: #888">软件</a>
     </div>
   </section>
 
@@ -3522,7 +3461,7 @@ Webhook 清除缓存
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-07-25</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-07-25</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-07-25</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-07-25</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-07-25</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-09-12</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-09-12</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-09-12</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3564,32 +3503,18 @@ Webhook 清除缓存
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>28k 字</div>
+          <div>27.8k 字</div>
         </div>
       
 
       
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="lc-uv"><span id='number'><i class="fa-solid fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
-          
-        </div>
-      
 
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="lc-sv"><span id='number'><i class="fa-solid fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
-          
-        </div>
       
 
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-07-25 日</div>
+          <div id="last-update-show">2022-09-12 日</div>
         </div>
       
     </div>
@@ -3657,85 +3582,69 @@ Webhook 清除缓存
         </div>
         
   
-  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
-
-
+  <footer class="site-footer"  itemscope itemtype="http://schema.org/WPFooter">
+    <div id="footer_icon">
+      <div class="icon_left">
+        <a class="icon_link" target="_blank" rel="noopener" href="https://travellings.cn" title="开往-随机跳转到另一个加入开往的网页"><i class="fa-solid fa-subway fa-fw"></i></a>
+        <a class="icon_link" target="_blank" rel="noopener" href="https://github.com/qystudio0" title="我的Github主页"><i class="fa-brands fa-github fa-fw"></i></a>
+        <a class="icon_link" href="/about" title="关于本站"><i class="fa-solid fa-info-circle fa-fw"></i></a>
+      </div>
+      <div class="icon_left">
+        <a class="icon_link" href="https://qystu.cc/atom.xml" title="网站订阅"><i class="fa-solid fa-compass fa-fw"></i></a>
+        <a class="icon_link" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=TjbIk84fDNYu4UAzA4xDzRk53hkKABh_&authKey=St%2F%2B%2FHaVkOvMkzZAqWXC5jfovqmrVqIStz5FL9o2oOCxZYAVth5ywkwnShxmf8X%2B&noverify=0&group_code=660414614" title="联系QQ"><i class="fa-brands fa-qq fa-fw"></i></a>
+        <a class="icon_link" href="mailto:admin@qystu.cc" title="联系邮箱"><i class="fa-solid fa-envelope fa-fw"></i></a>
+      </div>
+    </div>
+    <div id="crl-footer">
+      <div class="footer-group">
+          <h3 class="footer-title">直达</h3>
+          <div class="footer-links">
+              <a class="footer-item" href="/talk">我的说说</a>
+              <a class="footer-item" href="/messages">网站留言</a>
+              <a class="footer-item" href="/archives">文章归档</a>
+              <a class="footer-item" href="about/#网站数据">站点统计</a>
+              <a class="footer-item" href=""></a>
+          </div>
+      </div>
+      <div class="footer-group">
+          <h3 class="footer-title">分类</h3>
+          <div class="footer-links">
+            <a class="footer-item" href="/tags/博客/">博客</a>
+            <a class="footer-item" href="/tags/系统/">系统</a>
+            <a class="footer-item" href="/tags/前端/">前端</a>
+            <a class="footer-item" href="/tags/图床/">图床</a>
+          </div>
+      </div>
+      <div class="footer-group">
+          <h3 class="footer-title">其他</h3>
+          <div class="footer-links">
+            <a class="footer-item" href="/privacy">隐私协议</a>
+            <a class="footer-item" href="https://qystu.cc/sitemap.xml">网站地图</a>
+            <a class="footer-item" href="https://qystu.cc/atom.xml">我的订阅</a>
+            <a class="footer-item" href="/join">加入我们</a>
+          </div>
+      </div>
+      <div class="footer-group" id="friend-links-in-footer">
+        <h3 class="footer-title">友链</h3>
+        <div class="footer-links">
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="">随机加载中...</a>
+          <a class="footer-item" href="/links">查看更多</a>
         </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          
-            
-              <a href="/atom.xml"
-                class="social fad fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-              <a href="mailto:admin@qystudio.ltd"
-                class="social fad fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-              <a href="https://github.com/qystudio0"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer" itemprop="url">
-                
-              </a>
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
-</div>
-      
-    
-      
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
-
-      
-    
-      
-        本站使用
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/5.5.0" target="_blank" class="codename">Volantis</a>
-        作为主题
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2020-2021 青云工作室</a></p>
-
-        </div>
-      
-    
+      </div>
+    </div>
+    <div id="footer-bottom">
+      <div class="footer-bottom-links">
+          <div class="footer-bottom-left">
+              <div id="footer-bottom-tips">©2020 - 2022 By QY Studio</div>
+          </div>
+          <div class="footer-bottom-right">
+              <a class="footer-bottom-link">|</a><a class="footer-bottom-link" target="_blank" rel="noopener" href="https://vlts.cc/" title="主题">Volantis</a>
+              <a class="footer-bottom-link">|</a><a class="footer-bottom-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="备案号">沪ICP备2021023713号-16</a>
+          </div>
+      </div>
+    </div>
     <!-- Custom Files footer begin-->
     
     <!-- Custom Files footer end-->
@@ -4368,7 +4277,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystudio.ltd","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystu.cc","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -4481,239 +4390,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://qystudio.ltd' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'https://qystudio.ltd' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-  
-
-
-
-
-
-
-  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-  <script>
-    volantis.js("https://sdk.51.la/js-sdk-pro.min.js").then(() => {
-      LA.init({id: "JgfdvE9NYUjOrkIE",ck: "JgfdvE9NYUjOrkIE",autoTrack:true,hashMode:true})
-    })
-  </script>
-
-
-
-  <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
-  <script>
-    volantis.js("https://sdk.51.la/perf/js-sdk-perf.min.js").then(() => {
-      new LingQue.Monitor().init({id:"JjnFbSr5oht3eLEv",sendSuspicious:true});
-    })
-  </script>
 
 
 
@@ -4968,7 +4644,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","sameAs":["https://qystudio.ltd"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystudio.ltd/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystudio.ltd/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystudio.ltd/archives/2022/","name":"2022年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://qystudio.ltd/archives/2022/3/","name":"3月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystudio.ltd/","keywords":["青云工作室","qystudio"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystudio.ltd/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystudio.ltd?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystudio.ltd/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室","url":"https://qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/","sameAs":["https://qystu.cc"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://qystu.cc/","name":"青云工作室"}},{"@type":"ListItem","position":2,"item":{"@id":"https://qystu.cc/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://qystu.cc/archives/2022/","name":"2022年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://qystu.cc/archives/2022/3/","name":"3月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室","url":"https://qystu.cc/","keywords":["青云工作室","青云博客","qystudio","qystu"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室","url":"https://qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://qystu.cc?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://qystu.cc/"},"publisher":{"@type":"Organization","name":"青云工作室","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
 
 
 
@@ -5089,7 +4765,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["/artitalk/", "/links/"];
+        var banUrl = ["/artitalk/"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
