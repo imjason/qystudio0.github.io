@@ -19,8 +19,6 @@ function askFriend (event) {
     var des = document.getElementById('qexo_friend_brief introduction').value;
     var url = document.getElementById('qexo_friend_website').value;
     var image = document.getElementById('qexo_friend_logo').value;
-    var body='name='+encodeURIComponent(name)+'&url='+encodeURIComponent(website)+'&image='+encodeURIComponent(logo)+'&description='+encodeURIComponent(introduction)
-    console.log(body);
     if(!(name&&url&&image&&des)){
         VolantisApp.message('异常', '信息填写不完整!', {
             icon: 'fa-light fa-circle-exclamation red', 
@@ -56,7 +54,9 @@ function askFriend (event) {
     });
     event.target.classList.add('is-loading');
     grecaptcha.ready(function() {
-        grecaptcha.execute('6LdU3-UgAAAAALLKV6IltrhA2KJcjoopc4XhhxNM', {action: 'submit'}).then(function(token) {
+        grecaptcha.execute('6LdzNvQhAAAAABzqu6957x_uDUUrnh09taiocJbx', {action: 'submit'}).then(function(token) {
+            var body='name='+encodeURIComponent(name)+'&url='+encodeURIComponent(url)+'&image='+encodeURIComponent(image)+'&description='+encodeURIComponent(des)+'&verify='+encodeURIComponent(token)
+            console.log(body);
             fetch(uri, {
                 method: 'post',
                 body: body,
@@ -67,7 +67,6 @@ function askFriend (event) {
                 if (data.ok){
                     data.json().then(function(res){
                          if (res["status"]) {
-                             alert("提交成功，请等待博主确认！我们不再提醒你结果，谢谢！");
                              VolantisApp.message('恭喜', '提交成功，请等待博主审核！我们不再提醒你结果，谢谢！', {
                                 icon: 'fa-light fa-check light-blue', 
                                 transitionIn:'bounceInDown',
@@ -75,7 +74,6 @@ function askFriend (event) {
                                 time: 5000
                              });
                          } else {
-                             alert("友链申请失败 提示："+res["msg"]);
                              VolantisApp.message('异常', '友链申请失败 提示:'+res["msg"], {
                                 icon: 'fa-light fa-circle-exclamation red', 
                                 transitionIn:'bounceInDown',
@@ -85,7 +83,6 @@ function askFriend (event) {
                          }
                      });
                 } else {
-                    alert("网络异常！");
                     VolantisApp.message('异常', 'URL无法连通!', {
                         icon: 'fa-light fa-circle-exclamation red',
                         transitionIn:'bounceInDown',

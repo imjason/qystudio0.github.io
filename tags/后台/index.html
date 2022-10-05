@@ -42,18 +42,14 @@
                 console.log('检测到您的浏览器没有安装QYBlogHelper，开始注册')
                 window.stop()
                 window.localStorage.setItem('QYBlogHelper_Set', 1)
-                const replacehtml = await fetch('https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html')
+                const replacehtml = await fetch('https://npm.elemecdn.com/qycdn@0.9.13/html/swinstall.html')
                 document.body.innerHTML = await replacehtml.text()
-                $('#info').innerText = '尝试安装QYBlogHelper...';
             }, 0);
         }
         const $ = document.querySelector.bind(document);//语法糖
         navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)//随机数,强制更新
             .then(async () => {
                 if (Number(window.localStorage.getItem('QYBlogHelper_Set')) < 2) {
-                    setTimeout(() => {
-                        $('#info').innerText = '安装成功,稍等片刻...';
-                    }, 0);
                     setTimeout(() => {
                         window.localStorage.setItem('QYBlogHelper_Set', 2)
                         console.log('准备跳转')
@@ -64,7 +60,7 @@
             .catch(err => console.error(`QYBlogHelperError:${err}`))
     } else {
         setTimeout(() => {
-            $('#info').innerText = '很抱歉,我们已不再支持您的浏览器.';
+            console.log('很抱歉,我们已不再支持您的浏览器');
         }, 0);
     }
 })()
@@ -1867,6 +1863,9 @@ h3 {
   background: #2e86de;
   color: #333;
 }
+.grecaptcha-badge {
+  visibility: hidden;
+}
 
   </style>
   <link rel="stylesheet" href="/css/style.0d530efb.css" media="print" onload="this.media='all';this.onload=null">
@@ -1950,7 +1949,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.0d530efb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1662965150715),
+    lastupdate: new Date(1664946894797),
     sidebar: {
       for_page: ["navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2195,7 +2194,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1662965150715");
+        script.setAttribute("src", src + "?time=1664946894797");
         HEAD.appendChild(script);
       });
     });
@@ -2205,7 +2204,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1662965150715";
+        link.href = src + "?time=1664946894797";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -3402,7 +3401,7 @@ Webhook 清除缓存
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-09-12</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-09-12</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-09-12</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-09-12</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/posts/78415.html"><div class="item"><time>2022-10-05</time><span>系统</span></div><span>Windows 10 21H2 太阳谷更新镜像发布</span></a></li><li><a class="widget-last" href="/posts/34886.html"><div class="item"><time>2022-10-05</time><span>hexo</span></div><span>github图床之弃用jsd(图床使用npm镜像加速)</span></a></li><li><a class="widget-last" href="/posts/48475.html"><div class="item"><time>2022-10-05</time><span>系统</span></div><span>win11安装初体验(副下载)</span></a></li><li><a class="widget-last" href="/posts/63659.html"><div class="item"><time>2022-10-05</time><span>tools</span></div><span>window上帝模式</span></a></li><li><a class="widget-last" href="/posts/14166.html"><div class="item"><time>2022-10-05</time><span>web</span></div><span>使用PicGO-Gitee搭建博客图床</span></a></li></ul>
   </div>
 </section>
 
@@ -3455,7 +3454,7 @@ Webhook 清除缓存
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2022-09-12 日</div>
+          <div id="last-update-show">2022-10-05 日</div>
         </div>
       
     </div>
@@ -4218,7 +4217,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
 
     try {
-      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystu.cc","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"copyright":false}, {
+      Waline.init(Object.assign(Object.assign({"js":"https://npm.elemecdn.com/@waline/client@2.11.3/dist/waline.js","css":"https://npm.elemecdn.com/@waline/client@2.11.3/dist/waline.css","path":null,"placeholder":null,"serverURL":"https://waline.qystu.cc","imageUploader":false,"pageview":true,"comment":true,"meta":["nick","mail","link"],"requiredFields":["nick","mail"],"search":false,"dark":"auto","locale":{"admin":"可爱的博主","sofa":"这里冷冷清清的，快来留下脚印吧!","placeholder":"快来评论吧~"},"emoji":["https://cdn1.tianli0.top/gh/zhheo/Sticker-Heo@main/Sticker-100/","https://npm.elemecdn.com/@waline/emojis@1.0.1/bilibili"],"recaptchaV3Key":"6LdzNvQhAAAAABzqu6957x_uDUUrnh09taiocJbx","copyright":false}, {
         el: '#waline',
         path: path,
         // https://github.com/volantis-x/hexo-theme-volantis/issues/713
@@ -4243,8 +4242,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     }
   }
 
-  volantis.css('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.css')
-  volantis.js('https://npm.elemecdn.com/@waline/client@2.5.1/dist/waline.js').then(pjax_waline)
+  volantis.css('https://npm.elemecdn.com/@waline/client@2.11.3/dist/waline.css')
+  volantis.js('https://npm.elemecdn.com/@waline/client@2.11.3/dist/waline.js').then(pjax_waline)
   volantis.pjax.push(pjax_waline);
 </script>
     
