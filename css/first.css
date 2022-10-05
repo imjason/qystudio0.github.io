@@ -1768,3 +1768,6 @@ h3 {
   background: #2e86de;
   color: #333;
 }
+.grecaptcha-badge {
+  visibility: hidden;
+}

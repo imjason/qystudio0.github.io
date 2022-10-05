@@ -1,85 +1,11 @@
-const config = {
-    dev: {
-        blog: false,
-        accelerator: false
-    },
-    cache: {
-        name: "QYstudioBlogCache",
-        enabled: true
-    },
-    accelerator: [
-        //加速组，同一组内的url会被并发请求其余的url
-        //JsDelivr Github
-        [
-            "https://cdn1.tianli0.top/gh",
-            "https://cdn.oplog.cn/gh",
-            "https://jsd.8b9.cn/gh"
-        ],
-        //JsDelivr Combine
-        [
-            "https://cdn1.tianli0.top/combine",
-            "https://cdn.oplog.cn/combine",
-            "https://jsd.8b9.cn/combine"
-        ],
-        //NPM
-        [
-            "https://npm.elemecdn.com",
-            "https://cdn.oplog.cn/npm",
-            "https://jsd.8b9.cn/npm",
-            "https://adn.arcitcgn.cn/npm",
-            "https://cdn.cnortles.top/npm",
-            "https://cdn1.tianli0.top/npm",
-            "https://unpkg.com",
-            "https://npm.sourcegcdn.com"
-        ],
-        //cdnjs
-        [
-            "https://cdn.bootcdn.net/ajax/libs",
-            "https://lib.baomitu.com",
-            "https://cdn.staticfile.org",
-            "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs",
-            "https://cdnjs.sourcegcdn.com/ajax/libs"
-        ]
-    ],
-    blog: {
-        accelerator: true,
-        origin: [
-            "qystudio.ltd",
-            "qystu.cc"
-        ],
-        mode: "npm",//加速模式：mirror|npm
-        mirrors: [
-            "qyblog.qystudio.workers.dev",
-            "qy.beixibaobao.com"
-        ],
-        npm: {
-            accelerator: true,
-            package: "qy-blog",
-            version: "0.1.7"
-        }
-    }
-}
+const CACHE_NAME = 'QYstudioBlogCache';
 
-config.blog.npm.urls = [
-    `https://npm.elemecdn.com/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://cdn.tianli0.top/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://jsd.8b9.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`,
-    `https://adn.arcitcgn.cn/npm/${config.blog.npm.package}@${config.blog.npm.version}/public`
-]
+let cachelist = [];
 
-const mirror = [
-    `https://registry.npmmirror.com/qy-blog/latest`,
-    `https://registry.npmjs.org/qy-blog/latest`,
-    `https://mirrors.cloud.tencent.com/npm/qy-blog/latest`
-]
+const cachetime = 86400000;
 
-//以下源代码，看不懂勿动
-const get_newest_version = async (mirror) => {
-    return lfetch(mirror, mirror[0])
-        .then(res => res.json())
-        .then(res.version)
-}
-self.db = { //全局定义db,只要read和write,看不懂可以略过
+self.CACHE_NAME = 'SWHelperCache';
+self.db = {
     read: (key, config) => {
         if (!config) { config = { type: "text" } }
         return new Promise((resolve, reject) => {
@@ -105,33 +31,17 @@ self.db = { //全局定义db,只要read和write,看不懂可以略过
     }
 }
 
-const set_newest_version = async (mirror) => { //改为最新版本写入数据库
-    return lfetch(mirror, mirror[0])
-        .then(res => res.json()) //JSON Parse
-        .then(async res => {
-            await db.write('blog_version', res.version) //写入
-            return;
-        })
-}
-
-setInterval(async() => {
-    await set_newest_version(mirror) //定时更新,一分钟一次
-}, 60*1000);
-
-setTimeout(async() => { 
-    await set_newest_version(mirror)//打开五秒后更新,避免堵塞
-},5000)
-
-
 self.addEventListener('install', async function (installEvent) {
     self.skipWaiting();
     installEvent.waitUntil(
-        caches.open(config.cache.name)
-            .then(cache => {
-                return cache.addAll([]);
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(cachelist);
             })
     );
 });
+
 self.addEventListener('fetch', async event => {
     try {
         event.respondWith(handle(event.request))
@@ -140,107 +50,59 @@ self.addEventListener('fetch', async event => {
     }
 });
 const handleerr = async (req, msg) => {
-    return new Response(`<h1>QYBlogHelper Error</h1>
+    return new Response(`<h1>Service Worker 遇到致命错误</h1>
     <b>${msg}</b>`, { headers: { "content-type": "text/html; charset=utf-8" } })
 }
-const handle = async (req) => {
-    const urlObj = new URL(req.url);
-    const urlStr = urlObj.toString();
-    const urlPath = urlObj.pathname;
-    const query = (q) => urlObj.searchParams.get(q);
-    const domain = urlObj.hostname;
-    //accelerator 加速
-    let ansUrl = [];
-    config.accelerator.forEach(group => {
-        group.forEach(url => {
-            if (urlStr.match(url)) {
-                group.forEach(Aurl => {
-                    ansUrl.push(urlStr.replace(url, Aurl))
-                })
-            }
-        })
-    })
-    if (ansUrl.length > 0) {
-        return caches.open(config.cache.name).then(cache => {
-            return cache.match(urlStr).then(res => {
-                if (res) return res;
-                return lfetch(ansUrl, urlStr).then(async res => {
-                    if (config.cache.enabled) {
-                        await caches.open(config.cache.name).then(cache => {
-                            cache.put(req, res.clone())
-                        })
-                    }
-                    return res
-                })
-            })
-        })
-    }
-    //blog 加速
-    if (config.blog.accelerator) {
-        if (config.blog.origin.includes(domain)) {
-            return caches.open(config.cache.name).then(cache => {
-                return cache.match(urlStr).then(res => {
-                    return new Promise((resolve, reject) => {
-                        if (res) {
-                            setTimeout(() => {
-                                resolve(res)
-                            }, 20);
-                        }
-                        setTimeout(() => {
-                            if (config.blog.mode === "mirror") {
-                                config.blog.mirrors.forEach(mirror => {
-                                    ansUrl.push(urlStr.replace(domain, mirror))
-                                })
-
-                            }
-                            if (config.blog.mode === "npm") {
-                                config.blog.npm.urls.forEach(url => {
-                                    ansUrl.push(npm_prefix(url, urlObj))
-                                })
-                            }
-                            ansUrl.push(urlStr)
-                            lfetch(ansUrl, urlStr).then(async res => {
-                                let newRes;
-                                if (npm_prefix('', urlObj).endsWith('.html')) {
-                                    newRes = new Response(await res.arrayBuffer(), {
-                                        headers: {
-                                            'content-type': 'text/html; charset=utf-8',
-                                            'cache-control': 'max-age=0',
-                                            "Server": "QYstudioBlogHelper"
-                                        }
-                                    })
-                                } else {
-                                    newRes = res.clone()
-                                }
-                                if (config.cache.enabled) {
-                                    await caches.open(config.cache.name).then(async cache => {
-                                        cache.put(req, newRes.clone())
-                                    })
-                                }
-                                resolve(newRes)
-                            })
-                        }, 0);
-                    })
-                })
-            })
+let cdn = {
+    "gh": {
+        ftft: {
+            "url": "https://jsd.iftft.com/gh"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/gh"
         }
+    },
+    "combine": {
+        ftft: {
+            "url": "https://jsd.iftft.com/combine"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/combine"
+        }
+    },
+    "npm": {
+        eleme: {
+            "url": "https://npm.elemecdn.com"
+        },
+        ftft: {
+            "url": "https://jsd.iftft.com/npm"
+        },
+        sourcegcdn: {
+            "url": "https://npm.sourcegcdn.com"
+        },
+        tianli: {
+            "url": "https://cdn1.tianli0.top/npm"
+        }
+    },
+    "cdnjs": {
+        bootcdn: {
+            "url": "https://cdn.bootcdn.net/ajax/libs"
+        },
+        baomitu: {
+            "url": "https://lib.baomitu.com"
+        },
+        staticfile: {
+            "url": "https://cdn.staticfile.org"
+        },
+        sustech: {
+            "url": "https://mirrors.sustech.edu.cn/cdnjs/ajax/libs"
+        },
+        sourcegcdn: {
+            "url": "https://cdnjs.sourcegcdn.com/ajax/libs"
+        }   
     }
-
-    return fetch(req);
 }
-
-
-
-//Function 功能区
-const npm_prefix = (url, urlObj) => {
-    let path = urlObj.pathname.split("#")[0];
-    if (path.endsWith("/")) path += "index"
-    if (!path.split('/')[path.split('/').length - 1].includes(".")) {
-        path += ".html"
-    }
-    return url + path
-}
-const lfetch = async (urls, url) => {
+const lfetch = async (urls, url, init) => {
     let controller = new AbortController();
     const PauseProgress = async (res) => {
         return new Response(await (res).arrayBuffer(), { status: res.status, headers: res.headers });
@@ -267,19 +129,142 @@ const lfetch = async (urls, url) => {
         }
     }
     return Promise.any(urls.map(urls => {
+        init = init || {}
+        init.signal = controller.signal
         return new Promise((resolve, reject) => {
-            fetch(urls, {
-                signal: controller.signal
-            })
+            fetch(urls, init)
                 .then(PauseProgress)
                 .then(res => {
                     if (res.status == 200) {
                         controller.abort();
                         resolve(res)
                     } else {
-                        reject(res)
+                        reject(null)
                     }
                 })
         })
     }))
+}
+
+let gdt = {
+
+}
+const mirror = [
+    `https://registry.npmmirror.com/qy-blog/latest`,
+    `https://registry.npmjs.org/qy-blog/latest`,
+    `https://mirrors.cloud.tencent.com/npm/qy-blog/latest`
+]
+const set_newest_version = async (mirror) => { //改为最新版本写入数据库
+    console.log("[LOG] 开始检查更新.");
+    return lfetch(mirror, mirror[0])
+        .then(res => res.json()) //JSON Parse
+        .then(async res => {
+            console.info("[INFO] 当前版本: "+ await db.read("blog_version"));
+            console.info("[INFO] 最新版本: "+res.version);
+            await db.write('blog_version', res.version) //写入
+            return;
+        })
+}
+
+setInterval(async() => {
+    await set_newest_version(mirror) // 定时更新,一分钟一次
+}, 60*1000);
+
+setTimeout(async() => { 
+    await set_newest_version(mirror)// 打开五秒后更新,避免堵塞
+},5000)
+
+
+const handle = async function (req) {
+    const urlStr = req.url
+    const urlObj = new URL(urlStr)
+    const port = urlObj.port
+    const domain = urlObj.hostname;
+    const urlPath = urlObj.pathname;
+    let urls = []
+
+    if (req.method == "GET" && (domain == "www.qystu.cc" || domain == "localhost")) {
+        /* 是 Blog & 且资源为 Get */
+        /* 根据 Blog 的路径情况修改了下 fullpath 函数 */
+        const fullpath = (path) => {
+            path = path.split('?')[0].split('#')[0]
+            if (path.match(/\/$/)) {
+                path += 'index.html'
+            }
+            if (!path.match(/\.[a-zA-Z]+$/)) {
+                path += '/index.html'
+            }
+            return path
+        }
+        const generate_blog_urls = (packagename, blogversion, path, static) => {
+            var npmmirror;
+            if (static == 0) {
+                // HTML 文件
+                npmmirror = [
+                    `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
+                    `https://cdn.tianli0.top/npm/${packagename}@${blogversion}/public`,
+                    `https://jsd.iftft.com/npm/${packagename}@${blogversion}/public`
+                ]
+            } else {
+                // 其他资源文件
+                npmmirror = [
+                    `https://npm.elemecdn.com/${packagename}@${blogversion}/public`,
+                    `https://cdn.tianli0.top/npm/${packagename}@${blogversion}/public`,
+                    `https://jsd.iftft.com/npm/${packagename}@${blogversion}/public`
+                ]
+            }
+            for (var i in npmmirror) {
+                npmmirror[i] += path
+            }
+            return npmmirror
+        }
+        if (fullpath(urlPath).match(/\.[a-zA-Z]+$/)[0] == ".html") {
+            /* 只拦截 HTML 文件 */
+            return lfetch(generate_blog_urls('qy-blog',await db.read('blog_version') || '0.1.7',fullpath(urlPath),0))
+            .then(res=>res.arrayBuffer())
+            .then(buffer=>new Response(buffer,{headers:{"Content-Type":"text/html;charset=utf-8"}})
+            )// rewrite header
+        } else {
+            /* 拦截其他文件，不用处理 Headers */
+            return lfetch(generate_blog_urls('qy-blog',await db.read('blog_version') || '0.1.7',fullpath(urlPath), 0))
+            // .then(res=>res.arrayBuffer())
+            // .then(buffer=>new Response(buffer,{headers:{"Content-Type":"text/html;charset=utf-8"}})
+            // )// rewrite header
+        }
+    }
+
+    for (let i in cdn) {
+        for (let j in cdn[i]) {
+            if (domain == cdn[i][j].url.split('https://')[1].split('/')[0] && urlStr.match(cdn[i][j].url)) {
+                urls = []
+                for (let k in cdn[i]) {
+                    urls.push(urlStr.replace(cdn[i][j].url, cdn[i][k].url))
+                }
+                if (urlStr.indexOf('@latest/') > -1) {
+                    return lfetch(urls, urlStr)
+                } else {
+                    return caches.match(req).then(function (resp) {
+                        return resp || lfetch(urls, urlStr).then(function (res) {
+                            return caches.open(CACHE_NAME).then(function (cache) {
+                                cache.put(req, res.clone());
+                                return res;
+                            });
+                        });
+                    })
+                }
+            }
+        }
+    }
+    return fetch(req).then(function (res) {
+        if (!res) { throw 'error' } //1
+        return caches.open(CACHE_NAME).then(function (cache) {
+            cache.delete(req);
+            cache.put(req, res.clone());
+            return res;
+        });
+    }).catch(function (err) {
+        return caches.match(req).then(function (resp) {
+            return resp || caches.match(new Request('/offline/')) //2
+        })
+    })
 }
