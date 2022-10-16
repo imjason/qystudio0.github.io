@@ -47,45 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</title>
-    <url>/posts/55153.html</url>
-    <content><![CDATA[<div class="story post-story"><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文<br><img src="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" class="lazyload" data-srcset="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-</div><div class="story post-story"><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在查看了日志最后发现了如下报错</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Did you forget to signal async completion?</span><br></pre></td></tr></table></figure>
-
-<p>在查看了gulp官网之后我人傻了,全是英文</p>
-<p>这是一个新特性,简单来说就是原因: gulp 不再支持同步任务了。 因为同步任务常常会导致难以调试的细微错误,例如忘记从任务 (task)中返回 stream。 当你看到 “ Did you forget to signal async completion ?” 警告时,说明你<strong>并未使用前面提到的返回方式</strong></p>
-<p>意思是你没有写一个任务完成的返回通知(如果我描述有误评论区告诉我)</p>
-<p>官网的原文是When you see the <em>“Did you forget to signal async completion?”</em> warning, none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.</p>
-</div><div class="story post-story"><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="官网的解决方案是"><a href="#官网的解决方案是" class="headerlink" title="官网的解决方案是"></a>官网的解决方案是</h3><p>Using async/await</p>
-<p>即把原来类似这样的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, () =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>改成这样</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, async() =&gt; &#123;</span><br><span class="line">   await console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>就正常了</p>
-<h3 id="更简单的方法"><a href="#更简单的方法" class="headerlink" title="更简单的方法"></a>更简单的方法</h3><p>在我一顿搜索之后发现了更简单的方法</p>
-<p>在不使用文件流的情况下，向task的函数里传入一个名叫done的回调函数，以结束task</p>
-<p>例如源代码是这样的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&#x27;default&#x27;, gulp.series(&#x27;one&#x27;));</span><br></pre></td></tr></table></figure>
-
-<p>那只要添加一个done的回调函数即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li></ul></div>
-</div>]]></content>
-      <categories>
-        <category>web</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>gulp</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github图床之弃用jsd(图床使用npm镜像加速)</title>
     <url>/posts/34886.html</url>
     <content><![CDATA[<div class="story post-story"><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>2021/12/20日，赶在旧年的末尾，一则<code>JSdelivrSSL证书错误</code>缓缓上了v2ex论坛热点。</p>
@@ -139,6 +100,45 @@
         <tag>hexo</tag>
         <tag>cdn</tag>
         <tag>加速</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</title>
+    <url>/posts/55153.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>今天我升级了gulp到4.0,在git三件套之后,网站并没有更新,我便登录了github查看action的运行状况,便有此文<br><img src="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" class="lazyload" data-srcset="https://bu.dusays.com/2022/02/24/8dd37de3207c0.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</div><div class="story post-story"><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在查看了日志最后发现了如下报错</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Did you forget to signal async completion?</span><br></pre></td></tr></table></figure>
+
+<p>在查看了gulp官网之后我人傻了,全是英文</p>
+<p>这是一个新特性,简单来说就是原因: gulp 不再支持同步任务了。 因为同步任务常常会导致难以调试的细微错误,例如忘记从任务 (task)中返回 stream。 当你看到 “ Did you forget to signal async completion ?” 警告时,说明你<strong>并未使用前面提到的返回方式</strong></p>
+<p>意思是你没有写一个任务完成的返回通知(如果我描述有误评论区告诉我)</p>
+<p>官网的原文是When you see the <em>“Did you forget to signal async completion?”</em> warning, none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.</p>
+</div><div class="story post-story"><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="官网的解决方案是"><a href="#官网的解决方案是" class="headerlink" title="官网的解决方案是"></a>官网的解决方案是</h3><p>Using async/await</p>
+<p>即把原来类似这样的代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, () =&gt; &#123;</span><br><span class="line">    console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>改成这样</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const gulp = require(&#x27;gulp&#x27;);</span><br><span class="line">gulp.task(&#x27;testGulp&#x27;, async() =&gt; &#123;</span><br><span class="line">   await console.log(&#x27;Hello World!&#x27;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>就正常了</p>
+<h3 id="更简单的方法"><a href="#更简单的方法" class="headerlink" title="更简单的方法"></a>更简单的方法</h3><p>在我一顿搜索之后发现了更简单的方法</p>
+<p>在不使用文件流的情况下，向task的函数里传入一个名叫done的回调函数，以结束task</p>
+<p>例如源代码是这样的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&#x27;default&#x27;, gulp.series(&#x27;one&#x27;));</span><br></pre></td></tr></table></figure>
+
+<p>那只要添加一个done的回调函数即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+</div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>gulp</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -994,31 +994,6 @@
       </tags>
   </entry>
   <entry>
-    <title>window上帝模式</title>
-    <url>/posts/63659.html</url>
-    <content><![CDATA[<div class="story post-story"><h2 id="为什么要写"><a href="#为什么要写" class="headerlink" title="为什么要写"></a>为什么要写</h2><p>最近要用个功能，因为前阵子重装系统了，突然发现没有，然后我就炸毛了，仅以此文作为记录</p>
-</div><div class="story post-story"><h2 id="什么是上帝模式"><a href="#什么是上帝模式" class="headerlink" title="什么是上帝模式"></a>什么是上帝模式</h2><p>这个名字看起来很酷，上帝模式就是打开全部的控制面板，就能发现一些目前看不见的功能。</p>
-<p>如果你想要更高级的一些功能，<strong>可以试试这个模式， 开启之后，系统隐藏的很多功能你都能使用。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316373000.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316373000.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
-<p>这个名字看起来很酷，上帝模式就是打开全部的控制面板，<strong>就能发现一些目前看不见的功能。</strong></p>
-<p>如果你想要更高级的一些功能，可以试试这个模式， 开启之后，系统隐藏的很多功能你都能使用。</p>
-</div><div class="story post-story"><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>新建一个文件夹，然后将文件夹重命名为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GodMode.&#123;ED7BA470-8E54-465E-825C-99712043E01C&#125;</span><br></pre></td></tr></table></figure>
-
-<p>回车确认之后，就是开启上帝模式了，打开文件夹你会看到很多系统设置项目，包括了系统设置选项和各种工具。</p>
-<p>比如一键删除浏览的历史记录、阻止或允许弹窗、等等，你们可以可以根据自己需求去使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li></ul></div>
-</div>]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win11安装初体验(副下载)</title>
     <url>/posts/48475.html</url>
     <content><![CDATA[<p>6月15号深夜，Windows 11预览版的镜像，从国内论坛首先流出，各大QQ群和微信群都在广泛分享。16号白天，各大QQ群都时不时能看到群友在谈论Windows 11的话题。至此，Windows 11已经板上钉钉，无可争议了。</p>
@@ -1209,6 +1184,31 @@
       <tags>
         <tag>windows</tag>
         <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>window上帝模式</title>
+    <url>/posts/63659.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="为什么要写"><a href="#为什么要写" class="headerlink" title="为什么要写"></a>为什么要写</h2><p>最近要用个功能，因为前阵子重装系统了，突然发现没有，然后我就炸毛了，仅以此文作为记录</p>
+</div><div class="story post-story"><h2 id="什么是上帝模式"><a href="#什么是上帝模式" class="headerlink" title="什么是上帝模式"></a>什么是上帝模式</h2><p>这个名字看起来很酷，上帝模式就是打开全部的控制面板，就能发现一些目前看不见的功能。</p>
+<p>如果你想要更高级的一些功能，<strong>可以试试这个模式， 开启之后，系统隐藏的很多功能你都能使用。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316373000.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316373000.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<p>这个名字看起来很酷，上帝模式就是打开全部的控制面板，<strong>就能发现一些目前看不见的功能。</strong></p>
+<p>如果你想要更高级的一些功能，可以试试这个模式， 开启之后，系统隐藏的很多功能你都能使用。</p>
+</div><div class="story post-story"><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>新建一个文件夹，然后将文件夹重命名为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GodMode.&#123;ED7BA470-8E54-465E-825C-99712043E01C&#125;</span><br></pre></td></tr></table></figure>
+
+<p>回车确认之后，就是开启上帝模式了，打开文件夹你会看到很多系统设置项目，包括了系统设置选项和各种工具。</p>
+<p>比如一键删除浏览的历史记录、阻止或允许弹窗、等等，你们可以可以根据自己需求去使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
