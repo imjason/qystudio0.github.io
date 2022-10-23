@@ -1706,4 +1706,67 @@
         <tag>去广告</tag>
       </tags>
   </entry>
+  <entry>
+    <title>阿里云搭建frp服务实现本地内网穿透</title>
+    <url>/posts/38304.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>利用阿里云搭建frp服务，本地frp客户端来实现内网穿透，来达到访问没有公网ip的远程机器</p>
+</div><div class="story post-story"><h2 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h2><p>首先我们先安装一键部署frp的<a href="https://github.com/MvsCode/frps-onekey">脚本</a>,如果是阿里云的服务器直接用以下源：</p>
+<h3 id="Aliyun"><a href="#Aliyun" class="headerlink" title="Aliyun"></a>Aliyun</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh</span><br><span class="line">chmod 700 ./install-frps.sh</span><br><span class="line">./install-frps.sh install</span><br></pre></td></tr></table></figure>
+
+<p>首先选择下载源：：</p>
+<p><img src="https://oss.overme.cn/img/image-20210316094929755.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316094929755.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316094929755"></p>
+<p>默认是阿里云 回车</p>
+<p><img src="https://oss.overme.cn/img/image-20210316095103012.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316095103012.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316095103012"></p>
+<p>frp的监听端口我选7000 默认是5443默认就直接回车</p>
+<p><img src="https://oss.overme.cn/img/image-20210316095159157.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316095159157.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316095159157"></p>
+<p>vhost_http_port端口默认是80,但是我80端口已经给nginx了所以随便设置了8080,因为我用不到这个</p>
+<p>同上我默认的443端口也是被占用了，所以直接随机给了4433</p>
+<p><img src="https://oss.overme.cn/img/image-20210316095446628.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316095446628.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316095446628"></p>
+<p>dashboard是监控面板网址的端口我们直接用默认的回车就行</p>
+<p><img src="https://oss.overme.cn/img/image-20210316095608395.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316095608395.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316095608395"></p>
+<p>监控面板的用户名和密码设置,接下来的一些日志配置直接回车就行,配置好后:</p>
+<p><img src="https://oss.overme.cn/img/image-20210316095740349.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316095740349.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316095740349"></p>
+<p>以上是我的frp服务器的配置</p>
+<p>我已经把6443端口用nginx转发到我自己的域名上了登录就可以看到各种仪表盘</p>
+<p><img src="https://oss.overme.cn/img/image-20210316100059776.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316100059776.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316100059776"></p>
+</div><div class="story post-story"><h2 id="本地frp客户端搭建"><a href="#本地frp客户端搭建" class="headerlink" title="本地frp客户端搭建"></a>本地frp客户端搭建</h2><p><a href="https://github.com/fatedier/frp/releases">进入github下载</a>,我选择的是64位windows</p>
+<p><img src="https://oss.overme.cn/img/image-20210316100512822.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316100512822.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316100512822"></p>
+<p>解压后修改frpc.ini文件配置,这是我的配置</p>
+<p><img src="https://oss.overme.cn/img/image-20210316100715807.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316100715807.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316100715807"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 47.110.134.2  #frp服务器地址</span><br><span class="line">server_port = 7000    #frp服务器监听端口</span><br><span class="line">token = hBanuRmGrwNlNe10 #服务器token是随机的在上图的配置中有</span><br><span class="line"></span><br><span class="line">[mstsc]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1 </span><br><span class="line">local_port = 3389  #因为我是开远程桌面RDP所以是映射3389端口</span><br><span class="line">remote_port = 6000</span><br></pre></td></tr></table></figure>
+
+<p>进入cmd 运行frp客户端</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">frpc.exe -c frpc.ini</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://oss.overme.cn/img/image-20210316101149626.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101149626.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101149626"></p>
+<p>报错：<code>[service.go:103] login to server failed</code></p>
+<p>原因是没有打开阿里云服务器安全组的7000端口,现在去打开</p>
+<p><img src="https://oss.overme.cn/img/image-20210316101351051.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101351051.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101351051"></p>
+<p>再次运行后, <code>login to server success</code>成功</p>
+<p><img src="https://oss.overme.cn/img/image-20210316101424738.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101424738.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101424738"></p>
+<p>试试远程连接，连不上</p>
+<p><img src="https://oss.overme.cn/img/image-20210316101608046.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101608046.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101608046"></p>
+<p>原因是没有打开阿里云安全组的6000端口,现在去打开</p>
+<p><img src="https://oss.overme.cn/img/image-20210316101656122.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101656122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101656122"></p>
+<p>再次连接可以连上了</p>
+<p><img src="https://oss.overme.cn/img/image-20210316101730454.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316101730454.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316101730454"></p>
+<p>最后还有一点小坑，这里的登陆密码不能用pin码,我用户密码忘记了,需要用cmd管理员模式运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">net user username password</span><br></pre></td></tr></table></figure>
+
+<p>重置密码,这里非常感谢<a href="https://www.yuque.com/revang/blog/tgnnyz">钢明兄</a></p>
+</div><div class="story post-story"><h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><h3 id="Uninstall（卸载）"><a href="#Uninstall（卸载）" class="headerlink" title="Uninstall（卸载）"></a>Uninstall（卸载）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./install-frps.sh uninstall</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://oss.overme.cn/img/image-20210316094815230.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316094815230.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316094815230"></p>
+<h3 id="Update（更新）"><a href="#Update（更新）" class="headerlink" title="Update（更新）"></a>Update（更新）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./install-frps.sh update</span><br></pre></td></tr></table></figure>
+
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>阿里云</tag>
+        <tag>frp</tag>
+        <tag>内网穿透</tag>
+      </tags>
+  </entry>
 </search>
