@@ -130,7 +130,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">gulp.task(&quot;default&quot;, done =&gt; &#123;</span><br><span class="line">    gulp.series(&quot;one&quot;);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
 </div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>又码了700多字,如果有其他问题可以在评论区回复噢，我会尽量回复的😃</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -183,11 +183,11 @@
 <p>已经很详细的看了上面的阐述，并且我不会直接照搬</p>
 </blockquote>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">&#x27;on&#x27;:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">workflow_dispatch</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">push</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ref:</span> <span class="string">main</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install hexo-cli -g</span></span><br><span class="line"><span class="string">          npm install -g gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">Modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2.1.1</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">cache-modules</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles(&#x27;**/package-lock.json&#x27;)&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">if:</span> <span class="string">steps.cache-modules.outputs.cache-hit</span> <span class="type">!=</span> <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm ci</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setting</span> <span class="string">Token</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sed -i &quot;s/.Baidu_Token/$&#123;&#123; secrets.BAIDU_TOKEN &#125;&#125;/&quot; _config.yml</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo recommend</span></span><br><span class="line"><span class="string">          hexo generate</span></span><br><span class="line"><span class="string">          gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string">          git clone https://github.com/username/username.github.io.git .public</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">username/username.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">main</span></span><br><span class="line">          <span class="attr">exclude_assets:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">github-actions[bot]</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">github-actions[bot]@users.noreply.github.com</span></span><br></pre></td></tr></table></figure>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
-        <category>前端</category>
+        <category>web</category>
       </categories>
       <tags>
         <tag>hexo</tag>
@@ -680,7 +680,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -983,7 +983,7 @@
 
 </div><div class="story post-story"><h2 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h2><p>去问abudu</p>
 <p>终于水完这篇文章了</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystu.cc/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -991,6 +991,44 @@
       <tags>
         <tag>博客</tag>
         <tag>后台</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>serviceworkers首屏优化</title>
+    <url>/posts/52948.html</url>
+    <content><![CDATA[<div class="note info"><p>note info 本片文章默认你已经会使用sw来加速网站了</p></div>
+<div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前阵子，我开始用cyf大佬的sw加速方案，前前后后我使用了三个不同作者所开发的sw加速，但是因cyf的代码过于难以了解（我菜），而去使用了yfun大佬的代码，以便网页在前端被更新</p>
+</div><div class="story post-story"><h2 id="为什么要首屏优化"><a href="#为什么要首屏优化" class="headerlink" title="为什么要首屏优化"></a>为什么要首屏优化</h2><p>在使用cyf大佬的方案是我发现了cyf的首屏优化方案</p>
+<blockquote>
+<p>事实上，ServiceWorker最显著的缺点是要在第一次加载网页安装后，刷新一次才能激活。即访客第一次访问是不受sw控制的。换句话说，访客首屏不受加速，其加载速度与你的服务器有直接联系 <del>[虽然安装完成后就起飞了,但安装前就是屑]</del>。</p>
+</blockquote>
+<blockquote>
+<p>更加令人抓狂的是，在首屏加载时，静态资源会被直接获取，并且不缓存，而sw激活后又会强制第二次获取，拉跨速度。不过我们可以尽可能弱化这一劣势。我们可以用js打断所有的请求，以确保首屏只加载一个html和一个sw.js，其余资源都不会加载，降低首屏加载延迟。</p>
+</blockquote>
+<p>所以我尝试使用了cyf大佬的首屏优化，而且有一个帅气的sw安装页面谁不爱呢</p>
+<p>我前后使用了两种首屏优化样式这里都分享出来</p>
+<h3 id="方案1（by-cyfan）"><a href="#方案1（by-cyfan）" class="headerlink" title="方案1（by cyfan）"></a>方案1（by cyfan）</h3><details cyan><summary> 打开复制源码 </summary>
+              <div class='content'>
+              <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- sw前端竞速 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">(async () =&gt; &#123;//使用匿名函数确保body已载入</span><br><span class="line">    /*</span><br><span class="line">    QYBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态</span><br><span class="line">    0 或不存在 未安装</span><br><span class="line">    1 已打断</span><br><span class="line">    2 已安装</span><br><span class="line">    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)</span><br><span class="line">    */</span><br><span class="line">    if (&#x27;serviceWorker&#x27; in navigator) &#123; //如果支持sw</span><br><span class="line">        if (Number(window.localStorage.getItem(&#x27;QYBlogHelper_Set&#x27;)) &lt; 1) &#123;</span><br><span class="line">            setTimeout(async () =&gt; &#123;</span><br><span class="line">                console.log(&#x27;检测到您的浏览器没有安装QYBlogHelper，开始注册&#x27;)</span><br><span class="line">                window.stop()</span><br><span class="line">                window.localStorage.setItem(&#x27;QYBlogHelper_Set&#x27;, 1)</span><br><span class="line">                const replacehtml = await fetch(&#x27;https://npm.elemecdn.com/chenyfan-blog@1.0.13/public/notice.html&#x27;)</span><br><span class="line">                document.body.innerHTML = await replacehtml.text()</span><br><span class="line">                $(&#x27;#info&#x27;).innerText = &#x27;尝试安装QYBlogHelper...&#x27;;</span><br><span class="line">            &#125;, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        const $ = document.querySelector.bind(document);//语法糖</span><br><span class="line">        navigator.serviceWorker.register(`/sw.js?time=$&#123;new Date().getTime()&#125;`)//随机数,强制更新</span><br><span class="line">            .then(async () =&gt; &#123;</span><br><span class="line">                if (Number(window.localStorage.getItem(&#x27;QYBlogHelper_Set&#x27;)) &lt; 2) &#123;</span><br><span class="line">                    setTimeout(() =&gt; &#123;</span><br><span class="line">                        $(&#x27;#info&#x27;).innerText = &#x27;安装成功,稍等片刻...&#x27;;</span><br><span class="line">                    &#125;, 0);</span><br><span class="line">                    setTimeout(() =&gt; &#123;</span><br><span class="line">                        window.localStorage.setItem(&#x27;QYBlogHelper_Set&#x27;, 2)</span><br><span class="line">                        console.log(&#x27;准备跳转&#x27;)</span><br><span class="line">                        window.location.reload()//刷新,以载入sw</span><br><span class="line">                    &#125;, 500)//安装后等待500ms使其激活</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(err =&gt; console.error(`QYBlogHelperError:$&#123;err&#125;`))</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            $(&#x27;#info&#x27;).innerText = &#x27;很抱歉,我们已不再支持您的浏览器.&#x27;;</span><br><span class="line">        &#125;, 0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h3 id="方案2（by-yfun）"><a href="#方案2（by-yfun）" class="headerlink" title="方案2（by yfun）"></a>方案2（by yfun）</h3><details cyan><summary> 打开复制源码 </summary>
+              <div class='content'>
+              <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- sw前端竞速 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">(async () =&gt; &#123;//使用匿名函数确保body已载入</span><br><span class="line">    /*</span><br><span class="line">    QYBlogHelper_Set 存储在LocalStorage中,用于指示sw安装状态</span><br><span class="line">    0 或不存在 未安装</span><br><span class="line">    1 已打断</span><br><span class="line">    2 已安装</span><br><span class="line">    3 已激活,并且已缓存必要的文件(此处未写出,无需理会)</span><br><span class="line">    */</span><br><span class="line">    if (&#x27;serviceWorker&#x27; in navigator) &#123; //如果支持sw</span><br><span class="line">        if (Number(window.localStorage.getItem(&#x27;QYBlogHelper_Set&#x27;)) &lt; 1) &#123;</span><br><span class="line">            setTimeout(async () =&gt; &#123;</span><br><span class="line">                console.log(&#x27;检测到您的浏览器没有安装QYBlogHelper，开始注册&#x27;)</span><br><span class="line">                window.stop()</span><br><span class="line">                window.localStorage.setItem(&#x27;QYBlogHelper_Set&#x27;, 1)</span><br><span class="line">                const replacehtml = await fetch(&#x27;https://npm.elemecdn.com/qycdn@0.9.13/html/swinstall.html&#x27;)</span><br><span class="line">                document.body.innerHTML = await replacehtml.text()</span><br><span class="line">            &#125;, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        const $ = document.querySelector.bind(document);//语法糖</span><br><span class="line">        navigator.serviceWorker.register(`/sw.js?time=$&#123;new Date().getTime()&#125;`)//随机数,强制更新</span><br><span class="line">            .then(async () =&gt; &#123;</span><br><span class="line">                if (Number(window.localStorage.getItem(&#x27;QYBlogHelper_Set&#x27;)) &lt; 2) &#123;</span><br><span class="line">                    setTimeout(() =&gt; &#123;</span><br><span class="line">                        window.localStorage.setItem(&#x27;QYBlogHelper_Set&#x27;, 2)</span><br><span class="line">                        console.log(&#x27;准备跳转&#x27;)</span><br><span class="line">                        window.location.reload()//刷新,以载入sw</span><br><span class="line">                    &#125;, 500)//安装后等待500ms使其激活</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(err =&gt; console.error(`QYBlogHelperError:$&#123;err&#125;`))</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            console.log(&#x27;很抱歉,我们已不再支持您的浏览器&#x27;);</span><br><span class="line">        &#125;, 0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><div class="note warning"><p>note warning 我们尽可能将打断代码提到<code>&lt;head&gt;</code> 以确保不被其他资源堵塞，对于hexo来说打开主题的head.ejs，在<code>&lt;head&gt;</code>标签靠前的位置中加入，否则可能达不到理想的加速效果</p></div><div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>博客</tag>
+        <tag>web</tag>
+        <tag>sw</tag>
       </tags>
   </entry>
   <entry>
@@ -1239,7 +1277,7 @@
 <p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。</p>
 <p>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。</p>
 <p>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1278,7 +1316,7 @@
 <li><p>别忘了设置后保存设置并点击“设为默认图床”按钮</p>
 </li>
 </ol>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1390,10 +1428,10 @@
 <p>然后我们再用另存为pdf格式功能来保存下来就好。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1642157105000.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><div class="story post-story"><h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><p>除了上面介绍的基本特性之外，reveal.js支持自动播放、自制插件、支持处理事件等等有利于开发人员写slides的特性。相信能给你的slides带来新的好玩的东西，将汇报与分享变成乐趣。Enjoy it!</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystu.cc/posts/25250.html">给博客加入链接安全跳转页(添加一个和CSDN一样的链接跳转页)</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li></ul></div>
 </div>]]></content>
       <categories>
-        <category>前端</category>
+        <category>web</category>
       </categories>
       <tags>
         <tag>前端</tag>
@@ -1515,7 +1553,7 @@
 <li>discuz论坛建站系列文章</li>
 </ul>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1621,14 +1659,14 @@
 </div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
 <p>源码参考自<a href="https://github.com/pai233/go-jumper/">go-jumper</a></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://qystu.cc/posts/55153.html">gulp更新4.0后的报错(gulp报Did you forget to signal async completion?)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>博客</tag>
+        <tag>web</tag>
         <tag>跳转</tag>
       </tags>
   </entry>
