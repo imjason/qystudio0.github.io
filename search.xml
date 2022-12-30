@@ -36,7 +36,7 @@
 <p>“新闻和兴趣”：它默认显示的是当地的天气。如果点击一下这个天气图标，就会弹出资讯。</p>
 <p>“笔按钮”：点一下这个按钮，就会显示白板和截图的按钮。另外，在系统设置里，也可以对笔进行进一步详细的设定。</p>
 </div><div class="story post-story"><h2 id="四、建议"><a href="#四、建议" class="headerlink" title="四、建议"></a>四、建议</h2><p>正如前面说过，Win10 Build 21354还是测试版本，不建议大家在实体机上安装。测试版往往有比较多的bug，在虚拟机里玩玩就好，提前体验一下即将发布的新系统，过过瘾就好</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -91,7 +91,7 @@
 </div><div class="story post-story"><h2 id="其他方案-前端竞速"><a href="#其他方案-前端竞速" class="headerlink" title="其他方案(前端竞速)"></a>其他方案(前端竞速)</h2><p>去看<a href="https://blog.cyfan.top/">cyfan的博客</a></p>
 </div><div class="story post-story"><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这篇文章在2月就准备开始写了，憋到今天才发布</p>
 <p>前端竞速不会的还在问，会用的同学已经用起来了，我的博客速度怎么样，留言告诉我</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/51935.html">hexo史上最全搭建教程</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/51935.html">hexo史上最全搭建教程</a></li><li><a href="https://czh1106.github.io/hexo-setting/">hexo setting</a></li><li><a href="http://czh06.tk/hexo-setting/">hexo setting</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -144,7 +144,7 @@
   <entry>
     <title>为hexo加一个自动部署</title>
     <url>/posts/61056.html</url>
-    <content><![CDATA[<p><img src="https://assets.qystudio.ml/img/1658139167.6203759.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658139167.6203759.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658139167.6203759.jpg"></p>
+    <content><![CDATA[<p><img src="https://cdn.chuqis.com/img/1658139167.6203759.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/1658139167.6203759.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/1658139167.6203759.jpg"></p>
 <div class="story post-story"><h2 id="Hexo-博客的Github-Action自动化部署是什么？"><a href="#Hexo-博客的Github-Action自动化部署是什么？" class="headerlink" title="Hexo 博客的Github Action自动化部署是什么？"></a>Hexo 博客的Github Action自动化部署是什么？</h2><p>简单说，就是把hexo博客的源代码上传到github代码仓库，github在代码发生变动的时候，自动通过安装一系列nodejs环境和相关依赖，生成html页面到github pages仓库。</p>
 <p>再简单点说，就是把本地生成博客的工作，全部交给github执行。</p>
 </div><div class="story post-story"><h2 id="为什么要action"><a href="#为什么要action" class="headerlink" title="为什么要action"></a>为什么要action</h2><p>hexo 是一款快速、简洁且高效的静态博客框架，因为它的高可定制性，所以深受各个程序员的喜爱，我也曾一头扎进去研究过，魔改了vlts主题，在使用过程中，也渐渐的发现了一些问题</p>
@@ -166,7 +166,7 @@
 </blockquote>
 <p>注意先保存，等新建仓库后填入</p>
 <p>在源码仓库的密钥处填入</p>
-<p><img src="https://assets.qystudio.ml/img/1658138422.8459709.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658138422.8459709.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658138422.8459709.jpg"></p>
+<p><img src="https://cdn.chuqis.com/img/1658138422.8459709.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/1658138422.8459709.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/1658138422.8459709.jpg"></p>
 <p><code>PERSONAL_TOKEN</code>里面写密钥即可</p>
 <h3 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h3><p>首先初始化本地仓库</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init </span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span> </span><br><span class="line">git branch -M main git remote add origin https://github.com/username/xxx.git </span><br></pre></td></tr></table></figure>
@@ -183,7 +183,7 @@
 <p>已经很详细的看了上面的阐述，并且我不会直接照搬</p>
 </blockquote>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">&#x27;on&#x27;:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">workflow_dispatch</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">push</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ref:</span> <span class="string">main</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install hexo-cli -g</span></span><br><span class="line"><span class="string">          npm install -g gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">Modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2.1.1</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">cache-modules</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles(&#x27;**/package-lock.json&#x27;)&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">if:</span> <span class="string">steps.cache-modules.outputs.cache-hit</span> <span class="type">!=</span> <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm ci</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setting</span> <span class="string">Token</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sed -i &quot;s/.Baidu_Token/$&#123;&#123; secrets.BAIDU_TOKEN &#125;&#125;/&quot; _config.yml</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo recommend</span></span><br><span class="line"><span class="string">          hexo generate</span></span><br><span class="line"><span class="string">          gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string">          git clone https://github.com/username/username.github.io.git .public</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">username/username.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">main</span></span><br><span class="line">          <span class="attr">exclude_assets:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">github-actions[bot]</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">github-actions[bot]@users.noreply.github.com</span></span><br></pre></td></tr></table></figure>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="http://czh06.tk/hexo-setting/">hexo setting</a></li><li><a href="https://czh1106.github.io/hexo-setting/">hexo setting</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -680,7 +680,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="http://czh06.tk/hexo-setting/">hexo setting</a></li><li><a href="https://czh1106.github.io/hexo-setting/">hexo setting</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -689,6 +689,60 @@
         <tag>hexo</tag>
         <tag>博客</tag>
         <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>netlify反代</title>
+    <url>/posts/23787.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>我在使用netlify部署博客后，经过测试速度，我觉得作为一款非国内产品速度相当不错</p>
+<p><img src="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg"></p>
+<p>所以我想到了我部署在vercel的jsd反代<br>如果我把反代部署在netlify那么cdn的速度会有提升<br>说干就干</p>
+<p>ps:如果你不想看我叨叨，你可以点击跳转到<a href="/posts/23787.html#%E5%AE%9E%E8%B7%B5%E4%BB%A3%E7%A0%81">代码处</a>直接查看代码使用</p>
+</div><div class="story post-story"><h2 id="需要的东西"><a href="#需要的东西" class="headerlink" title="需要的东西"></a>需要的东西</h2><p>一个netlify账号</p>
+<p><img src="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg"></p>
+<p>一个github账号</p>
+</div><div class="story post-story"><h2 id="查阅文档"><a href="#查阅文档" class="headerlink" title="查阅文档"></a>查阅文档</h2><p>打开netlify的<a href="https://docs.netlify.com/routing/redirects/">文档</a>查看</p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>找到了路由设置的相关内容后可以看到这些内容和格式</p>
+<p>If you specify your redirect rules in your Netlify configuration file, you can use a more structured configuration format with additional capabilities such as signed proxy redirects. In a netlify.toml file, we use TOML’s array of tables to specify each individual redirect rule. The following keywords are available:</p>
+<p><code>from</code>: The path you want to redirect.</p>
+<p><code>to</code>: The URL or path you want to redirect to.</p>
+<p><code>status</code>: The HTTP status code you want to use in that redirect; 301 by default.</p>
+<p><code>force</code>: Whether to override any existing content in the path or not; false by default. Visit the shadowing instructions for more details.</p>
+<p><code>query</code>: Query string parameters REQUIRED to match the redirect. Visit the query parameters instructions for more details.</p>
+<p><code>conditions</code>: Conditions to match the redirect, including country, role, and cookie presence conditions.</p>
+<p><code>headers</code>: Additional request headers to send in proxy redirects.</p>
+<p><code>signed</code>: Name of an environment variable for signed proxy redirects.</p>
+<h3 id="目录反代目录匹配"><a href="#目录反代目录匹配" class="headerlink" title="目录反代目录匹配"></a>目录反代目录匹配</h3><p>因为反代jsd同时需要反代jsd目录下的所有文件，所以这里需要有一个路径匹配</p>
+<p>原文如下</p>
+<p>An asterisk indicates a splat that will match anything that follows it.</p>
+<p>You can use the splat in your rewrites or redirects like this:</p>
+<p>/news/*  /blog/:splat</p>
+<p>This would redirect paths like /news/2004/01/10/my-story to /blog/2004/01/10/my-story.</p>
+<p>所以我需要在 <code>from</code>的/后面添加* <code>to</code>的/后面添加:splat</p>
+</div><div class="story post-story"><h2 id="实践代码"><a href="#实践代码" class="headerlink" title="实践代码"></a>实践代码</h2><p>这里我需要http返回状态码为200</p>
+<blockquote>
+<p>这样我的国内服务器就能再次反代netlify的cdn</p>
+</blockquote>
+<p>整合完上面的设置配置就是这样了</p>
+<p>这里我们需要把下面的代码放在新建名为 <code>netlify.toml</code>的文件中</p>
+<blockquote>
+<p>注意这里的文件必须在仓库的根目录</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[[redirects]]</span><br><span class="line">from = &quot;/*&quot;</span><br><span class="line">to = &quot;https://cdn.jsdelivr.net/:splat&quot;</span><br><span class="line">status = 200</span><br><span class="line">force = true</span><br><span class="line">headers = &#123;X-From = &quot;Netlify&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后把这个仓库上传到github</p>
+<p>之后我们点击<a href="https://app.netlify.com/start">这里</a>在netlify新建一个项目并且选择已经上传到github仓库</p>
+<p>然后等待部署完成即可</p>
+<p>完结撒花👏</p>
+
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>netlify</tag>
+        <tag>反代</tag>
+        <tag>jsdelivr</tag>
       </tags>
   </entry>
   <entry>
@@ -1214,7 +1268,7 @@
 <p>MD5: 179bfe07f7050093ee595ddd85a30201</p>
 <p>SHA1: 3b6da9194ba303ac7dbbf2e521716c809500919c</p>
 <p>测试工具下载:<a href="https://aka.ms/GetPCHealthCheckApp">https://aka.ms/GetPCHealthCheckApp</a></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -1239,7 +1293,7 @@
 <p>回车确认之后，就是开启上帝模式了，打开文件夹你会看到很多系统设置项目，包括了系统设置选项和各种工具。</p>
 <p>比如一键删除浏览的历史记录、阻止或允许弹窗、等等，你们可以可以根据自己需求去使用</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>tools</category>
