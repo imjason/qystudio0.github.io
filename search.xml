@@ -144,7 +144,7 @@
   <entry>
     <title>为hexo加一个自动部署</title>
     <url>/posts/61056.html</url>
-    <content><![CDATA[<p><img src="https://assets.qystudio.ml/img/1658139167.6203759.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658139167.6203759.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658139167.6203759.jpg"></p>
+    <content><![CDATA[<p><img src="https://cdn.chuqis.com/img/1658139167.6203759.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/1658139167.6203759.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/1658139167.6203759.jpg"></p>
 <div class="story post-story"><h2 id="Hexo-博客的Github-Action自动化部署是什么？"><a href="#Hexo-博客的Github-Action自动化部署是什么？" class="headerlink" title="Hexo 博客的Github Action自动化部署是什么？"></a>Hexo 博客的Github Action自动化部署是什么？</h2><p>简单说，就是把hexo博客的源代码上传到github代码仓库，github在代码发生变动的时候，自动通过安装一系列nodejs环境和相关依赖，生成html页面到github pages仓库。</p>
 <p>再简单点说，就是把本地生成博客的工作，全部交给github执行。</p>
 </div><div class="story post-story"><h2 id="为什么要action"><a href="#为什么要action" class="headerlink" title="为什么要action"></a>为什么要action</h2><p>hexo 是一款快速、简洁且高效的静态博客框架，因为它的高可定制性，所以深受各个程序员的喜爱，我也曾一头扎进去研究过，魔改了vlts主题，在使用过程中，也渐渐的发现了一些问题</p>
@@ -166,7 +166,7 @@
 </blockquote>
 <p>注意先保存，等新建仓库后填入</p>
 <p>在源码仓库的密钥处填入</p>
-<p><img src="https://assets.qystudio.ml/img/1658138422.8459709.jpg" class="lazyload" data-srcset="https://assets.qystudio.ml/img/1658138422.8459709.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://assets.qystudio.ml/img/1658138422.8459709.jpg"></p>
+<p><img src="https://cdn.chuqis.com/img/1658138422.8459709.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/1658138422.8459709.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/1658138422.8459709.jpg"></p>
 <p><code>PERSONAL_TOKEN</code>里面写密钥即可</p>
 <h3 id="上传源码"><a href="#上传源码" class="headerlink" title="上传源码"></a>上传源码</h3><p>首先初始化本地仓库</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init </span><br><span class="line">git add . </span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span> </span><br><span class="line">git branch -M main git remote add origin https://github.com/username/xxx.git </span><br></pre></td></tr></table></figure>
