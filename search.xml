@@ -692,6 +692,60 @@
       </tags>
   </entry>
   <entry>
+    <title>netlify反代</title>
+    <url>/posts/23787.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>我在使用netlify部署博客后，经过测试速度，我觉得作为一款非国内产品速度相当不错</p>
+<p><img src="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/35b2aaa74553ddcf3b4e9765d2a3df0b.jpg"></p>
+<p>所以我想到了我部署在vercel的jsd反代<br>如果我把反代部署在netlify那么cdn的速度会有提升<br>说干就干</p>
+<p>ps:如果你不想看我叨叨，你可以点击跳转到<a href="/posts/23787.html#%E5%AE%9E%E8%B7%B5%E4%BB%A3%E7%A0%81">代码处</a>直接查看代码使用</p>
+</div><div class="story post-story"><h2 id="需要的东西"><a href="#需要的东西" class="headerlink" title="需要的东西"></a>需要的东西</h2><p>一个netlify账号</p>
+<p><img src="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg" class="lazyload" data-srcset="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/4c8a395ea13de4893afb0921e74afeef.jpg"></p>
+<p>一个github账号</p>
+</div><div class="story post-story"><h2 id="查阅文档"><a href="#查阅文档" class="headerlink" title="查阅文档"></a>查阅文档</h2><p>打开netlify的<a href="https://docs.netlify.com/routing/redirects/">文档</a>查看</p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>找到了路由设置的相关内容后可以看到这些内容和格式</p>
+<p>If you specify your redirect rules in your Netlify configuration file, you can use a more structured configuration format with additional capabilities such as signed proxy redirects. In a netlify.toml file, we use TOML’s array of tables to specify each individual redirect rule. The following keywords are available:</p>
+<p><code>from</code>: The path you want to redirect.</p>
+<p><code>to</code>: The URL or path you want to redirect to.</p>
+<p><code>status</code>: The HTTP status code you want to use in that redirect; 301 by default.</p>
+<p><code>force</code>: Whether to override any existing content in the path or not; false by default. Visit the shadowing instructions for more details.</p>
+<p><code>query</code>: Query string parameters REQUIRED to match the redirect. Visit the query parameters instructions for more details.</p>
+<p><code>conditions</code>: Conditions to match the redirect, including country, role, and cookie presence conditions.</p>
+<p><code>headers</code>: Additional request headers to send in proxy redirects.</p>
+<p><code>signed</code>: Name of an environment variable for signed proxy redirects.</p>
+<h3 id="目录反代目录匹配"><a href="#目录反代目录匹配" class="headerlink" title="目录反代目录匹配"></a>目录反代目录匹配</h3><p>因为反代jsd同时需要反代jsd目录下的所有文件，所以这里需要有一个路径匹配</p>
+<p>原文如下</p>
+<p>An asterisk indicates a splat that will match anything that follows it.</p>
+<p>You can use the splat in your rewrites or redirects like this:</p>
+<p>/news/*  /blog/:splat</p>
+<p>This would redirect paths like /news/2004/01/10/my-story to /blog/2004/01/10/my-story.</p>
+<p>所以我需要在 <code>from</code>的/后面添加* <code>to</code>的/后面添加:splat</p>
+</div><div class="story post-story"><h2 id="实践代码"><a href="#实践代码" class="headerlink" title="实践代码"></a>实践代码</h2><p>这里我需要http返回状态码为200</p>
+<blockquote>
+<p>这样我的国内服务器就能再次反代netlify的cdn</p>
+</blockquote>
+<p>整合完上面的设置配置就是这样了</p>
+<p>这里我们需要把下面的代码放在新建名为 <code>netlify.toml</code>的文件中</p>
+<blockquote>
+<p>注意这里的文件必须在仓库的根目录</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[[redirects]]</span><br><span class="line">from = &quot;/*&quot;</span><br><span class="line">to = &quot;https://cdn.jsdelivr.net/:splat&quot;</span><br><span class="line">status = 200</span><br><span class="line">force = true</span><br><span class="line">headers = &#123;X-From = &quot;Netlify&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后把这个仓库上传到github</p>
+<p>之后我们点击<a href="https://app.netlify.com/start">这里</a>在netlify新建一个项目并且选择已经上传到github仓库</p>
+<p>然后等待部署完成即可</p>
+<p>完结撒花👏</p>
+
+</div>]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>netlify</tag>
+        <tag>反代</tag>
+        <tag>jsdelivr</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>qexo的搭建与使用</title>
     <url>/posts/37212.html</url>
     <content><![CDATA[<p><img src="https://bu.dusays.com/2022/01/17/0f3d2cf954f82.png" class="lazyload" data-srcset="https://bu.dusays.com/2022/01/17/0f3d2cf954f82.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>

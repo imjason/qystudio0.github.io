@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://qystu.cc/join/index.html</loc>
+    
+    <lastmod>2022-12-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://qystu.cc/links/index.html</loc>
     
     <lastmod>2022-12-30</lastmod>
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://qystu.cc/join/index.html</loc>
+    <loc>https://qystu.cc/posts/23787.html</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -385,6 +394,27 @@
   </url>
   
   <url>
+    <loc>https://qystu.cc/tags/netlify/</loc>
+    <lastmod>2022-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystu.cc/tags/%E5%8F%8D%E4%BB%A3/</loc>
+    <lastmod>2022-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qystu.cc/tags/jsdelivr/</loc>
+    <lastmod>2022-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://qystu.cc/tags/%E5%90%8E%E5%8F%B0/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -534,14 +564,14 @@
   </url>
   
   <url>
-    <loc>https://qystu.cc/categories/web/</loc>
+    <loc>https://qystu.cc/categories/%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://qystu.cc/categories/%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://qystu.cc/categories/web/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
