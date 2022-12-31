@@ -64,6 +64,38 @@
         }, 0);
     }
 })()
+// file you register sw
+
+function prompt_core(msg) {
+  alert(msg);
+}
+
+setTimeout(() => {
+    try {
+        console.log("[INFO] Broadcast Enabled.");
+        // 创建一个广播
+        const broadcast = new BroadcastChannel("Blog Update");
+        // 接收 Service Worker 发送的广播
+        broadcast.onmessage = (event) => {
+            if (event.data.type == "REFRESH") {
+                VolantisApp.message('系统提示', 'Blog 内容有更新！请刷新页面以查看。', {
+                    icon: 'fa-duotone fa-up light-blue', 
+                    time: 4800
+                });
+            }
+        };
+    } catch(e) {
+        console.warn(e);
+        if (!sessionStorage.getItem("BROADCAST_ERROR")) {
+            VolantisApp.message('系统提示', '您的浏览器暂不支持 Broadcast，无法检查更新。页面 6s 后将自动刷新。', {
+                    icon: 'fa-duotone fa-triangle-exclamation light-red', 
+                    time: 4800
+                });
+            setTimeout(() => {window.location.reload();}, 6000);
+            sessionStorage.setItem("BROADCAST_ERROR", 1);
+        }
+    }
+}, 1);
 </script>
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.0d530efb.css" as="style">
@@ -74,7 +106,7 @@
       <link rel="alternate" href="/atom.xml" title="青云工作室-博客" type="application/atom+xml">
   <!-- 页面元数据 -->
   <title>归档：2021/9 - 青云工作室-博客</title>
-  <meta name="keywords" content="青云工作室,青云博客,qystudio,qystu">
+  <meta name="keywords" content="青云工作室,青云博客,qystudio,qystu,qy,青云">
   <meta desc name="description" content="一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客 - 青云工作室 - 青云工作室-博客">
   
 <meta property="og:type" content="website">
@@ -89,6 +121,8 @@
 <meta property="article:tag" content="青云博客">
 <meta property="article:tag" content="qystudio">
 <meta property="article:tag" content="qystu">
+<meta property="article:tag" content="qy">
+<meta property="article:tag" content="青云">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bu.dusays.com/2022/03/04/b972f4461561d.png">
   <style>
@@ -1949,7 +1983,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.2d353ba5.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.6244377b.js","rightMenus":"/js/plugins/rightMenus.4825b4ea.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.0e52f222.js","iconfontInkss":"/js/thirdparty/iconfontInkss.f5d1775f.js","pjax":"/js/szyink/pjax.min.d810aff1.js"},"css":{"style":"/css/style.0d530efb.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1672472520967),
+    lastupdate: new Date(1672482122176),
     sidebar: {
       for_page: ["navigation","blogger","bloggerpro","category","tagcloud","lastupdate","webinfo"],
       for_post: ["toc","lastupdate"],
@@ -2194,7 +2228,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         } else {
           script.onload = resolve
         }
-        script.setAttribute("src", src + "?time=1672472520967");
+        script.setAttribute("src", src + "?time=1672482122176");
         HEAD.appendChild(script);
       });
     });
@@ -2204,7 +2238,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       setTimeout(function () {
         var link = document.createElement('link');
         link.rel = "stylesheet";
-        link.href = src + "?time=1672472520967";
+        link.href = src + "?time=1672482122176";
         link.onload = resolve;
         document.getElementsByTagName("head")[0].appendChild(link);
       });
@@ -4650,7 +4684,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室-博客","url":"https://www.qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/","sameAs":["https://qystu.cc"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.qystu.cc/","name":"青云工作室-博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.qystu.cc/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.qystu.cc/archives/2021/","name":"2021年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.qystu.cc/archives/2021/9/","name":"9月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室-博客","url":"https://www.qystu.cc/","keywords":["青云工作室","青云博客","qystudio","qystu"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室-博客","url":"https://www.qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.qystu.cc?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/"},"publisher":{"@type":"Organization","name":"青云工作室-博客","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"青云工作室-博客","url":"https://www.qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/","sameAs":["https://qystu.cc"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.qystu.cc/","name":"青云工作室-博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.qystu.cc/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.qystu.cc/archives/2021/","name":"2021年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://www.qystu.cc/archives/2021/9/","name":"9月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"青云工作室-博客","url":"https://www.qystu.cc/","keywords":["青云工作室","青云博客","qystudio","qystu","qy","青云"],"description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客"},"publisher":{"@type":"Organization","name":"青云工作室-博客","url":"https://www.qystu.cc/","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.qystu.cc?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个对技术执迷不悟，旨在技术分享、好软推荐、原创发布的团队博客","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"青云工作室","image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png"},"url":"https://www.qystu.cc/"},"publisher":{"@type":"Organization","name":"青云工作室-博客","logo":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://bu.dusays.com/2022/03/04/b972f4461561d.png","width":192,"height":192}}]</script>
 
 
 
