@@ -154,25 +154,35 @@ const mirror = [
     `https://registry.npmjs.org/qy-blog/latest`,
     `https://mirrors.cloud.tencent.com/npm/qy-blog/latest`
 ]
-const set_newest_version = async (mirror) => { //改为最新版本写入数据库
+const broadcast = (channel, data) => {
+    let broadcast = new BroadcastChannel(channel);
+    return broadcast.postMessage({ type: data })
+}
+const set_newest_version = async (mirror) => { 
+    // 改为最新版本写入数据库
     console.log("[LOG] 开始检查更新.");
     return lfetch(mirror, mirror[0])
-        .then(res => res.json()) //JSON Parse
+        .then(res => res.json())
         .then(async res => {
-            console.info("[INFO] 当前版本: "+ await db.read("blog_version"));
+            let thisVersion = await db.read("blog_version");
+            console.info("[INFO] 当前版本: "+ thisVersion);
             console.info("[INFO] 最新版本: "+res.version);
-            await db.write('blog_version', res.version) //写入
+            if (thisVersion != res.version) {
+                // 版本有更新 向页面展示
+                broadcast("Blog Update", "REFRESH");
+            }
+            await db.write('blog_version', res.version);
             return;
-        })
+        });
 }
 
 setInterval(async() => {
-    await set_newest_version(mirror) // 定时更新,一分钟一次
-}, 60*1000);
+    await set_newest_version(mirror);
+}, 30*1000);
 
 setTimeout(async() => { 
-    await set_newest_version(mirror)// 打开五秒后更新,避免堵塞
-},5000)
+    await set_newest_version(mirror);
+}, 5000)
 
 
 const handle = async function (req) {
