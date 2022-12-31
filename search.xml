@@ -1594,6 +1594,44 @@
       </tags>
   </entry>
   <entry>
+    <title>年度回顾与展望</title>
+    <url>/posts/47618.html</url>
+    <content><![CDATA[<p><img src="https://cdn.chuqis.com/img/06b72ec6217f5f65616fa132b779fb97.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/06b72ec6217f5f65616fa132b779fb97.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/06b72ec6217f5f65616fa132b779fb97.png"></p>
+<div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>又到了年末之时距离2023你还剩下两天，这时写这篇文章正好</p>
+</div><div class="story post-story"><h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>回顾这一年青云做了许许多多的改动</p>
+<p>青云工作室博客更新了主题，更加简洁大方</p>
+<p>青云更换了域名 由<code>qystudio.ltd</code>改为<code>qystu.cc</code></p>
+<p>青云迁移了所有服务</p>
+<p>青云工作室进行了备案，主体为拾小染网络科技（上海）有限责任公司</p>
+<p>青云工作室转移了主体，隶属于武汉初柒网络科技有限公司，保留独立性</p>
+<p>青云负责人加入了武汉初柒网络科技有限公司</p>
+<p>青云将网站移动到了dcloud中，提高了网络速度</p>
+<p>青云招收了3位作者为青云提供文章</p>
+<p>青云更换了serviceworker脚本来加速网站</p>
+<p>青云更换了sw安装脚本</p>
+<p>青云部署了新的jsd代理<code>cdn.chuqis.com</code>不仅支持<code>jsd</code>的常规使用同时代理了<code>cdnjs</code>且支持了青云的图床使用</p>
+</div><div class="story post-story"><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>我们希望未来可以</p>
+<p>招收更多作者加入青云博客，尝试多作者模式</p>
+<p>与携手初柒科技获得更多发展</p>
+<p>更新博客主题，极致优化速度</p>
+<p>优化SEO，对蜘蛛优化，增加搜索引擎流量</p>
+<p>推广青云博客，收获更多流量</p>
+<p>更多参与开源社区活动，聚焦公益项目</p>
+</div><div class="story post-story"><h2 id="远航"><a href="#远航" class="headerlink" title="远航"></a>远航</h2><p>最后希望在新的一年了，青云可以扬帆远航</p>
+<p>同时预祝大家新年快乐😀 大吉大利</p>
+<p><img src="https://cdn.chuqis.com/img/6ac67d6e38b3796d8b5316f8a6c22624.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/6ac67d6e38b3796d8b5316f8a6c22624.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/6ac67d6e38b3796d8b5316f8a6c22624.png"></p>
+
+</div>]]></content>
+      <categories>
+        <category>qystudio</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>青云</tag>
+        <tag>2023</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>建站博客折腾之路</title>
     <url>/posts/48495.html</url>
     <content><![CDATA[<div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想必很多人都有一个属于自己的草根站长梦想，但却由于技术水平、资金、关系资源等种种原因，往往徘徊在坚持与放弃之间！“梦想还是要有的，万一实现了呢！”没错，今天我就要帮助那些有站长梦的人实现这个梦想，不需要你会敲代码，今天我们攻克技术、资金、资源难关拿下一个网站！</p>
