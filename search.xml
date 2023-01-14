@@ -51,7 +51,7 @@
 </div><div class="story post-story"><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>你甚至还可以配置国内cdn回源到这里，以提升速度</p>
 <p>就像这样</p>
 <p><img src="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png"></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://www.qystu.cc/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="http://example.com/%E5%8D%9A%E5%AE%A2/hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/">hexo自定义友链页面</a></li><li><a href="http://example.com/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/Typora%E7%9A%84%E4%BD%BF%E7%94%A8/">Typora使用教程</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://www.qystu.cc/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li><li><a href="http://example.com/%E5%8D%9A%E5%AE%A2/hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/">hexo自定义友链页面</a></li><li><a href="http://example.com/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/Typora%E7%9A%84%E4%BD%BF%E7%94%A8/">Typora使用教程</a></li><li><a href="https://qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://qystu.cc/posts/34886.html">github图床���弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://qystu.cc/posts/14166.html">使用PicGO-Gitee搭建博客图床</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -1862,6 +1862,19 @@
         <tag>博客</tag>
         <tag>web</tag>
         <tag>跳转</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>胡杨礼赞</title>
+    <url>/posts/52176.html</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> 我赞美胡杨，赞美它那挺立的身姿，赞美它那无尽的毅力，所以我要高声地赞美胡杨。</span><br><span class="line"> 我初见胡杨，是一段干巴巴的树枝，干裂的树皮同被一个身强力壮的人硬扭的麻花一样，一条条不齐地盘旋在表面上。一个一个凹凹凸凸的小点，同麻疹一样撒在一条条纵横的沟壑间，给人一种就是普通的木头段子，在落叶堆间唾手可得的平凡之物，而不用给予任何理睬时，因一段家尊的口述后，我要高声赞美胡杨。</span><br><span class="line"> “这段胡杨，是我去西北时，路过一片树林，起初我还不知道那是什么树，枝条一个个旁逸斜出，但这段胡杨的故事使我难忘，这段胡杨就是我在那捡的。”我爸顿了顿，饮了口茶。从他对我的简述我还没有领会到胡杨的特别，但后来的这样一句话，让我一开始看到胡杨时，那种从这段胡杨中渐渐溢出矗立西域千年的古老气息是从何而来的了。</span><br><span class="line"> “胡杨生则三千年不死，死则三千年不倒，倒则三千年不朽。”这是在我内心最震撼的一句话。细看它之后才发现，这一截虬枝上，本是断折处应棱立而起的木碴，是被荒漠岁月的雄风磨去了棱角。枝条落在地上，向上的那一面已被西北沙漠的烈日烤得发黄发焦，这些是绝非一日而就的。</span><br><span class="line">家尊至西北关塞之日亦为四月，胡杨之叶乃未发也，枯叶存枝头，尚犹金也。予枝虽不齐，但生志犹高也。日挂枝头，大江东去，杨满金沙丘。登丘而望其林也，树虽旁逸斜出，日照投其影，影布石上，甚异之。</span><br><span class="line"> 虽然这样的胡杨相貌不扬，但岁月嵌在上面，那种难以掩饰的威严每每能震慑住我。这是生命与时间迸发出的火焰，把鼻子凑上去细细地嗅，有一种檀木发出的被岁月冲淡的浅浅香气。</span><br><span class="line">我用手抚摸这这从千里外来的“老人”，本是对破木头的鄙夷，以全然转变为对岁月的仰望了。日日夜夜浓缩在这样一段胡杨里，是生命，是历史，也是我感受到华夏大地不屈服的毅力。</span><br><span class="line"> “我把一段小胡杨枝送给了一位叔叔，他一开始也以为这是块破木头，但他听了胡杨背后的故事，也突然使他迷上了胡杨的精神品质，他说将会把段胡杨好好收藏，也是我寓意着他的事业如胡杨一样常青。”我爸最后向我说，“我这还有一小段胡杨，虽然不能拿来当做封存美术馆的艺术品，但有时候吧，胡杨的意志才是人们追求的。不论日晒雨淋，都不应倒下。生命给我们种种坎坷，究竟是一种恩赐，还是一种折磨？”父亲向我抛下了一个疑问。</span><br><span class="line">自愧不如，这个问题我还尚无得到解释，但我却理解了胡杨崎岖表面上一条条沟壑的深意，这是生命一定会有的，生命必须有裂缝，阳光才照得进来。</span><br><span class="line"> 听故事的人变成讲故事的人，讲故事的人变成了故事里的人，生命即如胡杨，时间能证明一切。这是从胡杨的一生中得出的道理。</span><br><span class="line"> 是啊！没有什么能够超脱时间的束缚，我们虽没有千年的寿命，但我们能做的，只有自强不息，因为这样，时间才永远无法击败我们的心志。</span><br><span class="line"> 谨以此文，记矛盾老先生和送给我的父亲。</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>categories</category>
+      </categories>
+      <tags>
+        <tag>tags</tag>
       </tags>
   </entry>
   <entry>
