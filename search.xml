@@ -1505,22 +1505,6 @@
       </tags>
   </entry>
   <entry>
-    <title>停更通知</title>
-    <url>/posts/25002.html</url>
-    <content><![CDATA[<div class="story post-story"><h2 id="停更"><a href="#停更" class="headerlink" title="停更"></a>停更</h2><p>青云团队由于一些原因，工作力不从心</p>
-<p>经过慎重考虑，青云工作室准备在2022/4/11开始停更</p>
-</div><div class="story post-story"><h2 id="重启时间"><a href="#重启时间" class="headerlink" title="重启时间"></a>重启时间</h2><p>重启时间预计定在8月中旬</p>
-</div><div class="story post-story"><h2 id="再起航"><a href="#再起航" class="headerlink" title="再起航"></a>再起航</h2><p>在8月重启网站时，我们将带来更好的网站，更快的速度</p>
-<p>同时会重构开往的官网</p>
-<p>预计我们会在开源美化的主题同时，尝试开源全部源码</p>
-<p>而且青云将建立一个基于gitea的代码托管平台，拥有CI/CD</p>
-<p>请耐心等待，青云将变得更好</p>
-<p>聊天扯淡加群</p>
-<p><a href="https://jq.qq.com/?_wv=1027&k=6fMOhKtn"><img src="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" class="lazyload" data-srcset="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></p>
-
-</div>]]></content>
-  </entry>
-  <entry>
     <title>做一个特殊的ppt</title>
     <url>/posts/59121.html</url>
     <content><![CDATA[<div class="story post-story"><h2 id="居然可以用js写ppt"><a href="#居然可以用js写ppt" class="headerlink" title="居然可以用js写ppt"></a>居然可以用js写ppt</h2><p>用powerpoint或者keynote写演示文稿，对于代码、数学公式等的支持一直是个痛点。而且对于前端同学来说，一身的css功力用不上也是个痛点。对于使用markdown来写文档的同学来说，将文档转成ppt需要重新排版也是件重复性的工作量。</p>
@@ -1632,6 +1616,22 @@
         <tag>tools</tag>
         <tag>PPT</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>停更通知</title>
+    <url>/posts/25002.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="停更"><a href="#停更" class="headerlink" title="停更"></a>停更</h2><p>青云团队由于一些原因，工作力不从心</p>
+<p>经过慎重考虑，青云工作室准备在2022/4/11开始停更</p>
+</div><div class="story post-story"><h2 id="重启时间"><a href="#重启时间" class="headerlink" title="重启时间"></a>重启时间</h2><p>重启时间预计定在8月中旬</p>
+</div><div class="story post-story"><h2 id="再起航"><a href="#再起航" class="headerlink" title="再起航"></a>再起航</h2><p>在8月重启网站时，我们将带来更好的网站，更快的速度</p>
+<p>同时会重构开往的官网</p>
+<p>预计我们会在开源美化的主题同时，尝试开源全部源码</p>
+<p>而且青云将建立一个基于gitea的代码托管平台，拥有CI/CD</p>
+<p>请耐心等待，青云将变得更好</p>
+<p>聊天扯淡加群</p>
+<p><a href="https://jq.qq.com/?_wv=1027&k=6fMOhKtn"><img src="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" class="lazyload" data-srcset="https://bu.dusays.com/2022/04/09/1b1512ab5471e.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></p>
+
+</div>]]></content>
   </entry>
   <entry>
     <title>关于接管运营博客的事项</title>
