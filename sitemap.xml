@@ -2,60 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.qystu.cc/posts/64280.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/join/index.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/links/index.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/messages/index.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/privacy/index.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/talks/index.html</loc>
-    
-    <lastmod>2023-04-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qystu.cc/posts/78415.html</loc>
     
     <lastmod>2023-04-27</lastmod>
@@ -138,6 +84,60 @@
   
   <url>
     <loc>https://www.qystu.cc/posts/35934.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/posts/64280.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/join/index.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/links/index.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/messages/index.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/privacy/index.html</loc>
+    
+    <lastmod>2023-04-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/talks/index.html</loc>
     
     <lastmod>2023-04-27</lastmod>
     
