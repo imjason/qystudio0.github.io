@@ -51,7 +51,7 @@
 </div><div class="story post-story"><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>你甚至还可以配置国内cdn回源到这里，以提升速度</p>
 <p>就像这样</p>
 <p><img src="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/228be3eb21e55bde29a1fff1e13f8d0e.png"></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/09/10/HEXO的常用MarkDown语法/">HEXO的常用MarkDown语法</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/34886.html">github图床之弃用jsd(图床使用npm镜像加速)</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -98,7 +98,7 @@
 <p>“新闻和兴趣”：它默认显示的是当地的天气。如果点击一下这个天气图标，就会弹出资讯。</p>
 <p>“笔按钮”：点一下这个按钮，就会显示白板和截图的按钮。另外，在系统设置里，也可以对笔进行进一步详细的设定。</p>
 </div><div class="story post-story"><h2 id="四、建议"><a href="#四、建议" class="headerlink" title="四、建议"></a>四、建议</h2><p>正如前面说过，Win10 Build 21354还是测试版本，不建议大家在实体机上安装。测试版往往有比较多的bug，在虚拟机里玩玩就好，提前体验一下即将发布的新系统，过过瘾就好</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li><li><a href="http://broken-year.github.io/2022/03/23/fire-wall/">系统防火墙原理及突破</a></li><li><a href="http://broken-year.github.io/2022/03/21/information-tool/">渗透工具使用</a></li><li><a href="http://broken-year.github.io/2022/03/18/filed/">内网和域</a></li><li><a href="https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/">RD Client 简明教程</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -106,6 +106,46 @@
       <tags>
         <tag>windows</tag>
         <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初七云测评</title>
+    <url>/posts/25124.html</url>
+    <content><![CDATA[<div class="story post-story"><h2 id="初七云怎么样"><a href="#初七云怎么样" class="headerlink" title="初七云怎么样"></a>初七云怎么样</h2><blockquote>
+<p><a href="https://www.chuqiyun.com/aff/IDRGMZMW">初七云</a>怎么样？<a href="https://www.chuqiyun.com/aff/IDRGMZMW">初七云</a>是一家国人主机商，提供 VPS、CDN 等，数据中心包括中国香港、美国等，国内直连优化或者 CN2 GIA 等优秀线路，还有 CERA 低价服务器。</p>
+</blockquote>
+<p><a href="https://www.chuqiyun.com/aff/IDRGMZMW">初七云</a>中 VPS 包括常规 VPS (经典轻量云服务器) 和 ECS (弹性云)，支持自定义配置。</p>
+<p><a href="https://www.chuqiyun.com/aff/IDRGMZMW">初七云</a>致力于创新IDC业内新平台，目前真正研发全新IDC财务结算系统，CDN插件，智慧虚拟主机管理系统，IDS网络管理系统</p>
+<p>同时我们希望可以与业内同行互利共赢，实现IDC行业健康规范发展</p>
+<p><img src="https://cdn.chuqis.com/img/37a45efb11ae5548148700f194128686.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/37a45efb11ae5548148700f194128686.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/37a45efb11ae5548148700f194128686.png"></p>
+</div><div class="story post-story"><h2 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h2><p><a href="https://www.chuqiyun.com/aff/IDRGMZMW">https://www.chuqiyun.com/</a></p>
+</div><div class="story post-story"><h2 id="最新特惠活动"><a href="#最新特惠活动" class="headerlink" title="最新特惠活动"></a>最新特惠活动</h2><p><img src="https://www.mryunqi.com/wp-content/uploads/2023/01/1675161489-%E7%94%BB%E6%9D%BF-1-1024x493.png" class="lazyload" data-srcset="https://www.mryunqi.com/wp-content/uploads/2023/01/1675161489-%E7%94%BB%E6%9D%BF-1-1024x493.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>活动一：</p>
+<ul>
+<li>华中高防16-32 180月 续费同价</li>
+<li>不限量 66 折・骨折码：[qystu] (所有产品)</li>
+<li>全球加速体验版 月流量：20G 域名：3 防护：自定义 网站预热： 支持 全球多节点负载</li>
+</ul>
+<p>活动二：</p>
+<ul>
+<li>aff推介计划 新购返点7%以上，更多查看官网</li>
+<li>代理75折 5元永久</li>
+</ul>
+</div><div class="story post-story"><h2 id="香港精品云"><a href="#香港精品云" class="headerlink" title="香港精品云"></a>香港精品云</h2><p>包括CTG GIA等线路 大陆方向优化</p>
+<p>评论获取6折码</p>
+<p>10-16评论获取99折扣码</p>
+<p><img src="https://cdn.chuqis.com/img/c6031c890ce5726fcc8dbef6d4af2dd4.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/c6031c890ce5726fcc8dbef6d4af2dd4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="https://cdn.chuqis.com/img/c6031c890ce5726fcc8dbef6d4af2dd4.png"></p>
+</div><div class="story post-story"><h2 id="纽约服务器"><a href="#纽约服务器" class="headerlink" title="纽约服务器"></a>纽约服务器</h2><p>低价钜惠 线路优秀 利好建站</p>
+<p><img src="https://cdn.chuqis.com/img/fcb66aff0fc673e38db85fdb3be8646f.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/fcb66aff0fc673e38db85fdb3be8646f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="纽约服务器"></p>
+</div><div class="story post-story"><h2 id="蜂鸟云桌面"><a href="#蜂鸟云桌面" class="headerlink" title="蜂鸟云桌面"></a>蜂鸟云桌面</h2><p>全新技术，支持显卡云桌面，欢迎对接</p>
+<h3 id="普通体验型"><a href="#普通体验型" class="headerlink" title="普通体验型"></a>普通体验型</h3><p><img src="https://cdn.chuqis.com/img/e5b72cdd660cc26ca25b89ff235197cf.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/e5b72cdd660cc26ca25b89ff235197cf.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="蜂鸟服务器"></p>
+<h3 id="gcc显卡云"><a href="#gcc显卡云" class="headerlink" title="gcc显卡云"></a>gcc显卡云</h3><p><img src="https://cdn.chuqis.com/img/22094522cf4b56e6ad3b416c87ee4c07.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/22094522cf4b56e6ad3b416c87ee4c07.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="gcc显卡云"></p>
+<h3 id="gcpm高性能（适合各种游戏、软件、直播、模拟器多开、虚拟机多开、渲染、模型训练等）"><a href="#gcpm高性能（适合各种游戏、软件、直播、模拟器多开、虚拟机多开、渲染、模型训练等）" class="headerlink" title="gcpm高性能（适合各种游戏、软件、直播、模拟器多开、虚拟机多开、渲染、模型训练等）"></a>gcpm高性能（<strong>适合各种游戏、软件、直播、模拟器多开、虚拟机多开、渲染、模型训练等</strong>）</h3><p><img src="https://cdn.chuqis.com/img/fdca154c89da57f7377fd38ce34b1cab.png" class="lazyload" data-srcset="https://cdn.chuqis.com/img/fdca154c89da57f7377fd38ce34b1cab.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="gcpm高性能服务器"></p>
+
+</div>]]></content>
+      <tags>
+        <tag>初七云</tag>
+        <tag>IDC</tag>
       </tags>
   </entry>
   <entry>
@@ -153,7 +193,7 @@
 </div><div class="story post-story"><h2 id="其他方案-前端竞速"><a href="#其他方案-前端竞速" class="headerlink" title="其他方案(前端竞速)"></a>其他方案(前端竞速)</h2><p>去看<a href="https://blog.cyfan.top/">cyfan的博客</a></p>
 </div><div class="story post-story"><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这篇文章在2月就准备开始写了，憋到今天才发布</p>
 <p>前端竞速不会的还在问，会用的同学已经用起来了，我的博客速度怎么样，留言告诉我</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/09/10/HEXO的常用MarkDown语法/">HEXO的常用MarkDown语法</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -245,7 +285,7 @@
 <p>已经很详细的看了上面的阐述，并且我不会直接照搬</p>
 </blockquote>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line"><span class="attr">&#x27;on&#x27;:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">workflow_dispatch</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">push</span></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">ref:</span> <span class="string">main</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="number">16.</span><span class="string">x</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Hexo</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm install hexo-cli -g</span></span><br><span class="line"><span class="string">          npm install -g gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">Modules</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2.1.1</span></span><br><span class="line">        <span class="attr">id:</span> <span class="string">cache-modules</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;runner.OS&#125;&#125;-$&#123;&#123;hashFiles(&#x27;**/package-lock.json&#x27;)&#125;&#125;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">if:</span> <span class="string">steps.cache-modules.outputs.cache-hit</span> <span class="type">!=</span> <span class="string">&#x27;true&#x27;</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          npm ci</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setting</span> <span class="string">Token</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          sed -i &quot;s/.Baidu_Token/$&#123;&#123; secrets.BAIDU_TOKEN &#125;&#125;/&quot; _config.yml</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          hexo clean</span></span><br><span class="line"><span class="string">          hexo recommend</span></span><br><span class="line"><span class="string">          hexo generate</span></span><br><span class="line"><span class="string">          gulp //如果没有gulp把这行去掉</span></span><br><span class="line"><span class="string">          git clone https://github.com/username/username.github.io.git .public</span></span><br><span class="line"><span class="string"></span>      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">personal_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.PERSONAL_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">          <span class="attr">external_repository:</span> <span class="string">username/username.github.io</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">main</span></span><br><span class="line">          <span class="attr">exclude_assets:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">          <span class="attr">user_name:</span> <span class="string">github-actions[bot]</span></span><br><span class="line">          <span class="attr">user_email:</span> <span class="string">github-actions[bot]@users.noreply.github.com</span></span><br></pre></td></tr></table></figure>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/09/10/HEXO的常用MarkDown语法/">HEXO的常用MarkDown语法</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -742,7 +782,7 @@
 <p>照样把代码复制到head.ejs文件中，然后再进行一下安装检查，半小时左右就可以在百度统计里面看到自己的网站信息了。</p>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就基本做完了。其实都是参考别的博主的设置的，不一定仅限于volantis主题，你可以在网络中寻找到各种各样的hexo主题,其他主题的设置也是大体相同的，所以如果你希望设置别的主题，那么仔细看一下这个主题的代码结构，也能够把上边的功能添加进去。</p>
 <p>多看看别的博主的那些功能，如果有你能找到自己喜欢的功能，那么好好发动搜索技能，很快就能找到怎么做了。加油吧！</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/09/10/HEXO的常用MarkDown语法/">HEXO的常用MarkDown语法</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -818,7 +858,7 @@
 <p>然后是否为管理按需填写</p>
 <p>然后完结撒花</p>
 </div><div class="story post-story"><h2 id="再次感谢abudu大佬"><a href="#再次感谢abudu大佬" class="headerlink" title="再次感谢abudu大佬"></a>再次感谢abudu大佬</h2><p>成功又水一篇文章</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/09/10/HEXO的常用MarkDown语法/">HEXO的常用MarkDown语法</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/11159.html">DIY最低成本图床</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>hexo</category>
@@ -1157,7 +1197,7 @@
               </div>
             </details>
 
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><div class="note warning"><p>我们尽可能将打断代码提到<code>&lt;head&gt;</code> 以确保不被其他资源堵塞，对于hexo来说打开主题的head.ejs，在<code>&lt;head&gt;</code>标签靠前的位置中加入，否则可能达不到理想的加速效果</p></div><div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="http://broken-year.github.io/2022/11/17/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb/">攻防世界WEB篇</a></li><li><a href="http://broken-year.github.io/2022/05/24/phpmyadmin-webshell/">phpmyadmin后台getshell</a></li><li><a href="http://broken-year.github.io/2022/03/26/sql-injection/">sql注入</a></li><li><a href="http://broken-year.github.io/2022/03/25/gongfangshijie/">攻防世界Web进阶篇</a></li><li><a href="http://broken-year.github.io/2022/03/23/web-vulnerability/">web漏洞介绍</a></li></ul></div>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><div class="note warning"><p>我们尽可能将打断代码提到<code>&lt;head&gt;</code> 以确保不被其他资源堵塞，对于hexo来说打开主题的head.ejs，在<code>&lt;head&gt;</code>标签靠前的位置中加入，否则可能达不到理想的加速效果</p></div><div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://www.qystu.cc/posts/37212.html">qexo的搭建与使用</a></li><li><a href="https://songxwn.com/team_nav/">部署团队服务导航网站 Team-nav</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1392,7 +1432,7 @@
 <p>MD5: 179bfe07f7050093ee595ddd85a30201</p>
 <p>SHA1: 3b6da9194ba303ac7dbbf2e521716c809500919c</p>
 <p>测试工具下载:<a href="https://aka.ms/GetPCHealthCheckApp">https://aka.ms/GetPCHealthCheckApp</a></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li><li><a href="http://broken-year.github.io/2022/03/23/fire-wall/">系统防火墙原理及突破</a></li><li><a href="http://broken-year.github.io/2022/03/21/information-tool/">渗透工具使用</a></li><li><a href="http://broken-year.github.io/2022/03/18/filed/">内网和域</a></li><li><a href="https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/">RD Client 简明教程</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/63659.html">window上帝模式</a></li><li><a href="https://www.qystu.cc/posts/35934.html">数字基础设施开源操作系统欧拉全新发布</a></li><li><a href="https://www.qystu.cc/posts/18567.html">华为宣布将发布操作系统openEuler欧拉</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>系统</category>
@@ -1417,7 +1457,7 @@
 <p>回车确认之后，就是开启上帝模式了，打开文件夹你会看到很多系统设置项目，包括了系统设置选项和各种工具。</p>
 <p>比如一键删除浏览的历史记录、阻止或允许弹窗、等等，你们可以可以根据自己需求去使用</p>
 <p><img src="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/qystudio0/cdn@main/img/post/1639316639000.gif" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="图片"></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://www.qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="http://broken-year.github.io/2022/03/24/back-door/">系统后门</a></li><li><a href="http://broken-year.github.io/2022/03/23/fire-wall/">系统防火墙原理及突破</a></li><li><a href="http://broken-year.github.io/2022/03/21/information-tool/">渗透工具使用</a></li><li><a href="http://broken-year.github.io/2022/03/18/filed/">内网和域</a></li><li><a href="https://e1sewhere.github.io/2019/05/23/RD-Client-简明教程/">RD Client 简明教程</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/59121.html">做一个特殊的ppt</a></li><li><a href="https://www.qystu.cc/posts/64280.html">软件屏蔽器 秒杀流氓软件</a></li><li><a href="https://www.qystu.cc/posts/48475.html">win11安装初体验(副下载)</a></li><li><a href="https://songxwn.com/ipv6-Windows/">Windows上的IPv6</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>tools</category>
@@ -1769,7 +1809,7 @@
 <li>discuz论坛建站系列文章</li>
 </ul>
 </div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我的文章将以不间断的形式更新，作者今年初三中考更新比较慢，勿催更，谢谢</p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://e1sewhere.github.io/2018/03/04/建站小记/">Hexo建站小记</a></li><li><a href="https://e1sewhere.github.io/2018/03/06/next-live2d插件删除问题/">HEXO next live2d插件删除问题</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -1875,7 +1915,7 @@
 </div><div class="story post-story"><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这样，当博客加载完毕的时候，博客的全部外链就会被加上二级跳转，但是源HTML里的外链不变。可以优化 SEO和加强网站体验</p>
 <p>本文修改自<a href="https://blog.pai233.top/20220109/how-to-use-go-jumper/">pai233</a></p>
 <p>源码参考自<a href="https://github.com/pai233/go-jumper/">go-jumper</a></p>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="http://broken-year.github.io/2022/11/17/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb/">攻防世界WEB篇</a></li><li><a href="http://broken-year.github.io/2022/05/24/phpmyadmin-webshell/">phpmyadmin后台getshell</a></li><li><a href="http://broken-year.github.io/2022/03/26/sql-injection/">sql注入</a></li><li><a href="http://broken-year.github.io/2022/03/25/gongfangshijie/">攻防世界Web进阶篇</a></li><li><a href="http://broken-year.github.io/2022/03/23/web-vulnerability/">web漏洞介绍</a></li></ul></div>
+<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="https://www.qystu.cc/posts/32667.html">qexo多作者解决方案</a></li><li><a href="https://www.qystu.cc/posts/52948.html">serviceworkers首屏优化</a></li><li><a href="https://www.qystu.cc/posts/61056.html">为hexo加一个自动部署</a></li><li><a href="https://songxwn.com/team_nav/">部署团队服务导航网站 Team-nav</a></li></ul></div>
 </div>]]></content>
       <categories>
         <category>web</category>
@@ -2026,7 +2066,7 @@
 
 <p><img src="https://oss.overme.cn/img/image-20210316094815230.png" class="lazyload" data-srcset="https://oss.overme.cn/img/image-20210316094815230.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20210316094815230"></p>
 <h3 id="Update（更新）"><a href="#Update（更新）" class="headerlink" title="Update（更新）"></a>Update（更新）</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./install-frps.sh update</span><br></pre></td></tr></table></figure>
-<div></div><div class="story post-story"><h2>推荐文章<span style="font-size:0.45em; color:gray">（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动）</span></h2><ul><li><a href="http://broken-year.github.io/2022/03/30/frp/">frp内网穿透</a></li></ul></div>
+
 </div>]]></content>
       <categories>
         <category>web</category>
