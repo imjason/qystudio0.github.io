@@ -2,33 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.qystu.cc/posts/78415.html</loc>
-    
-    <lastmod>2023-06-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/posts/34886.html</loc>
-    
-    <lastmod>2023-06-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.qystu.cc/posts/52948.html</loc>
-    
-    <lastmod>2023-06-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qystu.cc/posts/48475.html</loc>
     
     <lastmod>2023-06-07</lastmod>
@@ -138,6 +111,33 @@
   
   <url>
     <loc>https://www.qystu.cc/talks/index.html</loc>
+    
+    <lastmod>2023-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/posts/78415.html</loc>
+    
+    <lastmod>2023-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/posts/34886.html</loc>
+    
+    <lastmod>2023-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/posts/52948.html</loc>
     
     <lastmod>2023-06-07</lastmod>
     
@@ -753,14 +753,14 @@
   </url>
   
   <url>
-    <loc>https://www.qystu.cc/categories/hexo/%E5%BB%BA%E7%AB%99/</loc>
+    <loc>https://www.qystu.cc/categories/web/</loc>
     <lastmod>2023-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.qystu.cc/categories/web/</loc>
+    <loc>https://www.qystu.cc/categories/hexo/%E5%BB%BA%E7%AB%99/</loc>
     <lastmod>2023-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -788,13 +788,6 @@
   </url>
   
   <url>
-    <loc>https://www.qystu.cc/categories/chuqis/</loc>
-    <lastmod>2023-06-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.qystu.cc/categories/%E5%93%94%E5%93%94/</loc>
     <lastmod>2023-06-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -810,6 +803,13 @@
   
   <url>
     <loc>https://www.qystu.cc/categories/qystudio/</loc>
+    <lastmod>2023-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.qystu.cc/categories/chuqis/</loc>
     <lastmod>2023-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
